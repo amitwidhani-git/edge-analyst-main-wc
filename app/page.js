@@ -130,7 +130,7 @@ export default function HomePage() {
       </div>
 
       <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch',marginLeft:'clamp(-16px,-4vw,-56px)',marginRight:'clamp(-16px,-4vw,-56px)',paddingLeft:'clamp(16px,4vw,56px)',paddingRight:'clamp(16px,4vw,56px)'}}>
-      <div style={{minWidth:600,{/* Column headers */}
+      {/* Column headers */}
       <div style={{minWidth:600,display:'grid',gridTemplateColumns:'72px 1fr 1fr 60px 68px 68px 68px 90px',gap:8,padding:'8px 0',borderBottom:'1px solid rgba(247,245,240,.08)',fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.1em',textTransform:'uppercase',color:'rgba(247,245,240,.28)'}}>
         <span>Date</span><span>Home</span><span>Away</span><span>Grp</span>
         <span style={{textAlign:'center'}}>Home</span><span style={{textAlign:'center'}}>Draw</span><span style={{textAlign:'center'}}>Away</span>
