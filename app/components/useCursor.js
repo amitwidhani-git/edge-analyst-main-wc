@@ -13,10 +13,12 @@ export function useCursor() {
     const ring = document.getElementById("ea-ring");
     if (!cur || !dot || !ring) return;
 
-    let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+    cur.style.opacity = "0";
+    let mx = -100, my = -100;
     let rx = mx, ry = my, rafId;
 
     const onMove = e => {
+      cur.style.opacity = "1";
       mx = e.clientX; my = e.clientY;
       let dark = true;
       for (const s of document.querySelectorAll("[data-theme]")) {
@@ -54,7 +56,7 @@ export function useCursor() {
 
 // Cursor HTML to include at top of every page
 export const CursorEl = () => (
-  <div id="ea-cur" style={{ position:"fixed", zIndex:9998, pointerEvents:"none", top:0, left:0 }} aria-hidden="true">
+  <div id="ea-cur" style={{ position:"fixed", zIndex:9998, pointerEvents:"none", top:0, left:0, opacity:0, transition:"opacity 0.3s" }} aria-hidden="true">
     <div id="ea-ring" style={{ width:36, height:36, border:"1.5px solid rgba(247,245,240,.55)", borderRadius:"50%", position:"absolute", transform:"translate(-50%,-50%)", transition:"width .2s,height .2s,border-color .2s" }} />
     <div id="ea-dot"  style={{ width:6, height:6, background:"#F7F5F0", borderRadius:"50%", position:"absolute", transform:"translate(-50%,-50%)", transition:"transform .08s,background .2s" }} />
   </div>

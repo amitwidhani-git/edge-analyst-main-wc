@@ -20,11 +20,13 @@ export default function HomePage() {
   useEffect(()=>{const t=setTimeout(()=>setImgReady(true),80);return()=>clearTimeout(t);},[]);
 
   useEffect(()=>{
+    if(window.matchMedia('(hover:none),(pointer:coarse)').matches) return;
     document.body.style.cursor='none';
     const cur=document.getElementById('ea-cur'),dot=document.getElementById('ea-dot'),ring=document.getElementById('ea-ring');
     if(!cur||!dot||!ring) return;
-    let mx=window.innerWidth/2,my=window.innerHeight/2,rx=mx,ry=my,rafId;
-    const onMove=e=>{mx=e.clientX;my=e.clientY;let d=true;for(const s of document.querySelectorAll('[data-theme]')){const{top,bottom}=s.getBoundingClientRect();if(e.clientY>=top&&e.clientY<bottom){d=s.dataset.theme==='dark';break;}}dot.style.background=d?'#F7F5F0':'#080808';ring.style.borderColor=d?'rgba(247,245,240,.55)':'rgba(8,8,8,.55)';};
+    cur.style.opacity='0';
+    let mx=-100,my=-100,rx=mx,ry=my,rafId;
+    const onMove=e=>{cur.style.opacity='1';mx=e.clientX;my=e.clientY;let d=true;for(const s of document.querySelectorAll('[data-theme]')){const{top,bottom}=s.getBoundingClientRect();if(e.clientY>=top&&e.clientY<bottom){d=s.dataset.theme==='dark';break;}}dot.style.background=d?'#F7F5F0':'#080808';ring.style.borderColor=d?'rgba(247,245,240,.55)':'rgba(8,8,8,.55)';};
     const loop=()=>{rx+=(mx-rx)*.12;ry+=(my-ry)*.12;cur.style.left=mx+'px';cur.style.top=my+'px';ring.style.left=(rx-mx)+'px';ring.style.top=(ry-my)+'px';rafId=requestAnimationFrame(loop);};
     document.addEventListener('mousemove',onMove);rafId=requestAnimationFrame(loop);
     const add=()=>document.body.classList.add('lp-hovering'),rem=()=>document.body.classList.remove('lp-hovering');
@@ -72,7 +74,7 @@ export default function HomePage() {
   const tmMap = Object.fromEntries(teamStats.map(t=>[t.team,t]));
 
   return (<>
-    <div id="ea-cur" style={{position:'fixed',zIndex:9998,pointerEvents:'none',top:0,left:0}} aria-hidden="true">
+    <div id="ea-cur" style={{position:'fixed',zIndex:9998,pointerEvents:'none',top:0,left:0,opacity:0,transition:'opacity .3s'}} aria-hidden="true">
       <div id="ea-ring" style={{width:36,height:36,border:'1.5px solid rgba(247,245,240,.55)',borderRadius:'50%',position:'absolute',transform:'translate(-50%,-50%)',transition:'width .2s,height .2s,border-color .2s'}}/>
       <div id="ea-dot"  style={{width:6,height:6,background:'#F7F5F0',borderRadius:'50%',position:'absolute',transform:'translate(-50%,-50%)',transition:'transform .08s,background .2s'}}/>
     </div>
@@ -102,7 +104,7 @@ export default function HomePage() {
       <div style={{position:'absolute',left:56,top:0,bottom:0,width:2,background:'linear-gradient(to bottom,transparent 10%,#F0A500 30%,#F0A500 70%,transparent 100%)',opacity:.65}} aria-hidden="true"/>
       <div style={{position:'absolute',bottom:28,right:40,textAlign:'right',pointerEvents:'none'}}>
         <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,letterSpacing:'.1em',textTransform:'uppercase',color:'rgba(247,245,240,.7)',marginBottom:3}}>MetLife Stadium · World Cup Final · 19 Jul 2026</div>
-        <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.06em',color:'rgba(247,245,240,.35)'}}>Photo: Anthony Quintano / CC BY 2.0</div>
+        <div className="ea-photo-credit" style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.06em',color:'rgba(247,245,240,.55)'}}>Photo: Anthony Quintano / CC BY 2.0</div>
       </div>
 
       <div className="ea-hero__inner">
@@ -154,7 +156,7 @@ export default function HomePage() {
         {/* KPI strip */}
         <div className="ea-kpi-grid" style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',borderTop:'1px solid rgba(247,245,240,.1)',paddingTop:32,gap:0}}>
           {[
-            {n:loading?'—':matches.length,     l:'Fixtures'},
+            {n:loading?'—':matches.length,     l:'Group Fixtures'},
             {n:loading?'—':data?.liveCount||0, l:'Live odds'},
             {n:loading?'—':simTop[0]?.team||'Spain', l:'Favourite'},
             {n:loading?'—':simTop[0]?`${simTop[0].win_pct}%`:'—', l:'Win probability'},
@@ -181,7 +183,7 @@ export default function HomePage() {
         <Link href="/fixtures" style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,letterSpacing:'.1em',textTransform:'uppercase',color:'rgba(247,245,240,.5)',textDecoration:'none',border:'1px solid rgba(247,245,240,.1)',padding:'10px 20px',borderRadius:2,transition:'all .2s'}}
           onMouseEnter={e=>{e.currentTarget.style.borderColor='rgba(200,255,0,.3)';e.currentTarget.style.color='#C8FF00';}}
           onMouseLeave={e=>{e.currentTarget.style.borderColor='rgba(247,245,240,.1)';e.currentTarget.style.color='rgba(247,245,240,.5)';}}>
-          All 72 fixtures →
+          All group fixtures →
         </Link>
       </div>
 

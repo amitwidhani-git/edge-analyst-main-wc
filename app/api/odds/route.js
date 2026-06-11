@@ -1,3 +1,6 @@
+// Cache the full route response for 1 hour to reduce Odds API quota usage.
+export const revalidate = 3600;
+
 const BOOKMAKER_LABELS = {
   bet365:           'Bet365',
   skybet:           'Sky Bet',
@@ -107,7 +110,7 @@ export async function GET() {
 
   let raw;
   try {
-    const res = await fetch(url, { next: { revalidate: 300 } });
+    const res = await fetch(url, { next: { revalidate: 3600 } });
     if (!res.ok) return Response.json(DUMMY);
     raw = await res.json();
   } catch (e) {

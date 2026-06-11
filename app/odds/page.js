@@ -14,13 +14,16 @@ const ebr = e => e >= 8 ? 'rgba(200,255,0,.3)' : e >= 3 ? 'rgba(200,255,0,.15)' 
 
 function useCursor() {
   useEffect(() => {
+    if (window.matchMedia('(hover:none),(pointer:coarse)').matches) return;
     document.body.style.cursor = 'none';
     const cur  = document.getElementById('ea-cur');
     const dot  = document.getElementById('ea-dot');
     const ring = document.getElementById('ea-ring');
     if (!cur || !dot || !ring) return;
-    let mx = window.innerWidth / 2, my = window.innerHeight / 2, rx = mx, ry = my, rafId;
+    cur.style.opacity = '0';
+    let mx = -100, my = -100, rx = mx, ry = my, rafId;
     const onMove = e => {
+      cur.style.opacity = '1';
       mx = e.clientX; my = e.clientY;
       let dark = true;
       for (const s of document.querySelectorAll('[data-theme]')) {
@@ -107,7 +110,7 @@ export default function IntelligencePage() {
   return (
     <>
       {/* cursor */}
-      <div id="ea-cur" style={{ position:'fixed', zIndex:9998, pointerEvents:'none', top:0, left:0 }} aria-hidden="true">
+      <div id="ea-cur" style={{ position:'fixed', zIndex:9998, pointerEvents:'none', top:0, left:0, opacity:0, transition:'opacity .3s' }} aria-hidden="true">
         <div id="ea-ring" style={{ width:36, height:36, border:'1.5px solid rgba(247,245,240,.55)', borderRadius:'50%', position:'absolute', transform:'translate(-50%,-50%)', transition:'width .2s,height .2s,border-color .2s' }} />
         <div id="ea-dot"  style={{ width:6, height:6, background:'#F7F5F0', borderRadius:'50%', position:'absolute', transform:'translate(-50%,-50%)', transition:'transform .08s,background .2s' }} />
       </div>
@@ -127,7 +130,7 @@ export default function IntelligencePage() {
         }
       `}</style>
 
-      <div style={{ background:'#080808', minHeight:'100vh', color:'#F7F5F0' }}>
+      <div style={{ background:'#080808', minHeight:'100vh', color:'#F7F5F0', overflowX:'hidden' }}>
 
         {/* ── HERO ──────────────────────────────────────────────────────── */}
         <section data-theme="dark" className="ea-hero">
@@ -136,7 +139,7 @@ export default function IntelligencePage() {
           <div style={{ position:'absolute', left:56, top:0, bottom:0, width:2, background:'linear-gradient(to bottom,transparent 10%,#F0A500 30%,#F0A500 70%,transparent 100%)', opacity:.65 }} aria-hidden="true"/>
           <div style={{ position:'absolute', bottom:28, right:40, textAlign:'right', pointerEvents:'none' }}>
             <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.7)', marginBottom:3 }}>BC Place · World Cup 2026 · Vancouver, Canada</div>
-            <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.06em', color:'rgba(247,245,240,.35)' }}>Photo: Darren Kirby / CC BY-SA 2.0</div>
+            <div className="ea-photo-credit" style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.06em', color:'rgba(247,245,240,.55)' }}>Photo: Darren Kirby / CC BY-SA 2.0</div>
           </div>
 
           <div className="ea-hero__inner">
@@ -261,6 +264,7 @@ export default function IntelligencePage() {
 
                   {/* Summary row */}
                   <div
+                    className="ea-match-row"
                     onClick={() => toggleExpand(matchId)}
                     style={{
                       display:'grid',
@@ -305,7 +309,7 @@ export default function IntelligencePage() {
                       { odds:m.bestD, ev_:m.evD, label:'Draw' },
                       { odds:m.bestA, ev_:m.evA, label:m.away.split(' ')[0] },
                     ].map((c, ci) => (
-                      <div key={ci} style={{ textAlign:'center' }}>
+                      <div key={ci} className="ea-match-col-hide" style={{ textAlign:'center' }}>
                         <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, color:'rgba(247,245,240,.28)', marginBottom:2 }}>{c.label}</div>
                         <span style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:22, color: c.ev_>3?'#C8FF00':'rgba(247,245,240,.75)' }}>
                           {c.odds?.toFixed(2) || '—'}
@@ -442,16 +446,21 @@ export default function IntelligencePage() {
             <div style={{ padding:'16px 20px', border:'1px solid rgba(247,245,240,.07)', background:'rgba(247,245,240,.02)', marginTop:4 }}>
               <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.12em', textTransform:'uppercase', color:'rgba(247,245,240,.3)', marginBottom:10 }}>How to read</div>
               {[
-                ['Green odds', 'Best available price'],
-                ['Value %',    'Model prob × odds − 1'],
-                ['★ Pinnacle', 'Sharp reference market'],
-                ['+ expand',   'All bookmaker prices'],
+                ['Decimal odds', 'e.g. 2.50 means £1 returns £2.50. Under 2.00 = favourite.'],
+                ['Model %',      'Elo-rated win probability from 10,000 simulations'],
+                ['Value % (EV)', 'Positive = model says odds are too generous. +5% = 5% edge.'],
+                ['Green odds',   'Best available price across all tracked bookmakers'],
+                ['★ Pinnacle',   'Sharp reference — tightest margins, most accurate lines'],
+                ['+ expand',     'See all bookmaker prices for that fixture'],
               ].map(([k, v]) => (
-                <div key={k} style={{ display:'flex', justifyContent:'space-between', marginBottom:7 }}>
-                  <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'#C8FF00' }}>{k}</span>
-                  <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.35)', textAlign:'right', maxWidth:'56%' }}>{v}</span>
+                <div key={k} style={{ marginBottom:9 }}>
+                  <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'#C8FF00', display:'block', marginBottom:2 }}>{k}</span>
+                  <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, color:'rgba(247,245,240,.45)', lineHeight:1.5 }}>{v}</span>
                 </div>
               ))}
+              <div style={{ marginTop:10, paddingTop:10, borderTop:'1px solid rgba(247,245,240,.06)', fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, color:'rgba(247,245,240,.3)', lineHeight:1.6 }}>
+                Probabilities are Elo-based and reflect long-run averages — single match outcomes are always uncertain. Bet responsibly.
+              </div>
             </div>
 
             <Link href="/fixtures" style={{ marginTop:4, padding:'14px 16px', fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.5)', border:'1px solid rgba(247,245,240,.08)', textDecoration:'none', textAlign:'center', transition:'all .2s', borderRadius:2, display:'block' }}

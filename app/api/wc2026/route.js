@@ -1,6 +1,10 @@
 import { readFile } from 'fs/promises';
 import { join } from 'path';
 
+// Cache the full route response for 1 hour — limits Odds API calls to at most 1/hour.
+// Raise to 7200 (2h) on quieter days; lower to 900 (15min) on match days.
+export const revalidate = 3600;
+
 // ─── File helpers ─────────────────────────────────────────────────────────────
 async function readJSON(filename) {
   const raw = await readFile(join(process.cwd(), 'data', filename), 'utf-8');
@@ -62,7 +66,7 @@ async function fetchLiveOdds() {
         `https://api.the-odds-api.com/v4/sports/${sport}/odds/` +
         `?apiKey=${apiKey}&regions=eu,uk&markets=h2h&oddsFormat=decimal&dateFormat=iso`;
 
-      const res = await fetch(url, { next: { revalidate: 300 } });
+      const res = await fetch(url, { next: { revalidate: 3600 } });
 
       const remaining = res.headers.get('x-requests-remaining');
       const used      = res.headers.get('x-requests-used');

@@ -278,3 +278,29 @@ html.light .nav-word  { color: var(--ea-text-h)    !important; }
   letter-spacing: -0.015em;
   text-transform: uppercase;
 }
+
+/* ── CURSOR: hide on touch / pointer-coarse devices ──────────────────────── */
+@media (hover: none), (pointer: coarse) {
+  #ea-cur { display: none !important; }
+  body { cursor: auto !important; }
+  button, a, [role="button"] { cursor: pointer !important; }
+}
+
+/* ── MOBILE TEXT LEGIBILITY ───────────────────────────────────────────────── */
+/* Bump very dim text up so it reads on small screens */
+@media (max-width: 768px) {
+  .ea-page [style*="color: rgba(247,245,240,.28)"],
+  .ea-page [style*="color: rgba(247,245,240,.3)"],
+  .ea-page [style*="color: rgba(247,245,240,.35)"],
+  .ea-page [style*="color: rgba(247,245,240,.38)"],
+  .ea-page [style*="color: rgba(247,245,240,.4)"],
+  .ea-page [style*="color: rgba(247,245,240,.45)"] {
+    color: rgba(247,245,240,0.72) !important;
+  }
+  .ea-page [style*="color: rgba(247,245,240,.5)"],
+  .ea-page [style*="color: rgba(247,245,240,.55)"] {
+    color: rgba(247,245,240,0.82) !important;
+  }
+  /* Photo credits: more visible on small screens */
+  .ea-photo-credit { opacity: 0.85 !important; }
+}
