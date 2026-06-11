@@ -17,8 +17,6 @@ function fmtDate(d) {
 /* ─── Cursor (identical pattern to existing pages) ─────────────────────────── */
 function useCursor() {
   useEffect(() => {
-    const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
-    if (isTouch) return;
     document.body.style.cursor = 'none';
     const cur  = document.getElementById('ea-cur');
     const dot  = document.getElementById('ea-dot');
@@ -58,7 +56,6 @@ function useCursor() {
 
 /* ─── Tabs ──────────────────────────────────────────────────────────────────── */
 const TABS = ['Fixtures', 'Odds Intel', 'Rankings', 'Simulator'];
-const DISABLED_TABS = ['Simulator'];
 
 /* ─── Main page ─────────────────────────────────────────────────────────────── */
 export default function WC2026Page() {
@@ -213,12 +210,7 @@ export default function WC2026Page() {
       <div className="ea-page" style={{ minHeight:'100vh', color:'#F7F5F0' }}>
 
         {/* ── HERO ──────────────────────────────────────────────────────── */}
-        <section data-theme="dark" style={{
-          position:'relative', minHeight:'60vh',
-          background:'#080808', overflow:'hidden',
-          display:'flex', flexDirection:'column', justifyContent:'flex-end',
-          padding:'0 56px 0 76px',
-        }}>
+        <section data-theme="dark" className="ea-hero">
           {/* Background image */}
           <div style={{
             position:'absolute', inset:0,
@@ -233,7 +225,7 @@ export default function WC2026Page() {
           }} aria-hidden="true" />
           <div style={{ position:'absolute', left:56, top:0, bottom:0, width:2, background:'linear-gradient(to bottom, transparent 10%, #C8FF00 35%, #C8FF00 70%, transparent 100%)', opacity:.6 }} aria-hidden="true" />
 
-          <div style={{ position:'relative', zIndex:3, paddingBottom:64 }}>
+          <div className="ea-hero__inner">
             <div data-r style={{ display:'flex', alignItems:'center', gap:16, marginBottom:28 }}>
               <span style={{
                 fontFamily:"var(--font-mono,'DM Mono',monospace)",
@@ -248,7 +240,7 @@ export default function WC2026Page() {
                 fontFamily:"var(--font-mono,'DM Mono',monospace)",
                 fontSize:8, letterSpacing:'.12em', textTransform:'uppercase',
                 color:'rgba(247,245,240,.6)',
-              }}>Dixon-Coles + Elo · StatsBomb data · 10k simulations</span>
+              }}>Elo · StatsBomb data · 10k simulations</span>
             </div>
 
             <h1 data-r data-d="1" style={{
@@ -302,23 +294,9 @@ export default function WC2026Page() {
           padding:'0 clamp(20px,3vw,56px)',
         }}>
           <div style={{ display:'flex' }}>
-            {TABS.map(t => {
-              const disabled = DISABLED_TABS.includes(t);
-              return (
-                <button key={t}
-                  className={`wc-tab${tab===t&&!disabled?' active':''}`}
-                  onClick={() => !disabled && setTab(t)}
-                  style={{ opacity: disabled ? 0.45 : 1, cursor: disabled ? 'default' : 'none', position:'relative' }}
-                  title={disabled ? 'Coming soon' : undefined}>
-                  {t}
-                  {disabled && (
-                    <span style={{ marginLeft:6, fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:6.5, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(200,255,0,.6)', border:'1px solid rgba(200,255,0,.25)', padding:'1px 5px', borderRadius:2, verticalAlign:'middle' }}>
-                      soon
-                    </span>
-                  )}
-                </button>
-              );
-            })}
+            {TABS.map(t => (
+              <button key={t} className={`wc-tab${tab===t?' active':''}`} onClick={() => setTab(t)}>{t}</button>
+            ))}
           </div>
           {data?.oddsOk && data?.liveCount > 0 && (
             <div style={{ display:'flex', alignItems:'center', gap:6, fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.1em', color:'#C8FF00' }}>
@@ -334,7 +312,7 @@ export default function WC2026Page() {
 
             {/* Group filter */}
             <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:32, flexWrap:'wrap' }}>
-              <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.12em', textTransform:'uppercase', color:'rgba(247,245,240,.65)', marginRight:4 }}>Group</span>
+              <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.12em', textTransform:'uppercase', color:'rgba(247,245,240,.4)', marginRight:4 }}>Group</span>
               <button className={`wc-grp-pill${grpFilter==='ALL'?' active':''}`} onClick={() => setGrpFilter('ALL')}>All</button>
               {groups.map(g => (
                 <button key={g} className={`wc-grp-pill${grpFilter===g?' active':''}`} onClick={() => setGrpFilter(g)}>{g}</button>
@@ -345,7 +323,7 @@ export default function WC2026Page() {
             <div style={{
               display:'grid', gridTemplateColumns:'90px 1fr 1fr 1fr 80px 80px 80px 90px 80px',
               gap:8, padding:'8px 16px',
-              fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.55)',
+              fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.3)',
               borderBottom:'1px solid rgba(247,245,240,.08)',
             }}>
               <span>Date</span><span>Home</span><span>Away</span><span>Venue</span>
@@ -366,7 +344,7 @@ export default function WC2026Page() {
                 <div key={m.id || i} className={`wc-match-row${hasValue?' has-value':''}`}
                   style={{ display:'grid', gridTemplateColumns:'90px 1fr 1fr 1fr 80px 80px 80px 90px 80px', gap:8, padding:'14px 16px', alignItems:'center' }}>
 
-                  <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:'rgba(247,245,240,.65)' }}>{fmtDate(m.date)}</span>
+                  <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:'rgba(247,245,240,.4)' }}>{fmtDate(m.date)}</span>
 
                   <span style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:15, letterSpacing:'.04em', color: m.prediction===m.home?'#F7F5F0':'rgba(247,245,240,.55)' }}>
                     {m.home}
@@ -374,7 +352,7 @@ export default function WC2026Page() {
                   <span style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:15, letterSpacing:'.04em', color: m.prediction===m.away?'#F7F5F0':'rgba(247,245,240,.55)' }}>
                     {m.away}
                   </span>
-                  <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.55)', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>
+                  <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.3)', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>
                     {m.venue?.split(',')[0] || '—'}
                   </span>
 
@@ -388,7 +366,7 @@ export default function WC2026Page() {
                       <span className={`wc-odds-cell${cell.ev_>=8&&m.oddsSource==='live'?' value':cell.ev_>=3&&m.oddsSource==='live'?' best':''}`}>
                         {cell.odds?.toFixed(2) || '—'}
                       </span>
-                      <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.55)' }}>
+                      <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.3)' }}>
                         {ci===0?m.prob_home:ci===1?m.prob_draw:m.prob_away}%
                       </span>
                     </div>
@@ -560,18 +538,18 @@ export default function WC2026Page() {
                         }}
                       >
                         {/* Date */}
-                        <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:'rgba(247,245,240,.6)' }}>
+                        <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:'rgba(247,245,240,.35)' }}>
                           {fmtDate(m.date)}
                           {hasLive && <span style={{ display:'block', color:'#C8FF00', fontSize:7, letterSpacing:'.1em', marginTop:2 }}>LIVE</span>}
                         </span>
 
                         {/* Match */}
                         <div>
-                          <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.55)' }}>
+                          <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.3)' }}>
                             Grp {m.group}
                           </span>
                           <div style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:16, letterSpacing:'.04em', color:'#F7F5F0', lineHeight:1.1 }}>
-                            {m.home} <span style={{color:'rgba(247,245,240,.55)', fontSize:12}}>vs</span> {m.away}
+                            {m.home} <span style={{color:'rgba(247,245,240,.3)', fontSize:12}}>vs</span> {m.away}
                           </div>
                         </div>
 
@@ -584,14 +562,14 @@ export default function WC2026Page() {
                             border:`1px solid ${hasValue ? ebr(m.bestEv) : 'rgba(247,245,240,.08)'}`,
                             color: hasValue ? ec(m.bestEv) : 'rgba(247,245,240,.5)',
                           }}>{bestMkt}</span>
-                          <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.55)', marginTop:3 }}>
+                          <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.3)', marginTop:3 }}>
                             {bestProb}% model
                           </div>
                         </div>
 
                         {/* Home odds */}
                         <div style={{ textAlign:'center' }}>
-                          <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, color:'rgba(247,245,240,.55)', marginBottom:2 }}>{m.home.split(' ')[0]}</div>
+                          <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, color:'rgba(247,245,240,.3)', marginBottom:2 }}>{m.home.split(' ')[0]}</div>
                           <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:13, fontWeight:500,
                             color: m.evH > 3 ? '#C8FF00' : 'rgba(247,245,240,.75)' }}>
                             {m.bestH?.toFixed(2)}
@@ -600,7 +578,7 @@ export default function WC2026Page() {
 
                         {/* Draw odds */}
                         <div style={{ textAlign:'center' }}>
-                          <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, color:'rgba(247,245,240,.55)', marginBottom:2 }}>Draw</div>
+                          <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, color:'rgba(247,245,240,.3)', marginBottom:2 }}>Draw</div>
                           <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:13, fontWeight:500,
                             color: m.evD > 3 ? '#C8FF00' : 'rgba(247,245,240,.75)' }}>
                             {m.bestD?.toFixed(2)}
@@ -609,7 +587,7 @@ export default function WC2026Page() {
 
                         {/* Away odds */}
                         <div style={{ textAlign:'center' }}>
-                          <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, color:'rgba(247,245,240,.55)', marginBottom:2 }}>{m.away.split(' ')[0]}</div>
+                          <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, color:'rgba(247,245,240,.3)', marginBottom:2 }}>{m.away.split(' ')[0]}</div>
                           <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:13, fontWeight:500,
                             color: m.evA > 3 ? '#C8FF00' : 'rgba(247,245,240,.75)' }}>
                             {m.bestA?.toFixed(2)}
@@ -742,14 +720,14 @@ export default function WC2026Page() {
                   { l:'Requests left', v: data?.requestsLeft || '—' },
                 ].map((s,i)=>(
                   <div key={i} style={{ padding:'20px', border:'1px solid rgba(247,245,240,.07)', background:'rgba(247,245,240,.02)' }}>
-                    <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.12em', textTransform:'uppercase', color:'rgba(247,245,240,.65)', marginBottom:6 }}>{s.l}</div>
+                    <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.12em', textTransform:'uppercase', color:'rgba(247,245,240,.4)', marginBottom:6 }}>{s.l}</div>
                     <div style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:40, lineHeight:.9, color: s.accent?'#C8FF00':'#F7F5F0' }}>{loading?'—':s.v}</div>
                   </div>
                 ))}
 
                 {/* Sort legend */}
                 <div style={{ padding:'16px 20px', border:'1px solid rgba(247,245,240,.07)', background:'rgba(247,245,240,.02)', marginTop:4 }}>
-                  <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.12em', textTransform:'uppercase', color:'rgba(247,245,240,.55)', marginBottom:10 }}>How to read</div>
+                  <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.12em', textTransform:'uppercase', color:'rgba(247,245,240,.3)', marginBottom:10 }}>How to read</div>
                   {[
                     ['Green odds', 'Best price available'],
                     ['+EV%', 'Model prob × odds − 1'],
@@ -758,7 +736,7 @@ export default function WC2026Page() {
                   ].map(([k,v])=>(
                     <div key={k} style={{ display:'flex', justifyContent:'space-between', marginBottom:6 }}>
                       <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'#C8FF00' }}>{k}</span>
-                      <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.6)', textAlign:'right', maxWidth:'55%' }}>{v}</span>
+                      <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.35)', textAlign:'right', maxWidth:'55%' }}>{v}</span>
                     </div>
                   ))}
                 </div>
@@ -780,7 +758,7 @@ export default function WC2026Page() {
             </h2>
 
             {/* Column header */}
-            <div style={{ display:'grid', gridTemplateColumns:'32px 1fr 60px 80px 60px 60px 60px 100px', gap:8, padding:'8px 0', borderBottom:'1px solid rgba(247,245,240,.08)', fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.55)' }}>
+            <div style={{ display:'grid', gridTemplateColumns:'32px 1fr 60px 80px 60px 60px 60px 100px', gap:8, padding:'8px 0', borderBottom:'1px solid rgba(247,245,240,.08)', fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.3)' }}>
               <span>#</span><span>Team</span><span>Conf</span><span>Elo</span><span>W%</span><span>Avg GF</span><span>Avg GA</span><span>Win Prob</span>
             </div>
 
@@ -817,30 +795,61 @@ export default function WC2026Page() {
 
         {/* ── SIMULATOR TAB ─────────────────────────────────────────────── */}
         {tab === 'Simulator' && (
-          <section data-theme="dark" style={{ padding:'80px 56px 120px' }}>
-            <div style={{ maxWidth:560 }}>
-              <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.18em', textTransform:'uppercase', background:'rgba(200,255,0,.1)', color:'#C8FF00', padding:'5px 12px', borderRadius:2, border:'1px solid rgba(200,255,0,.2)', display:'inline-block', marginBottom:28 }}>
-                Coming Soon
-              </span>
-              <h2 style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:'clamp(56px,8vw,108px)', lineHeight:.86, color:'#F7F5F0', marginBottom:24 }}>
-                <span style={{ fontFamily:"var(--font-serif,'Cormorant Garamond',serif)", fontStyle:'italic', fontWeight:300, fontSize:'.46em', color:'rgba(247,245,240,.6)', display:'block', marginBottom:'.1em' }}>Monte Carlo</span>
-                Simulator.
-              </h2>
-              <p style={{ fontFamily:"var(--font-body,'Outfit',sans-serif)", fontSize:15, fontWeight:200, color:'rgba(247,245,240,.65)', lineHeight:1.85, marginBottom:36 }}>
-                The tournament simulator runs 10,000 full bracket simulations using current Elo ratings and Dixon-Coles match probabilities. It will be available once the group stage draw is finalised and match data is live.
-              </p>
-              <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:2, maxWidth:380 }}>
-                {[
-                  ['Model','Dixon-Coles + Elo'],
-                  ['Simulations','10,000 runs'],
-                  ['Coverage','Full bracket'],
-                  ['Status','Post group stage'],
-                ].map(([k,v])=>(
-                  <div key={k} style={{ padding:'16px', border:'1px solid rgba(247,245,240,.07)', background:'rgba(247,245,240,.02)' }}>
-                    <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.6)', marginBottom:4 }}>{k}</div>
-                    <div style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:18, color:'#F7F5F0' }}>{v}</div>
+          <section data-theme="dark" style={{ padding:'48px 56px' }}>
+            <div style={{ display:'grid', gridTemplateColumns:'1fr 400px', gap:80, alignItems:'start' }}>
+              <div>
+                <p style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.2em', textTransform:'uppercase', color:'#C8FF00', marginBottom:20 }}>Monte Carlo</p>
+                <h2 style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:'clamp(56px,8vw,108px)', lineHeight:.86, color:'#F7F5F0', marginBottom:24 }}>
+                  <span style={{ fontFamily:"var(--font-serif,'Cormorant Garamond',serif)", fontStyle:'italic', fontWeight:300, fontSize:'.46em', color:'rgba(247,245,240,.6)', display:'block', marginBottom:'.1em' }}>Simulate</span>
+                  The Trophy.
+                </h2>
+                <p style={{ fontFamily:"var(--font-body,'Outfit',sans-serif)", fontSize:14, fontWeight:200, color:'rgba(247,245,240,.65)', lineHeight:1.85, maxWidth:420, marginBottom:32 }}>
+                  1,000 full tournament simulations from the current Elo ratings. Click to run — the bracket plays out in real time.
+                </p>
+                <button onClick={runSim} disabled={simRunning || loading} style={{
+                  fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:10, letterSpacing:'.1em', textTransform:'uppercase',
+                  background: simRunning?'rgba(200,255,0,.3)':'#C8FF00', color:'#080808',
+                  border:'none', borderRadius:3, padding:'16px 32px', cursor:'none',
+                  transition:'all .22s cubic-bezier(.34,1.56,.64,1)',
+                  display:'flex', alignItems:'center', gap:12,
+                  opacity: loading?0.5:1,
+                }}>
+                  {simRunning ? '⏳ Running 1,000 simulations...' : '▶ Run simulator'}
+                </button>
+
+                {simResult && (
+                  <div style={{ marginTop:48, display:'flex', flexDirection:'column', gap:4 }}>
+                    {simResult.map((r, i) => (
+                      <div key={r.team} style={{ display:'flex', alignItems:'center', gap:16, padding:'12px 0', borderBottom:'1px solid rgba(247,245,240,.05)' }}>
+                        <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:10, color:'rgba(247,245,240,.25)', width:20, textAlign:'right' }}>{i+1}</span>
+                        <span style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:20, letterSpacing:'.04em', color: i===0?'#C8FF00':i<3?'#F7F5F0':'rgba(247,245,240,.65)', flex:1 }}>{r.team}</span>
+                        <div style={{ width:160, height:3, background:'rgba(247,245,240,.06)', borderRadius:2, overflow:'hidden' }}>
+                          <div style={{ height:'100%', background: i===0?'#C8FF00':i<3?'#4A7FD4':'rgba(247,245,240,.3)', width:`${r.pct/simResult[0].pct*100}%`, borderRadius:2, transition:'width .6s cubic-bezier(.22,1,.36,1)' }} />
+                        </div>
+                        <span style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:24, color: i===0?'#C8FF00':i<3?'#F7F5F0':'rgba(247,245,240,.5)', width:52, textAlign:'right' }}>{r.pct}%</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                )}
+              </div>
+
+              {/* Win probability from 10k sims */}
+              <div>
+                <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.12em', textTransform:'uppercase', color:'rgba(247,245,240,.4)', marginBottom:20 }}>
+                  10k sim win probability
+                </div>
+                <div style={{ display:'flex', flexDirection:'column', gap:3 }}>
+                  {simulation.filter(s=>s.win_pct>0.1).slice(0,16).map((s,i)=>(
+                    <div key={s.team} style={{ display:'flex', alignItems:'center', gap:12, padding:'8px 0', borderBottom:'1px solid rgba(247,245,240,.04)' }}>
+                      <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:'rgba(247,245,240,.2)', width:16, textAlign:'right' }}>{i+1}</span>
+                      <span style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:14, letterSpacing:'.04em', color: i===0?'#C8FF00':i<3?'#F7F5F0':'rgba(247,245,240,.6)', flex:1 }}>{s.team}</span>
+                      <div style={{ width:80, height:2, background:'rgba(247,245,240,.06)', borderRadius:1, overflow:'hidden' }}>
+                        <div style={{ height:'100%', background: i===0?'#C8FF00':i<3?'#4A7FD4':'rgba(247,245,240,.25)', width:`${s.win_pct/simulation[0].win_pct*100}%`, borderRadius:1 }} />
+                      </div>
+                      <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:10, color: i===0?'#C8FF00':i<3?'#4A7FD4':'rgba(247,245,240,.45)', width:36, textAlign:'right' }}>{s.win_pct}%</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </section>

@@ -14,8 +14,6 @@ const ebr = e => e >= 8 ? 'rgba(200,255,0,.3)' : e >= 3 ? 'rgba(200,255,0,.15)' 
 
 function useCursor() {
   useEffect(() => {
-    const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
-    if (isTouch) return;
     document.body.style.cursor = 'none';
     const cur  = document.getElementById('ea-cur');
     const dot  = document.getElementById('ea-dot');
@@ -53,175 +51,6 @@ function useCursor() {
   }, []);
 }
 
-
-/* ─── Odds Glossary ─────────────────────────────────────────────────────────── */
-function OddsGlossary() {
-  const [open, setOpen] = useState(false);
-  return (
-    <div style={{ marginBottom:16, border:'1px solid rgba(247,245,240,.08)', borderRadius:3 }}>
-      <button onClick={() => setOpen(v=>!v)}
-        style={{ width:'100%', display:'flex', justifyContent:'space-between', alignItems:'center',
-          padding:'12px 16px', background:'rgba(247,245,240,.03)', border:'none', cursor:'none',
-          fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, letterSpacing:'.1em',
-          textTransform:'uppercase', color:'rgba(247,245,240,.6)' }}>
-        <span>📖 How to read this page — odds, EV% and model explained</span>
-        <span style={{ color:'#C8FF00', fontSize:14 }}>{open ? '−' : '+'}</span>
-      </button>
-      {open && (
-        <div style={{ padding:'16px 20px', borderTop:'1px solid rgba(247,245,240,.06)',
-          display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(240px,1fr))', gap:12 }}>
-          {[
-            ['Decimal odds e.g. 2.50', 'For every £1 staked you get £2.50 back (£1.50 profit) if it wins. Lower odds = more likely to win per the bookmaker.'],
-            ['Model probability e.g. 45%', 'What our Dixon-Coles statistical model thinks the true probability of this outcome is, based on Elo ratings and historical data.'],
-            ['Implied probability', 'What probability the bookmaker odds imply: 1 ÷ odds. Odds of 2.50 imply 40% probability.'],
-            ['EV% (Expected Value)', 'The edge: (Model prob × Odds) − 1. Positive = the bookmaker is paying more than the true probability warrants. +5% means for every £100 staked you expect £5 profit long-term.'],
-            ['Green odds', 'Best available price across all bookmakers we track. Always take the highest odds.'],
-            ['★ Pinnacle', 'The sharpest bookmaker in the world — lowest margin, most accurate prices. Used as our reference market.'],
-            ['+ expand', 'Click any row to see every bookmaker price side by side. Green = best available for that market.'],
-            ['Host nation boost', 'USA, Canada and Mexico receive a +100–150 Elo point boost for their home fixtures, reflecting crowd advantage and familiarity.'],
-          ].map(([term, def]) => (
-            <div key={term} style={{ padding:'10px 12px', background:'rgba(247,245,240,.02)', border:'1px solid rgba(247,245,240,.06)', borderRadius:2 }}>
-              <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:'#C8FF00', marginBottom:5, fontWeight:500 }}>{term}</div>
-              <div style={{ fontFamily:"var(--font-body,'Outfit',sans-serif)", fontSize:12, fontWeight:300, color:'rgba(247,245,240,.75)', lineHeight:1.6 }}>{def}</div>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
-
-/* ─── Odds Calculator ───────────────────────────────────────────────────────── */
-function OddsCalculator() {
-  const [odds,    setOdds]    = useState('');
-  const [prob,    setProb]    = useState('');
-  const [stake,   setStake]   = useState('10');
-  const [mode,    setMode]    = useState('ev'); // 'ev' | 'payout' | 'implied'
-
-  const oddsN  = parseFloat(odds)  || 0;
-  const probN  = parseFloat(prob)  || 0;
-  const stakeN = parseFloat(stake) || 0;
-
-  const implied  = oddsN  ? ((1 / oddsN) * 100).toFixed(1) : '—';
-  const payout   = oddsN && stakeN ? (oddsN * stakeN).toFixed(2) : '—';
-  const profit   = oddsN && stakeN ? ((oddsN - 1) * stakeN).toFixed(2) : '—';
-  const ev       = oddsN && probN  ? (((probN/100) * oddsN - 1) * 100).toFixed(1) : '—';
-  const evClass  = parseFloat(ev) > 0 ? '#C8FF00' : parseFloat(ev) < 0 ? '#ef4444' : 'rgba(247,245,240,.6)';
-
-  const inputStyle = {
-    width:'100%', background:'rgba(247,245,240,.05)', border:'1px solid rgba(247,245,240,.12)',
-    color:'#F7F5F0', borderRadius:2, padding:'8px 10px', fontSize:13,
-    fontFamily:"var(--font-mono,'DM Mono',monospace)", outline:'none',
-    transition:'border-color .15s',
-  };
-
-  return (
-    <div style={{ border:'1px solid rgba(247,245,240,.1)', borderRadius:3, overflow:'hidden', marginTop:4 }}>
-      <div style={{ padding:'12px 16px', background:'rgba(200,255,0,.05)', borderBottom:'1px solid rgba(247,245,240,.08)',
-        fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, letterSpacing:'.1em', textTransform:'uppercase', color:'#C8FF00' }}>
-        🧮 Odds Calculator
-      </div>
-      <div style={{ padding:'16px' }}>
-        {/* Mode toggle */}
-        <div style={{ display:'flex', gap:2, marginBottom:14, border:'1px solid rgba(247,245,240,.08)', borderRadius:2, overflow:'hidden' }}>
-          {[['ev','EV Check'],['payout','Payout'],['implied','Implied %']].map(([m,l])=>(
-            <button key={m} onClick={()=>setMode(m)}
-              style={{ flex:1, padding:'7px', border:'none', cursor:'none',
-                fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.08em', textTransform:'uppercase',
-                background:mode===m?'#C8FF00':'transparent', color:mode===m?'#080808':'rgba(247,245,240,.5)',
-                transition:'all .15s' }}>{l}</button>
-          ))}
-        </div>
-
-        <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
-          {/* Odds input */}
-          <div>
-            <label style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.55)', display:'block', marginBottom:4 }}>
-              Decimal odds
-            </label>
-            <input type="number" step="0.01" min="1" placeholder="e.g. 2.50"
-              value={odds} onChange={e=>setOdds(e.target.value)}
-              style={inputStyle}
-              onFocus={e=>e.target.style.borderColor='rgba(200,255,0,.4)'}
-              onBlur={e=>e.target.style.borderColor='rgba(247,245,240,.12)'}/>
-          </div>
-
-          {/* Prob input — only for EV mode */}
-          {mode === 'ev' && (
-            <div>
-              <label style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.55)', display:'block', marginBottom:4 }}>
-                Your probability estimate (%)
-              </label>
-              <input type="number" step="1" min="0" max="100" placeholder="e.g. 45"
-                value={prob} onChange={e=>setProb(e.target.value)}
-                style={inputStyle}
-                onFocus={e=>e.target.style.borderColor='rgba(200,255,0,.4)'}
-                onBlur={e=>e.target.style.borderColor='rgba(247,245,240,.12)'}/>
-            </div>
-          )}
-
-          {/* Stake input — for payout mode */}
-          {mode === 'payout' && (
-            <div>
-              <label style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.55)', display:'block', marginBottom:4 }}>
-                Stake (£)
-              </label>
-              <input type="number" step="1" min="0" placeholder="e.g. 10"
-                value={stake} onChange={e=>setStake(e.target.value)}
-                style={inputStyle}
-                onFocus={e=>e.target.style.borderColor='rgba(200,255,0,.4)'}
-                onBlur={e=>e.target.style.borderColor='rgba(247,245,240,.12)'}/>
-            </div>
-          )}
-        </div>
-
-        {/* Results */}
-        {oddsN > 1 && (
-          <div style={{ marginTop:14, display:'grid', gridTemplateColumns:'1fr 1fr', gap:6 }}>
-            <div style={{ padding:'10px', background:'rgba(247,245,240,.03)', border:'1px solid rgba(247,245,240,.07)', borderRadius:2 }}>
-              <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.5)', marginBottom:3 }}>Implied prob</div>
-              <div style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:24, color:'#F7F5F0' }}>{implied}%</div>
-            </div>
-            {mode === 'ev' && probN > 0 && (
-              <div style={{ padding:'10px', background: parseFloat(ev)>0?'rgba(200,255,0,.06)':'rgba(239,68,68,.06)', border:`1px solid ${parseFloat(ev)>0?'rgba(200,255,0,.2)':'rgba(239,68,68,.2)'}`, borderRadius:2 }}>
-                <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.5)', marginBottom:3 }}>Expected value</div>
-                <div style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:24, color:evClass }}>{parseFloat(ev)>0?'+':''}{ev}%</div>
-              </div>
-            )}
-            {mode === 'payout' && stakeN > 0 && (
-              <>
-                <div style={{ padding:'10px', background:'rgba(247,245,240,.03)', border:'1px solid rgba(247,245,240,.07)', borderRadius:2 }}>
-                  <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.5)', marginBottom:3 }}>Total return</div>
-                  <div style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:24, color:'#F7F5F0' }}>£{payout}</div>
-                </div>
-                <div style={{ padding:'10px', background:'rgba(200,255,0,.04)', border:'1px solid rgba(200,255,0,.15)', borderRadius:2, gridColumn:'1/-1' }}>
-                  <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.5)', marginBottom:3 }}>Profit</div>
-                  <div style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:28, color:'#C8FF00' }}>£{profit}</div>
-                </div>
-              </>
-            )}
-            {mode === 'implied' && (
-              <div style={{ padding:'10px', background:'rgba(74,127,212,.06)', border:'1px solid rgba(74,127,212,.2)', borderRadius:2 }}>
-                <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.5)', marginBottom:3 }}>Book margin</div>
-                <div style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:24, color:'#4A7FD4' }}>
-                  {oddsN ? `${(100 - parseFloat(implied)).toFixed(1)}pp` : '—'}
-                </div>
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* Mini explanation */}
-        <div style={{ marginTop:10, fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.35)', lineHeight:1.6 }}>
-          {mode==='ev' && 'Enter the odds and your probability estimate. Positive EV = value bet.'}
-          {mode==='payout' && 'Enter the odds and your stake to see total return and profit.'}
-          {mode==='implied' && 'Enter odds to see the bookmaker implied probability.'}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 /* ─── Page ────────────────────────────────────────────────────────────────── */
 export default function IntelligencePage() {
   useCursor();
@@ -231,6 +60,7 @@ export default function IntelligencePage() {
   const [oddsSort,   setOddsSort]   = useState('date');
   const [showAll,    setShowAll]    = useState(false);
   const [expandedIds,setExpandedIds]= useState(new Set());
+  const [scrolled,   setScrolled]   = useState(false);
   const [imgReady,   setImgReady]   = useState(false);
 
   useEffect(() => { const t = setTimeout(() => setImgReady(true), 80); return () => clearTimeout(t); }, []);
@@ -241,6 +71,12 @@ export default function IntelligencePage() {
       .then(setData)
       .catch(() => {})
       .finally(() => setLoading(false));
+  }, []);
+
+  useEffect(() => {
+    const fn = () => setScrolled(window.scrollY > 400);
+    window.addEventListener('scroll', fn);
+    return () => window.removeEventListener('scroll', fn);
   }, []);
 
   function toggleExpand(id) {
@@ -256,6 +92,7 @@ export default function IntelligencePage() {
   const liveCount   = data?.liveCount || 0;
   const valueCount  = data?.valueCount || matches.filter(m => m.bestEv > 3).length;
   const topEv       = [...matches].sort((a, b) => b.bestEv - a.bestEv)[0];
+  const bkMax       = matches.length ? Math.max(0, ...matches.map(m => m.bkCount||0)) : 0;
 
   const sortedMatches = [...matches].sort((a, b) => {
     if (oddsSort === 'ev')    return b.bestEv - a.bestEv;
@@ -278,29 +115,35 @@ export default function IntelligencePage() {
         body.lp-hovering #ea-ring{width:52px!important;height:52px!important;border-color:#C8FF00!important}
         body.lp-hovering #ea-dot{background:#C8FF00!important;transform:translate(-50%,-50%) scale(1.4)!important}
         @keyframes lp-blink{0%,100%{opacity:1}50%{opacity:.3}}
-        @media(min-width:900px){ .ea-odds-grid{grid-template-columns:minmax(0,1fr) 280px!important} }
-        .ea-match-row-inner{display:grid;grid-template-columns:76px 1fr auto 64px 64px 64px 88px 24px;gap:10px;padding:14px 20px;align-items:center}
-        @media(max-width:640px){
-          .ea-match-row-inner{grid-template-columns:60px 1fr auto 52px 52px 52px 24px;gap:6px;padding:12px 14px;font-size:12px}
-          .ea-hide-mobile{display:none!important}
+        @keyframes lp-barUp{from{transform:scaleY(0);opacity:0}to{transform:scaleY(1);opacity:1}}
+        @media(max-width:768px){
+          .ea-hero__inner{padding:88px 20px 40px!important}
+          .ea-odds-section{padding-left:20px!important;padding-right:20px!important}
+          .ea-odds-main{grid-template-columns:1fr!important}
+          .ea-odds-sidebar{display:none!important}
+          .ea-odds-controls{padding-left:20px!important;padding-right:20px!important;flex-direction:column!important;align-items:flex-start!important}
+          .ea-match-row{grid-template-columns:60px 1fr auto 64px 72px!important}
+          .ea-match-col-hide{display:none!important}
         }
-        .ea-tooltip{position:relative;cursor:none}
-        .ea-tooltip:hover .ea-tip{display:block}
-        .ea-tip{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#1a2540;border:1px solid rgba(200,255,0,.2);color:#F7F5F0;font-size:10px;padding:6px 10px;border-radius:4px;white-space:nowrap;z-index:100;font-family:var(--font-mono,'DM Mono',monospace)}
       `}</style>
 
       <div style={{ background:'#080808', minHeight:'100vh', color:'#F7F5F0' }}>
 
         {/* ── HERO ──────────────────────────────────────────────────────── */}
-        <section data-theme="dark" style={{ position:'relative', minHeight:'52vh', display:'flex', flexDirection:'column', justifyContent:'flex-end', padding:'0 56px', overflow:'hidden' }}>
-          <div style={{ position:'absolute', inset:0, background:`url('https://images.unsplash.com/photo-1508098682722-e99c643e7f0b?w=1920&q=85&fit=crop') center 40%/cover`, filter:'grayscale(100%) brightness(.18)', transform:imgReady?'scale(1)':'scale(1.05)', transition:'transform 12s ease' }} aria-hidden="true"/>
-          <div style={{ position:'absolute', inset:0, background:'linear-gradient(to bottom,transparent 25%,rgba(8,8,8,.95) 80%)' }} aria-hidden="true"/>
-          <div style={{ position:'absolute', left:56, top:0, bottom:0, width:2, background:'linear-gradient(to bottom,transparent 10%,#C8FF00 35%,#C8FF00 70%,transparent 100%)', opacity:.55 }} aria-hidden="true"/>
+        <section data-theme="dark" className="ea-hero">
+          <div style={{ position:'absolute', inset:0, background:`url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/2021-08-08_Vancouver_%2851622723053%29.jpg/1920px-2021-08-08_Vancouver_%2851622723053%29.jpg') center 50%/cover no-repeat`, filter:'contrast(1.1) brightness(.52)', transform:imgReady?'scale(1)':'scale(1.06)', transition:'transform 12s ease' }} aria-hidden="true"/>
+          <div style={{ position:'absolute', inset:0, background:'linear-gradient(to bottom,rgba(8,8,8,.06) 0%,transparent 30%,rgba(8,8,8,.85) 78%),linear-gradient(to right,rgba(8,8,8,.35),transparent 55%)' }} aria-hidden="true"/>
+          <div style={{ position:'absolute', left:56, top:0, bottom:0, width:2, background:'linear-gradient(to bottom,transparent 10%,#F0A500 30%,#F0A500 70%,transparent 100%)', opacity:.65 }} aria-hidden="true"/>
+          <div style={{ position:'absolute', bottom:28, right:40, textAlign:'right', pointerEvents:'none' }}>
+            <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.7)', marginBottom:3 }}>BC Place · World Cup 2026 · Vancouver, Canada</div>
+            <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.06em', color:'rgba(247,245,240,.35)' }}>Photo: Darren Kirby / CC BY-SA 2.0</div>
+          </div>
 
-          <div style={{ position:'relative', zIndex:3, paddingBottom:52 }}>
+          <div className="ea-hero__inner">
             <div style={{ display:'flex', alignItems:'center', gap:16, marginBottom:20 }}>
-              <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.18em', textTransform:'uppercase', background:'#C8FF00', color:'#080808', padding:'5px 12px', borderRadius:2 }}>
-                Price Intelligence
+              <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.18em', textTransform:'uppercase', background:'#F0A500', color:'#080808', padding:'5px 12px', borderRadius:2, display:'flex', alignItems:'center', gap:7 }}>
+                <span style={{ width:5, height:5, borderRadius:'50%', background:'#080808', animation:'lp-blink 1.8s ease infinite' }}/>
+                WC 2026 · Live
               </span>
               <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.12em', textTransform:'uppercase', color:'rgba(247,245,240,.5)' }}>
                 {loading ? '—' : liveCount} live · {loading ? '—' : matches.length} fixtures · {loading ? '—' : valueCount} value edges
@@ -314,9 +157,13 @@ export default function IntelligencePage() {
             </div>
 
             <h1 style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:'clamp(72px,12vw,160px)', lineHeight:.84, margin:0 }}>
-              <span style={{ fontFamily:"var(--font-serif,'Cormorant Garamond',serif)", fontStyle:'italic', fontWeight:300, fontSize:'.38em', color:'rgba(247,245,240,.6)', display:'block', marginBottom:'.06em' }}>Where the market</span>
-              Is Wrong.
+              <span style={{ fontFamily:"var(--font-serif,'Cormorant Garamond',serif)", fontStyle:'italic', fontWeight:300, fontSize:'.38em', color:'rgba(247,245,240,.6)', display:'block', marginBottom:'.06em' }}>Odds &amp; Price Intelligence.</span>
+              Beat the Game.
             </h1>
+
+            <p style={{ fontFamily:"var(--font-serif,'Cormorant Garamond',serif)", fontStyle:'italic', fontWeight:300, fontSize:'clamp(18px,1.6vw,24px)', lineHeight:1.6, color:'rgba(247,245,240,.92)', maxWidth:580, margin:'20px 0 0' }}>
+              Live odds tracked across 20+ bookmakers, cross-referenced against our Elo-rated model. When the market misprices a World Cup fixture, you'll see it here first.
+            </p>
 
             {/* KPI strip */}
             <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', borderTop:'1px solid rgba(247,245,240,.1)', marginTop:32, paddingTop:24, gap:0 }}>
@@ -324,11 +171,11 @@ export default function IntelligencePage() {
                 { n: loading ? '—' : liveCount,    l: 'Live odds' },
                 { n: loading ? '—' : valueCount,   l: 'Value edges >3%' },
                 { n: loading ? '—' : (topEv ? (topEv.bestEv>0?'+':'')+topEv.bestEv.toFixed(1)+'%' : '—'), l: 'Best edge' },
-                { n: loading ? '—' : (data?.requestsLeft || '—'), l: 'API requests left' },
+                { n: loading ? '—' : (bkMax || '—'), l: 'Bookmakers tracked' },
               ].map((k, i) => (
                 <div key={i} style={{ padding:'0 0 0 '+(i>0?'28px':'0'), borderLeft:i>0?'1px solid rgba(247,245,240,.1)':'none' }}>
                   <div style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:'clamp(32px,3.5vw,52px)', lineHeight:.9, color: i===2&&!loading&&topEv?.bestEv>3?'#C8FF00':'#F7F5F0', marginBottom:6 }}>{k.n}</div>
-                  <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.65)' }}>{k.l}</div>
+                  <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.4)' }}>{k.l}</div>
                 </div>
               ))}
             </div>
@@ -336,7 +183,7 @@ export default function IntelligencePage() {
         </section>
 
         {/* ── CONTROLS ──────────────────────────────────────────────────── */}
-        <section data-theme="dark" style={{ padding:'24px 56px', borderBottom:'1px solid rgba(247,245,240,.06)', display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:12 }}>
+        <section data-theme="dark" className="ea-odds-controls" style={{ padding:'24px 56px', borderBottom:'1px solid rgba(247,245,240,.06)', display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:12 }}>
 
           {/* Offline warning */}
           {!loading && !data?.oddsOk && (
@@ -379,22 +226,19 @@ export default function IntelligencePage() {
             </button>
           </div>
 
-          <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.6)', letterSpacing:'.06em' }}>
+          <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.35)', letterSpacing:'.06em' }}>
             {showAll ? `All ${matches.length} fixtures` : `Top 10 by ${oddsSort==='ev'?'EV':oddsSort==='group'?'group':'date'}`}
           </div>
         </section>
 
         {/* ── MAIN CONTENT ──────────────────────────────────────────────── */}
-        <section data-theme="dark" style={{ padding:'40px clamp(16px,4vw,56px) 80px', display:'grid', gridTemplateColumns:'minmax(0,1fr)', gap:32, alignItems:'start' }} className='ea-odds-grid'>
-
-          {/* Odds glossary — collapsible */}
-          <OddsGlossary />
+        <section data-theme="dark" className="ea-odds-section ea-odds-main" style={{ padding:'40px 56px 80px', display:'grid', gridTemplateColumns:'1fr 280px', gap:48, alignItems:'start' }}>
 
           {/* Match list */}
           <div style={{ display:'flex', flexDirection:'column', gap:2 }}>
             {loading ? (
               [...Array(8)].map((_, i) => (
-                <div key={i} style={{ height:60, background:'rgba(247,245,240,.03)', borderRadius:2, margin:'1px 0' }}/>
+                <div key={i} style={{ height:60, background:'rgba(247,245,240,.03)', borderRadius:2, margin:'1px 0', animation:'lp-barUp .8s ease both', animationDelay:`${i*.06}s` }}/>
               ))
             ) : visibleMatches.map((m) => {
               const matchId   = m.id || (m.home + m.away);
@@ -405,7 +249,7 @@ export default function IntelligencePage() {
               const bestProb  = isH ? m.prob_home : isA ? m.prob_away : m.prob_draw;
               const hasValue  = m.bestEv > 3;
               const isLive    = m.oddsSource === 'live';
-              const canExpand = m.allBookmakers?.length > 0;
+              const hasBookmakers = m.allBookmakers?.length > 0;
 
               return (
                 <div key={matchId} style={{
@@ -417,27 +261,27 @@ export default function IntelligencePage() {
 
                   {/* Summary row */}
                   <div
-                    onClick={() => canExpand && toggleExpand(matchId)}
+                    onClick={() => toggleExpand(matchId)}
                     style={{
                       display:'grid',
-                      gridTemplateColumns:'76px 1fr auto 64px 64px 64px 88px 24px',
-                      gap:10, padding:'14px 20px', alignItems:'center',
-                      cursor: canExpand ? 'none' : 'default',
+                      gridTemplateColumns:'88px 1fr auto 80px 80px 80px 96px 28px',
+                      gap:20, padding:'16px 24px', alignItems:'center',
+                      cursor:'none',
                     }}
                   >
                     {/* Date */}
                     <div>
-                      <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:'rgba(247,245,240,.38)' }}>{fmtDate(m.date)}</span>
+                      <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:13, color:'rgba(247,245,240,.38)' }}>{fmtDate(m.date)}</span>
                       {isLive && <span style={{ display:'block', fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7, color:'#C8FF00', letterSpacing:'.1em', marginTop:2 }}>LIVE</span>}
                     </div>
 
                     {/* Match */}
                     <div>
-                      <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.55)', marginBottom:2 }}>
+                      <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.3)', marginBottom:2 }}>
                         Grp {m.group}
                       </div>
                       <div style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:16, letterSpacing:'.04em', color:'#F7F5F0', lineHeight:1.1 }}>
-                        {m.home} <span style={{ color:'rgba(247,245,240,.55)', fontSize:12 }}>vs</span> {m.away}
+                        {m.home} <span style={{ color:'rgba(247,245,240,.3)', fontSize:12 }}>vs</span> {m.away}
                       </div>
                     </div>
 
@@ -450,7 +294,7 @@ export default function IntelligencePage() {
                         color: hasValue ? ec(m.bestEv) : 'rgba(247,245,240,.5)',
                         whiteSpace:'nowrap',
                       }}>{bestMkt}</span>
-                      <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.55)', marginTop:3 }}>
+                      <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.3)', marginTop:3 }}>
                         {bestProb}% model
                       </div>
                     </div>
@@ -463,11 +307,11 @@ export default function IntelligencePage() {
                     ].map((c, ci) => (
                       <div key={ci} style={{ textAlign:'center' }}>
                         <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, color:'rgba(247,245,240,.28)', marginBottom:2 }}>{c.label}</div>
-                        <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:13, fontWeight:500, color: c.ev_>3?'#C8FF00':'rgba(247,245,240,.75)' }}>
+                        <span style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:22, color: c.ev_>3?'#C8FF00':'rgba(247,245,240,.75)' }}>
                           {c.odds?.toFixed(2) || '—'}
                         </span>
                         {c.ev_>3 && (
-                          <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, color:'rgba(200,255,0,.65)', marginTop:1 }}>
+                          <div style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:14, color:'rgba(200,255,0,.65)', marginTop:1 }}>
                             +{c.ev_.toFixed(1)}%
                           </div>
                         )}
@@ -477,7 +321,7 @@ export default function IntelligencePage() {
                     {/* EV badge */}
                     <div style={{ textAlign:'center' }}>
                       <span style={{
-                        fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:hasValue?11:10, fontWeight:500,
+                        fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:hasValue?18:16,
                         color: ec(m.bestEv),
                         background: hasValue ? ebg(m.bestEv) : 'transparent',
                         border: hasValue ? `1px solid ${ebr(m.bestEv)}` : 'none',
@@ -489,54 +333,72 @@ export default function IntelligencePage() {
 
                     {/* Expand toggle */}
                     <div style={{ textAlign:'center' }}>
-                      {canExpand && (
-                        <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:16, color:isExp?'#C8FF00':'rgba(247,245,240,.3)', userSelect:'none', lineHeight:1 }}>
-                          {isExp ? '−' : '+'}
-                        </span>
-                      )}
+                      <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:16, color:isExp?'#C8FF00':'rgba(247,245,240,.3)', userSelect:'none', lineHeight:1 }}>
+                        {isExp ? '−' : '+'}
+                      </span>
                     </div>
                   </div>
 
-                  {/* Expanded bookmaker breakdown */}
-                  {isExp && canExpand && (
+                  {/* Expanded breakdown */}
+                  {isExp && (
                     <div style={{ borderTop:'1px solid rgba(247,245,240,.05)', padding:'12px 20px 16px' }}>
-                      <div style={{ display:'grid', gridTemplateColumns:'140px 1fr 1fr 1fr', gap:8, marginBottom:8, fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.12em', textTransform:'uppercase', color:'rgba(247,245,240,.25)' }}>
-                        <span>Bookmaker</span>
-                        <span style={{textAlign:'center'}}>{m.home.split(' ')[0]}</span>
-                        <span style={{textAlign:'center'}}>Draw</span>
-                        <span style={{textAlign:'center'}}>{m.away.split(' ')[0]}</span>
-                      </div>
-                      {m.allBookmakers.map((bk, bi) => {
-                        const maxH = Math.max(...m.allBookmakers.map(b => b.homeOdds || 0));
-                        const maxD = Math.max(...m.allBookmakers.map(b => b.drawOdds || 0));
-                        const maxA = Math.max(...m.allBookmakers.map(b => b.awayOdds || 0));
-                        return (
-                          <div key={bi} style={{ display:'grid', gridTemplateColumns:'140px 1fr 1fr 1fr', gap:8, padding:'6px 0', borderBottom:bi<m.allBookmakers.length-1?'1px solid rgba(247,245,240,.04)':'none', alignItems:'center' }}>
-                            <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:bk.key==='pinnacle'?'#C8FF00':'rgba(247,245,240,.5)', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>
-                              {bk.key==='pinnacle'?'★ ':''}{bk.name}
-                            </span>
-                            {[
-                              { v:bk.homeOdds, max:maxH, ev_:((m.prob_home/100)*(bk.homeOdds||0)-1)*100 },
-                              { v:bk.drawOdds, max:maxD, ev_:((m.prob_draw/100)*(bk.drawOdds||0)-1)*100 },
-                              { v:bk.awayOdds, max:maxA, ev_:((m.prob_away/100)*(bk.awayOdds||0)-1)*100 },
-                            ].map((cell, ci) => (
-                              <div key={ci} style={{ textAlign:'center' }}>
-                                <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:12, fontWeight:500, color:cell.v===cell.max&&cell.max?'#C8FF00':'rgba(247,245,240,.7)' }}>
-                                  {cell.v?.toFixed(2) || '—'}
-                                </span>
-                                {cell.ev_ > 2 && (
-                                  <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7, color:'rgba(200,255,0,.65)', marginTop:1 }}>
-                                    +{cell.ev_.toFixed(1)}%
-                                  </div>
-                                )}
-                              </div>
-                            ))}
+                      {hasBookmakers ? (<>
+                        <div style={{ display:'grid', gridTemplateColumns:'140px 1fr 1fr 1fr', gap:8, marginBottom:8, fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.12em', textTransform:'uppercase', color:'rgba(247,245,240,.25)' }}>
+                          <span>Bookmaker</span>
+                          <span style={{textAlign:'center'}}>{m.home.split(' ')[0]}</span>
+                          <span style={{textAlign:'center'}}>Draw</span>
+                          <span style={{textAlign:'center'}}>{m.away.split(' ')[0]}</span>
+                        </div>
+                        {m.allBookmakers.map((bk, bi) => {
+                          const maxH = Math.max(...m.allBookmakers.map(b => b.homeOdds || 0));
+                          const maxD = Math.max(...m.allBookmakers.map(b => b.drawOdds || 0));
+                          const maxA = Math.max(...m.allBookmakers.map(b => b.awayOdds || 0));
+                          return (
+                            <div key={bi} style={{ display:'grid', gridTemplateColumns:'140px 1fr 1fr 1fr', gap:8, padding:'6px 0', borderBottom:bi<m.allBookmakers.length-1?'1px solid rgba(247,245,240,.04)':'none', alignItems:'center' }}>
+                              <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:bk.key==='pinnacle'?'#C8FF00':'rgba(247,245,240,.5)', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>
+                                {bk.key==='pinnacle'?'★ ':''}{bk.name}
+                              </span>
+                              {[
+                                { v:bk.homeOdds, max:maxH, ev_:((m.prob_home/100)*(bk.homeOdds||0)-1)*100 },
+                                { v:bk.drawOdds, max:maxD, ev_:((m.prob_draw/100)*(bk.drawOdds||0)-1)*100 },
+                                { v:bk.awayOdds, max:maxA, ev_:((m.prob_away/100)*(bk.awayOdds||0)-1)*100 },
+                              ].map((cell, ci) => (
+                                <div key={ci} style={{ textAlign:'center' }}>
+                                  <span style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:16, color:cell.v===cell.max&&cell.max?'#C8FF00':'rgba(247,245,240,.7)' }}>
+                                    {cell.v?.toFixed(2) || '—'}
+                                  </span>
+                                  {cell.ev_ > 2 && (
+                                    <div style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:13, color:'rgba(200,255,0,.65)', marginTop:1 }}>
+                                      +{cell.ev_.toFixed(1)}%
+                                    </div>
+                                  )}
+                                </div>
+                              ))}
+                            </div>
+                          );
+                        })}
+                        <div style={{ marginTop:10, fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.22)', letterSpacing:'.05em' }}>
+                          ★ Pinnacle = sharp reference market · green = best available price · +% = value vs model
+                        </div>
+                      </>) : (
+                        <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:16, marginBottom:8 }}>
+                          {[
+                            { label:m.home, prob:m.prob_home, odds:m.bestH, ev_:m.evH },
+                            { label:'Draw',  prob:m.prob_draw, odds:m.bestD, ev_:m.evD },
+                            { label:m.away, prob:m.prob_away, odds:m.bestA, ev_:m.evA },
+                          ].map((c,ci) => (
+                            <div key={ci} style={{ padding:'10px 14px', background:'rgba(247,245,240,.03)', borderRadius:2, border:'1px solid rgba(247,245,240,.06)' }}>
+                              <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.3)', marginBottom:6 }}>{c.label}</div>
+                              <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:18, fontWeight:500, color:'rgba(247,245,240,.8)', marginBottom:4 }}>{c.odds?.toFixed(2)||'—'}</div>
+                              <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:'rgba(247,245,240,.35)' }}>Model: {c.prob}%</div>
+                              {c.ev_>2 && <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:'#C8FF00', marginTop:3 }}>+{c.ev_.toFixed(1)}% value</div>}
+                            </div>
+                          ))}
+                          <div style={{ gridColumn:'1/-1', fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.2)', letterSpacing:'.05em', marginTop:4 }}>
+                            Live bookmaker breakdown available when odds feed is connected
                           </div>
-                        );
-                      })}
-                      <div style={{ marginTop:10, fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.22)', letterSpacing:'.05em' }}>
-                        ★ Pinnacle = sharp reference market · green = best available price · +% = EV edge vs model
-                      </div>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
@@ -561,12 +423,12 @@ export default function IntelligencePage() {
           </div>
 
           {/* ── Sidebar ── */}
-          <div style={{ display:'flex', flexDirection:'column', gap:2, position:'sticky', top:120 }}>
+          <div className="ea-odds-sidebar" style={{ display:'flex', flexDirection:'column', gap:2, position:'sticky', top:120 }}>
             {[
               { l:'Live matches',   v: liveCount,   accent:true  },
               { l:'Value edges >3%',v: valueCount               },
               { l:'Total fixtures', v: matches.length            },
-              { l:'Requests left',  v: data?.requestsLeft || '—' },
+              { l:'Bookmakers',      v: bkMax || '—' },
             ].map((s, i) => (
               <div key={i} style={{ padding:'20px', border:'1px solid rgba(247,245,240,.07)', background:'rgba(247,245,240,.02)' }}>
                 <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.12em', textTransform:'uppercase', color:'rgba(247,245,240,.38)', marginBottom:6 }}>{s.l}</div>
@@ -578,31 +440,36 @@ export default function IntelligencePage() {
 
             {/* Legend */}
             <div style={{ padding:'16px 20px', border:'1px solid rgba(247,245,240,.07)', background:'rgba(247,245,240,.02)', marginTop:4 }}>
-              <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.12em', textTransform:'uppercase', color:'rgba(247,245,240,.55)', marginBottom:10 }}>How to read</div>
+              <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.12em', textTransform:'uppercase', color:'rgba(247,245,240,.3)', marginBottom:10 }}>How to read</div>
               {[
                 ['Green odds', 'Best available price'],
-                ['+EV%',       'Model prob × odds − 1'],
+                ['Value %',    'Model prob × odds − 1'],
                 ['★ Pinnacle', 'Sharp reference market'],
                 ['+ expand',   'All bookmaker prices'],
               ].map(([k, v]) => (
                 <div key={k} style={{ display:'flex', justifyContent:'space-between', marginBottom:7 }}>
                   <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'#C8FF00' }}>{k}</span>
-                  <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.6)', textAlign:'right', maxWidth:'56%' }}>{v}</span>
+                  <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.35)', textAlign:'right', maxWidth:'56%' }}>{v}</span>
                 </div>
               ))}
             </div>
 
-            {/* Odds calculator */}
-            <OddsCalculator />
-
-            <Link href="/wc2026" style={{ marginTop:4, padding:'14px 16px', fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.5)', border:'1px solid rgba(247,245,240,.08)', textDecoration:'none', textAlign:'center', transition:'all .2s', borderRadius:2, display:'block' }}
+            <Link href="/fixtures" style={{ marginTop:4, padding:'14px 16px', fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.5)', border:'1px solid rgba(247,245,240,.08)', textDecoration:'none', textAlign:'center', transition:'all .2s', borderRadius:2, display:'block' }}
               onMouseEnter={e=>{ e.currentTarget.style.borderColor='rgba(200,255,0,.3)'; e.currentTarget.style.color='#C8FF00'; }}
               onMouseLeave={e=>{ e.currentTarget.style.borderColor='rgba(247,245,240,.08)'; e.currentTarget.style.color='rgba(247,245,240,.5)'; }}>
-              Tournament simulator →
+              View all fixtures →
             </Link>
           </div>
         </section>
       </div>
+
+      {scrolled && (
+        <button onClick={()=>window.scrollTo({top:0,behavior:'smooth'})}
+          style={{position:'fixed',bottom:32,right:32,zIndex:999,fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.12em',textTransform:'uppercase',padding:'10px 16px',background:'rgba(8,8,8,.92)',border:'1px solid rgba(247,245,240,.15)',color:'rgba(247,245,240,.55)',cursor:'none',borderRadius:2,backdropFilter:'blur(8px)',transition:'all .2s'}}
+          onMouseEnter={e=>{e.currentTarget.style.borderColor='rgba(240,165,0,.5)';e.currentTarget.style.color='#F0A500';}}
+          onMouseLeave={e=>{e.currentTarget.style.borderColor='rgba(247,245,240,.15)';e.currentTarget.style.color='rgba(247,245,240,.55)';}}
+          aria-label="Back to top">↑ Top</button>
+      )}
     </>
   );
 }

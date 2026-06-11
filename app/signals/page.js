@@ -8,8 +8,6 @@ function fmtDate(d) {
 }
 function useCursor() {
   useEffect(() => {
-    const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
-    if (isTouch) return;
     document.body.style.cursor = 'none';
     const cur=document.getElementById('ea-cur'),dot=document.getElementById('ea-dot'),ring=document.getElementById('ea-ring');
     if(!cur||!dot||!ring) return;
@@ -56,17 +54,17 @@ export default function FixturesPage() {
     <div style={{background:'#080808',minHeight:'100vh',color:'#F7F5F0'}}>
 
       {/* Hero */}
-      <section data-theme="dark" style={{position:'relative',minHeight:'52vh',display:'flex',flexDirection:'column',justifyContent:'flex-end',padding:'0 56px',overflow:'hidden'}}>
+      <section data-theme="dark" className="ea-hero">
         <div style={{position:'absolute',inset:0,background:`url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1920&q=85&fit=crop') center 40%/cover`,filter:'grayscale(100%) brightness(.18)',transform:imgReady?'scale(1)':'scale(1.05)',transition:'transform 12s ease'}} aria-hidden="true"/>
         <div style={{position:'absolute',inset:0,background:'linear-gradient(to bottom,transparent 30%,rgba(8,8,8,.95) 80%)'}} aria-hidden="true"/>
         <div style={{position:'absolute',left:56,top:0,bottom:0,width:2,background:'linear-gradient(to bottom,transparent 10%,#C8FF00 35%,#C8FF00 70%,transparent 100%)',opacity:.5}} aria-hidden="true"/>
-        <div style={{position:'relative',zIndex:3,paddingBottom:52}}>
+        <div className="ea-hero__inner">
           <div style={{display:'flex',alignItems:'center',gap:16,marginBottom:20}}>
             <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:7.5,letterSpacing:'.18em',textTransform:'uppercase',background:'#C8FF00',color:'#080808',padding:'5px 12px',borderRadius:2,display:'flex',alignItems:'center',gap:7}}>
               <span style={{width:5,height:5,borderRadius:'50%',background:'#080808',animation:'lp-blink 1.8s ease infinite'}}/>WC 2026
             </span>
             <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.12em',textTransform:'uppercase',color:'rgba(247,245,240,.5)'}}>
-              72 group fixtures · {liveCount} live odds · {valueCount} value edges
+              {loading?'—':matches.length} fixtures · {liveCount} live odds · {valueCount} value edges
             </span>
           </div>
           <h1 style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:'clamp(72px,12vw,160px)',lineHeight:.84,margin:0}}>
@@ -76,10 +74,6 @@ export default function FixturesPage() {
         </div>
       </section>
 
-      {/* Photo credit */}
-      <div style={{textAlign:'right',padding:'4px clamp(16px,4vw,56px)',background:'#080808'}}>
-        <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:7,color:'rgba(247,245,240,.25)'}}>Photo: Unsplash / Pixabay</span>
-      </div>
       {/* Group filter */}
       <section data-theme="dark" style={{padding:'32px 56px 0',borderBottom:'1px solid rgba(247,245,240,.06)'}}>
         <div style={{display:'flex',gap:6,flexWrap:'wrap',paddingBottom:24}}>
@@ -96,14 +90,12 @@ export default function FixturesPage() {
 
       {/* Table */}
       <section data-theme="dark" style={{padding:'0 56px 80px'}}>
-        <div style={{display:'grid',gridTemplateColumns:'80px 1fr 1fr 60px 72px 72px 72px 100px 88px',gap:8,padding:'10px 12px',borderBottom:'1px solid rgba(247,245,240,.08)',marginTop:24,fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.1em',textTransform:'uppercase',color:'rgba(247,245,240,.55)'}}>
+        <div style={{display:'grid',gridTemplateColumns:'80px 1fr 1fr 60px 72px 72px 72px 100px 88px',gap:8,padding:'10px 12px',borderBottom:'1px solid rgba(247,245,240,.08)',marginTop:24,fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.1em',textTransform:'uppercase',color:'rgba(247,245,240,.3)'}}>
           <span>Date</span><span>Home</span><span>Away</span><span>Grp</span>
           <span style={{textAlign:'center'}}>Home</span><span style={{textAlign:'center'}}>Draw</span><span style={{textAlign:'center'}}>Away</span>
           <span style={{textAlign:'center'}}>Model</span><span style={{textAlign:'center'}}>EV Edge</span>
         </div>
 
-        <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}>
-        <div style={{minWidth:680}}>
         {loading ? [...Array(8)].map((_,i)=>(
           <div key={i} style={{height:50,background:'rgba(247,245,240,.03)',borderRadius:2,margin:'2px 0'}}/>
         )) : filtered.map((m,i)=>{
@@ -120,16 +112,16 @@ export default function FixturesPage() {
               onMouseEnter={e=>e.currentTarget.style.background='rgba(200,255,0,.025)'}
               onMouseLeave={e=>e.currentTarget.style.background='transparent'}>
               <div>
-                <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,color:'rgba(247,245,240,.65)'}}>{fmtDate(m.date)}</span>
+                <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,color:'rgba(247,245,240,.4)'}}>{fmtDate(m.date)}</span>
                 {m.oddsSource==='live'&&<span style={{display:'block',fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:7,color:'#C8FF00',letterSpacing:'.1em',marginTop:2}}>LIVE</span>}
               </div>
               <span style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:15,letterSpacing:'.04em',color:m.prediction===m.home?'#F7F5F0':'rgba(247,245,240,.5)'}}>{m.home}</span>
               <span style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:15,letterSpacing:'.04em',color:m.prediction===m.away?'#F7F5F0':'rgba(247,245,240,.5)'}}>{m.away}</span>
-              <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,color:'rgba(247,245,240,.55)',textAlign:'center'}}>{m.group}</span>
+              <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,color:'rgba(247,245,240,.3)',textAlign:'center'}}>{m.group}</span>
               {[{o:m.bestH,e:m.evH},{o:m.bestD,e:m.evD},{o:m.bestA,e:m.evA}].map((c,ci)=>(
                 <div key={ci} style={{textAlign:'center'}}>
                   <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:13,fontWeight:500,color:c.e>3?'#C8FF00':'rgba(247,245,240,.7)'}}>{c.o?.toFixed(2)||'—'}</span>
-                  <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,color:'rgba(247,245,240,.55)',marginTop:1}}>{ci===0?m.prob_home:ci===1?m.prob_draw:m.prob_away}%</div>
+                  <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,color:'rgba(247,245,240,.3)',marginTop:1}}>{ci===0?m.prob_home:ci===1?m.prob_draw:m.prob_away}%</div>
                 </div>
               ))}
               <div style={{textAlign:'center'}}>
@@ -145,8 +137,6 @@ export default function FixturesPage() {
             </div>
           );
         })}
-        </div>
-        </div>{/* end scroll */}
       </section>
     </div>
   </>);
