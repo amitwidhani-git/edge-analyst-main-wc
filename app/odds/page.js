@@ -250,7 +250,8 @@ export default function IntelligencePage() {
               const bestMkt   = isH ? `${m.home} Win` : isA ? `${m.away} Win` : 'Draw';
               const bestOdds  = isH ? m.bestH : isA ? m.bestA : m.bestD;
               const bestProb  = isH ? m.prob_home : isA ? m.prob_away : m.prob_draw;
-              const hasValue  = m.bestEv > 3;
+              const isCompleted = m.status === 'completed';
+              const hasValue  = m.bestEv > 3 && !isCompleted;
               const isLive    = m.oddsSource === 'live';
               const hasBookmakers = m.allBookmakers?.length > 0;
 
@@ -291,16 +292,33 @@ export default function IntelligencePage() {
 
                     {/* Best market */}
                     <div style={{ textAlign:'right' }}>
-                      <span style={{
-                        fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, padding:'3px 10px', borderRadius:2, letterSpacing:'.06em',
-                        background: hasValue ? ebg(m.bestEv) : 'rgba(247,245,240,.04)',
-                        border:`1px solid ${hasValue ? ebr(m.bestEv) : 'rgba(247,245,240,.08)'}`,
-                        color: hasValue ? ec(m.bestEv) : 'rgba(247,245,240,.5)',
-                        whiteSpace:'nowrap',
-                      }}>{bestMkt}</span>
-                      <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.3)', marginTop:3 }}>
-                        {bestProb}% model
-                      </div>
+                      {isCompleted ? (
+                        <>
+                          <span style={{
+                            fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, padding:'3px 10px', borderRadius:2,
+                            background: m.model_correct ? 'rgba(200,255,0,.1)' : 'rgba(239,68,68,.1)',
+                            border: `1px solid ${m.model_correct ? 'rgba(200,255,0,.3)' : 'rgba(239,68,68,.3)'}`,
+                            color: m.model_correct ? '#C8FF00' : '#ef4444',
+                            whiteSpace:'nowrap',
+                          }}>{m.actual_score} · {m.model_correct ? '✓ Model correct' : '✗ Model wrong'}</span>
+                          <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.3)', marginTop:3 }}>
+                            Predicted: {m.prediction}
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <span style={{
+                            fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, padding:'3px 10px', borderRadius:2, letterSpacing:'.06em',
+                            background: hasValue ? ebg(m.bestEv) : 'rgba(247,245,240,.04)',
+                            border:`1px solid ${hasValue ? ebr(m.bestEv) : 'rgba(247,245,240,.08)'}`,
+                            color: hasValue ? ec(m.bestEv) : 'rgba(247,245,240,.5)',
+                            whiteSpace:'nowrap',
+                          }}>{bestMkt}</span>
+                          <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.3)', marginTop:3 }}>
+                            {bestProb}% model
+                          </div>
+                        </>
+                      )}
                     </div>
 
                     {/* H / D / A odds */}
@@ -324,15 +342,17 @@ export default function IntelligencePage() {
 
                     {/* EV badge */}
                     <div style={{ textAlign:'center' }}>
-                      <span style={{
-                        fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:hasValue?18:16,
-                        color: ec(m.bestEv),
-                        background: hasValue ? ebg(m.bestEv) : 'transparent',
-                        border: hasValue ? `1px solid ${ebr(m.bestEv)}` : 'none',
-                        padding: hasValue ? '2px 7px' : '0', borderRadius:2,
-                      }}>
-                        {m.bestEv > 0 ? '+' : ''}{m.bestEv.toFixed(1)}%
-                      </span>
+                      {!isCompleted && (
+                        <span style={{
+                          fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:hasValue?11:10, fontWeight:500,
+                          color: ec(m.bestEv),
+                          background: hasValue ? ebg(m.bestEv) : 'transparent',
+                          border: hasValue ? `1px solid ${ebr(m.bestEv)}` : 'none',
+                          padding: hasValue ? '2px 7px' : '0', borderRadius:2,
+                        }}>
+                          {m.bestEv > 0 ? '+' : ''}{m.bestEv.toFixed(1)}%
+                        </span>
+                      )}
                     </div>
 
                     {/* Expand toggle */}

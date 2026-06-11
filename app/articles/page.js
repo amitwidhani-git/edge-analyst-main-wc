@@ -19,6 +19,16 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:'Match Report', date:'11 Jun 2026',
+    title:'Mexico 2–0 South Africa: Model Correct. El Tri Deliver in Front of 87,000 at Estadio Azteca.',
+    excerpt:'Mexico opened their World Cup 2026 campaign with a controlled 2–0 victory over South Africa at the Estadio Azteca, exactly as the model predicted. The EdgeIQ model assigned Mexico a 74.8% win probability — the correct outcome, covering the spread. Raúl Jiménez was decisive, contributing to both goals in a performance that justified Mexico\'s status as one of the tournament\'s most dangerous hosts.',
+    excerpt2:'The model\'s xG projection was 2.55 for Mexico against 0.81 for South Africa. The actual xG came in at approximately 2.3 vs 0.4 — if anything, South Africa were even more limited than projected. Mexico\'s home Elo boost of +150 points was validated. The question now is whether their Elo rating should be revised upward ahead of the Czechia fixture on June 17.',
+    excerpt3:'South Africa\'s pre-tournament form concern (two draws and a loss in their last four) was borne out. Their Elo of 1,591 makes them the weakest team in Group A — the model gives them less than 12% probability of advancing. Two games remain: Czechia on June 18 and South Korea on June 25. Both are rated above South Africa in the Elo table.',
+    stat:'74.8%', statLabel:'Model win probability', stat2:'2–0', statLabel2:'Final score', stat3:'✓', statLabel3:'Model prediction correct',
+    modelCorrect: true,
+    highlight:true,
+  },
+  {
     tag:'Model Report', date:'Jun 2026',
     title:'Spain vs The Field: 37% Win Probability and Why the Market Is Underestimating Them',
     excerpt:'Spain enters WC 2026 with the highest Elo rating in the tournament at 2,171, a figure built on their Euro 2024 triumph and an 18-month unbeaten run. The model assigns Spain a 37% tournament win probability across 10,000 simulations. The next closest is Argentina at 16.8%.',
@@ -115,6 +125,11 @@ export default function InsightsPage() {
             </span>
             <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.12em',textTransform:'uppercase',color:'rgba(247,245,240,.5)'}}>
               {ARTICLES.length} pieces · model reports · group analysis
+              {data?.modelRecord?.played>0&&(
+                <span style={{marginLeft:12,color:'#C8FF00',fontWeight:600}}>
+                  · Model {data.modelRecord.correct}/{data.modelRecord.played} correct
+                </span>
+              )}
             </span>
           </div>
           <h1 style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:'clamp(72px,12vw,160px)',lineHeight:.84,margin:0}}>

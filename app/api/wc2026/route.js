@@ -3,7 +3,8 @@ import { join } from 'path';
 
 // Cache the full route response for 1 hour — limits Odds API calls to at most 1/hour.
 // Raise to 7200 (2h) on quieter days; lower to 900 (15min) on match days.
-export const revalidate = 3600;
+// export const revalidate = 3600;
+export const dynamic = 'force-dynamic';
 
 // ─── File helpers ─────────────────────────────────────────────────────────────
 async function readJSON(filename) {
@@ -208,6 +209,17 @@ export async function GET() {
     };
   });
 
+  // Model accuracy record from enriched predictions
+  const completed = merged.filter(m => m.status === 'completed');
+  const modelRecord = {
+    played:  completed.length,
+    correct: completed.filter(m => m.model_correct === true).length,
+    wrong:   completed.filter(m => m.model_correct === false).length,
+    accuracy: completed.length > 0
+      ? Math.round(completed.filter(m => m.model_correct).length / completed.length * 100)
+      : null,
+  };
+
   return Response.json({
     ok:           true,
     generated:    dataGenerated,
@@ -217,11 +229,11 @@ export async function GET() {
     oddsOk,
     oddsSource,
     requestsLeft: requestsRemaining,
-    // proxyOk kept as alias so the frontend check still works
     proxyOk:      oddsOk && liveOdds.length > 0,
     proxySource:  oddsSource,
     matches:      merged,
     teamStats,
     simulation,
+    modelRecord,
   });
 }

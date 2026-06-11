@@ -158,11 +158,11 @@ export default function HomePage() {
           {[
             {n:loading?'—':matches.length,     l:'Group Fixtures'},
             {n:loading?'—':data?.liveCount||0, l:'Live odds'},
-            {n:loading?'—':simTop[0]?.team||'Spain', l:'Favourite'},
-            {n:loading?'—':simTop[0]?`${simTop[0].win_pct}%`:'—', l:'Win probability'},
+            {n:loading?'—':data?.modelRecord?.played>0?`${data.modelRecord.correct}/${data.modelRecord.played}`:'—', l:'Model record', accent:true},
+            {n:loading?'—':data?.modelRecord?.accuracy!=null?`${data.modelRecord.accuracy}%`:'Pending', l:'Accuracy'},
           ].map((k,i)=>(
             <div key={i} style={{padding:'0 0 0 '+(i>0?'32px':'0'),borderLeft:i>0?'1px solid rgba(247,245,240,.1)':'none'}}>
-              <div style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:'clamp(36px,4vw,60px)',lineHeight:.9,color:'#F7F5F0',marginBottom:8}}>{k.n}</div>
+              <div style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:'clamp(36px,4vw,60px)',lineHeight:.9,color:k.accent?'#C8FF00':'#F7F5F0',marginBottom:8}}>{k.n}</div>
               <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.1em',textTransform:'uppercase',color:'rgba(247,245,240,.45)'}}>{k.l}</div>
             </div>
           ))}
