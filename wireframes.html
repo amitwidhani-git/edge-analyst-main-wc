@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Edge Analysts — Site Wireframes</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0E0E12;
+    font-family: 'DM Mono', 'Courier New', monospace;
+    color: #888;
+    min-height: 100vh;
+  }
+
+  /* ── TOP NAV ── */
+  .wf-topnav {
+    position: sticky; top: 0; z-index: 999;
+    background: #0E0E12;
+    border-bottom: 1px solid #222;
+    display: flex; align-items: center; gap: 0;
+    padding: 0 24px;
+    height: 44px;
+  }
+  .wf-topnav span {
+    font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #555; padding-right: 20px; margin-right: 4px;
+  }
+  .wf-tab {
+    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #555; background: none; border: none; cursor: pointer;
+    padding: 0 16px; height: 44px; border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .wf-tab:hover { color: #999; }
+  .wf-tab.active { color: #4A7FD4; border-bottom-color: #4A7FD4; }
+
+  /* ── PAGES ── */
+  .wf-page { display: none; padding: 24px; max-width: 1440px; margin: 0 auto; }
+  .wf-page.active { display: block; }
+
+  /* ── BUILDING BLOCKS ── */
+  .box {
+    background: #181820;
+    border: 1px solid #2a2a35;
+    border-radius: 3px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .box-label {
+    font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #444; text-align: center; padding: 4px 6px; line-height: 1.5;
+  }
+  .box-label strong { display: block; font-size: 10px; color: #666; margin-bottom: 2px; }
+  .box-label em { display: block; font-size: 8px; color: #3a3a45; margin-top: 2px; font-style: normal; }
+
+  /* accent colours */
+  .accent-green  { border-color: rgba(0,255,133,0.2);  }
+  .accent-blue   { border-color: rgba(74,127,212,0.3); }
+  .accent-amber  { border-color: rgba(240,165,0,0.2);  }
+  .accent-twitter{ border-top: 2px solid #1DA1F2; border-color: rgba(29,161,242,0.25); }
+  .accent-table  { border-top: 2px solid #1853B4; }
+
+  /* section label */
+  .section-label {
+    font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: #333; margin-bottom: 8px; padding-left: 2px;
+  }
+
+  /* page title chip */
+  .page-chip {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #181820; border: 1px solid #2a2a35; border-radius: 2px;
+    padding: 6px 14px; margin-bottom: 20px;
+  }
+  .page-chip span { font-size: 10px; letter-spacing: 0.12em; color: #555; text-transform: uppercase; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: #00FF85; opacity: 0.7; }
+  .dot-blue { background: #4A7FD4; }
+
+  /* gap helpers */
+  .gap4  { gap: 4px;  }
+  .gap8  { gap: 8px;  }
+  .gap12 { gap: 12px; }
+  .gap16 { gap: 16px; }
+  .gap20 { gap: 20px; }
+  .gap24 { gap: 24px; }
+
+  .flex       { display: flex; }
+  .flex-col   { display: flex; flex-direction: column; }
+  .grid       { display: grid; }
+  .mb4  { margin-bottom: 4px; }
+  .mb8  { margin-bottom: 8px; }
+  .mb12 { margin-bottom: 12px; }
+  .mb16 { margin-bottom: 16px; }
+  .mb20 { margin-bottom: 20px; }
+  .mb24 { margin-bottom: 24px; }
+  .mb32 { margin-bottom: 32px; }
+
+  /* ── SHARED NAV BAR ── */
+  .wf-nav {
+    height: 44px; background: #14141C; border: 1px solid #2a2a35;
+    border-radius: 2px; display: flex; align-items: center;
+    justify-content: space-between; padding: 0 20px;
+    margin-bottom: 16px;
+  }
+  .wf-nav-logo {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .bar-group { display: flex; gap: 3px; align-items: flex-end; }
+  .bar { width: 4px; border-radius: 1px; background: #4A7FD4; opacity: 0.7; }
+  .wf-nav-links { display: flex; gap: 1px; }
+  .nav-link-pill {
+    font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #444; padding: 0 12px; height: 44px; display: flex; align-items: center;
+    border-left: 1px solid #222;
+  }
+  .nav-link-pill.active { color: #00FF85; }
+  .wf-nav-btn {
+    font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+    background: #1853B4; color: #fff; padding: 5px 14px; border-radius: 1px;
+    opacity: 0.85;
+  }
+
+  /* ── TICKER ── */
+  .wf-ticker {
+    height: 34px; background: #12121A; border: 1px solid #222;
+    border-top: 2px solid #1853B4; border-radius: 2px;
+    display: flex; align-items: center; padding: 0 16px; gap: 24px;
+    overflow: hidden; margin-bottom: 16px;
+  }
+  .ticker-item {
+    display: flex; gap: 10px; align-items: center; flex-shrink: 0;
+  }
+  .ticker-pill {
+    font-size: 8px; padding: 1px 6px; border-radius: 1px;
+    background: rgba(0,255,133,0.1); border: 1px solid rgba(0,255,133,0.2);
+    color: rgba(0,255,133,0.6); letter-spacing: 0.06em;
+  }
+  .ticker-text { font-size: 9px; color: #444; letter-spacing: 0.06em; }
+  .ticker-sep { width: 1px; height: 20px; background: #222; }
+
+  /* ── CARD ── */
+  .wf-card {
+    background: #12121C; border: 1px solid #2a2a35; border-radius: 3px;
+    overflow: hidden;
+  }
+  .wf-card-header {
+    height: 80px; background: linear-gradient(135deg, #1a2060 0%, #201060 100%);
+    border-bottom: 1px solid #2a2a35;
+  }
+  .wf-card-body { padding: 10px 12px; }
+  .wf-card-row { height: 6px; background: #2a2a35; border-radius: 1px; margin-bottom: 5px; }
+
+  /* skeleton line */
+  .skel { background: #222; border-radius: 1px; }
+
+  /* ── SIDEBAR ── */
+  .wf-sidebar-card {
+    background: #12121C; border: 1px solid #2a2a35; border-radius: 2px;
+    overflow: hidden; margin-bottom: 10px;
+  }
+  .wf-sidebar-head {
+    background: #181820; border-bottom: 1px solid #222;
+    padding: 8px 12px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .wf-sidebar-body { padding: 12px; }
+
+  /* ── TEAM ROW ── */
+  .team-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 16px; border-bottom: 1px solid #1a1a22;
+    background: #121218;
+  }
+  .team-bar { width: 3px; height: 22px; border-radius: 1px; flex-shrink: 0; }
+  .team-name { flex: 1; height: 7px; background: #2a2a35; border-radius: 1px; }
+  .team-acc  { width: 28px; height: 9px; background: #2a2a38; border-radius: 1px; }
+  .team-rank { width: 16px; font-size: 9px; color: #333; flex-shrink: 0; }
+
+  /* ── ODDS TABLE ── */
+  .odds-th { height: 28px; background: #10101A; border-bottom: 1px solid #222; display: flex; align-items: center; padding: 0 14px; gap: 8px; }
+  .odds-tr { display: flex; height: 44px; border-bottom: 1px solid #1a1a22; align-items: center; padding: 0 14px; gap: 6px; }
+  .odds-tr:nth-child(odd) { background: #111118; }
+  .odds-tr:nth-child(even) { background: #0E0E16; }
+  .odds-cell { flex: 1; height: 8px; background: #2a2a35; border-radius: 1px; }
+  .odds-best { flex: 1; height: 8px; background: rgba(0,255,133,0.15); border-radius: 1px; border: 1px solid rgba(0,255,133,0.2); }
+
+  /* ── STAT BOX ── */
+  .stat-box {
+    flex: 1; padding: 14px 20px;
+    border-right: 1px solid #1a1a22;
+    background: #111118;
+  }
+  .stat-box:last-child { border-right: none; }
+  .stat-n { height: 28px; background: #2a2a35; border-radius: 1px; margin-bottom: 5px; width: 60%; }
+  .stat-l { height: 6px; background: #1e1e28; border-radius: 1px; width: 80%; }
+
+  /* ── OFFER CARD ── */
+  .offer-card {
+    background: #121218; border: 1px solid #2a2a35; border-top: 2px solid #2a2a45;
+    padding: 20px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .offer-headline { height: 9px; background: #2a2a35; border-radius: 1px; width: 85%; }
+  .offer-body1    { height: 6px; background: #1e1e28; border-radius: 1px; width: 100%; }
+  .offer-body2    { height: 6px; background: #1e1e28; border-radius: 1px; width: 75%; }
+  .offer-cta      { height: 26px; background: #1853B4; border-radius: 1px; width: 120px; margin-top: 4px; opacity: 0.7; align-self: flex-end; }
+
+  /* ── ARTICLE CARD ── */
+  .article-card {
+    background: #121218; border: 1px solid #2a2a35;
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  .article-card-head { height: 8px; background: rgba(74,127,212,0.3); }
+  .article-card-body { padding: 14px 16px; flex: 1; }
+  .art-tag  { height: 7px; background: rgba(74,127,212,0.2); border-radius: 1px; width: 60px; margin-bottom: 10px; }
+  .art-h    { height: 9px; background: #2a2a38; border-radius: 1px; margin-bottom: 5px; }
+  .art-h2   { height: 9px; background: #2a2a38; border-radius: 1px; margin-bottom: 12px; width: 75%; }
+  .art-p    { height: 6px; background: #1c1c26; border-radius: 1px; margin-bottom: 4px; }
+  .art-p2   { height: 6px; background: #1c1c26; border-radius: 1px; margin-bottom: 4px; width: 85%; }
+  .art-p3   { height: 6px; background: #1c1c26; border-radius: 1px; width: 60%; }
+
+  /* ── CHART ── */
+  .wf-chart {
+    background: #0E0E18; padding: 12px;
+    border: 1px solid #2a2a35; border-radius: 2px;
+  }
+  .chart-bars { display: flex; align-items: flex-end; gap: 3px; height: 60px; }
+  .chart-bar-el { flex: 1; border-radius: 1px 1px 0 0; background: rgba(0,255,133,0.2); }
+
+  /* ── ACCURACY HERO ── */
+  .acc-hero {
+    background: linear-gradient(135deg, #0E0E18, #12182A);
+    border: 1px solid rgba(74,127,212,0.2);
+    padding: 24px; display: flex; gap: 24px; align-items: center;
+  }
+  .acc-num { font-size: 48px; color: #00FF85; opacity: 0.6; letter-spacing: -0.02em; font-weight: 900; line-height: 1; }
+  .acc-sub { height: 6px; background: rgba(0,255,133,0.2); border-radius: 1px; margin-top: 6px; width: 80%; }
+
+  /* ── SECTION DIVIDER ── */
+  .wf-divider {
+    height: 2px; background: #1853B4; opacity: 0.5;
+    margin: 24px 0; border-radius: 1px;
+  }
+  .wf-divider-thin {
+    height: 1px; background: rgba(74,127,212,0.15);
+    margin: 20px 0;
+  }
+
+  /* ── PROGRESS BAR ── */
+  .prog-wrap { height: 4px; background: #1a1a24; border-radius: 2px; overflow: hidden; margin-top: 4px; }
+  .prog-fill { height: 100%; border-radius: 2px; }
+
+  /* ── PAGE TITLE BLOCK ── */
+  .wf-page-title { margin-bottom: 24px; }
+  .wf-h1 { font-size: 10px; letter-spacing: 0.08em; color: #3a3a50; text-transform: uppercase; }
+
+  /* ── ANNOTATION ── */
+  .annotation {
+    position: absolute; right: 8px; top: 8px;
+    font-size: 8px; color: #2a2a40; letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ── FOOTER ── */
+  .wf-footer {
+    height: 60px; background: #0A0A10; border: 1px solid #1a1a22;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 20px; margin-top: 16px; border-radius: 2px;
+  }
+  .wf-footer-skel { height: 6px; background: #1a1a22; border-radius: 1px; }
+
+  /* BANNER at top of each page wireframe */
+  .wf-banner {
+    background: #12121C; border: 1px solid #252535; border-radius: 3px;
+    padding: 10px 20px; display: flex; align-items: center; gap: 12px;
+    margin-bottom: 20px;
+  }
+  .wf-banner-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .wf-banner-label { font-size: 11px; color: #555; letter-spacing: 0.1em; text-transform: uppercase; }
+  .wf-banner-route { font-size: 9px; color: #333; letter-spacing: 0.08em; margin-left: auto; }
+</style>
+</head>
+<body>
+
+<!-- top nav between wireframes -->
+<div class="wf-topnav">
+  <span>Edge Analysts · Wireframes</span>
+  <button class="wf-tab active" onclick="show('landing')">Landing</button>
+  <button class="wf-tab" onclick="show('signals')">Signals</button>
+  <button class="wf-tab" onclick="show('odds')">Price Intelligence</button>
+  <button class="wf-tab" onclick="show('articles')">Insights</button>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     PAGE 1 · LANDING
+═══════════════════════════════════════════════════════════════════════════ -->
+<div id="wf-landing" class="wf-page active">
+
+  <div class="wf-banner">
+    <div class="wf-banner-dot" style="background:#4A7FD4;"></div>
+    <span class="wf-banner-label">Landing Page</span>
+    <span class="wf-banner-route">/ (root)</span>
+  </div>
+
+  <!-- NAV -->
+  <div class="wf-nav mb16">
+    <div class="wf-nav-logo">
+      <div class="bar-group">
+        <div class="bar" style="height:7px;"></div>
+        <div class="bar" style="height:11px;"></div>
+        <div class="bar" style="height:16px;"></div>
+      </div>
+      <span style="font-size:11px;color:#555;letter-spacing:0.08em;text-transform:uppercase;">Edge Analysts</span>
+    </div>
+    <div class="wf-nav-links">
+      <div class="nav-link-pill">Nav links</div>
+      <div class="nav-link-pill">Signals</div>
+      <div class="nav-link-pill">Price Intel</div>
+      <div class="nav-link-pill">Insights</div>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <div style="font-size:9px;color:#333;padding:4px 10px;border:1px solid #222;">◐ theme</div>
+      <div class="wf-nav-btn">Join waitlist</div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="mb24">
+    <div class="section-label">Hero section</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+
+      <!-- left: headline + CTA -->
+      <div class="box" style="min-height:340px;flex-direction:column;align-items:flex-start;padding:32px;gap:16px;position:relative;">
+        <span class="annotation">title + cta</span>
+        <!-- live chip -->
+        <div style="display:flex;align-items:center;gap:6px;">
+          <div class="dot"></div>
+          <div class="skel" style="height:6px;width:160px;"></div>
+        </div>
+        <!-- big headline -->
+        <div style="display:flex;flex-direction:column;gap:8px;width:100%;">
+          <div class="skel" style="height:72px;width:85%;"></div>
+          <div class="skel" style="height:72px;width:70%;background:rgba(74,127,212,0.15);"></div>
+        </div>
+        <!-- body copy -->
+        <div style="display:flex;flex-direction:column;gap:5px;width:100%;margin-top:8px;">
+          <div class="skel" style="height:6px;width:90%;"></div>
+          <div class="skel" style="height:6px;width:75%;"></div>
+        </div>
+        <!-- CTAs -->
+        <div style="display:flex;gap:10px;margin-top:8px;">
+          <div style="height:38px;width:140px;background:#1853B4;border-radius:1px;opacity:0.8;"></div>
+          <div style="height:38px;width:120px;background:#1a1a28;border:1px solid #2a2a40;border-radius:1px;"></div>
+        </div>
+        <!-- stat pills -->
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
+          <div style="height:22px;width:90px;background:#181828;border:1px solid #2a2a40;border-radius:1px;"></div>
+          <div style="height:22px;width:100px;background:#181828;border:1px solid rgba(0,255,133,0.15);border-radius:1px;"></div>
+          <div style="height:22px;width:80px;background:#181828;border:1px solid #2a2a40;border-radius:1px;"></div>
+        </div>
+      </div>
+
+      <!-- right: terminal + signal card preview -->
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <!-- terminal -->
+        <div class="box accent-blue" style="height:200px;flex-direction:column;align-items:flex-start;padding:14px 16px;gap:6px;position:relative;">
+          <span class="annotation">terminal animation</span>
+          <div style="display:flex;gap:6px;margin-bottom:4px;">
+            <div style="width:8px;height:8px;border-radius:50%;background:#444;"></div>
+            <div style="width:8px;height:8px;border-radius:50%;background:#444;"></div>
+            <div style="width:8px;height:8px;border-radius:50%;background:#444;"></div>
+          </div>
+          <div class="skel" style="height:5px;width:60%;"></div>
+          <div class="skel" style="height:5px;width:45%;background:rgba(0,255,133,0.15);"></div>
+          <div class="skel" style="height:5px;width:70%;"></div>
+          <div class="skel" style="height:5px;width:50%;background:rgba(74,127,212,0.2);"></div>
+          <div class="skel" style="height:5px;width:55%;"></div>
+        </div>
+        <!-- signal card preview -->
+        <div class="box accent-green" style="height:120px;flex-direction:column;padding:0;position:relative;overflow:hidden;">
+          <span class="annotation">signal card preview</span>
+          <div style="height:40px;background:linear-gradient(135deg,#1a2060,#201060);width:100%;"></div>
+          <div style="padding:10px 14px;display:flex;flex-direction:column;gap:6px;">
+            <div class="skel" style="height:5px;width:80%;"></div>
+            <div class="prog-wrap" style="width:100%;"><div class="prog-fill" style="width:65%;background:rgba(0,255,133,0.35);"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FEATURE CARDS -->
+  <div class="mb24">
+    <div class="section-label">Feature cards (4 grid)</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#1a1a22;">
+      {[['01','EdgeIQ Model'],['02','Market Edge'],['03','Signal tiers'],['04','Track record']].map(function(c){return c[0]+' '+c[1];})}
+      <div style="background:#111118;padding:20px;"><div style="font-size:28px;color:#1853B4;opacity:0.4;font-weight:900;margin-bottom:10px;">01</div><div class="skel" style="height:8px;width:90%;margin-bottom:6px;"></div><div class="skel" style="height:6px;width:100%;margin-bottom:4px;"></div><div class="skel" style="height:6px;width:75%;"></div></div>
+      <div style="background:#0e0e16;padding:20px;"><div style="font-size:28px;color:#1853B4;opacity:0.4;font-weight:900;margin-bottom:10px;">02</div><div class="skel" style="height:8px;width:85%;margin-bottom:6px;"></div><div class="skel" style="height:6px;width:100%;margin-bottom:4px;"></div><div class="skel" style="height:6px;width:80%;"></div></div>
+      <div style="background:#111118;padding:20px;"><div style="font-size:28px;color:#1853B4;opacity:0.4;font-weight:900;margin-bottom:10px;">03</div><div class="skel" style="height:8px;width:90%;margin-bottom:6px;"></div><div class="skel" style="height:6px;width:100%;margin-bottom:4px;"></div><div class="skel" style="height:6px;width:70%;"></div></div>
+      <div style="background:#0e0e16;padding:20px;"><div style="font-size:28px;color:#1853B4;opacity:0.4;font-weight:900;margin-bottom:10px;">04</div><div class="skel" style="height:8px;width:80%;margin-bottom:6px;"></div><div class="skel" style="height:6px;width:100%;margin-bottom:4px;"></div><div class="skel" style="height:6px;width:65%;"></div></div>
+    </div>
+  </div>
+
+  <!-- ACCURACY / CHART SECTION -->
+  <div class="mb24">
+    <div class="section-label">Rolling accuracy chart</div>
+    <div class="acc-hero">
+      <div>
+        <div class="acc-num">48%</div>
+        <div class="acc-sub"></div>
+      </div>
+      <div style="flex:1;">
+        <div class="chart-bars">
+          <div class="chart-bar-el" style="height:30%;"></div>
+          <div class="chart-bar-el" style="height:55%;"></div>
+          <div class="chart-bar-el" style="height:40%;"></div>
+          <div class="chart-bar-el" style="height:70%;"></div>
+          <div class="chart-bar-el" style="height:50%;"></div>
+          <div class="chart-bar-el" style="height:65%;"></div>
+          <div class="chart-bar-el" style="height:45%;"></div>
+          <div class="chart-bar-el" style="height:80%;background:rgba(0,255,133,0.5);"></div>
+          <div class="chart-bar-el" style="height:60%;background:rgba(0,255,133,0.5);"></div>
+          <div class="chart-bar-el" style="height:75%;background:rgba(0,255,133,0.6);"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:6px;">
+          <span style="font-size:8px;color:#2a2a40;">GW1</span>
+          <span style="font-size:8px;color:#2a2a40;">GW20</span>
+          <span style="font-size:8px;color:#2a2a40;">GW38</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="section-label">Footer</div>
+  <div class="wf-footer">
+    <div class="wf-footer-skel" style="width:120px;"></div>
+    <div class="wf-footer-skel" style="width:200px;"></div>
+    <div class="wf-footer-skel" style="width:80px;"></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     PAGE 2 · SIGNALS
+═══════════════════════════════════════════════════════════════════════════ -->
+<div id="wf-signals" class="wf-page">
+
+  <div class="wf-banner">
+    <div class="wf-banner-dot" style="background:#00FF85;"></div>
+    <span class="wf-banner-label">Signals Page</span>
+    <span class="wf-banner-route">/signals</span>
+  </div>
+
+  <!-- NAV -->
+  <div class="wf-nav mb16">
+    <div class="wf-nav-logo">
+      <div class="bar-group"><div class="bar" style="height:7px;"></div><div class="bar" style="height:11px;"></div><div class="bar" style="height:16px;"></div></div>
+      <span style="font-size:11px;color:#555;letter-spacing:0.08em;text-transform:uppercase;">Edge Analysts</span>
+    </div>
+    <div class="wf-nav-links">
+      <div class="nav-link-pill active">Signals</div>
+      <div class="nav-link-pill">Price Intel</div>
+      <div class="nav-link-pill">Insights</div>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <div style="font-size:9px;color:#333;padding:4px 10px;border:1px solid #222;">◐ theme</div>
+      <div class="wf-nav-btn">Join waitlist</div>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <div class="box mb12" style="padding:24px 28px;align-items:flex-start;flex-direction:column;gap:10px;background:linear-gradient(180deg,rgba(24,83,180,0.06) 0%,transparent 100%);position:relative;">
+    <span class="annotation">page header</span>
+    <div style="display:flex;align-items:center;gap:6px;"><div class="dot"></div><div class="skel" style="height:6px;width:140px;background:rgba(0,255,133,0.2);"></div></div>
+    <div class="skel" style="height:56px;width:340px;"></div>
+    <div class="skel" style="height:56px;width:240px;background:rgba(74,127,212,0.15);"></div>
+    <div style="display:flex;gap:12px;align-items:center;">
+      <div class="skel" style="height:7px;width:120px;"></div>
+      <div class="skel" style="height:7px;width:180px;"></div>
+    </div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="wf-ticker mb16">
+    <div class="ticker-item"><div class="ticker-text" style="width:90px;height:6px;background:#222;border-radius:1px;"></div><div class="ticker-pill">+8pp</div></div>
+    <div class="ticker-sep"></div>
+    <div class="ticker-item"><div class="ticker-text" style="width:80px;height:6px;background:#222;border-radius:1px;"></div><div class="ticker-pill" style="background:rgba(240,165,0,0.1);border-color:rgba(240,165,0,0.2);color:rgba(240,165,0,0.6);">+4pp</div></div>
+    <div class="ticker-sep"></div>
+    <div class="ticker-item"><div class="ticker-text" style="width:85px;height:6px;background:#222;border-radius:1px;"></div><div style="font-size:8px;color:#333;">no signal</div></div>
+    <div class="ticker-sep"></div>
+    <div class="ticker-item"><div class="ticker-text" style="width:90px;height:6px;background:#222;border-radius:1px;"></div><div class="ticker-pill">+12pp</div></div>
+    <div class="ticker-sep"></div>
+    <div class="ticker-item"><div class="ticker-text" style="width:80px;height:6px;background:#222;border-radius:1px;"></div><div class="ticker-pill" style="background:rgba(240,165,0,0.1);border-color:rgba(240,165,0,0.2);color:rgba(240,165,0,0.6);">+5pp</div></div>
+  </div>
+
+  <!-- MAIN GRID: CARDS + SIDEBAR -->
+  <div style="display:grid;grid-template-columns:1fr 280px;gap:0;margin-bottom:0;">
+
+    <!-- left: card tiers -->
+    <div style="border-right:1px solid #1a1a25;padding:20px;">
+
+      <!-- HIGH EDGE tier -->
+      <div class="mb20">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <div class="skel" style="height:8px;width:70px;background:rgba(0,255,133,0.25);"></div>
+          <div class="skel" style="height:6px;width:180px;"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,300px);gap:16px;overflow:hidden;">
+          <div class="wf-card accent-green" style="position:relative;">
+            <span class="annotation">flip card</span>
+            <div class="wf-card-header"></div>
+            <div class="wf-card-body">
+              <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><div class="skel" style="height:6px;width:60%;"></div><div style="height:18px;width:36px;background:rgba(0,255,133,0.2);border-radius:1px;font-size:8px;color:rgba(0,255,133,0.5);display:flex;align-items:center;justify-content:center;">+11pp</div></div>
+              <div class="wf-card-row"></div>
+              <div class="wf-card-row" style="width:85%;"></div>
+              <div class="wf-card-row" style="width:70%;"></div>
+            </div>
+          </div>
+          <div class="wf-card accent-green"><div class="wf-card-header"></div><div class="wf-card-body"><div class="wf-card-row"></div><div class="wf-card-row" style="width:80%;"></div><div class="wf-card-row" style="width:65%;"></div></div></div>
+        </div>
+      </div>
+
+      <!-- MID EDGE tier -->
+      <div class="mb20">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <div class="skel" style="height:8px;width:70px;background:rgba(240,165,0,0.25);"></div>
+          <div class="skel" style="height:6px;width:160px;"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,300px);gap:16px;overflow:hidden;">
+          <div class="wf-card accent-amber"><div class="wf-card-header" style="background:linear-gradient(135deg,#201520,#1a1030);"></div><div class="wf-card-body"><div class="wf-card-row"></div><div class="wf-card-row" style="width:90%;"></div><div class="wf-card-row" style="width:70%;"></div></div></div>
+          <div class="wf-card accent-amber"><div class="wf-card-header" style="background:linear-gradient(135deg,#201520,#1a1030);"></div><div class="wf-card-body"><div class="wf-card-row"></div><div class="wf-card-row" style="width:75%;"></div></div></div>
+          <div class="wf-card accent-amber"><div class="wf-card-header" style="background:linear-gradient(135deg,#201520,#1a1030);"></div><div class="wf-card-body"><div class="wf-card-row"></div><div class="wf-card-row" style="width:80%;"></div></div></div>
+        </div>
+      </div>
+
+      <!-- NO SIGNAL tier -->
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <div class="skel" style="height:8px;width:80px;"></div>
+          <div class="skel" style="height:6px;width:140px;"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,300px);gap:16px;overflow:hidden;opacity:0.5;">
+          <div class="wf-card"><div class="wf-card-header" style="background:#111118;"></div><div class="wf-card-body"><div class="wf-card-row"></div><div class="wf-card-row" style="width:75%;"></div></div></div>
+          <div class="wf-card"><div class="wf-card-header" style="background:#111118;"></div><div class="wf-card-body"><div class="wf-card-row"></div><div class="wf-card-row" style="width:80%;"></div></div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- right: sidebar -->
+    <div style="background:#0E0E18;padding:20px;border-left:1px solid #1a1a25;">
+
+      <div class="wf-sidebar-card accent-blue">
+        <div class="wf-sidebar-head">
+          <div class="skel" style="height:7px;width:110px;"></div>
+          <div class="skel" style="height:7px;width:50px;background:rgba(74,127,212,0.2);"></div>
+        </div>
+        <div class="wf-sidebar-body">
+          <div style="font-size:36px;color:rgba(0,255,133,0.4);font-weight:900;line-height:1;margin-bottom:4px;">48%</div>
+          <div class="skel" style="height:5px;width:120px;margin-bottom:12px;"></div>
+          <!-- mini bar chart -->
+          <div class="chart-bars" style="height:44px;margin-bottom:10px;">
+            <div class="chart-bar-el" style="height:60%;"></div><div class="chart-bar-el" style="height:80%;"></div><div class="chart-bar-el" style="height:50%;"></div><div class="chart-bar-el" style="height:90%;background:rgba(0,255,133,0.4);"></div><div class="chart-bar-el" style="height:70%;"></div><div class="chart-bar-el" style="height:55%;"></div>
+          </div>
+          <!-- 2x2 stat grid -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#1a1a25;margin-bottom:8px;">
+            <div style="background:#111118;padding:8px;"><div style="height:14px;background:#2a2a38;border-radius:1px;margin-bottom:4px;width:50%;"></div><div class="skel" style="height:5px;width:80%;"></div></div>
+            <div style="background:#111118;padding:8px;"><div style="height:14px;background:#2a2a38;border-radius:1px;margin-bottom:4px;width:50%;"></div><div class="skel" style="height:5px;width:80%;"></div></div>
+            <div style="background:#111118;padding:8px;"><div style="height:14px;background:#2a2a38;border-radius:1px;margin-bottom:4px;width:50%;"></div><div class="skel" style="height:5px;width:80%;"></div></div>
+            <div style="background:#111118;padding:8px;"><div style="height:14px;background:#2a2a38;border-radius:1px;margin-bottom:4px;width:50%;"></div><div class="skel" style="height:5px;width:80%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wf-sidebar-card">
+        <div class="wf-sidebar-head"><div class="skel" style="height:7px;width:130px;"></div></div>
+        <div class="wf-sidebar-body" style="display:flex;flex-direction:column;gap:5px;">
+          <div class="skel" style="height:5px;width:100%;"></div>
+          <div class="skel" style="height:5px;width:90%;"></div>
+          <div class="skel" style="height:5px;width:85%;"></div>
+          <div class="skel" style="height:5px;width:95%;"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="wf-divider"></div>
+
+  <!-- MODEL PERFORMANCE section -->
+  <div class="mb24">
+    <div class="section-label">Model Performance (new section)</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+
+      <!-- Monthly accuracy chart -->
+      <div class="wf-sidebar-card accent-blue" style="margin-bottom:0;">
+        <div class="wf-sidebar-head">
+          <div class="skel" style="height:7px;width:120px;"></div>
+          <div class="skel" style="height:7px;width:80px;"></div>
+        </div>
+        <div style="padding:14px;">
+          <div style="height:90px;position:relative;margin-bottom:8px;">
+            <!-- line chart skeleton -->
+            <svg viewBox="0 0 300 80" style="width:100%;height:100%;" preserveAspectRatio="none">
+              <polyline points="10,50 40,45 70,48 100,35 130,30 160,55 190,60 220,52 250,54 280,38"
+                fill="none" stroke="rgba(0,255,133,0.3)" stroke-width="1.5"/>
+              <polyline points="10,50 40,45 70,48 100,35 130,30 160,55 190,60 220,52 250,54 280,38"
+                fill="none" stroke="rgba(0,255,133,0.0)"/>
+              <circle cx="130" cy="30" r="3" fill="rgba(0,255,133,0.5)"/>
+              <circle cx="160" cy="55" r="3" fill="rgba(255,100,100,0.5)"/>
+              <circle cx="190" cy="60" r="3" fill="rgba(255,100,100,0.5)"/>
+            </svg>
+          </div>
+          <div style="display:flex;gap:16px;">
+            <div style="display:flex;align-items:center;gap:4px;"><div style="width:6px;height:6px;border-radius:50%;background:rgba(0,255,133,0.5);"></div><div class="skel" style="height:5px;width:60px;"></div></div>
+            <div style="display:flex;align-items:center;gap:4px;"><div style="width:6px;height:6px;border-radius:50%;background:rgba(74,127,212,0.5);"></div><div class="skel" style="height:5px;width:40px;"></div></div>
+            <div style="display:flex;align-items:center;gap:4px;"><div style="width:6px;height:6px;border-radius:50%;background:rgba(255,100,100,0.5);"></div><div class="skel" style="height:5px;width:50px;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call type breakdown -->
+      <div class="wf-sidebar-card accent-blue" style="margin-bottom:0;">
+        <div class="wf-sidebar-head"><div class="skel" style="height:7px;width:150px;"></div></div>
+        <div style="padding:14px;display:flex;flex-direction:column;gap:14px;">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:5px;"><div class="skel" style="height:7px;width:70px;"></div><div style="font-size:18px;font-weight:900;color:rgba(74,127,212,0.6);line-height:1;">51%</div></div>
+            <div class="prog-wrap"><div class="prog-fill" style="width:51%;background:rgba(74,127,212,0.4);"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:5px;"><div class="skel" style="height:7px;width:50px;"></div><div style="font-size:18px;font-weight:900;color:rgba(240,165,0,0.6);line-height:1;">36%</div></div>
+            <div class="prog-wrap"><div class="prog-fill" style="width:36%;background:rgba(240,165,0,0.4);"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:5px;"><div class="skel" style="height:7px;width:65px;"></div><div style="font-size:18px;font-weight:900;color:rgba(0,255,133,0.6);line-height:1;">48%</div></div>
+            <div class="prog-wrap"><div class="prog-fill" style="width:48%;background:rgba(0,255,133,0.4);"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="wf-divider"></div>
+
+  <!-- TEAM ALIGNMENT -->
+  <div class="mb24">
+    <div class="section-label">Model Alignment by Team</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#1a1a22;">
+      <div class="team-row"><div class="team-rank" style="color:rgba(0,255,133,0.5);">#1</div><div class="team-bar" style="background:#C8102E;"></div><div class="team-name"></div><div class="team-acc"></div><div style="font-size:14px;color:rgba(0,255,133,0.5);font-weight:900;">82%</div></div>
+      <div class="team-row"><div class="team-rank" style="color:#4A7FD4;">#2</div><div class="team-bar" style="background:#1B458F;"></div><div class="team-name"></div><div class="team-acc"></div><div style="font-size:14px;color:#E0E8F0;font-weight:900;">75%</div></div>
+      <div class="team-row"><div class="team-rank" style="color:#4A7FD4;">#3</div><div class="team-bar" style="background:#034694;"></div><div class="team-name"></div><div class="team-acc"></div><div style="font-size:14px;color:#E0E8F0;font-weight:900;">71%</div></div>
+      <div class="team-row"><div class="team-rank">#4</div><div class="team-bar" style="background:#EF0107;"></div><div class="team-name"></div><div class="team-acc"></div><div style="font-size:14px;color:#8A9AAC;font-weight:900;">60%</div></div>
+      <div class="team-row"><div class="team-rank">#5</div><div class="team-bar" style="background:#005AAF;"></div><div class="team-name"></div><div class="team-acc"></div><div style="font-size:14px;color:#8A9AAC;font-weight:900;">55%</div></div>
+      <div class="team-row"><div class="team-rank">#6</div><div class="team-bar" style="background:#670E36;"></div><div class="team-name"></div><div class="team-acc"></div><div style="font-size:14px;color:#8A9AAC;font-weight:900;">50%</div></div>
+    </div>
+    <div style="margin-top:8px;font-size:8px;color:#2a2a40;letter-spacing:0.06em;">Accuracy = correct predictions ÷ completed fixtures · Home + Away appearances counted</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="section-label">Footer</div>
+  <div class="wf-footer"><div class="wf-footer-skel" style="width:120px;"></div><div class="wf-footer-skel" style="width:200px;"></div><div class="wf-footer-skel" style="width:80px;"></div></div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     PAGE 3 · PRICE INTELLIGENCE
+═══════════════════════════════════════════════════════════════════════════ -->
+<div id="wf-odds" class="wf-page">
+
+  <div class="wf-banner">
+    <div class="wf-banner-dot" style="background:#4A7FD4;"></div>
+    <span class="wf-banner-label">Price Intelligence</span>
+    <span class="wf-banner-route">/odds</span>
+  </div>
+
+  <!-- NAV -->
+  <div class="wf-nav mb16">
+    <div class="wf-nav-logo"><div class="bar-group"><div class="bar" style="height:7px;"></div><div class="bar" style="height:11px;"></div><div class="bar" style="height:16px;"></div></div><span style="font-size:11px;color:#555;letter-spacing:0.08em;text-transform:uppercase;">Edge Analysts</span></div>
+    <div class="wf-nav-links"><div class="nav-link-pill">Signals</div><div class="nav-link-pill active">Price Intel</div><div class="nav-link-pill">Insights</div></div>
+    <div style="display:flex;gap:8px;"><div class="wf-nav-btn">Join waitlist</div></div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <div class="box mb4" style="padding:28px;align-items:flex-start;flex-direction:column;gap:10px;background:linear-gradient(160deg,rgba(24,83,180,0.06) 0%,transparent 60%);position:relative;">
+    <span class="annotation">page header + watermark "GW32"</span>
+    <div style="display:flex;align-items:center;gap:6px;"><div class="dot"></div><div class="skel" style="height:6px;width:160px;background:rgba(0,255,133,0.2);"></div></div>
+    <div class="skel" style="height:56px;width:280px;"></div>
+    <div class="skel" style="height:56px;width:220px;background:rgba(74,127,212,0.15);"></div>
+    <div class="skel" style="height:6px;width:380px;"></div>
+  </div>
+
+  <!-- QUICK STATS BAR -->
+  <div style="display:flex;gap:0;margin-bottom:16px;background:#111118;border:1px solid #1a1a25;">
+    <div class="stat-box"><div class="stat-n"></div><div class="stat-l"></div></div>
+    <div class="stat-box"><div class="stat-n"></div><div class="stat-l"></div></div>
+    <div class="stat-box"><div class="stat-n" style="background:rgba(0,255,133,0.2);"></div><div class="stat-l"></div></div>
+    <div class="stat-box"><div class="stat-n"></div><div class="stat-l"></div></div>
+  </div>
+
+  <!-- MAIN GRID: FIXTURE TABLE + SIDEBAR -->
+  <div style="display:grid;grid-template-columns:1fr 290px;gap:0;margin-bottom:0;border:1px solid #1a1a25;">
+
+    <!-- left: fixture selector + odds table -->
+    <div style="border-right:1px solid #1a1a25;">
+
+      <!-- fixture tabs -->
+      <div style="display:flex;overflow:hidden;border-bottom:1px solid #1a1a25;background:#0e0e16;height:52px;align-items:flex-end;">
+        <div style="padding:0 16px;height:52px;display:flex;align-items:center;border-bottom:2px solid #4A7FD4;flex-shrink:0;"><div class="skel" style="height:7px;width:100px;"></div></div>
+        <div style="padding:0 16px;height:52px;display:flex;align-items:center;flex-shrink:0;opacity:0.5;"><div class="skel" style="height:7px;width:90px;"></div></div>
+        <div style="padding:0 16px;height:52px;display:flex;align-items:center;flex-shrink:0;opacity:0.5;"><div class="skel" style="height:7px;width:95px;"></div></div>
+        <div style="padding:0 16px;height:52px;display:flex;align-items:center;flex-shrink:0;opacity:0.5;"><div class="skel" style="height:7px;width:80px;"></div></div>
+      </div>
+
+      <!-- fixture header -->
+      <div style="padding:14px 20px;background:#0e0e16;border-bottom:1px solid #1a1a25;display:flex;justify-content:space-between;align-items:center;">
+        <div><div style="display:flex;gap:10px;align-items:center;margin-bottom:4px;"><div class="skel" style="height:16px;width:120px;"></div><div class="skel" style="height:8px;width:20px;background:#1a1a28;"></div><div class="skel" style="height:16px;width:110px;"></div></div><div class="skel" style="height:6px;width:180px;"></div></div>
+        <div style="display:flex;gap:8px;align-items:center;"><div style="height:30px;width:120px;background:rgba(0,255,133,0.08);border:1px solid rgba(0,255,133,0.2);border-radius:1px;display:flex;align-items:center;justify-content:center;font-size:8px;color:rgba(0,255,133,0.5);">Model edge +11pp</div><div style="height:28px;width:70px;background:#1a1a28;border:1px solid #2a2a38;border-radius:1px;"></div></div>
+      </div>
+
+      <!-- best available strip -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid #1a1a25;">
+        <div style="padding:12px 16px;border-right:1px solid rgba(0,255,133,0.06);background:rgba(0,255,133,0.02);">
+          <div class="skel" style="height:6px;width:80%;margin-bottom:8px;background:rgba(0,255,133,0.2);"></div>
+          <div style="display:flex;align-items:baseline;gap:6px;"><div style="font-size:22px;color:rgba(0,255,133,0.5);font-weight:900;line-height:1;">2.10</div><div style="font-size:8px;color:rgba(0,255,133,0.3);">47%</div></div>
+          <div class="skel" style="height:5px;width:70%;margin-top:6px;"></div>
+        </div>
+        <div style="padding:12px 16px;border-right:1px solid rgba(0,255,133,0.06);">
+          <div class="skel" style="height:6px;width:60%;margin-bottom:8px;"></div>
+          <div style="display:flex;align-items:baseline;gap:6px;"><div style="font-size:22px;color:rgba(0,255,133,0.5);font-weight:900;line-height:1;">3.40</div><div style="font-size:8px;color:rgba(0,255,133,0.3);">29%</div></div>
+          <div class="skel" style="height:5px;width:65%;margin-top:6px;"></div>
+        </div>
+        <div style="padding:12px 16px;">
+          <div class="skel" style="height:6px;width:75%;margin-bottom:8px;"></div>
+          <div style="display:flex;align-items:baseline;gap:6px;"><div style="font-size:22px;color:rgba(0,255,133,0.5);font-weight:900;line-height:1;">4.00</div><div style="font-size:8px;color:rgba(0,255,133,0.3);">25%</div></div>
+          <div class="skel" style="height:5px;width:60%;margin-top:6px;"></div>
+        </div>
+      </div>
+
+      <!-- odds table -->
+      <div>
+        <div class="odds-th">
+          <div style="height:6px;width:90px;background:#2a2a35;border-radius:1px;flex-shrink:0;"></div>
+          <div style="height:6px;width:60px;background:#1e1e28;border-radius:1px;"></div>
+          <div style="height:6px;width:60px;background:#1e1e28;border-radius:1px;"></div>
+          <div style="height:6px;width:60px;background:#1e1e28;border-radius:1px;"></div>
+          <div style="height:6px;width:60px;background:#1e1e28;border-radius:1px;"></div>
+          <div style="height:6px;width:50px;background:rgba(0,255,133,0.15);border-radius:1px;"></div>
+        </div>
+        <div class="odds-tr"><div class="odds-cell" style="flex:0 0 90px;background:rgba(0,255,133,0.08);"></div><div class="odds-best"></div><div class="odds-cell"></div><div class="odds-cell"></div><div class="odds-best"></div><div class="odds-best"></div></div>
+        <div class="odds-tr"><div class="odds-cell" style="flex:0 0 90px;"></div><div class="odds-cell"></div><div class="odds-best"></div><div class="odds-cell"></div><div class="odds-cell"></div><div class="odds-best"></div></div>
+        <div class="odds-tr"><div class="odds-cell" style="flex:0 0 90px;"></div><div class="odds-cell"></div><div class="odds-cell"></div><div class="odds-best"></div><div class="odds-cell"></div><div class="odds-best"></div></div>
+      </div>
+
+    </div>
+
+    <!-- right: sidebar -->
+    <div style="background:#0C0C16;padding:16px;">
+      <!-- EA pinned entry -->
+      <div style="padding:12px;background:rgba(0,255,133,0.05);border:1px solid rgba(0,255,133,0.15);margin-bottom:12px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;"><div class="skel" style="height:7px;width:90px;"></div><div style="font-size:16px;color:rgba(0,255,133,0.5);font-weight:900;">67.4%</div></div>
+        <div class="prog-wrap"><div class="prog-fill" style="width:67%;background:rgba(0,255,133,0.4);"></div></div>
+      </div>
+      <!-- bookmaker leaderboard -->
+      <div style="font-size:8px;color:#2a2a40;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">Best price wins this GW</div>
+      {['#1 bet365','#2 Betfair','#3 Sky Bet','#4 Coral','#5 Paddy Power'].map(function(b,i){return '';})}
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <div style="padding:8px 0;border-bottom:1px solid #1a1a22;"><div style="display:flex;gap:8px;align-items:center;margin-bottom:5px;"><div style="width:18px;font-size:9px;color:rgba(0,255,133,0.5);">#1</div><div style="width:3px;height:18px;background:#02A84E;"></div><div class="skel" style="height:7px;flex:1;"></div><div style="font-size:12px;color:rgba(0,255,133,0.4);font-weight:700;">14</div></div><div class="prog-wrap" style="margin-left:26px;"><div class="prog-fill" style="width:78%;background:rgba(2,168,78,0.4);"></div></div></div>
+        <div style="padding:8px 0;border-bottom:1px solid #1a1a22;"><div style="display:flex;gap:8px;align-items:center;margin-bottom:5px;"><div style="width:18px;font-size:9px;color:#3a3a50;">#2</div><div style="width:3px;height:18px;background:#FFB800;"></div><div class="skel" style="height:7px;flex:1;"></div><div style="font-size:12px;color:#3a4a60;font-weight:700;">11</div></div><div class="prog-wrap" style="margin-left:26px;"><div class="prog-fill" style="width:61%;background:rgba(255,184,0,0.3);"></div></div></div>
+        <div style="padding:8px 0;border-bottom:1px solid #1a1a22;opacity:0.7;"><div style="display:flex;gap:8px;align-items:center;margin-bottom:5px;"><div style="width:18px;font-size:9px;color:#3a3a50;">#3</div><div style="width:3px;height:18px;background:#5A9FE0;"></div><div class="skel" style="height:7px;flex:1;"></div><div style="font-size:12px;color:#3a4a60;font-weight:700;">8</div></div><div class="prog-wrap" style="margin-left:26px;"><div class="prog-fill" style="width:44%;background:rgba(90,159,224,0.3);"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wf-divider"></div>
+
+  <!-- SIGNAL INTELLIGENCE section (new) -->
+  <div class="mb24">
+    <div class="section-label">Signal Intelligence (new section)</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+
+      <!-- confidence calibration -->
+      <div class="wf-sidebar-card accent-blue" style="margin-bottom:0;">
+        <div class="wf-sidebar-head"><div class="skel" style="height:7px;width:160px;"></div></div>
+        <div style="padding:16px 18px;border-bottom:1px solid #1a1a25;display:flex;align-items:flex-end;gap:16px;">
+          <div style="font-size:52px;color:rgba(0,255,133,0.5);font-weight:900;line-height:1;">91%</div>
+          <div style="font-size:8px;color:#3a4a5c;line-height:1.7;padding-bottom:4px;">accuracy when<br>confidence ≥70%</div>
+        </div>
+        <div style="padding:14px 18px;display:flex;flex-direction:column;gap:12px;">
+          <div><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><div class="skel" style="height:6px;width:120px;"></div><div style="font-size:18px;color:rgba(0,255,133,0.55);font-weight:900;line-height:1;">91%</div></div><div class="prog-wrap"><div class="prog-fill" style="width:91%;background:rgba(0,255,133,0.4);"></div></div></div>
+          <div><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><div class="skel" style="height:6px;width:100px;"></div><div style="font-size:18px;color:rgba(74,127,212,0.6);font-weight:900;line-height:1;">50%</div></div><div class="prog-wrap"><div class="prog-fill" style="width:50%;background:rgba(74,127,212,0.4);"></div></div></div>
+          <div><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><div class="skel" style="height:6px;width:90px;"></div><div style="font-size:18px;color:rgba(240,165,0,0.6);font-weight:900;line-height:1;">43%</div></div><div class="prog-wrap"><div class="prog-fill" style="width:43%;background:rgba(240,165,0,0.4);"></div></div></div>
+        </div>
+      </div>
+
+      <!-- edge signal vs no edge -->
+      <div class="wf-sidebar-card accent-blue" style="margin-bottom:0;">
+        <div class="wf-sidebar-head"><div class="skel" style="height:7px;width:160px;"></div></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #1a1a25;">
+          <div style="padding:18px;border-right:1px solid #1a1a25;background:rgba(0,255,133,0.03);">
+            <div style="font-size:8px;color:rgba(0,255,133,0.5);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">Edge flagged</div>
+            <div style="font-size:44px;color:rgba(0,255,133,0.5);font-weight:900;line-height:1;margin-bottom:6px;">63%</div>
+            <div class="prog-wrap"><div class="prog-fill" style="width:63%;background:rgba(0,255,133,0.4);"></div></div>
+          </div>
+          <div style="padding:18px;">
+            <div style="font-size:8px;color:#3a4a5c;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">No edge flag</div>
+            <div style="font-size:44px;color:#3a4a60;font-weight:900;line-height:1;margin-bottom:6px;">46%</div>
+            <div class="prog-wrap"><div class="prog-fill" style="width:46%;background:#2a3a50;"></div></div>
+          </div>
+        </div>
+        <div style="padding:14px 18px;display:flex;align-items:center;gap:14px;">
+          <div style="padding:10px 16px;background:rgba(0,255,133,0.08);border:1px solid rgba(0,255,133,0.2);text-align:center;flex-shrink:0;">
+            <div style="font-size:24px;color:rgba(0,255,133,0.6);font-weight:900;line-height:1;">+17pp</div>
+            <div style="font-size:8px;color:rgba(0,255,133,0.4);margin-top:3px;">advantage</div>
+          </div>
+          <div class="skel" style="height:5px;flex:1;"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="wf-divider"></div>
+
+  <!-- MARKET OFFERS -->
+  <div class="mb24">
+    <div class="section-label">Market Offers &amp; Promotions</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#1a1a22;">
+      <div class="offer-card" style="border-top-color:rgba(2,168,78,0.5);"><div style="height:7px;width:60px;background:rgba(2,168,78,0.3);border-radius:1px;margin-bottom:8px;"></div><div class="offer-headline"></div><div class="offer-body1"></div><div class="offer-body2"></div><div class="offer-cta" style="background:rgba(2,168,78,0.6);"></div></div>
+      <div class="offer-card" style="border-top-color:rgba(255,184,0,0.4);"><div style="height:7px;width:60px;background:rgba(255,184,0,0.2);border-radius:1px;margin-bottom:8px;"></div><div class="offer-headline"></div><div class="offer-body1"></div><div class="offer-body2"></div><div class="offer-cta"></div></div>
+      <div class="offer-card" style="border-top-color:rgba(92,208,26,0.4);"><div style="height:7px;width:60px;background:rgba(92,208,26,0.2);border-radius:1px;margin-bottom:8px;"></div><div class="offer-headline"></div><div class="offer-body1"></div><div class="offer-body2"></div><div class="offer-cta" style="background:rgba(92,208,26,0.4);"></div></div>
+      <div class="offer-card"><div style="height:7px;width:60px;background:#2a2a35;border-radius:1px;margin-bottom:8px;"></div><div class="offer-headline"></div><div class="offer-body1"></div><div class="offer-body2"></div><div class="offer-cta"></div></div>
+      <div class="offer-card"><div style="height:7px;width:60px;background:#2a2a35;border-radius:1px;margin-bottom:8px;"></div><div class="offer-headline"></div><div class="offer-body1"></div><div class="offer-body2"></div><div class="offer-cta"></div></div>
+      <div class="offer-card"><div style="height:7px;width:60px;background:#2a2a35;border-radius:1px;margin-bottom:8px;"></div><div class="offer-headline"></div><div class="offer-body1"></div><div class="offer-body2"></div><div class="offer-cta"></div></div>
+    </div>
+  </div>
+
+  <div class="section-label">Footer</div>
+  <div class="wf-footer"><div class="wf-footer-skel" style="width:120px;"></div><div class="wf-footer-skel" style="width:200px;"></div><div class="wf-footer-skel" style="width:80px;"></div></div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     PAGE 4 · INSIGHTS / ARTICLES
+═══════════════════════════════════════════════════════════════════════════ -->
+<div id="wf-articles" class="wf-page">
+
+  <div class="wf-banner">
+    <div class="wf-banner-dot" style="background:#1DA1F2;"></div>
+    <span class="wf-banner-label">Insights / Articles</span>
+    <span class="wf-banner-route">/articles</span>
+  </div>
+
+  <!-- NAV -->
+  <div class="wf-nav mb16">
+    <div class="wf-nav-logo"><div class="bar-group"><div class="bar" style="height:7px;"></div><div class="bar" style="height:11px;"></div><div class="bar" style="height:16px;"></div></div><span style="font-size:11px;color:#555;letter-spacing:0.08em;text-transform:uppercase;">Edge Analysts</span></div>
+    <div class="wf-nav-links"><div class="nav-link-pill">Signals</div><div class="nav-link-pill">Price Intel</div><div class="nav-link-pill active">Insights</div></div>
+    <div style="display:flex;gap:8px;"><div class="wf-nav-btn">Join waitlist</div></div>
+  </div>
+
+  <!-- 3-COLUMN HEADER -->
+  <div class="mb16">
+    <div class="section-label">3-column header: Title · League Table · Twitter Feed</div>
+    <div style="display:grid;grid-template-columns:1fr minmax(260px,310px) minmax(320px,400px);gap:20px;align-items:start;">
+
+      <!-- col 1: title -->
+      <div class="box" style="min-height:380px;flex-direction:column;align-items:flex-start;padding:28px;gap:12px;position:relative;">
+        <span class="annotation">title + description</span>
+        <div style="display:flex;align-items:center;gap:6px;"><div class="dot"></div><div class="skel" style="height:6px;width:160px;background:rgba(0,255,133,0.2);"></div></div>
+        <div class="skel" style="height:60px;width:90%;"></div>
+        <div class="skel" style="height:60px;width:75%;background:rgba(74,127,212,0.15);"></div>
+        <div style="display:flex;flex-direction:column;gap:4px;width:100%;margin-top:8px;">
+          <div class="skel" style="height:6px;width:95%;"></div>
+          <div class="skel" style="height:6px;width:80%;"></div>
+        </div>
+      </div>
+
+      <!-- col 2: league table placeholder -->
+      <div class="box accent-table" style="flex-direction:column;padding:0;overflow:hidden;min-height:380px;position:relative;">
+        <span class="annotation">LeagueTable.js</span>
+        <!-- header -->
+        <div style="padding:10px 14px;border-bottom:1px solid #1a1a25;background:#181820;display:flex;justify-content:space-between;align-items:center;width:100%;flex-shrink:0;">
+          <div style="display:flex;align-items:center;gap:6px;"><div class="skel" style="width:10px;height:10px;background:rgba(74,127,212,0.3);"></div><div class="skel" style="height:6px;width:60px;background:rgba(74,127,212,0.25);"></div></div>
+          <div class="skel" style="height:5px;width:40px;"></div>
+        </div>
+        <!-- column headers -->
+        <div style="display:grid;grid-template-columns:20px 1fr 22px 22px 22px 26px;gap:4px;padding:8px 12px;border-bottom:1px solid #1a1a22;">
+          <div class="skel" style="height:5px;"></div><div class="skel" style="height:5px;"></div><div class="skel" style="height:5px;"></div><div class="skel" style="height:5px;"></div><div class="skel" style="height:5px;"></div><div class="skel" style="height:5px;background:rgba(74,127,212,0.15);"></div>
+        </div>
+        <!-- skeleton rows -->
+        <div style="flex:1;display:flex;flex-direction:column;">
+          <div style="display:grid;grid-template-columns:20px 1fr 22px 22px 22px 26px;gap:4px;padding:6px 12px;border-bottom:1px solid #1a1a1e;align-items:center;"><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;width:70%;"></div><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;background:rgba(74,127,212,0.12);"></div></div>
+          <div style="display:grid;grid-template-columns:20px 1fr 22px 22px 22px 26px;gap:4px;padding:6px 12px;border-bottom:1px solid #1a1a1e;align-items:center;"><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;width:80%;"></div><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;background:rgba(74,127,212,0.12);"></div></div>
+          <div style="display:grid;grid-template-columns:20px 1fr 22px 22px 22px 26px;gap:4px;padding:6px 12px;border-bottom:1px solid #1a1a1e;align-items:center;"><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;width:65%;"></div><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;background:rgba(74,127,212,0.12);"></div></div>
+          <div style="display:grid;grid-template-columns:20px 1fr 22px 22px 22px 26px;gap:4px;padding:6px 12px;border-bottom:1px solid #1a1a1e;align-items:center;opacity:0.7;"><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;width:75%;"></div><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;background:rgba(74,127,212,0.08);"></div></div>
+          <div style="display:grid;grid-template-columns:20px 1fr 22px 22px 22px 26px;gap:4px;padding:6px 12px;border-bottom:1px solid #1a1a1e;align-items:center;opacity:0.6;"><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;width:60%;"></div><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;background:rgba(74,127,212,0.08);"></div></div>
+          <div style="display:grid;grid-template-columns:20px 1fr 22px 22px 22px 26px;gap:4px;padding:6px 12px;border-bottom:1px solid #1a1a1e;align-items:center;opacity:0.5;"><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;width:68%;"></div><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;"></div><div class="skel" style="height:6px;background:rgba(74,127,212,0.06);"></div></div>
+          <div style="flex:1;display:flex;align-items:flex-end;justify-content:center;padding:10px;">
+            <div style="font-size:8px;color:#2a2a3c;text-align:center;letter-spacing:0.06em;line-height:1.8;">Paste widget URL to activate<br><span style="color:#3a4a6c;">app/components/LeagueTable.js</span></div>
+          </div>
+        </div>
+        <!-- footer -->
+        <div style="padding:6px 12px;border-top:1px solid #1a1a22;flex-shrink:0;"><div class="skel" style="height:5px;width:140px;"></div></div>
+      </div>
+
+      <!-- col 3: twitter feed -->
+      <div class="box accent-twitter" style="flex-direction:column;padding:0;overflow:hidden;min-height:380px;position:relative;">
+        <span class="annotation">X / Twitter feed</span>
+        <!-- header -->
+        <div style="padding:10px 14px;border-bottom:1px solid #1a1a25;background:#181820;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;width:100%;">
+          <div style="display:flex;align-items:center;gap:6px;"><div style="width:12px;height:12px;background:#1DA1F2;border-radius:1px;opacity:0.7;"></div><div class="skel" style="height:6px;width:90px;background:rgba(29,161,242,0.25);"></div></div>
+          <div class="skel" style="height:5px;width:70px;"></div>
+        </div>
+        <!-- account tabs -->
+        <div style="display:flex;border-bottom:1px solid #1a1a25;background:#0e0e16;flex-shrink:0;overflow:hidden;">
+          <div style="padding:7px 12px;border-bottom:2px solid #1DA1F2;font-size:8px;color:rgba(29,161,242,0.6);">Analyst 1</div>
+          <div style="padding:7px 12px;border-bottom:2px solid transparent;font-size:8px;color:#2a2a40;">Analyst 2</div>
+          <div style="padding:7px 12px;border-bottom:2px solid transparent;font-size:8px;color:#2a2a40;">Analyst 3</div>
+          <div style="padding:7px 12px;border-bottom:2px solid transparent;font-size:8px;color:#2a2a40;">Analyst 4</div>
+        </div>
+        <!-- tweet skeletons -->
+        <div style="flex:1;padding:12px;display:flex;flex-direction:column;gap:10px;">
+          <div style="padding:10px;background:#111118;border:1px solid #1a1a25;border-radius:2px;display:flex;flex-direction:column;gap:5px;">
+            <div class="skel" style="height:6px;width:50%;"></div>
+            <div class="skel" style="height:5px;width:100%;"></div>
+            <div class="skel" style="height:5px;width:85%;"></div>
+            <div class="skel" style="height:5px;width:70%;"></div>
+          </div>
+          <div style="padding:10px;background:#111118;border:1px solid #1a1a25;border-radius:2px;display:flex;flex-direction:column;gap:5px;">
+            <div class="skel" style="height:6px;width:45%;"></div>
+            <div class="skel" style="height:5px;width:95%;"></div>
+            <div class="skel" style="height:5px;width:80%;"></div>
+          </div>
+          <div style="padding:10px;background:#111118;border:1px solid #1a1a25;border-radius:2px;display:flex;flex-direction:column;gap:5px;opacity:0.7;">
+            <div class="skel" style="height:6px;width:55%;"></div>
+            <div class="skel" style="height:5px;width:90%;"></div>
+            <div class="skel" style="height:5px;width:65%;"></div>
+          </div>
+        </div>
+        <!-- view full feed link -->
+        <div style="padding:7px 14px;border-top:1px solid #1a1a25;text-align:right;flex-shrink:0;"><div class="skel" style="height:5px;width:100px;background:rgba(29,161,242,0.2);display:inline-block;"></div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TAB BAR -->
+  <div style="display:flex;border-top:1px solid #1a1a25;margin-bottom:16px;">
+    <div style="padding:12px 20px;border-bottom:2px solid #4A7FD4;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#4A7FD4;">Upcoming</div>
+    <div style="padding:12px 20px;border-bottom:2px solid transparent;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#2a2a40;">Results</div>
+  </div>
+
+  <!-- ARTICLES GRID -->
+  <div class="mb24">
+    <div class="section-label">Article cards grid</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1px;background:#1a1a22;">
+      <div class="article-card"><div class="article-card-head"></div><div class="article-card-body"><div class="art-tag"></div><div class="art-h"></div><div class="art-h2"></div><div class="art-p"></div><div class="art-p2"></div><div class="art-p3"></div></div></div>
+      <div class="article-card"><div class="article-card-head" style="background:rgba(240,165,0,0.25);"></div><div class="article-card-body"><div class="art-tag" style="background:rgba(240,165,0,0.15);"></div><div class="art-h"></div><div class="art-h2"></div><div class="art-p"></div><div class="art-p2"></div><div class="art-p3"></div></div></div>
+      <div class="article-card"><div class="article-card-head"></div><div class="article-card-body"><div class="art-tag"></div><div class="art-h"></div><div class="art-h2"></div><div class="art-p"></div><div class="art-p2"></div><div class="art-p3"></div></div></div>
+      <div class="article-card"><div class="article-card-head" style="background:rgba(0,255,133,0.15);"></div><div class="article-card-body"><div class="art-tag" style="background:rgba(0,255,133,0.12);"></div><div class="art-h"></div><div class="art-h2"></div><div class="art-p"></div><div class="art-p2"></div><div class="art-p3"></div></div></div>
+      <div class="article-card"><div class="article-card-head"></div><div class="article-card-body"><div class="art-tag"></div><div class="art-h"></div><div class="art-h2"></div><div class="art-p"></div><div class="art-p2"></div></div></div>
+      <div class="article-card"><div class="article-card-head"></div><div class="article-card-body"><div class="art-tag"></div><div class="art-h"></div><div class="art-h2"></div><div class="art-p"></div><div class="art-p2"></div></div></div>
+    </div>
+  </div>
+
+  <div class="section-label">Footer</div>
+  <div class="wf-footer"><div class="wf-footer-skel" style="width:120px;"></div><div class="wf-footer-skel" style="width:200px;"></div><div class="wf-footer-skel" style="width:80px;"></div></div>
+</div>
+
+<script>
+  function show(page) {
+    document.querySelectorAll('.wf-page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.wf-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('wf-' + page).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+</body>
+</html>
