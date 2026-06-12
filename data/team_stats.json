@@ -262,19 +262,6 @@
       "rank": 20
     },
     {
-      "team": "Sweden",
-      "elo": 1810,
-      "conf": "UEFA",
-      "group": "F",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
-      "win_prob_pct": 0.7,
-      "rank": 21
-    },
-    {
       "team": "USA",
       "elo": 1810,
       "conf": "CONCACAF",
@@ -285,6 +272,19 @@
       "avg_gf": 0.0,
       "avg_ga": 0.0,
       "win_prob_pct": 1.7,
+      "rank": 21
+    },
+    {
+      "team": "Sweden",
+      "elo": 1810,
+      "conf": "UEFA",
+      "group": "F",
+      "played": 0,
+      "wins": 0,
+      "win_rate": 0.0,
+      "avg_gf": 0.0,
+      "avg_ga": 0.0,
+      "win_prob_pct": 0.7,
       "rank": 22
     },
     {
@@ -353,10 +353,10 @@
       "rank": 27
     },
     {
-      "team": "Scotland",
+      "team": "Algeria",
       "elo": 1680,
-      "conf": "UEFA",
-      "group": "C",
+      "conf": "CAF",
+      "group": "J",
       "played": 0,
       "wins": 0,
       "win_rate": 0.0,
@@ -366,10 +366,10 @@
       "rank": 28
     },
     {
-      "team": "Algeria",
+      "team": "Scotland",
       "elo": 1680,
-      "conf": "CAF",
-      "group": "J",
+      "conf": "UEFA",
+      "group": "C",
       "played": 0,
       "wins": 0,
       "win_rate": 0.0,
@@ -535,10 +535,10 @@
       "rank": 41
     },
     {
-      "team": "Iraq",
+      "team": "Qatar",
       "elo": 1530,
       "conf": "AFC",
-      "group": "I",
+      "group": "B",
       "played": 0,
       "wins": 0,
       "win_rate": 0.0,
@@ -548,10 +548,10 @@
       "rank": 42
     },
     {
-      "team": "Qatar",
+      "team": "Iraq",
       "elo": 1530,
       "conf": "AFC",
-      "group": "B",
+      "group": "I",
       "played": 0,
       "wins": 0,
       "win_rate": 0.0,
