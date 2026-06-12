@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-11",
+  "generated": "2026-06-12",
   "model": "Dixon-Coles + Elo",
-  "wc_results_applied": 0,
+  "wc_results_applied": 2,
   "matches": [
     {
       "id": "A1",
@@ -11,25 +11,19 @@
       "home": "Mexico",
       "away": "South Africa",
       "venue": "Mexico City Stadium",
-      "home_elo": 1820,
-      "away_elo": 1591,
-      "home_xg": 2.55,
-      "away_xg": 0.81,
-      "prob_home": 74.8,
-      "prob_draw": 15.4,
-      "prob_away": 9.8,
-      "odds_home": 1.34,
-      "odds_draw": 6.49,
-      "odds_away": 10.24,
+      "home_elo": 1831,
+      "away_elo": 1580,
+      "home_xg": 2.57,
+      "away_xg": 0.8,
+      "prob_home": 75.4,
+      "prob_draw": 15.2,
+      "prob_away": 9.4,
+      "odds_home": 1.33,
+      "odds_draw": 6.6,
+      "odds_away": 10.63,
       "prediction": "Mexico",
-      "confidence": 74.8,
-      "model_insight": "Mexico strong favourites (Elo gap 379). Host nation +150 Elo boost applied.",
-      "actual_result": "Mexico",
-      "actual_score": "2\u20130",
-      "home_score": 2,
-      "away_score": 0,
-      "model_correct": true,
-      "status": "completed"
+      "confidence": 75.4,
+      "model_insight": "Mexico strong favourites (Elo gap 400.61796421528015). Host nation +150 Elo boost applied."
     },
     {
       "id": "A2",
@@ -39,25 +33,19 @@
       "home": "South Korea",
       "away": "Czechia",
       "venue": "Estadio Guadalajara, Zapopan",
-      "home_elo": 1755,
-      "away_elo": 1605,
-      "home_xg": 2.19,
-      "away_xg": 1.08,
-      "prob_home": 62.7,
-      "prob_draw": 19.7,
-      "prob_away": 17.6,
-      "odds_home": 1.6,
-      "odds_draw": 5.07,
-      "odds_away": 5.68,
+      "home_elo": 1770,
+      "away_elo": 1590,
+      "home_xg": 2.26,
+      "away_xg": 1.03,
+      "prob_home": 65.0,
+      "prob_draw": 19.0,
+      "prob_away": 16.0,
+      "odds_home": 1.54,
+      "odds_draw": 5.26,
+      "odds_away": 6.25,
       "prediction": "South Korea",
-      "confidence": 62.7,
-      "model_insight": "South Korea slight edge (Elo gap 150).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "confidence": 65.0,
+      "model_insight": "South Korea slight edge (Elo gap 180.3733756444849)."
     },
     {
       "id": "B1",
@@ -79,13 +67,7 @@
       "odds_away": 6.72,
       "prediction": "Canada",
       "confidence": 66.6,
-      "model_insight": "Canada strong favourites (Elo gap 204). Host nation +100 Elo boost applied.",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Canada strong favourites (Elo gap 204). Host nation +100 Elo boost applied."
     },
     {
       "id": "D1",
@@ -107,13 +89,7 @@
       "odds_away": 8.49,
       "prediction": "USA",
       "confidence": 71.5,
-      "model_insight": "USA strong favourites (Elo gap 290). Host nation +100 Elo boost applied.",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "USA strong favourites (Elo gap 290). Host nation +100 Elo boost applied."
     },
     {
       "id": "B2",
@@ -135,13 +111,7 @@
       "odds_away": 1.81,
       "prediction": "Switzerland",
       "confidence": 55.4,
-      "model_insight": "Switzerland strong favourites (Elo gap 367).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Switzerland strong favourites (Elo gap 367)."
     },
     {
       "id": "C1",
@@ -163,13 +133,7 @@
       "odds_away": 5.48,
       "prediction": "Brazil",
       "confidence": 61.8,
-      "model_insight": "Brazil slight edge (Elo gap 139).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Brazil slight edge (Elo gap 139)."
     },
     {
       "id": "C2",
@@ -191,13 +155,7 @@
       "odds_away": 2.09,
       "prediction": "Scotland",
       "confidence": 47.9,
-      "model_insight": "Scotland strong favourites (Elo gap 230).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Scotland strong favourites (Elo gap 230)."
     },
     {
       "id": "D2",
@@ -219,13 +177,7 @@
       "odds_away": 2.7,
       "prediction": "Australia",
       "confidence": 39.2,
-      "model_insight": "Turkey slight edge (Elo gap 95).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Turkey slight edge (Elo gap 95)."
     },
     {
       "id": "E1",
@@ -247,13 +199,7 @@
       "odds_away": 12.01,
       "prediction": "Germany",
       "confidence": 77.3,
-      "model_insight": "Germany strong favourites (Elo gap 490).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Germany strong favourites (Elo gap 490)."
     },
     {
       "id": "F1",
@@ -275,13 +221,7 @@
       "odds_away": 4.52,
       "prediction": "Netherlands",
       "confidence": 56.5,
-      "model_insight": "Netherlands slight edge (Elo gap 80).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Netherlands slight edge (Elo gap 80)."
     },
     {
       "id": "E2",
@@ -303,13 +243,7 @@
       "odds_away": 2.0,
       "prediction": "Ecuador",
       "confidence": 50.1,
-      "model_insight": "Ecuador strong favourites (Elo gap 263).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Ecuador strong favourites (Elo gap 263)."
     },
     {
       "id": "F2",
@@ -331,13 +265,7 @@
       "odds_away": 6.64,
       "prediction": "Sweden",
       "confidence": 66.4,
-      "model_insight": "Sweden slight edge (Elo gap 200).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Sweden slight edge (Elo gap 200)."
     },
     {
       "id": "H1",
@@ -359,13 +287,7 @@
       "odds_away": 13.58,
       "prediction": "Spain",
       "confidence": 79.1,
-      "model_insight": "Spain strong favourites (Elo gap 651).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Spain strong favourites (Elo gap 651)."
     },
     {
       "id": "G1",
@@ -387,13 +309,7 @@
       "odds_away": 7.64,
       "prediction": "Belgium",
       "confidence": 69.4,
-      "model_insight": "Belgium strong favourites (Elo gap 249).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Belgium strong favourites (Elo gap 249)."
     },
     {
       "id": "H2",
@@ -415,13 +331,7 @@
       "odds_away": 1.93,
       "prediction": "Uruguay",
       "confidence": 51.9,
-      "model_insight": "Uruguay strong favourites (Elo gap 295).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Uruguay strong favourites (Elo gap 295)."
     },
     {
       "id": "G2",
@@ -443,13 +353,7 @@
       "odds_away": 7.87,
       "prediction": "Iran",
       "confidence": 70.0,
-      "model_insight": "Iran strong favourites (Elo gap 260).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Iran strong favourites (Elo gap 260)."
     },
     {
       "id": "I1",
@@ -471,13 +375,7 @@
       "odds_away": 6.52,
       "prediction": "France",
       "confidence": 66.0,
-      "model_insight": "France slight edge (Elo gap 194).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "France slight edge (Elo gap 194)."
     },
     {
       "id": "I2",
@@ -499,13 +397,7 @@
       "odds_away": 1.78,
       "prediction": "Norway",
       "confidence": 56.3,
-      "model_insight": "Norway strong favourites (Elo gap 392).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Norway strong favourites (Elo gap 392)."
     },
     {
       "id": "J1",
@@ -527,13 +419,7 @@
       "odds_away": 11.17,
       "prediction": "Argentina",
       "confidence": 76.2,
-      "model_insight": "Argentina strong favourites (Elo gap 433).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Argentina strong favourites (Elo gap 433)."
     },
     {
       "id": "J2",
@@ -555,13 +441,7 @@
       "odds_away": 8.59,
       "prediction": "Austria",
       "confidence": 71.7,
-      "model_insight": "Austria strong favourites (Elo gap 295).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Austria strong favourites (Elo gap 295)."
     },
     {
       "id": "K1",
@@ -583,13 +463,7 @@
       "odds_away": 11.22,
       "prediction": "Portugal",
       "confidence": 76.3,
-      "model_insight": "Portugal strong favourites (Elo gap 436).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Portugal strong favourites (Elo gap 436)."
     },
     {
       "id": "L1",
@@ -611,13 +485,7 @@
       "odds_away": 4.97,
       "prediction": "England",
       "confidence": 59.2,
-      "model_insight": "England slight edge (Elo gap 109).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "England slight edge (Elo gap 109)."
     },
     {
       "id": "L2",
@@ -639,13 +507,7 @@
       "odds_away": 4.24,
       "prediction": "Ghana",
       "confidence": 54.6,
-      "model_insight": "Ghana slight edge (Elo gap 60).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Ghana slight edge (Elo gap 60)."
     },
     {
       "id": "K2",
@@ -667,13 +529,7 @@
       "odds_away": 1.76,
       "prediction": "Colombia",
       "confidence": 56.9,
-      "model_insight": "Colombia strong favourites (Elo gap 408).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Colombia strong favourites (Elo gap 408)."
     },
     {
       "id": "A3",
@@ -683,25 +539,19 @@
       "home": "Czechia",
       "away": "South Africa",
       "venue": "Atlanta Stadium",
-      "home_elo": 1605,
-      "away_elo": 1591,
-      "home_xg": 1.86,
-      "away_xg": 1.32,
-      "prob_home": 50.0,
+      "home_elo": 1590,
+      "away_elo": 1580,
+      "home_xg": 1.85,
+      "away_xg": 1.33,
+      "prob_home": 49.6,
       "prob_draw": 22.7,
-      "prob_away": 27.3,
-      "odds_home": 2.0,
-      "odds_draw": 4.41,
-      "odds_away": 3.66,
+      "prob_away": 27.7,
+      "odds_home": 2.02,
+      "odds_draw": 4.4,
+      "odds_away": 3.61,
       "prediction": "Czechia",
-      "confidence": 50.0,
-      "model_insight": "Closely matched teams \u2014 draw likely.",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "confidence": 49.6,
+      "model_insight": "Closely matched teams \u2014 draw likely."
     },
     {
       "id": "B3",
@@ -723,13 +573,7 @@
       "odds_away": 7.85,
       "prediction": "Switzerland",
       "confidence": 69.9,
-      "model_insight": "Switzerland strong favourites (Elo gap 259).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Switzerland strong favourites (Elo gap 259)."
     },
     {
       "id": "B4",
@@ -751,13 +595,7 @@
       "odds_away": 8.94,
       "prediction": "Canada",
       "confidence": 72.4,
-      "model_insight": "Canada strong favourites (Elo gap 312). Host nation +100 Elo boost applied.",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Canada strong favourites (Elo gap 312). Host nation +100 Elo boost applied."
     },
     {
       "id": "A4",
@@ -767,25 +605,19 @@
       "home": "Mexico",
       "away": "South Korea",
       "venue": "Estadio Guadalajara, Zapopan",
-      "home_elo": 1820,
-      "away_elo": 1755,
+      "home_elo": 1831,
+      "away_elo": 1770,
       "home_xg": 2.32,
       "away_xg": 0.98,
-      "prob_home": 67.3,
-      "prob_draw": 18.2,
-      "prob_away": 14.4,
-      "odds_home": 1.48,
-      "odds_draw": 5.48,
-      "odds_away": 6.94,
+      "prob_home": 67.1,
+      "prob_draw": 18.3,
+      "prob_away": 14.6,
+      "odds_home": 1.49,
+      "odds_draw": 5.45,
+      "odds_away": 6.85,
       "prediction": "Mexico",
-      "confidence": 67.3,
-      "model_insight": "Mexico strong favourites (Elo gap 215). Host nation +150 Elo boost applied.",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "confidence": 67.1,
+      "model_insight": "Mexico strong favourites (Elo gap 210.62229428539763). Host nation +150 Elo boost applied."
     },
     {
       "id": "C3",
@@ -807,13 +639,7 @@
       "odds_away": 2.35,
       "prediction": "Morocco",
       "confidence": 42.6,
-      "model_insight": "Morocco slight edge (Elo gap 160).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Morocco slight edge (Elo gap 160)."
     },
     {
       "id": "D3",
@@ -835,13 +661,7 @@
       "odds_away": 5.87,
       "prediction": "USA",
       "confidence": 63.5,
-      "model_insight": "USA slight edge (Elo gap 160). Host nation +100 Elo boost applied.",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "USA slight edge (Elo gap 160). Host nation +100 Elo boost applied."
     },
     {
       "id": "C4",
@@ -863,13 +683,7 @@
       "odds_away": 12.49,
       "prediction": "Brazil",
       "confidence": 77.9,
-      "model_insight": "Brazil strong favourites (Elo gap 529).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Brazil strong favourites (Elo gap 529)."
     },
     {
       "id": "D4",
@@ -891,13 +705,7 @@
       "odds_away": 7.14,
       "prediction": "Turkey",
       "confidence": 68.0,
-      "model_insight": "Turkey strong favourites (Elo gap 225).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Turkey strong favourites (Elo gap 225)."
     },
     {
       "id": "F3",
@@ -919,13 +727,7 @@
       "odds_away": 5.66,
       "prediction": "Netherlands",
       "confidence": 62.6,
-      "model_insight": "Netherlands slight edge (Elo gap 149).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Netherlands slight edge (Elo gap 149)."
     },
     {
       "id": "E3",
@@ -947,13 +749,7 @@
       "odds_away": 7.45,
       "prediction": "Germany",
       "confidence": 68.9,
-      "model_insight": "Germany strong favourites (Elo gap 240).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Germany strong favourites (Elo gap 240)."
     },
     {
       "id": "E4",
@@ -975,13 +771,7 @@
       "odds_away": 12.3,
       "prediction": "Ecuador",
       "confidence": 77.7,
-      "model_insight": "Ecuador strong favourites (Elo gap 513).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Ecuador strong favourites (Elo gap 513)."
     },
     {
       "id": "F4",
@@ -1003,13 +793,7 @@
       "odds_away": 1.98,
       "prediction": "Japan",
       "confidence": 50.5,
-      "model_insight": "Japan strong favourites (Elo gap 269).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Japan strong favourites (Elo gap 269)."
     },
     {
       "id": "H3",
@@ -1031,13 +815,7 @@
       "odds_away": 12.98,
       "prediction": "Spain",
       "confidence": 78.5,
-      "model_insight": "Spain strong favourites (Elo gap 576).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Spain strong favourites (Elo gap 576)."
     },
     {
       "id": "G3",
@@ -1059,13 +837,7 @@
       "odds_away": 4.97,
       "prediction": "Belgium",
       "confidence": 59.2,
-      "model_insight": "Belgium slight edge (Elo gap 109).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Belgium slight edge (Elo gap 109)."
     },
     {
       "id": "H4",
@@ -1087,13 +859,7 @@
       "odds_away": 10.07,
       "prediction": "Uruguay",
       "confidence": 74.5,
-      "model_insight": "Uruguay strong favourites (Elo gap 370).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Uruguay strong favourites (Elo gap 370)."
     },
     {
       "id": "G4",
@@ -1115,13 +881,7 @@
       "odds_away": 2.55,
       "prediction": "Egypt",
       "confidence": 39.2,
-      "model_insight": "Egypt slight edge (Elo gap 120).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Egypt slight edge (Elo gap 120)."
     },
     {
       "id": "J3",
@@ -1143,13 +903,7 @@
       "odds_away": 8.86,
       "prediction": "Argentina",
       "confidence": 72.3,
-      "model_insight": "Argentina strong favourites (Elo gap 308).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Argentina strong favourites (Elo gap 308)."
     },
     {
       "id": "I3",
@@ -1171,13 +925,7 @@
       "odds_away": 12.54,
       "prediction": "France",
       "confidence": 78.0,
-      "model_insight": "France strong favourites (Elo gap 533).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "France strong favourites (Elo gap 533)."
     },
     {
       "id": "I4",
@@ -1199,13 +947,7 @@
       "odds_away": 4.14,
       "prediction": "Norway",
       "confidence": 53.9,
-      "model_insight": "Norway slight edge (Elo gap 53).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Norway slight edge (Elo gap 53)."
     },
     {
       "id": "J4",
@@ -1227,13 +969,7 @@
       "odds_away": 2.3,
       "prediction": "Algeria",
       "confidence": 43.5,
-      "model_insight": "Algeria slight edge (Elo gap 170).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Algeria slight edge (Elo gap 170)."
     },
     {
       "id": "K3",
@@ -1255,13 +991,7 @@
       "odds_away": 10.37,
       "prediction": "Portugal",
       "confidence": 75.0,
-      "model_insight": "Portugal strong favourites (Elo gap 386).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Portugal strong favourites (Elo gap 386)."
     },
     {
       "id": "L3",
@@ -1283,13 +1013,7 @@
       "odds_away": 10.99,
       "prediction": "England",
       "confidence": 76.0,
-      "model_insight": "England strong favourites (Elo gap 422).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "England strong favourites (Elo gap 422)."
     },
     {
       "id": "L4",
@@ -1311,13 +1035,7 @@
       "odds_away": 1.8,
       "prediction": "Croatia",
       "confidence": 55.6,
-      "model_insight": "Croatia strong favourites (Elo gap 373).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Croatia strong favourites (Elo gap 373)."
     },
     {
       "id": "K4",
@@ -1339,13 +1057,7 @@
       "odds_away": 11.56,
       "prediction": "Colombia",
       "confidence": 76.8,
-      "model_insight": "Colombia strong favourites (Elo gap 458).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Colombia strong favourites (Elo gap 458)."
     },
     {
       "id": "B5",
@@ -1367,13 +1079,7 @@
       "odds_away": 5.77,
       "prediction": "Switzerland",
       "confidence": 63.1,
-      "model_insight": "Switzerland slight edge (Elo gap 155).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Switzerland slight edge (Elo gap 155)."
     },
     {
       "id": "B6",
@@ -1395,13 +1101,7 @@
       "odds_away": 4.96,
       "prediction": "Bosnia-Herzegovina",
       "confidence": 59.1,
-      "model_insight": "Bosnia-Herzegovina slight edge (Elo gap 108).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Bosnia-Herzegovina slight edge (Elo gap 108)."
     },
     {
       "id": "C5",
@@ -1423,13 +1123,7 @@
       "odds_away": 1.92,
       "prediction": "Brazil",
       "confidence": 52.2,
-      "model_insight": "Brazil strong favourites (Elo gap 299).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Brazil strong favourites (Elo gap 299)."
     },
     {
       "id": "C6",
@@ -1451,13 +1145,7 @@
       "odds_away": 10.44,
       "prediction": "Morocco",
       "confidence": 75.1,
-      "model_insight": "Morocco strong favourites (Elo gap 390).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Morocco strong favourites (Elo gap 390)."
     },
     {
       "id": "A5",
@@ -1467,25 +1155,19 @@
       "home": "Czechia",
       "away": "Mexico",
       "venue": "Mexico City Stadium",
-      "home_elo": 1605,
-      "away_elo": 1820,
-      "home_xg": 1.32,
-      "away_xg": 1.72,
-      "prob_home": 29.5,
-      "prob_draw": 23.6,
-      "prob_away": 46.9,
-      "odds_home": 3.39,
-      "odds_draw": 4.24,
-      "odds_away": 2.13,
+      "home_elo": 1590,
+      "away_elo": 1831,
+      "home_xg": 1.28,
+      "away_xg": 1.76,
+      "prob_home": 27.9,
+      "prob_draw": 23.4,
+      "prob_away": 48.7,
+      "odds_home": 3.59,
+      "odds_draw": 4.27,
+      "odds_away": 2.05,
       "prediction": "Mexico",
-      "confidence": 46.9,
-      "model_insight": "Mexico strong favourites (Elo gap 215).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "confidence": 48.7,
+      "model_insight": "Mexico strong favourites (Elo gap 240.99566992988252)."
     },
     {
       "id": "A6",
@@ -1495,25 +1177,19 @@
       "home": "South Africa",
       "away": "South Korea",
       "venue": "Estadio Monterrey, Guadalupe",
-      "home_elo": 1591,
-      "away_elo": 1755,
-      "home_xg": 1.42,
-      "away_xg": 1.65,
-      "prob_home": 33.2,
-      "prob_draw": 23.8,
-      "prob_away": 43.0,
-      "odds_home": 3.01,
-      "odds_draw": 4.19,
-      "odds_away": 2.33,
+      "home_elo": 1580,
+      "away_elo": 1770,
+      "home_xg": 1.37,
+      "away_xg": 1.69,
+      "prob_home": 31.2,
+      "prob_draw": 23.7,
+      "prob_away": 45.0,
+      "odds_home": 3.2,
+      "odds_draw": 4.21,
+      "odds_away": 2.22,
       "prediction": "South Korea",
-      "confidence": 43.0,
-      "model_insight": "South Korea slight edge (Elo gap 164).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "confidence": 45.0,
+      "model_insight": "South Korea slight edge (Elo gap 189.99566992988252)."
     },
     {
       "id": "E5",
@@ -1535,13 +1211,7 @@
       "odds_away": 3.76,
       "prediction": "Ecuador",
       "confidence": 50.9,
-      "model_insight": "Closely matched teams \u2014 draw likely.",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Closely matched teams \u2014 draw likely."
     },
     {
       "id": "E6",
@@ -1563,13 +1233,7 @@
       "odds_away": 2.03,
       "prediction": "C\u00f4te d'Ivoire",
       "confidence": 49.3,
-      "model_insight": "C\u00f4te d'Ivoire strong favourites (Elo gap 250).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "C\u00f4te d'Ivoire strong favourites (Elo gap 250)."
     },
     {
       "id": "F5",
@@ -1591,13 +1255,7 @@
       "odds_away": 4.36,
       "prediction": "Japan",
       "confidence": 55.5,
-      "model_insight": "Japan slight edge (Elo gap 69).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Japan slight edge (Elo gap 69)."
     },
     {
       "id": "F6",
@@ -1619,13 +1277,7 @@
       "odds_away": 1.83,
       "prediction": "Netherlands",
       "confidence": 54.6,
-      "model_insight": "Netherlands strong favourites (Elo gap 349).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Netherlands strong favourites (Elo gap 349)."
     },
     {
       "id": "D5",
@@ -1647,13 +1299,7 @@
       "odds_away": 3.91,
       "prediction": "Turkey",
       "confidence": 52.1,
-      "model_insight": "Closely matched teams \u2014 draw likely.",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Closely matched teams \u2014 draw likely."
     },
     {
       "id": "D6",
@@ -1675,13 +1321,7 @@
       "odds_away": 2.49,
       "prediction": "Australia",
       "confidence": 40.1,
-      "model_insight": "Australia slight edge (Elo gap 130).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Australia slight edge (Elo gap 130)."
     },
     {
       "id": "I5",
@@ -1703,13 +1343,7 @@
       "odds_away": 2.44,
       "prediction": "France",
       "confidence": 41.1,
-      "model_insight": "France slight edge (Elo gap 141).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "France slight edge (Elo gap 141)."
     },
     {
       "id": "I6",
@@ -1731,13 +1365,7 @@
       "odds_away": 9.48,
       "prediction": "Senegal",
       "confidence": 73.5,
-      "model_insight": "Senegal strong favourites (Elo gap 339).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Senegal strong favourites (Elo gap 339)."
     },
     {
       "id": "H5",
@@ -1759,13 +1387,7 @@
       "odds_away": 2.84,
       "prediction": "Cabo Verde",
       "confidence": 41.1,
-      "model_insight": "Saudi Arabia slight edge (Elo gap 75).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Saudi Arabia slight edge (Elo gap 75)."
     },
     {
       "id": "H6",
@@ -1787,13 +1409,7 @@
       "odds_away": 1.95,
       "prediction": "Spain",
       "confidence": 51.2,
-      "model_insight": "Spain strong favourites (Elo gap 281).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Spain strong favourites (Elo gap 281)."
     },
     {
       "id": "G5",
@@ -1815,13 +1431,7 @@
       "odds_away": 2.44,
       "prediction": "Iran",
       "confidence": 41.0,
-      "model_insight": "Iran slight edge (Elo gap 140).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Iran slight edge (Elo gap 140)."
     },
     {
       "id": "G6",
@@ -1843,13 +1453,7 @@
       "odds_away": 1.8,
       "prediction": "Belgium",
       "confidence": 55.4,
-      "model_insight": "Belgium strong favourites (Elo gap 369).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Belgium strong favourites (Elo gap 369)."
     },
     {
       "id": "L5",
@@ -1871,13 +1475,7 @@
       "odds_away": 1.7,
       "prediction": "England",
       "confidence": 58.9,
-      "model_insight": "England strong favourites (Elo gap 482).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "England strong favourites (Elo gap 482)."
     },
     {
       "id": "L6",
@@ -1899,13 +1497,7 @@
       "odds_away": 8.96,
       "prediction": "Croatia",
       "confidence": 72.5,
-      "model_insight": "Croatia strong favourites (Elo gap 313).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Croatia strong favourites (Elo gap 313)."
     },
     {
       "id": "K5",
@@ -1927,13 +1519,7 @@
       "odds_away": 3.75,
       "prediction": "Colombia",
       "confidence": 50.8,
-      "model_insight": "Closely matched teams \u2014 draw likely.",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Closely matched teams \u2014 draw likely."
     },
     {
       "id": "K6",
@@ -1955,13 +1541,7 @@
       "odds_away": 3.03,
       "prediction": "Congo DR",
       "confidence": 43.5,
-      "model_insight": "Uzbekistan slight edge (Elo gap 50).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Uzbekistan slight edge (Elo gap 50)."
     },
     {
       "id": "J5",
@@ -1983,13 +1563,7 @@
       "odds_away": 2.52,
       "prediction": "Austria",
       "confidence": 39.7,
-      "model_insight": "Austria slight edge (Elo gap 125).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Austria slight edge (Elo gap 125)."
     },
     {
       "id": "J6",
@@ -2011,19 +1585,7 @@
       "odds_away": 1.64,
       "prediction": "Argentina",
       "confidence": 61.0,
-      "model_insight": "Argentina strong favourites (Elo gap 603).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "model_insight": "Argentina strong favourites (Elo gap 603)."
     }
-  ],
-  "results_applied": 1,
-  "model_record": {
-    "played": 1,
-    "correct": 1,
-    "wrong": 0
-  }
+  ]
 }

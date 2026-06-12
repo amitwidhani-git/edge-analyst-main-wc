@@ -29,6 +29,16 @@ const ARTICLES = [
     highlight:true,
   },
   {
+    tag:'Match Report', date:'12 Jun 2026',
+    title:'South Korea 2–1 Czechia: The Comeback Kids. Model Nails the Taeguk Warriors.',
+    excerpt:'South Korea produced one of the tournament\'s early talking points — coming from behind to beat Czechia 2–1 at Estadio Guadalajara. Ladislav Krejci gave Czechia a shock lead, but Hwang In-beom equalised before substitute Oh Hyeon-gyu drove home the winner to send the Korean fans in Guadalajara into raptures. The EdgeIQ model had South Korea as 62.7% favourites — the correct call. Two from two. The model record stands at 100%.',
+    excerpt2:'The xG projection was 2.19 for South Korea against 1.08 for Czechia — a 150-point Elo gap that correctly identified the Taeguk Warriors as clear favourites. The actual xG played out similarly, with South Korea creating the better chances across the 90 minutes despite going behind. Manager Hong Myung-bo\'s substitutions proved decisive — Oh Hyeon-gyu came on in the 69th minute and scored the winner.',
+    excerpt3:'For Czechia this is a damaging start. Their playoff route to qualification — beating Denmark on penalties in Prague — suggested resilience, but they now face Mexico on June 17. The model gives Czechia just 14% to beat Mexico. A second consecutive defeat would effectively end their tournament. Group A is shaping up exactly as projected: Mexico and South Korea pulling away from South Africa and Czechia.',
+    stat:'62.7%', statLabel:'Model win probability', stat2:'2–1', statLabel2:'Final score', stat3:'✓', statLabel3:'Model prediction correct',
+    modelCorrect: true,
+    highlight: false,
+  },
+  {
     tag:'Model Report', date:'Jun 2026',
     title:'Spain vs The Field: 37% Win Probability and Why the Market Is Underestimating Them',
     excerpt:'Spain enters WC 2026 with the highest Elo rating in the tournament at 2,171, a figure built on their Euro 2024 triumph and an 18-month unbeaten run. The model assigns Spain a 37% tournament win probability across 10,000 simulations. The next closest is Argentina at 16.8%.',
