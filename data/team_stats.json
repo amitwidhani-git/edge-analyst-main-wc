@@ -106,19 +106,6 @@
       "rank": 8
     },
     {
-      "team": "Croatia",
-      "elo": 1933,
-      "conf": "UEFA",
-      "group": "L",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
-      "win_prob_pct": 1.2,
-      "rank": 9
-    },
-    {
       "team": "Ecuador",
       "elo": 1933,
       "conf": "CONMEBOL",
@@ -129,6 +116,19 @@
       "avg_gf": 0.0,
       "avg_ga": 0.0,
       "win_prob_pct": 0.9,
+      "rank": 9
+    },
+    {
+      "team": "Croatia",
+      "elo": 1933,
+      "conf": "UEFA",
+      "group": "L",
+      "played": 0,
+      "wins": 0,
+      "win_rate": 0.0,
+      "avg_gf": 0.0,
+      "avg_ga": 0.0,
+      "win_prob_pct": 1.2,
       "rank": 10
     },
     {
@@ -262,19 +262,6 @@
       "rank": 20
     },
     {
-      "team": "USA",
-      "elo": 1810,
-      "conf": "CONCACAF",
-      "group": "D",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
-      "win_prob_pct": 1.7,
-      "rank": 21
-    },
-    {
       "team": "Sweden",
       "elo": 1810,
       "conf": "UEFA",
@@ -285,6 +272,19 @@
       "avg_gf": 0.0,
       "avg_ga": 0.0,
       "win_prob_pct": 0.7,
+      "rank": 21
+    },
+    {
+      "team": "USA",
+      "elo": 1810,
+      "conf": "CONCACAF",
+      "group": "D",
+      "played": 0,
+      "wins": 0,
+      "win_rate": 0.0,
+      "avg_gf": 0.0,
+      "avg_ga": 0.0,
+      "win_prob_pct": 1.7,
       "rank": 22
     },
     {
@@ -327,19 +327,6 @@
       "rank": 25
     },
     {
-      "team": "Canada",
-      "elo": 1742,
-      "conf": "CONCACAF",
-      "group": "B",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
-      "win_prob_pct": 0.4,
-      "rank": 26
-    },
-    {
       "team": "Iran",
       "elo": 1740,
       "conf": "AFC",
@@ -349,6 +336,19 @@
       "win_rate": 0.0,
       "avg_gf": 0.0,
       "avg_ga": 0.0,
+      "win_prob_pct": 0.4,
+      "rank": 26
+    },
+    {
+      "team": "Canada",
+      "elo": 1735,
+      "conf": "CONCACAF",
+      "group": "B",
+      "played": 1,
+      "wins": 0,
+      "win_rate": 0.0,
+      "avg_gf": 1.0,
+      "avg_ga": 1.0,
       "win_prob_pct": 0.4,
       "rank": 27
     },
@@ -393,29 +393,16 @@
     },
     {
       "team": "Bosnia-Herzegovina",
-      "elo": 1638,
+      "elo": 1645,
       "conf": "UEFA",
       "group": "B",
-      "played": 0,
+      "played": 1,
       "wins": 0,
       "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
+      "avg_gf": 1.0,
+      "avg_ga": 1.0,
       "win_prob_pct": 0.1,
       "rank": 31
-    },
-    {
-      "team": "Ghana",
-      "elo": 1620,
-      "conf": "CAF",
-      "group": "L",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
-      "win_prob_pct": 0.1,
-      "rank": 32
     },
     {
       "team": "Paraguay",
@@ -428,6 +415,19 @@
       "avg_gf": 0.0,
       "avg_ga": 0.0,
       "win_prob_pct": 0.2,
+      "rank": 32
+    },
+    {
+      "team": "Ghana",
+      "elo": 1620,
+      "conf": "CAF",
+      "group": "L",
+      "played": 0,
+      "wins": 0,
+      "win_rate": 0.0,
+      "avg_gf": 0.0,
+      "avg_ga": 0.0,
+      "win_prob_pct": 0.1,
       "rank": 33
     },
     {

@@ -20,6 +20,16 @@ function useCursor() {
 const ARTICLES = [
   {
     tag:'Match Report', date:'12 Jun 2026',
+    title:'Canada 1–1 Bosnia & Herzegovina: Model Incorrect. The Underdog Holds.',
+    excerpt:'Bosnia & Herzegovina silenced a packed BMO Field inside 21 minutes. Kolašinac\'s flick from a corner found Lukić unmarked at the back post, a set piece that worked to perfection, and Canada\'s defensive shape had no answer for it. The hosts dominated from that point forward but found Vasilj and a resolute Bosnian backline in no mood to yield.',
+    excerpt2:'The clearest moment of Canadian frustration came in the 53rd minute. A flowing move carved Bosnia open entirely, Laryea\'s shot seemingly destined for the net until Kolašinac recovered to turn it onto the crossbar. Canada created. Canada pressed. Canada could not score. Larin changed that — two minutes off the bench, 78 minutes on the clock, a sharp turn on the edge of the box and a deflected finish that crept past Vasilj.',
+    excerpt3:'The EdgeIQ model assigned Canada a 66% win probability. The performance backed that reading. The scoreboard did not. A resilient Bosnian side did exactly what a 14.5% underdog needed to do — defend their moments, take their chance, leave with something. Draw on xG terms too: Canada 1.25 to Bosnia 0.98. Both sides sit on one point in Group B.',
+    stat:'66.0%', statLabel:'Canada win probability', stat2:'1–1', statLabel2:'Final score', stat3:'✗', statLabel3:'Model incorrect',
+    modelCorrect: false,
+    highlight: false,
+  },
+  {
+    tag:'Match Report', date:'12 Jun 2026',
     title:'South Korea 2–1 Czechia: The Comeback Kids. Model Nails the Taeguk Warriors.',
     excerpt:'South Korea produced one of the tournament\'s early talking points — coming from behind to beat Czechia 2–1 at Estadio Guadalajara. Ladislav Krejci gave Czechia a shock lead, but Hwang In-beom equalised before substitute Oh Hyeon-gyu drove home the winner to send the Korean fans in Guadalajara into raptures. The EdgeIQ model had South Korea as 62.7% favourites — the correct call. Two from two. The model record stands at 100%.',
     excerpt2:'The xG projection was 2.19 for South Korea against 1.08 for Czechia — a 150-point Elo gap that correctly identified the Taeguk Warriors as clear favourites. The actual xG played out similarly, with South Korea creating the better chances across the 90 minutes despite going behind. Manager Hong Myung-bo\'s substitutions proved decisive — Oh Hyeon-gyu came on in the 69th minute and scored the winner.',
