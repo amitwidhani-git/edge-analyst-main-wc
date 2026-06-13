@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-13",
+  "generated": "2026-06-14",
   "teams": [
     {
       "team": "Spain",
@@ -158,19 +158,6 @@
       "rank": 12
     },
     {
-      "team": "Switzerland",
-      "elo": 1897,
-      "conf": "UEFA",
-      "group": "B",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
-      "win_prob_pct": 1.2,
-      "rank": 13
-    },
-    {
       "team": "Uruguay",
       "elo": 1890,
       "conf": "CONMEBOL",
@@ -181,7 +168,7 @@
       "avg_gf": 0.0,
       "avg_ga": 0.0,
       "win_prob_pct": 1.4,
-      "rank": 14
+      "rank": 13
     },
     {
       "team": "Japan",
@@ -194,6 +181,19 @@
       "avg_gf": 0.0,
       "avg_ga": 0.0,
       "win_prob_pct": 1.6,
+      "rank": 14
+    },
+    {
+      "team": "Switzerland",
+      "elo": 1877,
+      "conf": "UEFA",
+      "group": "B",
+      "played": 1,
+      "wins": 0,
+      "win_rate": 0.0,
+      "avg_gf": 1.0,
+      "avg_ga": 1.0,
+      "win_prob_pct": 1.2,
       "rank": 15
     },
     {
@@ -353,10 +353,10 @@
       "rank": 27
     },
     {
-      "team": "Algeria",
+      "team": "Scotland",
       "elo": 1680,
-      "conf": "CAF",
-      "group": "J",
+      "conf": "UEFA",
+      "group": "C",
       "played": 0,
       "wins": 0,
       "win_rate": 0.0,
@@ -366,10 +366,10 @@
       "rank": 28
     },
     {
-      "team": "Scotland",
+      "team": "Algeria",
       "elo": 1680,
-      "conf": "UEFA",
-      "group": "C",
+      "conf": "CAF",
+      "group": "J",
       "played": 0,
       "wins": 0,
       "win_rate": 0.0,
@@ -522,6 +522,19 @@
       "rank": 40
     },
     {
+      "team": "Qatar",
+      "elo": 1550,
+      "conf": "AFC",
+      "group": "B",
+      "played": 1,
+      "wins": 0,
+      "win_rate": 0.0,
+      "avg_gf": 1.0,
+      "avg_ga": 1.0,
+      "win_prob_pct": 0.02,
+      "rank": 41
+    },
+    {
       "team": "Congo DR",
       "elo": 1540,
       "conf": "CAF",
@@ -532,19 +545,6 @@
       "avg_gf": 0.0,
       "avg_ga": 0.0,
       "win_prob_pct": 0.05,
-      "rank": 41
-    },
-    {
-      "team": "Qatar",
-      "elo": 1530,
-      "conf": "AFC",
-      "group": "B",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
-      "win_prob_pct": 0.02,
       "rank": 42
     },
     {

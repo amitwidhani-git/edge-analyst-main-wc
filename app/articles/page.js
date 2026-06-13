@@ -19,6 +19,26 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:'Match Report', date:'13 Jun 2026',
+    title:'Qatar 1–1 Switzerland: The Model\'s Biggest Miss. An Own Goal in Stoppage Time Rewrites Group B.',
+    excerpt:'Switzerland led for 90 minutes. Breel Embolo\'s clinical penalty conversion in the 17th minute — the first spot-kick of the 2026 World Cup — gave the Swiss exactly the platform their Elo rating of 1,850 demanded against a Qatar side rated 334 points lower. For four-fifths of the match, the EdgeIQ model\'s 93.5% Switzerland win probability looked like the most obvious prediction of the tournament. Then Miro Muheim turned the ball into his own net in the 90th minute.',
+    excerpt2:'Qatar\'s equaliser came from a corner, Boualem Khoukhi darting to the near post as Muheim\'s attempted clearance deflected past his own goalkeeper. It was chaotic, fortunate, and utterly against the run of play — xG finished approximately 0.3 to 2.1 in Switzerland\'s favour. The Swiss created chances throughout. They simply could not turn dominance into the second goal that would have killed the game.',
+    excerpt3:'This is the model\'s heaviest miss so far — a 93.5% confidence call reversed by a 90th-minute own goal. Qatar become just the second host nation in World Cup history to earn a point in their opening group game despite creating so little. The consequence is significant: all four Group B teams sit on one point after matchday one. Canada, Bosnia-Herzegovina, Switzerland and Qatar are separated by nothing. The model now has 3 correct from 5 predictions — 60% accuracy — and Group B is wide open.',
+    stat:'93.5%', statLabel:'Switzerland win probability', stat2:'1–1', statLabel2:'Final score', stat3:'✗', statLabel3:'Model incorrect',
+    modelCorrect: false,
+    highlight: false,
+  },  
+  {
+    tag:'Match Report', date:'13 Jun 2026',
+    title:'USA 4–1 Paraguay: The Host Nation Announces Itself. Balogun Bags a Brace in Los Angeles.',
+    excerpt:'The United States did not just win their opening World Cup fixture — they announced themselves. A 4–1 demolition of Paraguay at Los Angeles Stadium, in front of a sold-out crowd of 80,000, was the kind of performance that changes the narrative around a host nation. Damian Bobadilla put the ball in his own net after just seven minutes under pressure from the USMNT press, and from that point forward Paraguay had no answer.',
+    excerpt2:'Folarin Balogun was the story of the first half. Two clinical finishes — the first a composed low finish, the second a precise near-post strike — gave USA a 3–0 lead at the break and silenced any suggestion this might be a tight Group D contest. Paraguay pulled one back through Mauricio in the 73rd minute, a moment of quality from a side who had been largely second best, but Gio Reyna ended any doubt with a stunning outside-of-the-boot finish deep in injury time.',
+    excerpt3:'The EdgeIQ model gave USA a 45.2% win probability — correct, and notably cautious given the margin of victory. The host Elo boost of +100 points was clearly justified. xG projection was 1.35 for USA against 0.95 for Paraguay. The actual xG finished approximately 2.8 to 0.7 — USA significantly outperformed their model projection on the night. Chris Richards completed 83 of 83 passes, a perfect passing display. Group D is now USA\'s to lose.',
+    stat:'45.2%', statLabel:'USA win probability', stat2:'4–1', statLabel2:'Final score', stat3:'✓', statLabel3:'Model prediction correct',
+    modelCorrect: true,
+    highlight: false,
+  },
+  {
     tag:'Match Report', date:'12 Jun 2026',
     title:'Canada 1–1 Bosnia & Herzegovina: Model Incorrect. The Underdog Holds.',
     excerpt:'Bosnia & Herzegovina silenced a packed BMO Field inside 21 minutes. Kolašinac\'s flick from a corner found Lukić unmarked at the back post, a set piece that worked to perfection, and Canada\'s defensive shape had no answer for it. The hosts dominated from that point forward but found Vasilj and a resolute Bosnian backline in no mood to yield.',
