@@ -19,6 +19,16 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:'Match Report', date:'13 Jun 2026',
+    title:'USA 4–1 Paraguay: The Host Nation Announces Itself. Balogun Bags a Brace in Los Angeles.',
+    excerpt:'The United States did not just win their opening World Cup fixture — they announced themselves. A 4–1 demolition of Paraguay at Los Angeles Stadium, in front of a sold-out crowd of 80,000, was the kind of performance that changes the narrative around a host nation. Damian Bobadilla put the ball in his own net after just seven minutes under pressure from the USMNT press, and from that point forward Paraguay had no answer.',
+    excerpt2:'Folarin Balogun was the story of the first half. Two clinical finishes — the first a composed low finish, the second a precise near-post strike — gave USA a 3–0 lead at the break and silenced any suggestion this might be a tight Group D contest. Paraguay pulled one back through Mauricio in the 73rd minute, a moment of quality from a side who had been largely second best, but Gio Reyna ended any doubt with a stunning outside-of-the-boot finish deep in injury time.',
+    excerpt3:'The EdgeIQ model gave USA a 45.2% win probability — correct, and notably cautious given the margin of victory. The host Elo boost of +100 points was clearly justified. xG projection was 1.35 for USA against 0.95 for Paraguay. The actual xG finished approximately 2.8 to 0.7 — USA significantly outperformed their model projection on the night. Chris Richards completed 83 of 83 passes, a perfect passing display. Group D is now USA\'s to lose.',
+    stat:'45.2%', statLabel:'USA win probability', stat2:'4–1', statLabel2:'Final score', stat3:'✓', statLabel3:'Model prediction correct',
+    modelCorrect: true,
+    highlight: false,
+  },
+  {
     tag:'Match Report', date:'12 Jun 2026',
     title:'Canada 1–1 Bosnia & Herzegovina: Model Incorrect. The Underdog Holds.',
     excerpt:'Bosnia & Herzegovina silenced a packed BMO Field inside 21 minutes. Kolašinac\'s flick from a corner found Lukić unmarked at the back post, a set piece that worked to perfection, and Canada\'s defensive shape had no answer for it. The hosts dominated from that point forward but found Vasilj and a resolute Bosnian backline in no mood to yield.',
