@@ -23,11 +23,11 @@ const ARTICLES = [
     title:'Qatar 1–1 Switzerland: The Model\'s Biggest Miss. An Own Goal in Stoppage Time Rewrites Group B.',
     excerpt:'Switzerland led for 90 minutes. Breel Embolo\'s clinical penalty conversion in the 17th minute — the first spot-kick of the 2026 World Cup — gave the Swiss exactly the platform their Elo rating of 1,850 demanded against a Qatar side rated 334 points lower. For four-fifths of the match, the EdgeIQ model\'s 93.5% Switzerland win probability looked like the most obvious prediction of the tournament. Then Miro Muheim turned the ball into his own net in the 90th minute.',
     excerpt2:'Qatar\'s equaliser came from a corner, Boualem Khoukhi darting to the near post as Muheim\'s attempted clearance deflected past his own goalkeeper. It was chaotic, fortunate, and utterly against the run of play — xG finished approximately 0.3 to 2.1 in Switzerland\'s favour. The Swiss created chances throughout. They simply could not turn dominance into the second goal that would have killed the game.',
-    excerpt3:'This is the model\'s heaviest miss so far — a 93.5% confidence call reversed by a 90th-minute own goal. Qatar become just the second host nation in World Cup history to earn a point in their opening group game despite creating so little. The consequence is significant: all four Group B teams sit on one point after matchday one. Canada, Bosnia-Herzegovina, Switzerland and Qatar are separated by nothing. The model now has 3 correct from 5 predictions — 60% accuracy — and Group B is wide open.',
+    excerpt3:'Qatar earn their first-ever World Cup point — having gone three games without one at the 2022 tournament they hosted, losing all three and finishing bottom of Group A. A remarkable turnaround for a side that created so little here. The consequence for Group B is significant: all four teams — Canada, Bosnia-Herzegovina, Switzerland and Qatar — sit on one point after matchday one, separated by nothing. The model now has 3 correct from 5 predictions, and Group B is the most unpredictable group of the tournament.',
     stat:'93.5%', statLabel:'Switzerland win probability', stat2:'1–1', statLabel2:'Final score', stat3:'✗', statLabel3:'Model incorrect',
     modelCorrect: false,
     highlight: false,
-  },  
+  },
   {
     tag:'Match Report', date:'13 Jun 2026',
     title:'USA 4–1 Paraguay: The Host Nation Announces Itself. Balogun Bags a Brace in Los Angeles.',
