@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-12",
+  "generated": "2026-06-13",
   "teams": [
     {
       "team": "Spain",
@@ -106,19 +106,6 @@
       "rank": 8
     },
     {
-      "team": "Ecuador",
-      "elo": 1933,
-      "conf": "CONMEBOL",
-      "group": "E",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
-      "win_prob_pct": 0.9,
-      "rank": 9
-    },
-    {
       "team": "Croatia",
       "elo": 1933,
       "conf": "UEFA",
@@ -129,6 +116,19 @@
       "avg_gf": 0.0,
       "avg_ga": 0.0,
       "win_prob_pct": 1.2,
+      "rank": 9
+    },
+    {
+      "team": "Ecuador",
+      "elo": 1933,
+      "conf": "CONMEBOL",
+      "group": "E",
+      "played": 0,
+      "wins": 0,
+      "win_rate": 0.0,
+      "avg_gf": 0.0,
+      "avg_ga": 0.0,
+      "win_prob_pct": 0.9,
       "rank": 10
     },
     {
@@ -262,6 +262,19 @@
       "rank": 20
     },
     {
+      "team": "USA",
+      "elo": 1823,
+      "conf": "CONCACAF",
+      "group": "D",
+      "played": 1,
+      "wins": 1,
+      "win_rate": 1.0,
+      "avg_gf": 4.0,
+      "avg_ga": 1.0,
+      "win_prob_pct": 1.7,
+      "rank": 21
+    },
+    {
       "team": "Sweden",
       "elo": 1810,
       "conf": "UEFA",
@@ -272,19 +285,6 @@
       "avg_gf": 0.0,
       "avg_ga": 0.0,
       "win_prob_pct": 0.7,
-      "rank": 21
-    },
-    {
-      "team": "USA",
-      "elo": 1810,
-      "conf": "CONCACAF",
-      "group": "D",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
-      "win_prob_pct": 1.7,
       "rank": 22
     },
     {
@@ -405,19 +405,6 @@
       "rank": 31
     },
     {
-      "team": "Paraguay",
-      "elo": 1620,
-      "conf": "CONMEBOL",
-      "group": "D",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
-      "win_prob_pct": 0.2,
-      "rank": 32
-    },
-    {
       "team": "Ghana",
       "elo": 1620,
       "conf": "CAF",
@@ -428,7 +415,7 @@
       "avg_gf": 0.0,
       "avg_ga": 0.0,
       "win_prob_pct": 0.1,
-      "rank": 33
+      "rank": 32
     },
     {
       "team": "Tunisia",
@@ -440,6 +427,19 @@
       "win_rate": 0.0,
       "avg_gf": 0.0,
       "avg_ga": 0.0,
+      "win_prob_pct": 0.2,
+      "rank": 33
+    },
+    {
+      "team": "Paraguay",
+      "elo": 1607,
+      "conf": "CONMEBOL",
+      "group": "D",
+      "played": 1,
+      "wins": 0,
+      "win_rate": 0.0,
+      "avg_gf": 1.0,
+      "avg_ga": 4.0,
       "win_prob_pct": 0.2,
       "rank": 34
     },

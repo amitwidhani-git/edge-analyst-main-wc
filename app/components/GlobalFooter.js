@@ -53,7 +53,7 @@ export default function GlobalFooter() {
             color: 'rgba(247,245,240,0.6)',
             maxWidth: 200, lineHeight: 1.65, marginBottom: 14,
           }}>
-            Football intelligence. Verifiable predictions. Transparent track record.
+            FIFA WC 2026 intelligence. Dixon-Coles model predictions. Transparent track record.
           </p>
           <div style={{ display: 'flex', gap: 10 }}>
             <a href="https://www.instagram.com/edgeanalysts" target="_blank" rel="noopener noreferrer" aria-label="Edge Analysts on Instagram" className="gfooter-social">
@@ -79,20 +79,22 @@ export default function GlobalFooter() {
           ))}
         </nav>
 
-        {/* Col 3 — Account */}
-        <nav aria-label="Account links">
-          <span style={COL_HEADING}>Account</span>
-          {[['Sign up free', '/signup'], ['Pro subscription', '/signup'], ['Log in', '/login']].map(([label, href]) => (
+        {/* Col 3 — About */}
+        <nav aria-label="About links">
+          <span style={COL_HEADING}>About</span>
+          {[['Model methodology', '/articles'], ['Track record', '/fixtures']].map(([label, href]) => (
             <Link key={label} href={href} style={COL_LINK} className="gfooter-link">{label}</Link>
           ))}
+          <a href="mailto:hello@edgeanalysts.com" style={COL_LINK} className="gfooter-link">Contact</a>
         </nav>
 
         {/* Col 4 — Legal */}
         <nav aria-label="Legal links">
           <span style={COL_HEADING}>Legal</span>
-          {[['Privacy policy', '/privacy'], ['Terms of use', '/terms'], ['Cookie policy', '/cookies'], ['Affiliate disclosure', '/affiliate']].map(([label, href]) => (
-            <Link key={label} href={href} style={COL_LINK} className="gfooter-link">{label}</Link>
-          ))}
+          <p style={{...COL_LINK, cursor:'default', pointerEvents:'none', opacity:.6}}>18+ · Gamble responsibly</p>
+          <p style={{...COL_LINK, cursor:'default', pointerEvents:'none', opacity:.6}}>Predictions for information only</p>
+          <a href="https://www.begambleaware.org" target="_blank" rel="noopener noreferrer" style={COL_LINK} className="gfooter-link">BeGambleAware.org</a>
+          <a href="https://www.gamcare.org.uk" target="_blank" rel="noopener noreferrer" style={COL_LINK} className="gfooter-link">GamCare.org.uk</a>
         </nav>
       </div>
 
