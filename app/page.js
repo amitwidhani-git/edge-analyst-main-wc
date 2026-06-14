@@ -54,7 +54,20 @@ export default function HomePage() {
   const teamStats    = data?.teamStats || [];
   const simTop       = data?.simulation?.results?.slice(0,6) || [];
   const valueMatches = [...matches].sort((a,b)=>b.bestEv-a.bestEv).filter(m=>m.bestEv>0).slice(0,6);
-  const upcoming     = [...matches].sort((a,b)=>a.date.localeCompare(b.date)).slice(0,8);
+
+  const lastResult = [...matches]
+    .filter(m=>m.status==='completed')
+    .sort((a,b)=>b.date.localeCompare(a.date))
+    .slice(0,2);
+
+  const upcoming = [
+    ...lastResult,
+    ...[...matches]
+      .sort((a,b)=>a.date.localeCompare(b.date))
+      .filter(m=>m.status==='upcoming')
+      .slice(0,6)
+  ];  
+
   const groups       = ['A','B','C','D','E','F','G','H','I','J','K','L'];
 
   const GROUPS_MAP = {

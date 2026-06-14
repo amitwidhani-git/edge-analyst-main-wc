@@ -85,7 +85,7 @@ export default function GlobalFooter() {
           {[['Model methodology', '/articles'], ['Track record', '/fixtures']].map(([label, href]) => (
             <Link key={label} href={href} style={COL_LINK} className="gfooter-link">{label}</Link>
           ))}
-          <a href="mailto:hello@edgeanalysts.com" style={COL_LINK} className="gfooter-link">Contact</a>
+          <a href="mailto:contactus@edgeanalysts.com" style={COL_LINK} className="gfooter-link">Contact</a>
         </nav>
 
         {/* Col 4 — Legal */}

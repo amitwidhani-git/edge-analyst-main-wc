@@ -67,19 +67,6 @@
       "rank": 5
     },
     {
-      "team": "Brazil",
-      "elo": 1979,
-      "conf": "CONMEBOL",
-      "group": "C",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
-      "win_prob_pct": 8.5,
-      "rank": 6
-    },
-    {
       "team": "Portugal",
       "elo": 1976,
       "conf": "UEFA",
@@ -90,6 +77,19 @@
       "avg_gf": 0.0,
       "avg_ga": 0.0,
       "win_prob_pct": 6.5,
+      "rank": 6
+    },
+    {
+      "team": "Brazil",
+      "elo": 1969,
+      "conf": "CONMEBOL",
+      "group": "C",
+      "played": 1,
+      "wins": 0,
+      "win_rate": 0.0,
+      "avg_gf": 1.0,
+      "avg_ga": 1.0,
+      "win_prob_pct": 8.5,
       "rank": 7
     },
     {
@@ -210,6 +210,19 @@
       "rank": 16
     },
     {
+      "team": "Morocco",
+      "elo": 1850,
+      "conf": "CAF",
+      "group": "C",
+      "played": 1,
+      "wins": 0,
+      "win_rate": 0.0,
+      "avg_gf": 1.0,
+      "avg_ga": 1.0,
+      "win_prob_pct": 1.5,
+      "rank": 17
+    },
+    {
       "team": "Belgium",
       "elo": 1849,
       "conf": "UEFA",
@@ -220,33 +233,7 @@
       "avg_gf": 0.0,
       "avg_ga": 0.0,
       "win_prob_pct": 2.0,
-      "rank": 17
-    },
-    {
-      "team": "Turkey",
-      "elo": 1845,
-      "conf": "UEFA",
-      "group": "D",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
-      "win_prob_pct": 0.8,
       "rank": 18
-    },
-    {
-      "team": "Morocco",
-      "elo": 1840,
-      "conf": "CAF",
-      "group": "C",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
-      "win_prob_pct": 1.5,
-      "rank": 19
     },
     {
       "team": "Mexico",
@@ -259,7 +246,7 @@
       "avg_gf": 2.0,
       "avg_ga": 0.0,
       "win_prob_pct": 1.1,
-      "rank": 20
+      "rank": 19
     },
     {
       "team": "USA",
@@ -272,6 +259,19 @@
       "avg_gf": 4.0,
       "avg_ga": 1.0,
       "win_prob_pct": 1.7,
+      "rank": 20
+    },
+    {
+      "team": "Turkey",
+      "elo": 1813,
+      "conf": "UEFA",
+      "group": "D",
+      "played": 1,
+      "wins": 0,
+      "win_rate": 0.0,
+      "avg_gf": 0.0,
+      "avg_ga": 2.0,
+      "win_prob_pct": 0.8,
       "rank": 21
     },
     {
@@ -301,6 +301,19 @@
       "rank": 23
     },
     {
+      "team": "Australia",
+      "elo": 1782,
+      "conf": "AFC",
+      "group": "D",
+      "played": 1,
+      "wins": 1,
+      "win_rate": 1.0,
+      "avg_gf": 2.0,
+      "avg_ga": 0.0,
+      "win_prob_pct": 0.6,
+      "rank": 24
+    },
+    {
       "team": "South Korea",
       "elo": 1770,
       "conf": "AFC",
@@ -311,19 +324,6 @@
       "avg_gf": 2.0,
       "avg_ga": 1.0,
       "win_prob_pct": 0.7,
-      "rank": 24
-    },
-    {
-      "team": "Australia",
-      "elo": 1750,
-      "conf": "AFC",
-      "group": "D",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
-      "win_prob_pct": 0.6,
       "rank": 25
     },
     {
@@ -354,13 +354,13 @@
     },
     {
       "team": "Scotland",
-      "elo": 1680,
+      "elo": 1691,
       "conf": "UEFA",
       "group": "C",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
+      "played": 1,
+      "wins": 1,
+      "win_rate": 1.0,
+      "avg_gf": 1.0,
       "avg_ga": 0.0,
       "win_prob_pct": 0.3,
       "rank": 28
@@ -601,14 +601,14 @@
     },
     {
       "team": "Haiti",
-      "elo": 1450,
+      "elo": 1439,
       "conf": "CONCACAF",
       "group": "C",
-      "played": 0,
+      "played": 1,
       "wins": 0,
       "win_rate": 0.0,
       "avg_gf": 0.0,
-      "avg_ga": 0.0,
+      "avg_ga": 1.0,
       "win_prob_pct": 0.01,
       "rank": 47
     },
