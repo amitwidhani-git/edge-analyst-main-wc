@@ -7,6 +7,6 @@
   {"date":"2026-06-13","home":"Brazil","away":"Morocco","hs":1,"as":1},
   {"date":"2026-06-13","home":"Haiti","away":"Scotland","hs":0,"as":1},
   {"date":"2026-06-14","home":"Australia","away":"Turkey","hs":2,"as":0},
-  {"date":"2026-06-14","home":"Germany","away":"Curaçao","hs":7,"as":1},
+  {"date":"2026-06-14","home":"Germany","away":"Cura\u00e7ao","hs":7,"as":1},
   {"date":"2026-06-14","home":"Netherlands","away":"Japan","hs":2,"as":2}
 ]

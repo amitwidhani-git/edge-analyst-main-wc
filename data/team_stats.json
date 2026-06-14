@@ -106,19 +106,6 @@
       "rank": 8
     },
     {
-      "team": "Croatia",
-      "elo": 1933,
-      "conf": "UEFA",
-      "group": "L",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
-      "win_prob_pct": 1.2,
-      "rank": 9
-    },
-    {
       "team": "Ecuador",
       "elo": 1933,
       "conf": "CONMEBOL",
@@ -129,6 +116,19 @@
       "avg_gf": 0.0,
       "avg_ga": 0.0,
       "win_prob_pct": 0.9,
+      "rank": 9
+    },
+    {
+      "team": "Croatia",
+      "elo": 1933,
+      "conf": "UEFA",
+      "group": "L",
+      "played": 0,
+      "wins": 0,
+      "win_rate": 0.0,
+      "avg_gf": 0.0,
+      "avg_ga": 0.0,
+      "win_prob_pct": 1.2,
       "rank": 10
     },
     {
@@ -146,7 +146,7 @@
     },
     {
       "team": "Germany",
-      "elo": 1914,
+      "elo": 1913,
       "conf": "UEFA",
       "group": "E",
       "played": 1,
@@ -614,14 +614,14 @@
     },
     {
       "team": "Cura\u00e7ao",
-      "elo": 1420,
+      "elo": 1417,
       "conf": "CONCACAF",
       "group": "E",
-      "played": 0,
+      "played": 1,
       "wins": 0,
       "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
+      "avg_gf": 1.0,
+      "avg_ga": 7.0,
       "win_prob_pct": 0.01,
       "rank": 48
     }
