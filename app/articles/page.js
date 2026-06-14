@@ -20,6 +20,24 @@ function useCursor() {
 const ARTICLES = [
   {
     tag:`Match Report`, date:`14 Jun 2026`,
+    title:`Netherlands 2–2 Japan: Kamada Breaks Dutch Hearts in the 88th. Japan Do It Again.`,
+    excerpt:`Japan were supposed to lose this. Ranked 19th, missing Xavi Simons, against a Netherlands side with Virgil van Dijk, Frenkie de Jong and Cody Gakpo. The model said 46.3% Netherlands. Japan spent 45 minutes making that look about right. Then the second half happened. Three goals in 14 minutes, a 2–1 lead for the Dutch, and then — of course — Japan equalised in the 88th minute. Daichi Kamada. Header from a Junya Ito corner. 2–2. Dallas lost its mind.`,
+    excerpt2:`Van Dijk headed in from Gravenberch's cross on 50 minutes — the big Liverpool defender doing what he does. Keito Nakamura equalised seven minutes later with a shot that deflected off Van Hecke past his Brighton teammate Verbruggen. Summerville restored the Dutch lead on 64 minutes with a curling effort that kissed the inside of the post — his first ever international goal, at the World Cup. Japan kept coming. Kamada found space at the back post. 2–2.`,
+    excerpt3:`The model predicted Netherlands. Draw. The model was wrong on the outcome but the 46.3%/26.5%/27.2% split was honest — this was always going to be tight. Japan are now unbeaten in nine matches against European opponents. The Netherlands had 60% possession, six shots on target. Japan had Zion Suzuki. Group F is now Netherlands and Japan both on one point, Sweden and Tunisia to play later tonight. The group is completely open after matchday one.`,
+    stat:`46.3%`, statLabel:`Netherlands win prob`, stat2:`2–2`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
+    modelCorrect: false, highlight: false,
+  },
+  {
+    tag:`Match Report`, date:`14 Jun 2026`,
+    title:`Germany 7–1 Curaçao: The Four-Time Champions Are Back. Havertz Bags a Brace in Houston.`,
+    excerpt:`Six minutes. That's how long it took Germany to remind the world they mean business. Felix Nmecha, played in beautifully by Florian Wirtz, slotted into the top corner and NRG Stadium erupted. Germany came to this World Cup carrying the baggage of two consecutive group-stage exits. Against Curaçao, they unloaded it all.`,
+    excerpt2:`Curaçao had their moment — Livano Comenencia's equaliser in the 21st minute was historic, the first-ever World Cup goal for the smallest nation in the tournament's history, and the noise from their supporters was something. Then Schlotterbeck headed in from a corner, Havertz converted a penalty in stoppage time, Musiala made it four seconds into the second half and that was that. Brown, Undav and Havertz again completed the rout. 26 shots, 12 on target, 57% possession. A statement.`,
+    excerpt3:`The model gave Germany 64.1%. Correct — though 7–1 was beyond even the most optimistic German projection. The xG finished approximately 4.2–0.3. Curaçao were brave, organised, and completely outclassed. Dick Advocaat, 78 years old, watched from the dugout with quiet dignity. Germany face Ivory Coast next on June 20 — a proper test of whether this is a genuine contender or just a big number against a tiny island.`,
+    stat:`64.1%`, statLabel:`Germany win prob`, stat2:`7–1`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },
+  {
+    tag:`Match Report`, date:`14 Jun 2026`,
     title:`Australia 2–0 Turkey: Irankunda Torches the Return. Turkey's 24 Years Ends in Embarrassment.`,
     excerpt:`They waited 24 years for this. They got Nestory Irankunda running in behind on the counter. Twice. Australia were sharper, hungrier and more organised than a Turkey side who arrived in Vancouver with genuine belief and left with nothing. Irankunda's opener — a burst of pace that the Turkish backline simply couldn't live with — was the moment the night turned. Connor Metcalfe's late second was the final nail.`,
     excerpt2:`Turkey had moments. Yıldız forced three saves. Güler looked dangerous in pockets. But they never really hurt Australia, and Tony Popovic's side knew exactly what they were doing. Compact. Physical. Clinical on the break. Everything Popovic has built over the last 18 months in one 90-minute performance.`,
