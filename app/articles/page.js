@@ -19,6 +19,24 @@ function useCursor() {
 
 const ARTICLES = [
   {
+   tag:`Match Report`, date:`15 Jun 2026`,
+   title:`Sweden 5–1 Tunisia: Potter's Side Erupt. Ayari Announces Himself With a Brace.`,
+   excerpt:`Nobody told Sweden they were supposed to struggle. The side that barely qualified through the play-offs, that lost five of their last ten before Graham Potter changed everything, turned up at Estadio BBVA and absolutely demolished Tunisia. Yasin Ayari opened in the 7th minute, a composed finish that set the tone. By the 59th minute it was 4–1 and the game was done.`,
+   excerpt2:`The goals were extraordinary. Ayari's first, Isak's header on 30 minutes, Gyökeres pouncing on Skhiri's error after the break, Svanberg scoring with his first touch 16 seconds after coming on — and then Ayari again in the 90th+6, hammering in from the edge of the box. Tunisia pulled one back through Rekik just before half time. It was brief. Sweden were in a completely different class.`,
+   excerpt3:`The model said Sweden 60.3% — correct. But 5–1 was beyond any projection. Sweden are now the second team to score three goals from outside the box in a single World Cup match since 1966. Group F after matchday one: Sweden three points, Netherlands and Japan one point each, Tunisia zero. Graham Potter's side face Japan next. That fixture looks very different after today.`,
+   stat:`60.3%`, statLabel:`Sweden win prob`, stat2:`5–1`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+   modelCorrect: true, highlight: false,
+  },
+  {
+   tag:`Match Report`, date:`15 Jun 2026`,
+   title:`Côte d'Ivoire 1–0 Ecuador: Amad Off the Bench. 90th Minute. Model Wrong.`,
+   excerpt:`Ecuador hit the woodwork three times. Three. John Yeboah, Alan Minda, Enner Valencia — all of them struck the frame of the goal at Lincoln Financial Field and walked away with nothing. Ivory Coast had one shot on target all game. It went in. 90th minute. Amad Diallo, two minutes off the bench, calm finish into the bottom corner. Football.`,
+   excerpt2:`The model gave Ecuador 53.9% — the correct side on paper, and the performance backed it. Ecuador dominated possession, pressed high, created the better chances across 90 minutes. The xG finished approximately 1.8–0.3 to Ecuador. Ivory Coast won 1–0. The model was wrong. The woodwork was wrong. Ivory Coast were right where it mattered.`,
+   excerpt3:`This is Ivory Coast's first World Cup win in 12 years. Amad Diallo becomes only the fourth substitute to score for Ivory Coast at a World Cup. Group E is now Ivory Coast three points, Germany three points, Ecuador and Curaçao on zero. Ecuador need to beat Germany on June 21 just to stay relevant. That's a tall order against a side who just put seven past Curaçao.`,
+   stat:`53.9%`, statLabel:`Ecuador win prob`, stat2:`1–0`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
+   modelCorrect: false, highlight: false,
+  },  
+  {
     tag:`Match Report`, date:`14 Jun 2026`,
     title:`Netherlands 2–2 Japan: Kamada Breaks Dutch Hearts in the 88th. Japan Do It Again.`,
     excerpt:`Japan were supposed to lose this. Ranked 19th, missing Xavi Simons, against a Netherlands side with Virgil van Dijk, Frenkie de Jong and Cody Gakpo. The model said 46.3% Netherlands. Japan spent 45 minutes making that look about right. Then the second half happened. Three goals in 14 minutes, a 2–1 lead for the Dutch, and then — of course — Japan equalised in the 88th minute. Daichi Kamada. Header from a Junya Ito corner. 2–2. Dallas lost its mind.`,
@@ -55,13 +73,13 @@ const ARTICLES = [
     modelCorrect: true, highlight: false,
   },
   {
-    tag:`Match Report`, date:`13 Jun 2026`,
-    title:`Brazil 1–1 Morocco: The Atlas Lions Don't Just Survive. They Thrive. Model Nails the Draw.`,
-    excerpt:`Morocco went to MetLife Stadium and played Brazil off the park for the first half hour. Not hung on. Not parked the bus. Actually played. Saibari's opener was everything — composed, intelligent, the goal of a team who know exactly what they're doing. That 2022 run wasn't a fluke. This Morocco side is genuinely frightening.`,
-    excerpt2:`Vinícius equalised on 32 minutes and for a spell Brazil looked like Brazil. But Morocco never looked rattled. They reorganised, sat slightly deeper, and spent the second half asking questions of their own. The xG finished 1.8–1.4 to Brazil. Not the comfortable Seleção win the pre-match noise suggested.`,
-    excerpt3:`Model said 43.3% draw. Correct. The highest single probability for this fixture and it landed. Group C is Scotland first, Brazil and Morocco level, Haiti bottom. Both big guns now need a result in their next game. Morocco face Scotland on June 19. That fixture looks enormous from here.`,
-    stat:`43.3%`, statLabel:`Draw probability`, stat2:`1–1`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
-    modelCorrect: true, highlight: false,
+   tag:`Match Report`, date:`13 Jun 2026`,
+   title:`Brazil 1–1 Morocco: The Atlas Lions Hold the Five-Times Champions. Model Wrong.`,
+   excerpt:`Morocco went to MetLife Stadium and played Brazil off the park for the first half hour. Not hung on. Not parked the bus. Actually played. Saibari's opener was everything — composed, intelligent, the goal of a team who know exactly what they're doing. That 2022 run wasn't a fluke. This Morocco side is genuinely frightening.`,
+   excerpt2:`Vinícius equalised on 32 minutes and for a spell Brazil looked like Brazil. But Morocco never looked rattled. They reorganised, sat slightly deeper, and spent the second half asking questions of their own. The xG finished 1.8–1.4 to Brazil. Not the comfortable Seleção win the pre-match noise suggested — and not the Brazil win the model predicted.`,
+   excerpt3:`The model gave Brazil a 59.3% win probability. Wrong. A draw was the fairest result on the night and Morocco fully deserved their point. Group C is Scotland first on three points, Brazil and Morocco level on one, Haiti bottom. The model now has 3 correct from 6 on matchday one — a humbling start for what looked like a set of straightforward early predictions.`,
+   stat:`59.3%`, statLabel:`Brazil win prob`, stat2:`1–1`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
+   modelCorrect: false, highlight: false,
   },
   {
     tag:`Match Report`, date:`13 Jun 2026`,
