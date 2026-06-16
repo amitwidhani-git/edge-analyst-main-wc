@@ -19,6 +19,42 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`15 Jun 2026`,
+    title:`Spain 0–0 Cabo Verde: The Favourites Are Held. Vozinha. Unbelievable Vozinha.`,
+    excerpt:`Lamine Yamal didn't start. Oyarzabal didn't touch the ball for the first 30 minutes — the longest any outfield player has gone without a touch since records began in 1966. Cabo Verde sat in a 5-4-1 so compact it was almost abstract, and Spain — reigning European champions, World Cup favourites, Elo-rated number one in the world — could not find a way through. Not even close.`,
+    excerpt2:`Vozinha. Forty years old. The oldest goalkeeper at this World Cup. Made four saves of genuine quality, commanded his box, organised his back five with the authority of someone who has done this a thousand times. When Yamal came on in the second half Spain looked more dangerous — quicker, more direct — but Cabo Verde's defensive discipline never cracked. The xG finished approximately 1.8–0.1. Spain created. Cabo Verde defended. The scoreboard said 0–0.`,
+    excerpt3:`The model gave Spain 66.3%. Wrong — and the biggest shock of the tournament so far. Spain's path to the final suddenly looks less straightforward. If they drop points against Uruguay on June 27 the group gets very complicated. Cabo Verde top Group H on goal difference. In their first ever World Cup game. Let that land.`,
+    stat:`66.3%`, statLabel:`Spain win prob`, stat2:`0–0`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
+    modelCorrect: false, highlight: false,
+  },  
+  {
+    tag:`Match Report`, date:`15 Jun 2026`,
+    title:`Belgium 1–1 Egypt: Salah Does What Salah Does. 91.9% Belgium. Wrong.`,
+    excerpt:`Egypt started better. That wasn't supposed to happen. Emam Ashour opened the scoring in the first half and for a spell Belgium — ranked 9th in the world, De Bruyne pulling strings, Lukaku up front — looked rattled. The equaliser came but the winner didn't. Mostafa Shobeir in the Egyptian goal was outstanding in the second half as Belgium pressed. Egypt held on. A point that feels like two.`,
+    excerpt2:`The model gave Belgium 91.9% — the second-highest confidence call of the tournament, behind only Switzerland vs Qatar. It was wrong. Mohamed Salah didn't score but his presence restructured Belgium's defensive shape entirely. Egypt were well-organised, physical, and dangerous on the counter. The xG finished 2.1–0.7 to Belgium. Belgium created. Egypt defended. Group G is now wide open.`,
+    excerpt3:`All four Group G teams on one point after matchday one. Belgium face Iran on June 21. Egypt face New Zealand. Both fixtures look very different now. The model's record drops further — two big-confidence calls wrong in the same day. Group G was supposed to be Belgium's group. Tonight suggested otherwise.`,
+    stat:`91.9%`, statLabel:`Belgium win prob`, stat2:`1–1`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
+    modelCorrect: false, highlight: false,
+  },  
+  {
+    tag:`Match Report`, date:`15 Jun 2026`,
+    title:`Saudi Arabia 1–1 Uruguay: Al Amri Stuns La Celeste. Araújo Rescues the Point.`,
+    excerpt:`Uruguay had 67% possession, 28 shots, and an xG of 1.58. Saudi Arabia had 33% possession, parked defensively, and went in 1–0 up at half time. Abdulelah Al Amri capitalised when Muslera spilled a long-range effort — the kind of moment that happens once in fifty games. Bielsa pulled Darwin Núñez off at half time and his team came out transformed, pressing from the front, creating chances in waves.`,
+    excerpt2:`Maximiliano Araújo's 80th-minute equaliser was deserved. Uruguay dominated the second half entirely. But a draw is a draw. Saudi Arabia survived with extraordinary defensive organisation and a goalkeeper in the form of his life. The model gave Uruguay 81.5%. Wrong. Group H is now all four teams on one point — the same chaotic picture as Group B and Group G.`,
+    excerpt3:`The 5–1 loss to USA in November looks like a one-off now rather than a form guide. Saudi Arabia's pre-tournament results — four losses in the last five — said nothing about what they'd produce on matchday one. Uruguay need to beat Cabo Verde on June 21. If they don't, the Uruguay vs Spain finale on June 27 becomes a must-win.`,
+    stat:`81.5%`, statLabel:`Uruguay win prob`, stat2:`1–1`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
+    modelCorrect: false, highlight: false,
+  },  
+  {
+    tag:`Match Report`, date:`15 Jun 2026`,
+    title:`Iran 2–2 New Zealand: Just Scores Twice. The All Whites Write History at SoFi.`,
+    excerpt:`Elijah Just opened it. Then he scored again — running onto a perfectly weighted Chris Wood ball and slamming it in from close range. New Zealand 2–0 ahead at Los Angeles Stadium, ranked 86th in the world against a side ranked 20th. The noise from the New Zealand end was something nobody in that stadium will forget. Then Iran hit back.`,
+    excerpt2:`Ghoddos found Rezaeian on the right, who curled a ball in for Mohammad Mohebi to thump into the net off the post. 2–1. Iran pushed, levelled — the exact scorer and minute weren't confirmed at the time of writing — and the final 15 minutes were as tense as anything this tournament has produced. New Zealand held on for a point. A point that, given the context, feels like a victory.`,
+    excerpt3:`The model gave Iran 57.9%. Wrong. New Zealand have their first World Cup point since 2010 — when they also drew all three group games and went home unbeaten. Chris Wood, the all-time leading scorer, was outstanding. The Iran vs New Zealand group narrative now hinges on Belgium and Egypt — if Group G stays chaotic, the All Whites could yet advance as a third-placed team. An extraordinary day for New Zealand football.`,
+    stat:`57.9%`, statLabel:`Iran win prob`, stat2:`2–2`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
+    modelCorrect: false, highlight: false,
+  },  
+  {
    tag:`Match Report`, date:`15 Jun 2026`,
    title:`Sweden 5–1 Tunisia: Potter's Side Erupt. Ayari Announces Himself With a Brace.`,
    excerpt:`Nobody told Sweden they were supposed to struggle. The side that barely qualified through the play-offs, that lost five of their last ten before Graham Potter changed everything, turned up at Estadio BBVA and absolutely demolished Tunisia. Yasin Ayari opened in the 7th minute, a composed finish that set the tone. By the 59th minute it was 4–1 and the game was done.`,
