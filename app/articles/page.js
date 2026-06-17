@@ -20,6 +20,15 @@ function useCursor() {
 const ARTICLES = [
   {
     tag:`Match Report`, date:`17 Jun 2026`,
+    title:`England 4–2 Croatia: Kane Joins Lineker. Bellingham Settles It. The Three Lions Are Flying.`,
+    excerpt:`Harry Kane scored twice in the first 42 minutes and joined Gary Lineker as England's all-time leading World Cup goalscorer.  The first was a penalty retake — Livaković saving the initial spot kick before the referee ordered it retaken for encroachment, and Kane made no mistake with his second attempt.  The second was a thumping header from a Declan Rice corner. England looked in control. Then Croatia happened.`,
+    excerpt2:`Martin Baturina stepped onto Sučić's cutback and lashed a stunning equaliser past Pickford from the edge of the area. Then Musa headed in from a Pašalić ball over the top in first-half stoppage time.  2–2 at half time, England's defence looking exposed. But they controlled the second half — Bellingham and Rashford settling it with two goals that killed the game.  England finished with 20 shots, 12 on target. Croatia had 11 attempts.`, 
+    excerpt3:`The model gave England 55.2%. Correct. England top Group L with three points and a +2 goal difference.  Croatia's hopes are hanging by a thread after matchday one. Ghana vs Panama is the other Group L fixture tonight. Kane is now joint-leading World Cup scorer for England with Lineker. On this form — fluid, direct, clinical in the second half — England look like genuine contenders.`,
+    stat:`55.2%`, statLabel:`England win prob`, stat2:`4–2`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },
+  {
+    tag:`Match Report`, date:`17 Jun 2026`,
     title:`Portugal 1–1 Congo DR: Wissa Ruins Ronaldo's Return. DR Congo Make History in Houston.`,
     excerpt:`João Neves headed Portugal in front in the 6th minute and it looked straightforward. Ronaldo on his sixth World Cup, Bruno Fernandes dictating, Bernardo Silva pulling strings. DR Congo — making their first World Cup appearance since 1974, when they competed as Zaire — were supposed to fold. They didn't. Yoane Wissa, a header from Masuaku's pinpoint cross in the 45th+5, sent the Congo end at NRG Stadium into scenes of complete delirium. 1–1 at half time. 1–1 at full time.`,
     excerpt2:`Portugal dominated the second half. 67% possession. Shot after shot. Cancelo's overhead kick in the 55th minute was the moment that should have won it — a spectacular effort from a Bruno Fernandes cross that flew in off the post. VAR chalked it off. Offside in the buildup, tightest of calls. Ronaldo pressed. Conceicao pressed. Diogo Costa was barely tested. Portugal created. DR Congo defended brilliantly and on the counter looked dangerous themselves through Bakambu.`,
