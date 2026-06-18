@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-17",
+  "generated": "2026-06-18",
   "teams": [
     {
       "team": "Spain",
@@ -55,14 +55,14 @@
     },
     {
       "team": "Colombia",
-      "elo": 1998,
+      "elo": 2002,
       "conf": "CONMEBOL",
       "group": "K",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
+      "played": 1,
+      "wins": 1,
+      "win_rate": 1.0,
+      "avg_gf": 3.0,
+      "avg_ga": 1.0,
       "win_prob_pct": 1.6,
       "rank": 5
     },
@@ -406,13 +406,13 @@
     },
     {
       "team": "Ghana",
-      "elo": 1620,
+      "elo": 1641,
       "conf": "CAF",
       "group": "L",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
+      "played": 1,
+      "wins": 1,
+      "win_rate": 1.0,
+      "avg_gf": 1.0,
       "avg_ga": 0.0,
       "win_prob_pct": 0.1,
       "rank": 32
@@ -470,19 +470,6 @@
       "rank": 36
     },
     {
-      "team": "Uzbekistan",
-      "elo": 1590,
-      "conf": "AFC",
-      "group": "K",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
-      "win_prob_pct": 0.05,
-      "rank": 37
-    },
-    {
       "team": "Czechia",
       "elo": 1590,
       "conf": "UEFA",
@@ -493,6 +480,19 @@
       "avg_gf": 1.0,
       "avg_ga": 2.0,
       "win_prob_pct": 0.1,
+      "rank": 37
+    },
+    {
+      "team": "Uzbekistan",
+      "elo": 1586,
+      "conf": "AFC",
+      "group": "K",
+      "played": 1,
+      "wins": 0,
+      "win_rate": 0.0,
+      "avg_gf": 1.0,
+      "avg_ga": 3.0,
+      "win_prob_pct": 0.05,
       "rank": 38
     },
     {
@@ -522,19 +522,6 @@
       "rank": 40
     },
     {
-      "team": "Panama",
-      "elo": 1560,
-      "conf": "CONCACAF",
-      "group": "L",
-      "played": 0,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 0.0,
-      "win_prob_pct": 0.05,
-      "rank": 41
-    },
-    {
       "team": "Qatar",
       "elo": 1550,
       "conf": "AFC",
@@ -545,7 +532,7 @@
       "avg_gf": 1.0,
       "avg_ga": 1.0,
       "win_prob_pct": 0.02,
-      "rank": 42
+      "rank": 41
     },
     {
       "team": "Cabo Verde",
@@ -557,6 +544,19 @@
       "win_rate": 0.0,
       "avg_gf": 0.0,
       "avg_ga": 0.0,
+      "win_prob_pct": 0.05,
+      "rank": 42
+    },
+    {
+      "team": "Panama",
+      "elo": 1539,
+      "conf": "CONCACAF",
+      "group": "L",
+      "played": 1,
+      "wins": 0,
+      "win_rate": 0.0,
+      "avg_gf": 0.0,
+      "avg_ga": 1.0,
       "win_prob_pct": 0.05,
       "rank": 43
     },

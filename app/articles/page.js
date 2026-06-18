@@ -20,6 +20,24 @@ function useCursor() {
 const ARTICLES = [
   {
     tag:`Match Report`, date:`17 Jun 2026`,
+    title:`Uzbekistan 1–3 Colombia: Díaz Stars. Uzbekistan Write History Then Lose It Again.`,
+    excerpt:`Colombia controlled the first half. Daniel Muñoz finished expertly in the 41st minute after a sublime Luis Díaz pass.  Then Abbosbek Fayzullaev made history in the 60th minute — a header that became Uzbekistan's first ever World Cup goal.  The celebrations were extraordinary. The White Wolves had equalised at a World Cup in their first appearance. Five minutes later, Díaz restored Colombia's lead with a powerful strike that slipped through the goalkeeper's hands.  Uzbekistan never recovered.`,
+    excerpt2:`Campaz headed in from a Juan Hernández cross late on to seal it at 3–1.  Karimov struck the post for Uzbekistan in the final minutes  — the moment that summed up their night. They competed, they scored a historic goal, they deserved more than the scoreline suggests. Colombia were too clinical in the end. Luis Díaz was the best player on the pitch — an assist, a goal, and relentless pressing for 90 minutes.`,
+    excerpt3:`The model gave Colombia 62.7%. Correct. Colombia go top of Group K after matchday one — Portugal and DR Congo drew 1–1 earlier in the day, meaning Colombia lead on three points.  The June 27 Colombia vs Portugal fixture is now the group decider. Uzbekistan face DR Congo next — a game that suddenly looks like a must-win. Group K has lived up to every pre-tournament billing. This is the group to watch.`,
+    stat:`62.7%`, statLabel:`Colombia win prob`, stat2:`1–3`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },  
+  {
+    tag:`Match Report`, date:`17 Jun 2026`,
+    title:`Ghana 1–0 Panama: Yirenkyi in Stoppage Time. Panama Lose Their Fourth World Cup Game in a Row.`,
+    excerpt:`Panama dominated the first half. 64% possession. 3–0 in shots. Ghana had one shot in the entire first half.  Carlos Queiroz sat in the dugout and said nothing publicly but everything with his expression. His side were being outplayed. Then the second half happened. Antoine Semenyo ran the show — pressing, linking, creating — and it was his movement that began the move for the winner.  Thomas-Asante released down the left, cut it back, and Caleb Yirenkyi stretched and stabbed it over the line in the fifth minute of stoppage time.  Toronto erupted.`,
+    excerpt2:`Ghana's goalkeeper Lawrence Ati-Zigi had been forced off injured at the start of the second half, replaced by Benjamin Asare, who produced three important saves to keep Panama from scoring.  Panama pushed everyone forward in the final minutes — goalkeeper Mosquera charged up for a last-gasp free kick — but Asare gathered and that was that.  Panama have now lost all four World Cup games they have ever played.  The xG flatters Ghana considerably.`,
+    excerpt3:`The model gave Ghana 91.0% — absurdly high given what actually unfolded. Correct outcome, completely wrong margin of dominance. With England already winning Group L, Ghana move second in the table. Panama face England next — a near-impossible task.  Ghana face Croatia on June 22. Group L is England's to lose, but the battle for second place is very much alive.`,
+    stat:`91.0%`, statLabel:`Ghana win prob`, stat2:`1–0`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },  
+  {
+    tag:`Match Report`, date:`17 Jun 2026`,
     title:`England 4–2 Croatia: Kane Joins Lineker. Bellingham Settles It. The Three Lions Are Flying.`,
     excerpt:`Harry Kane scored twice in the first 42 minutes and joined Gary Lineker as England's all-time leading World Cup goalscorer.  The first was a penalty retake — Livaković saving the initial spot kick before the referee ordered it retaken for encroachment, and Kane made no mistake with his second attempt.  The second was a thumping header from a Declan Rice corner. England looked in control. Then Croatia happened.`,
     excerpt2:`Martin Baturina stepped onto Sučić's cutback and lashed a stunning equaliser past Pickford from the edge of the area. Then Musa headed in from a Pašalić ball over the top in first-half stoppage time.  2–2 at half time, England's defence looking exposed. But they controlled the second half — Bellingham and Rashford settling it with two goals that killed the game.  England finished with 20 shots, 12 on target. Croatia had 11 attempts.`, 
