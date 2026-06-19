@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-18",
+  "generated": "2026-06-19",
   "teams": [
     {
       "team": "Spain",
@@ -158,6 +158,19 @@
       "rank": 12
     },
     {
+      "team": "Switzerland",
+      "elo": 1888,
+      "conf": "UEFA",
+      "group": "B",
+      "played": 2,
+      "wins": 1,
+      "win_rate": 0.5,
+      "avg_gf": 2.5,
+      "avg_ga": 1.0,
+      "win_prob_pct": 1.2,
+      "rank": 13
+    },
+    {
       "team": "Japan",
       "elo": 1885,
       "conf": "AFC",
@@ -168,19 +181,6 @@
       "avg_gf": 2.0,
       "avg_ga": 2.0,
       "win_prob_pct": 1.6,
-      "rank": 13
-    },
-    {
-      "team": "Switzerland",
-      "elo": 1877,
-      "conf": "UEFA",
-      "group": "B",
-      "played": 1,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 1.0,
-      "avg_ga": 1.0,
-      "win_prob_pct": 1.2,
       "rank": 14
     },
     {
@@ -210,6 +210,19 @@
       "rank": 16
     },
     {
+      "team": "Mexico",
+      "elo": 1852,
+      "conf": "CONCACAF",
+      "group": "A",
+      "played": 2,
+      "wins": 2,
+      "win_rate": 1.0,
+      "avg_gf": 1.5,
+      "avg_ga": 0.0,
+      "win_prob_pct": 1.1,
+      "rank": 17
+    },
+    {
       "team": "Morocco",
       "elo": 1850,
       "conf": "CAF",
@@ -220,7 +233,7 @@
       "avg_gf": 1.0,
       "avg_ga": 1.0,
       "win_prob_pct": 1.5,
-      "rank": 17
+      "rank": 18
     },
     {
       "team": "Belgium",
@@ -233,19 +246,6 @@
       "avg_gf": 1.0,
       "avg_ga": 1.0,
       "win_prob_pct": 2.0,
-      "rank": 18
-    },
-    {
-      "team": "Mexico",
-      "elo": 1831,
-      "conf": "CONCACAF",
-      "group": "A",
-      "played": 1,
-      "wins": 1,
-      "win_rate": 1.0,
-      "avg_gf": 2.0,
-      "avg_ga": 0.0,
-      "win_prob_pct": 1.1,
       "rank": 19
     },
     {
@@ -315,27 +315,27 @@
     },
     {
       "team": "South Korea",
-      "elo": 1770,
+      "elo": 1749,
       "conf": "AFC",
       "group": "A",
-      "played": 1,
+      "played": 2,
       "wins": 1,
-      "win_rate": 1.0,
-      "avg_gf": 2.0,
+      "win_rate": 0.5,
+      "avg_gf": 1.0,
       "avg_ga": 1.0,
       "win_prob_pct": 0.7,
       "rank": 25
     },
     {
       "team": "Canada",
-      "elo": 1735,
+      "elo": 1748,
       "conf": "CONCACAF",
       "group": "B",
-      "played": 1,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 1.0,
-      "avg_ga": 1.0,
+      "played": 2,
+      "wins": 1,
+      "win_rate": 0.5,
+      "avg_gf": 3.5,
+      "avg_ga": 0.5,
       "win_prob_pct": 0.4,
       "rank": 26
     },
@@ -392,19 +392,6 @@
       "rank": 30
     },
     {
-      "team": "Bosnia-Herzegovina",
-      "elo": 1645,
-      "conf": "UEFA",
-      "group": "B",
-      "played": 1,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 1.0,
-      "avg_ga": 1.0,
-      "win_prob_pct": 0.1,
-      "rank": 31
-    },
-    {
       "team": "Ghana",
       "elo": 1641,
       "conf": "CAF",
@@ -414,6 +401,19 @@
       "win_rate": 1.0,
       "avg_gf": 1.0,
       "avg_ga": 0.0,
+      "win_prob_pct": 0.1,
+      "rank": 31
+    },
+    {
+      "team": "Bosnia-Herzegovina",
+      "elo": 1635,
+      "conf": "UEFA",
+      "group": "B",
+      "played": 2,
+      "wins": 0,
+      "win_rate": 0.0,
+      "avg_gf": 1.0,
+      "avg_ga": 2.5,
       "win_prob_pct": 0.1,
       "rank": 32
     },
@@ -471,14 +471,14 @@
     },
     {
       "team": "Czechia",
-      "elo": 1590,
+      "elo": 1589,
       "conf": "UEFA",
       "group": "A",
-      "played": 1,
+      "played": 2,
       "wins": 0,
       "win_rate": 0.0,
       "avg_gf": 1.0,
-      "avg_ga": 2.0,
+      "avg_ga": 1.5,
       "win_prob_pct": 0.1,
       "rank": 37
     },
@@ -497,14 +497,14 @@
     },
     {
       "team": "South Africa",
-      "elo": 1580,
+      "elo": 1581,
       "conf": "CAF",
       "group": "A",
-      "played": 1,
+      "played": 2,
       "wins": 0,
       "win_rate": 0.0,
-      "avg_gf": 0.0,
-      "avg_ga": 2.0,
+      "avg_gf": 0.5,
+      "avg_ga": 1.5,
       "win_prob_pct": 0.05,
       "rank": 39
     },
@@ -522,19 +522,6 @@
       "rank": 40
     },
     {
-      "team": "Qatar",
-      "elo": 1550,
-      "conf": "AFC",
-      "group": "B",
-      "played": 1,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 1.0,
-      "avg_ga": 1.0,
-      "win_prob_pct": 0.02,
-      "rank": 41
-    },
-    {
       "team": "Cabo Verde",
       "elo": 1544,
       "conf": "CAF",
@@ -545,7 +532,7 @@
       "avg_gf": 0.0,
       "avg_ga": 0.0,
       "win_prob_pct": 0.05,
-      "rank": 42
+      "rank": 41
     },
     {
       "team": "Panama",
@@ -558,6 +545,19 @@
       "avg_gf": 0.0,
       "avg_ga": 1.0,
       "win_prob_pct": 0.05,
+      "rank": 42
+    },
+    {
+      "team": "Qatar",
+      "elo": 1537,
+      "conf": "AFC",
+      "group": "B",
+      "played": 2,
+      "wins": 0,
+      "win_rate": 0.0,
+      "avg_gf": 0.5,
+      "avg_ga": 3.5,
+      "win_prob_pct": 0.02,
       "rank": 43
     },
     {

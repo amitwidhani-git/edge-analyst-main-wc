@@ -19,6 +19,42 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`18 Jun 2026`,
+    title:`Mexico 1–0 South Korea: Romo's Strike and a Goalkeeping Howler Send El Tri Through First.`,
+    excerpt:`A tight, cagey first half produced just five shots and 0.22 combined xG between the sides before the game opened up after the break.  Luis Romo broke the deadlock in the 50th minute  in front of a raucous Estadio Akron crowd in Guadalajara, with the earlier Czechia-South Africa draw having set up a winner-takes-top-spot scenario for the late kick-off.`,
+    excerpt2:`South Korean goalkeeper Kim Seung-gyu came rushing off his line to claim an innocuous high ball, only to land on top of one of his own defenders and spill it  — the kind of error that defines tight knockout-stakes football. South Korea pushed hard for an equaliser in the closing stages but couldn't find a way through a well-organised Mexican defence.`,
+    excerpt3:`The model gave South Korea 39.5% as favourites — wrong, in a fixture the model rated as a genuine toss-up. Mexico become the first team to secure progression to the knockout stage at this World Cup, sitting on six points from two games.  South Korea remain on three points and well-placed but now face a tense final round against Czechia.`,
+    stat:`39.5%`, statLabel:`South Korea win prob`, stat2:`1–0`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
+    modelCorrect: false, highlight: false,
+  },  
+  {
+    tag:`Match Report`, date:`18 Jun 2026`,
+    title:`Canada 6–0 Qatar: Jonathan David's Hat-Trick. The Co-Hosts Announce Themselves in Vancouver.`,
+    excerpt:`Jonathan David scored a hat-trick as Canada delivered a historic 6-0 demolition of Qatar in Vancouver — the most emphatic win of the tournament so far.  Canada, who had needed a stoppage-time Larin equaliser just to draw their opener against Bosnia, were a completely different side here — sharp, ruthless, and clinical in front of goal from the opening exchanges.`,
+    excerpt2:`The only sour note was a reckless Qatari challenge that left Ismaël Koné facing a potentially serious injury  — a worrying moment for the co-hosts amid an otherwise perfect night. Qatar, who had so memorably snatched a draw against Switzerland with a stoppage-time own goal, found no such fortune here. Canada's front line tore through them at will.`,
+    excerpt3:`The model gave Canada 77.3% — correct, but few would have predicted the six-goal margin. Group B is now Canada four points and a commanding goal difference, with Switzerland on three after their own big win. Canada face Switzerland on June 24 in what looks set to be the match that decides top spot in the group. David's hat-trick puts him firmly in the Golden Boot conversation.`,
+    stat:`77.3%`, statLabel:`Canada win prob`, stat2:`6–0`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: true,
+  },
+  {
+    tag:`Match Report`, date:`18 Jun 2026`,
+    title:`Switzerland 4–1 Bosnia-Herzegovina: The Swiss Find Their Cutting Edge After Frustration.`,
+    excerpt:`Switzerland controlled 68% possession and completed 322 accurate passes in a first half that ended goalless, Granit Xhaka pulling the strings as Bosnia defended with discipline, recording 35 clearances to keep the scoreline blank at the break.  Both sides arrived having drawn frustrating openers — Switzerland denied by a stoppage-time Qatar own goal, Bosnia having led Canada before being pegged back. Both needed a win.`,
+    excerpt2:`The breakthrough came after the break and once it arrived, the floodgates opened. Embolo, fresh from his penalty against Qatar, was again involved as Switzerland's quality told in the final third. Bosnia pulled one back but it was a consolation in a game Switzerland controlled almost throughout. 4-1 reflects the gulf once the Swiss found their range.`,
+    excerpt3:`The model gave Switzerland 52.4% — correct, though the margin exceeded expectations. Group B remains a genuine four-way contest: Canada lead on four points after their own emphatic win, Switzerland on three, Bosnia and Qatar on one each. Switzerland face Canada on June 24 in what is now a likely group decider.`,
+    stat:`52.4%`, statLabel:`Switzerland win prob`, stat2:`4–1`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },
+  {
+    tag:`Match Report`, date:`18 Jun 2026`,
+    title:`Czechia 1–1 South Africa: Sadilek's Six-Minute Opener. Mokoena's Late Penalty Saves Bafana Bafana.`,
+    excerpt:`Michal Sadilek scored the earliest goal of the entire tournament — inside six minutes, a slick first-time finish from Sojka's cutback after a clever long-throw routine.  Czechia, needing a response after their opening defeat, looked the part early. Schick missed two presentable headed chances either side of half time that would have killed the game. South Africa, down to limited attacking options, gradually worked their way into it.`,
+    excerpt2:`Mokoena converted a penalty seven minutes from time after Maseko's shot struck Sulc's arm — the VAR check confirming what the South African bench had been screaming for.  Czechia finished with an xG of just 1.02 against South Africa's 1.37 — they will be hugely disappointed not to have taken all three points.  Both sides now sit on one point from two matches.`,
+    excerpt3:`The model gave Czechia 38.7% — the lowest single-outcome confidence of any prediction this matchday, reflecting how close this group truly is. Mexico's win over South Korea later in the day means Group A is now Mexico six points, South Korea three, Czechia and South Africa one each. South Africa face Mexico on June 24 in a dead rubber for El Tri but a must-win for Bafana Bafana's survival hopes.`,
+    stat:`38.7%`, statLabel:`Czechia win prob`, stat2:`1–1`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
+    modelCorrect: false, highlight: false,
+  },
+  {
     tag:`Match Report`, date:`17 Jun 2026`,
     title:`Uzbekistan 1–3 Colombia: Díaz Stars. Uzbekistan Write History Then Lose It Again.`,
     excerpt:`Colombia controlled the first half. Daniel Muñoz finished expertly in the 41st minute after a sublime Luis Díaz pass.  Then Abbosbek Fayzullaev made history in the 60th minute — a header that became Uzbekistan's first ever World Cup goal.  The celebrations were extraordinary. The White Wolves had equalised at a World Cup in their first appearance. Five minutes later, Díaz restored Colombia's lead with a powerful strike that slipped through the goalkeeper's hands.  Uzbekistan never recovered.`,

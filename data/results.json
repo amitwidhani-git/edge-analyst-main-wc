@@ -22,5 +22,9 @@
   {"date":"2026-06-17","home":"Portugal","away":"Congo DR","hs":1,"as":1},
   {"date":"2026-06-17","home":"England","away":"Croatia","hs":4,"as":2},
   {"date":"2026-06-17","home":"Ghana","away":"Panama","hs":1,"as":0},
-  {"date":"2026-06-17","home":"Uzbekistan","away":"Colombia","hs":1,"as":3}    
+  {"date":"2026-06-17","home":"Uzbekistan","away":"Colombia","hs":1,"as":3}  ,
+  {"date":"2026-06-18","home":"Czechia","away":"South Africa","hs":1,"as":1},
+  {"date":"2026-06-18","home":"Switzerland","away":"Bosnia-Herzegovina","hs":4,"as":1},
+  {"date":"2026-06-18","home":"Canada","away":"Qatar","hs":6,"as":0},
+  {"date":"2026-06-18","home":"Mexico","away":"South Korea","hs":1,"as":0}  
 ]
