@@ -99,11 +99,15 @@ export default function HomePage() {
       @media(max-width:768px){
         .ea-hero__inner{padding:88px 20px 40px!important}
         .ea-kpi-grid{grid-template-columns:repeat(2,1fr)!important}
+        .ea-kpi-item{padding-left:0!important;border-left:none!important}
+        .ea-kpi-item:nth-child(even){padding-left:24px!important;border-left:1px solid rgba(247,245,240,.1)!important}
         .ea-section-pad{padding-left:20px!important;padding-right:20px!important}
         .ea-fixtures-row{grid-template-columns:56px 1fr 1fr 80px!important}
         .ea-odds-col{display:none!important}
+        .ea-hfx-team{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
         .ea-two-col{grid-template-columns:1fr!important;gap:40px!important}
         .ea-groups-grid{grid-template-columns:repeat(2,1fr)!important}
+        .ea-grp-team{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
       }
       @media(max-width:480px){
         .ea-groups-grid{grid-template-columns:1fr!important}
@@ -115,7 +119,7 @@ export default function HomePage() {
       <div style={{position:'absolute',inset:0,background:`url('https://upload.wikimedia.org/wikipedia/commons/0/04/Metlife_stadium_%28Aerial_view%29.jpg') center 50%/cover no-repeat`,filter:'contrast(1.1) brightness(.52)',transform:imgReady?'scale(1)':'scale(1.06)',transition:'transform 12s ease'}} aria-hidden="true"/>
       <div style={{position:'absolute',inset:0,background:'linear-gradient(to bottom,rgba(8,8,8,.06) 0%,transparent 30%,rgba(8,8,8,.82) 78%),linear-gradient(to right,rgba(8,8,8,.35),transparent 55%)'}} aria-hidden="true"/>
       <div style={{position:'absolute',left:56,top:0,bottom:0,width:2,background:'linear-gradient(to bottom,transparent 10%,#F0A500 30%,#F0A500 70%,transparent 100%)',opacity:.65}} aria-hidden="true"/>
-      <div style={{position:'absolute',bottom:28,right:40,textAlign:'right',pointerEvents:'none'}}>
+      <div className="ea-hero-caption" style={{position:'absolute',bottom:28,right:40,textAlign:'right',pointerEvents:'none'}}>
         <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,letterSpacing:'.1em',textTransform:'uppercase',color:'rgba(247,245,240,.7)',marginBottom:3}}>MetLife Stadium · World Cup Final · 19 Jul 2026</div>
         <div className="ea-photo-credit" style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.06em',color:'rgba(247,245,240,.55)'}}>Photo: Anthony Quintano / CC BY 2.0</div>
       </div>
@@ -174,7 +178,7 @@ export default function HomePage() {
             {n:loading?'—':data?.modelRecord?.played>0?`${data.modelRecord.correct}/${data.modelRecord.played}`:'—', l:'Model record', accent:true},
             {n:loading?'—':data?.modelRecord?.accuracy!=null?`${data.modelRecord.accuracy}%`:'Pending', l:'Accuracy'},
           ].map((k,i)=>(
-            <div key={i} style={{padding:'0 0 0 '+(i>0?'32px':'0'),borderLeft:i>0?'1px solid rgba(247,245,240,.1)':'none'}}>
+            <div key={i} className="ea-kpi-item" style={{padding:'0 0 0 '+(i>0?'32px':'0'),borderLeft:i>0?'1px solid rgba(247,245,240,.1)':'none'}}>
               <div style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:'clamp(36px,4vw,60px)',lineHeight:.9,color:k.accent?'#C8FF00':'#F7F5F0',marginBottom:8}}>{k.n}</div>
               <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.1em',textTransform:'uppercase',color:'rgba(247,245,240,.45)'}}>{k.l}</div>
             </div>
@@ -185,7 +189,7 @@ export default function HomePage() {
 
     {/* ── UPCOMING FIXTURES (dark) ──────────────────────────────────────────── */}
     <section data-theme="dark" className="ea-section-pad" style={{background:'#080808',padding:'72px 56px 0'}}>
-      <div style={{display:'flex',alignItems:'baseline',justifyContent:'space-between',marginBottom:32}}>
+      <div style={{display:'flex',alignItems:'baseline',justifyContent:'space-between',marginBottom:32,flexWrap:'wrap',gap:12}}>
         <div>
           <p style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.2em',textTransform:'uppercase',color:'rgba(247,245,240,.4)',marginBottom:10}}>Next fixtures</p>
           <h2 style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:'clamp(40px,5vw,72px)',lineHeight:.88,color:'#F7F5F0',margin:0}}>
@@ -220,10 +224,11 @@ export default function HomePage() {
             onMouseLeave={e=>e.currentTarget.style.background='transparent'}>
             <div>
               <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,color:'rgba(247,245,240,.4)'}}>{fmtDate(m.date)}</span>
-              {m.oddsSource==='live'&&<span style={{display:'block',fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:7,color:'#C8FF00',letterSpacing:'.08em',marginTop:2}}>LIVE</span>}
+              {m.oddsSource==='live'&&m.status!=='completed'&&<span style={{display:'block',fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:7,color:'#C8FF00',letterSpacing:'.08em',marginTop:2}}>LIVE</span>}
+              {m.status==='completed'&&<span style={{display:'block',fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:7,color:'rgba(247,245,240,.35)',letterSpacing:'.08em',marginTop:2}}>FT</span>}
             </div>
-            <span style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:15,letterSpacing:'.04em',color:m.prediction===m.home?'#F7F5F0':'rgba(247,245,240,.5)'}}>{m.home}</span>
-            <span style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:15,letterSpacing:'.04em',color:m.prediction===m.away?'#F7F5F0':'rgba(247,245,240,.5)'}}>{m.away}</span>
+            <span className="ea-hfx-team" style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:15,letterSpacing:'.04em',color:m.prediction===m.home?'#F7F5F0':'rgba(247,245,240,.5)'}}>{m.home}</span>
+            <span className="ea-hfx-team" style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:15,letterSpacing:'.04em',color:m.prediction===m.away?'#F7F5F0':'rgba(247,245,240,.5)'}}>{m.away}</span>
             <span className="ea-odds-col" style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,color:'rgba(247,245,240,.3)',textAlign:'center'}}>{m.group}</span>
             {[{o:m.bestH,e:m.evH},{o:m.bestD,e:m.evD},{o:m.bestA,e:m.evA}].map((c,ci)=>(
               <div key={ci} className="ea-odds-col" style={{textAlign:'center'}}>
@@ -232,10 +237,19 @@ export default function HomePage() {
               </div>
             ))}
             <div style={{textAlign:'center'}}>
-              <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,padding:'3px 8px',borderRadius:2,background:'rgba(200,255,0,.07)',border:'1px solid rgba(200,255,0,.18)',color:'#C8FF00',display:'inline-block'}}>
-                {m.prediction===m.home?'HOME':m.prediction===m.away?'AWAY':'DRAW'}
-              </span>
-              <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,marginTop:2,color:'rgba(247,245,240,.35)'}}>{m.confidence}%</div>
+              {m.status==='completed'?(
+                <>
+                  <span style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:15,letterSpacing:'.04em',color:m.model_correct?'#C8FF00':'#ef4444'}}>{m.actual_score}</span>
+                  <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:7,marginTop:2,color:m.model_correct?'#C8FF00':'#ef4444',letterSpacing:'.06em'}}>{m.model_correct?'✓ CORRECT':'✗ WRONG'}</div>
+                </>
+              ):(
+                <>
+                  <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,padding:'3px 8px',borderRadius:2,background:'rgba(200,255,0,.07)',border:'1px solid rgba(200,255,0,.18)',color:'#C8FF00',display:'inline-block'}}>
+                    {m.prediction===m.home?'HOME':m.prediction===m.away?'AWAY':'DRAW'}
+                  </span>
+                  <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,marginTop:2,color:'rgba(247,245,240,.35)'}}>{m.confidence}%</div>
+                </>
+              )}
             </div>
           </div>
         );
@@ -361,7 +375,7 @@ export default function HomePage() {
                   <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'3px 0'}}>
                     <div style={{display:'flex',alignItems:'center',gap:7}}>
                       <span style={{width:5,height:5,borderRadius:'50%',background:ti<2?'#C8FF00':'rgba(247,245,240,.2)',flexShrink:0}}/>
-                      <span style={{fontFamily:"var(--font-body,'Outfit',sans-serif)",fontSize:12,fontWeight:ti<2?500:300,color:ti<2?'#F7F5F0':'rgba(247,245,240,.55)'}}>{t.team}</span>
+                      <span className="ea-grp-team" style={{fontFamily:"var(--font-body,'Outfit',sans-serif)",fontSize:12,fontWeight:ti<2?500:300,color:ti<2?'#F7F5F0':'rgba(247,245,240,.55)'}}>{t.team}</span>
                     </div>
                     <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,color:'rgba(247,245,240,.3)'}}>{t.elo}</span>
                   </div>
