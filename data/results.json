@@ -26,5 +26,9 @@
   {"date":"2026-06-18","home":"Czechia","away":"South Africa","hs":1,"as":1},
   {"date":"2026-06-18","home":"Switzerland","away":"Bosnia-Herzegovina","hs":4,"as":1},
   {"date":"2026-06-18","home":"Canada","away":"Qatar","hs":6,"as":0},
-  {"date":"2026-06-18","home":"Mexico","away":"South Korea","hs":1,"as":0}  
+  {"date":"2026-06-18","home":"Mexico","away":"South Korea","hs":1,"as":0},
+  {"date":"2026-06-19","home":"Scotland","away":"Morocco","hs":0,"as":1},
+  {"date":"2026-06-19","home":"USA","away":"Australia","hs":2,"as":0},
+  {"date":"2026-06-20","home":"Brazil","away":"Haiti","hs":3,"as":0},
+  {"date":"2026-06-20","home":"Turkey","away":"Paraguay","hs":0,"as":1}  
 ]
