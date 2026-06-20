@@ -80,7 +80,7 @@ export default function FixturesPage() {
       </section>
 
       {/* Group filter */}
-      <section data-theme="dark" style={{padding:'32px 56px 0',borderBottom:'1px solid rgba(247,245,240,.06)'}}>
+      <section data-theme="dark" className="ea-fx-filter" style={{padding:'32px 56px 0',borderBottom:'1px solid rgba(247,245,240,.06)'}}>
         <div style={{display:'flex',gap:6,flexWrap:'wrap',paddingBottom:24}}>
           <button onClick={()=>setGrp('ALL')} style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.1em',textTransform:'uppercase',padding:'7px 16px',borderRadius:2,border:`1px solid ${grp==='ALL'?'rgba(200,255,0,.4)':'rgba(247,245,240,.08)'}`,background:grp==='ALL'?'rgba(200,255,0,.08)':'transparent',color:grp==='ALL'?'#C8FF00':'rgba(247,245,240,.45)',cursor:'none',transition:'all .15s'}}>
             All Groups
@@ -94,8 +94,8 @@ export default function FixturesPage() {
       </section>
 
       {/* Table */}
-      <section data-theme="dark" style={{padding:'0 56px 80px'}}>
-        <div style={{display:'grid',gridTemplateColumns:'80px 1fr 1fr 60px 72px 72px 72px 100px 96px 64px',gap:8,padding:'10px 12px',borderBottom:'1px solid rgba(247,245,240,.08)',marginTop:24,fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.1em',textTransform:'uppercase',color:'rgba(247,245,240,.3)'}}>
+      <section data-theme="dark" className="ea-fx-section" style={{padding:'0 56px 80px'}}>
+        <div className="ea-fx-hdr" style={{display:'grid',gridTemplateColumns:'80px 1fr 1fr 60px 72px 72px 72px 100px 96px 64px',gap:8,padding:'10px 12px',borderBottom:'1px solid rgba(247,245,240,.08)',marginTop:24,fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.1em',textTransform:'uppercase',color:'rgba(247,245,240,.3)'}}>
           <span>Date</span><span>Home</span><span>Away</span><span>Grp</span>
           <span style={{textAlign:'center'}}>Home</span><span style={{textAlign:'center'}}>Draw</span><span style={{textAlign:'center'}}>Away</span>
           <span style={{textAlign:'center'}}>Model</span><span style={{textAlign:'center'}}>EV Edge</span>
@@ -110,7 +110,7 @@ export default function FixturesPage() {
           const isCompleted=m.status==='completed';
           const borderCol=isCompleted?(m.model_correct?'rgba(200,255,0,.5)':'rgba(239,68,68,.4)'):hasVal?ec(bestEv):'transparent';
           return (
-            <div key={i} style={{
+            <div key={i} className="ea-fx-row" style={{
               display:'grid',gridTemplateColumns:'80px 1fr 1fr 60px 72px 72px 72px 100px 96px 64px',gap:8,
               padding:'13px 12px',
               borderBottom:'1px solid rgba(247,245,240,.04)',
@@ -120,32 +120,32 @@ export default function FixturesPage() {
             }}
               onMouseEnter={e=>e.currentTarget.style.background='rgba(200,255,0,.025)'}
               onMouseLeave={e=>e.currentTarget.style.background=isCompleted?'rgba(247,245,240,.018)':'transparent'}>
-              <div>
+              <div className="ea-fx-date">
                 <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,color:'rgba(247,245,240,.4)'}}>{fmtDate(m.date)}</span>
                 {m.oddsSource==='live'&&<span style={{display:'block',fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:7,color:'#C8FF00',letterSpacing:'.1em',marginTop:2}}>LIVE</span>}
               </div>
-              <span style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:15,letterSpacing:'.04em',color:m.prediction===m.home?'#F7F5F0':'rgba(247,245,240,.5)'}}>{m.home}</span>
-              <span style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:15,letterSpacing:'.04em',color:m.prediction===m.away?'#F7F5F0':'rgba(247,245,240,.5)'}}>{m.away}</span>
-              <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,color:'rgba(247,245,240,.3)',textAlign:'center'}}>{m.group}</span>
+              <span className="ea-fx-home" style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:15,letterSpacing:'.04em',color:m.prediction===m.home?'#F7F5F0':'rgba(247,245,240,.5)'}}>{m.home}</span>
+              <span className="ea-fx-away" style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:15,letterSpacing:'.04em',color:m.prediction===m.away?'#F7F5F0':'rgba(247,245,240,.5)'}}>{m.away}</span>
+              <span className="ea-fx-grp" style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,color:'rgba(247,245,240,.3)',textAlign:'center'}}>{m.group}</span>
               {[{o:m.bestH??m.odds_home,e:m.evH??0},{o:m.bestD??m.odds_draw,e:m.evD??0},{o:m.bestA??m.odds_away,e:m.evA??0}].map((c,ci)=>(
-                <div key={ci} style={{textAlign:'center'}}>
+                <div key={ci} className="ea-fx-odds" style={{textAlign:'center'}}>
                   <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:13,fontWeight:500,color:c.e>3?'#C8FF00':'rgba(247,245,240,.7)'}}>{c.o?.toFixed(2)||'—'}</span>
                   <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,color:'rgba(247,245,240,.3)',marginTop:1}}>{ci===0?m.prob_home:ci===1?m.prob_draw:m.prob_away}%</div>
                 </div>
               ))}
-              <div style={{textAlign:'center'}}>
+              <div className="ea-fx-model" style={{textAlign:'center'}}>
                 <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,padding:'3px 8px',borderRadius:2,background:m.prediction==='Draw'?'rgba(74,127,212,.1)':'rgba(200,255,0,.08)',border:m.prediction==='Draw'?'1px solid rgba(74,127,212,.25)':'1px solid rgba(200,255,0,.2)',color:m.prediction==='Draw'?'#4A7FD4':'#C8FF00',display:'inline-block'}}>
                   {m.prediction===m.home?'HOME':m.prediction===m.away?'AWAY':'DRAW'}
                 </span>
                 <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,marginTop:3,color:m.confidence>65?'#C8FF00':m.confidence>50?'#4A7FD4':'rgba(247,245,240,.4)'}}>{m.confidence}%</div>
               </div>
-              <div style={{textAlign:'center'}}>
+              <div className="ea-fx-ev" style={{textAlign:'center'}}>
                 {hasVal?<span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:11,fontWeight:500,color:ec(bestEv),padding:'3px 8px',background:ebg(bestEv),border:`1px solid ${ebr(bestEv)}`,borderRadius:2,display:'inline-block'}}>+{bestEv.toFixed(1)}%</span>
                 :<span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,color:'rgba(247,245,240,.18)'}}>—</span>}
               </div>
 
               {/* Result cell */}
-              <div style={{textAlign:'center'}}>
+              <div className="ea-fx-result" style={{textAlign:'center'}}>
                 {isCompleted ? (
                   <div style={{display:'flex',flexDirection:'column',alignItems:'center',gap:2}}>
                     <span style={{

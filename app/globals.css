@@ -304,3 +304,36 @@ html.light .nav-word  { color: var(--ea-text-h)    !important; }
   /* Photo credits: more visible on small screens */
   .ea-photo-credit { opacity: 0.85 !important; }
 }
+
+/* ── FIXTURES PAGE MOBILE ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ea-fx-filter { padding: 24px 16px 0 !important; }
+  .ea-fx-section { padding: 0 16px 60px !important; }
+  .ea-fx-hdr { display: none !important; }
+
+  .ea-fx-row {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    grid-template-areas:
+      "date grp"
+      "home away"
+      "model result";
+    gap: 5px 8px !important;
+    padding: 12px !important;
+    margin-bottom: 4px !important;
+    border-radius: 4px !important;
+    cursor: auto !important;
+  }
+
+  .ea-fx-date   { grid-area: date; }
+  .ea-fx-grp    { grid-area: grp; display: flex !important; align-items: center; text-align: right !important; color: rgba(247,245,240,.45) !important; }
+  .ea-fx-home   { grid-area: home; }
+  .ea-fx-away   { grid-area: away; text-align: right !important; }
+  .ea-fx-odds   { display: none !important; }
+  .ea-fx-model  { grid-area: model; text-align: left !important; }
+  .ea-fx-ev     { display: none !important; }
+  .ea-fx-result { grid-area: result; text-align: right !important; }
+
+  /* Align result inner flex to the right on mobile */
+  .ea-fx-result > div { align-items: flex-end !important; }
+}
