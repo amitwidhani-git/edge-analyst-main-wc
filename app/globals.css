@@ -305,6 +305,12 @@ html.light .nav-word  { color: var(--ea-text-h)    !important; }
   .ea-photo-credit { opacity: 0.85 !important; }
 }
 
+/* ── SHARED MOBILE PATTERNS ───────────────────────────────────────────────── */
+/* Hero photo credit caption — hide on all pages at mobile widths */
+@media (max-width: 768px) {
+  .ea-hero-caption { display: none !important; }
+}
+
 /* ── FIXTURES PAGE MOBILE ─────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .ea-fx-filter { padding: 24px 16px 0 !important; }

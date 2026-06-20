@@ -371,6 +371,11 @@ export default function InsightsPage() {
         .ea-insights-sidebar{display:none!important}
         .ea-insights-articles{padding-left:20px!important;padding-right:20px!important}
         .ea-insights-featured{padding-left:20px!important;padding-right:20px!important}
+        .ea-hero-caption{display:none!important}
+        .ea-art-grid{grid-template-columns:1fr!important}
+        .ea-feat-stats{grid-template-columns:1fr!important;gap:4px 0!important}
+        .ea-feat-stats>div{padding-left:0!important;padding-right:0!important;border-right:none!important;padding-top:12px!important;border-top:1px solid rgba(247,245,240,.1)}
+        .ea-feat-stats>div:first-child{border-top:none!important;padding-top:0!important}
       }
     `}</style>
 
@@ -381,7 +386,7 @@ export default function InsightsPage() {
         <div style={{position:'absolute',inset:0,background:`url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Mercedes_Benz_Stadium_field_view.jpg/1920px-Mercedes_Benz_Stadium_field_view.jpg') center 50%/cover no-repeat`,filter:'contrast(1.0) brightness(.95)',transform:imgReady?'scale(1)':'scale(1.06)',transition:'transform 12s ease'}} aria-hidden="true"/>
         <div style={{position:'absolute',inset:0,background:'linear-gradient(to bottom,rgba(8,8,8,.06) 0%,transparent 30%,rgba(8,8,8,.85) 78%),linear-gradient(to right,rgba(8,8,8,.35),transparent 55%)'}} aria-hidden="true"/>
         <div style={{position:'absolute',left:56,top:0,bottom:0,width:2,background:'linear-gradient(to bottom,transparent 10%,#F0A500 30%,#F0A500 70%,transparent 100%)',opacity:.65}} aria-hidden="true"/>
-        <div style={{position:'absolute',bottom:28,right:40,textAlign:'right',pointerEvents:'none'}}>
+        <div className="ea-hero-caption" style={{position:'absolute',bottom:28,right:40,textAlign:'right',pointerEvents:'none'}}>
           <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,letterSpacing:'.1em',textTransform:'uppercase',color:'rgba(247,245,240,.7)',marginBottom:3}}>Mercedes-Benz Stadium · World Cup 2026 Semi-Final Venue · Atlanta, Georgia</div>
           <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.06em',color:'rgba(247,245,240,.35)'}}>Photo: BullDawg2021 / CC BY 4.0</div>
         </div>
@@ -443,7 +448,7 @@ export default function InsightsPage() {
                   {ARTICLES[0].excerpt3}
                 </p>
               )}
-              <div style={{display:'grid',gridTemplateColumns:'repeat(3,auto)',gap:0,marginTop:32,borderTop:'1px solid rgba(247,245,240,.1)',paddingTop:24}}>
+              <div className="ea-feat-stats" style={{display:'grid',gridTemplateColumns:'repeat(3,auto)',gap:0,marginTop:32,borderTop:'1px solid rgba(247,245,240,.1)',paddingTop:24}}>
                 {[
                   {stat:ARTICLES[0].stat, label:ARTICLES[0].statLabel},
                   {stat:ARTICLES[0].stat2, label:ARTICLES[0].statLabel2},
@@ -487,7 +492,7 @@ export default function InsightsPage() {
           <p style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.2em',textTransform:'uppercase',color:'rgba(8,8,8,.4)',marginBottom:28}}>
             All analysis · {ARTICLES.length - 1} pieces
           </p>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(340px,1fr))',gap:2}}>
+          <div className="ea-art-grid" style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(340px,1fr))',gap:2}}>
             {ARTICLES.slice(1).map((a,i)=>(
               <div key={i}
                 role="button" tabIndex={0} aria-pressed={active.has(i+1)}

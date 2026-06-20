@@ -58,8 +58,10 @@ export default function RankingsPage() {
         .ea-hero__inner{padding:88px 20px 40px!important}
         .ea-rnk-section{padding-left:20px!important;padding-right:20px!important}
         .ea-rnk-controls{padding-left:20px!important;padding-right:20px!important;flex-direction:column!important;align-items:flex-start!important}
-        .ea-rnk-row{grid-template-columns:36px 1fr 90px 120px!important}
+        .ea-rnk-row{grid-template-columns:26px 1fr 68px 76px!important;gap:6px!important}
         .ea-rnk-col-hide{display:none!important}
+        .ea-rnk-team{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+        .ea-hero-caption{display:none!important}
       }
     `}</style>
 
@@ -70,7 +72,7 @@ export default function RankingsPage() {
         <div style={{position:'absolute',inset:0,background:`url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Arlington_June_2020_4_(AT%26T_Stadium).jpg/1920px-Arlington_June_2020_4_(AT%26T_Stadium).jpg') center 50%/cover no-repeat`,filter:'contrast(1.1) brightness(.52)',transform:imgReady?'scale(1)':'scale(1.06)',transition:'transform 12s ease'}} aria-hidden="true"/>
         <div style={{position:'absolute',inset:0,background:'linear-gradient(to bottom,rgba(8,8,8,.06) 0%,transparent 30%,rgba(8,8,8,.85) 78%),linear-gradient(to right,rgba(8,8,8,.35),transparent 55%)'}} aria-hidden="true"/>
         <div style={{position:'absolute',left:56,top:0,bottom:0,width:2,background:'linear-gradient(to bottom,transparent 10%,#F0A500 30%,#F0A500 70%,transparent 100%)',opacity:.65}} aria-hidden="true"/>
-        <div style={{position:'absolute',bottom:28,right:40,textAlign:'right',pointerEvents:'none'}}>
+        <div className="ea-hero-caption" style={{position:'absolute',bottom:28,right:40,textAlign:'right',pointerEvents:'none'}}>
           <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,letterSpacing:'.1em',textTransform:'uppercase',color:'rgba(247,245,240,.7)',marginBottom:3}}>AT&T Stadium · World Cup 2026 Semi-Final Venue · Arlington, Texas</div>
           <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.06em',color:'rgba(247,245,240,.35)'}}>Photo: Michael Barera / CC BY-SA 4.0</div>
         </div>
@@ -141,7 +143,7 @@ export default function RankingsPage() {
                   onMouseEnter={e=>e.currentTarget.style.background='rgba(200,255,0,.02)'}
                   onMouseLeave={e=>e.currentTarget.style.background='transparent'}>
                   <span style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:16,color:'rgba(247,245,240,.45)',textAlign:'right'}}>{i+1}</span>
-                  <span style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:18,letterSpacing:'.04em',color:i<4?'#C8FF00':i<12?'#F7F5F0':'rgba(247,245,240,.8)'}}>{t.team}</span>
+                  <span className="ea-rnk-team" style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:18,letterSpacing:'.04em',color:i<4?'#C8FF00':i<12?'#F7F5F0':'rgba(247,245,240,.8)'}}>{t.team}</span>
                   <span className="ea-rnk-col-hide" style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:10,color:CONF_COLOR[t.conf]||'rgba(247,245,240,.6)'}}>{t.conf}</span>
                   <div>
                     <span style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:22,color:i<4?'#C8FF00':'#F7F5F0'}}>{t.elo}</span>
