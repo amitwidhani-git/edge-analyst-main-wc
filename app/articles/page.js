@@ -19,6 +19,42 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`21 Jun 2026`,
+    title:`Tunisia 0–4 Japan: Eliminated. Ueda Brace Sends the Samurai Blue Top of the Group.`,
+    excerpt:`Four minutes. Kamada flicked in Nakamura's left-wing cross at the near post and Tunisia, already reeling from a 5-1 opening day mauling by Sweden, were behind before they'd settled. Hervé Renard, appointed less than a week earlier after Sabri Trabelsi's sacking, had no answer. Dahmen brilliantly clawed away a close-range Tomiyasu effort but could do nothing about what followed.`,
+    excerpt2:`Ayase Ueda's 31st-minute strike from 18 yards nestled into the bottom corner to make it 2-0 at the break — Japan utterly dominant, slick interplay carving Tunisia open at will. Ito rolled in a third in the 69th minute, and seven minutes from time Ueda headed home a Sano cross for his second of the night and Japan's fourth. Tunisia finished with an xG of just 0.05 from two shots all match — a chastening, season-defining collapse for a side that won African qualifying without conceding a single goal.`,
+    excerpt3:`The model gave Japan 51.5% — correct, though the manner of victory exceeded every projection. Japan move level with Netherlands on four points at the top of Group F, both sides with identical goal difference. Tunisia are eliminated with one game still to play, the first team confirmed out of the tournament. They face Netherlands on June 25 in a dead rubber. Japan finish their group against Sweden in what is now a genuine top-of-the-table decider.`,
+    stat:`51.5%`, statLabel:`Japan win prob`, stat2:`0–4`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: true,
+  },
+  {
+    tag:`Match Report`, date:`21 Jun 2026`,
+    title:`Ecuador 0–0 Curaçao: Eloy Room Writes History Again. The Smallest Nation Make Their Point.`,
+    excerpt:`Ecuador dominated. 77.1% pre-match favourites, an Elo gap of nearly 500 points, Enner Valencia and Moisés Caicedo pulling the strings against a Curaçao side appearing at their first ever World Cup with a population smaller than most Premier League stadiums hold. None of the pre-match arithmetic mattered once the whistle blew. Curaçao defended their box with total discipline and refused to be moved.`,
+    excerpt2:`Goalkeeper Eloy Room was the difference. Standout saves throughout, commanding his area, organising a back line built around PSV pair Bazoer and Obispo with the calm of a side managed by 78-year-old Dick Advocaat, the oldest head coach at this World Cup. Ecuador created chance after chance and could find no way through. The result means the smallest nation ever to qualify for a World Cup became the smallest ever to earn a point at the tournament.`,
+    excerpt3:`The model gave Ecuador 77.1% — wrong, joining Spain's stalemate with Cabo Verde as one of the tournament's defining defensive performances by a minnow. Group E is now Germany six points and through, Côte d'Ivoire three, Ecuador and Curaçao both on one. Côte d'Ivoire face Curaçao on June 25 knowing victory secures their own progression. Ecuador must beat Germany to have any realistic hope of advancing.`,
+    stat:`77.1%`, statLabel:`Ecuador win prob`, stat2:`0–0`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
+    modelCorrect: false, highlight: false,
+  },  
+  {
+    tag:`Match Report`, date:`20 Jun 2026`,
+    title:`Germany 2–1 Côte d'Ivoire: Undav Wins It Late. The Ivorians Push Germany All the Way.`,
+    excerpt:`Franck Kessié gave Côte d'Ivoire a stunning half-time lead — a disciplined defensive performance from the Ivorians, who absorbed pressure for 45 minutes before striking on the counter. Germany had a goal disallowed by VAR for offside and missed chances through Havertz and Musiala. At the break it was Côte d'Ivoire 1, Germany 0 — a result that would have been a genuine shock given the 7-1 demolition of Curaçao in their opener.`,
+    excerpt2:`Germany pushed hard in the second half and eventually found a way through, levelling to set up a tense finish. Both sides traded chances late on — Amiri tested Yahia Fofana, who continued his excellent tournament — before substitute Deniz Undav settled it. Felix Nmecha, increasingly influential off the bench in both German matches, picked him out with a defence-splitting pass, and Undav turned and finished from inside the area. Bedlam at the Toronto Stadium.`,
+    excerpt3:`The model gave Germany 66.4% — correct, but the Ivorians made them work for every inch of it. Group E is now Germany six points, Côte d'Ivoire three, Ecuador and Curaçao still searching for their first points. Germany have now scored 9 goals in two matches. Côte d'Ivoire remain well-placed for a knockout spot but face Curaçao next knowing anything but a win complicates their path.`,
+    stat:`66.4%`, statLabel:`Germany win prob`, stat2:`2–1`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },  
+  {
+    tag:`Match Report`, date:`20 Jun 2026`,
+    title:`Netherlands 5–1 Sweden: Brobbey and Gakpo Score Twice Each. Koeman's Gamble Pays Off.`,
+    excerpt:`Ronald Koeman sprang a surprise — Brian Brobbey ahead of Crysencio Summerville, the scorer in their opening draw with Japan. The decision was vindicated inside five minutes. Brobbey laid off to Reijnders, who swept it left for Gakpo to cross low, and Brobbey poked it home. The second was almost a carbon copy — Dumfries crossing low from the right, Brobbey prodding in again. 2-0 inside 17 minutes.`,
+    excerpt2:`Sweden actually finished the first half well — Lagerbielke had a goal ruled out for offside right before the break — and for a moment looked capable of a response. Instead Netherlands killed the game in ten second-half minutes. Gakpo tapped in after a Dumfries assist, then drilled home a second after good work from Summerville. Elanga pulled one back for Sweden on the counter but it was a footnote. Summerville rounded it off in the 89th. Netherlands finished with an xG of 2.47 to Sweden's 0.98 — total control from start to finish.`,
+    excerpt3:`The model gave Netherlands 61.1% — correct, though 5-1 exceeded any pre-match projection. After the draw with Japan, this was the response Koeman needed. Netherlands top Group F on goal difference, level on four points with Sweden after their own opening win over Tunisia. Japan and Tunisia meet in the other Group F fixture — both knowing a win keeps their own knockout hopes alive.`,
+    stat:`61.1%`, statLabel:`Netherlands win prob`, stat2:`5–1`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: true,
+  },
+  {
     tag:`Match Report`, date:`20 Jun 2026`,
     title:`Turkey 0–1 Paraguay: A Minute In, Game Over. Turkey's Return Ends in Group Stage Elimination.`,
     excerpt:`Sixty-something seconds. That's all Paraguay needed. A goal so early that most of the Santa Clara crowd were still finding their seats when the net rippled. Turkey, fresh off a heartbreaking defeat to Australia, needed a response from the first whistle. Instead they spent the entire match chasing the game, dominating territory and possession but finding Paraguay's low block utterly impenetrable.`,

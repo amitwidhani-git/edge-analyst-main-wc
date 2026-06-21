@@ -125,8 +125,14 @@ export default function IntelligencePage() {
           .ea-odds-main{grid-template-columns:1fr!important}
           .ea-odds-sidebar{display:none!important}
           .ea-odds-controls{padding-left:20px!important;padding-right:20px!important;flex-direction:column!important;align-items:flex-start!important}
-          .ea-match-row{grid-template-columns:60px 1fr auto 64px 72px!important}
+          .ea-match-row{grid-template-columns:60px 1fr 56px 44px!important;gap:8px!important}
           .ea-match-col-hide{display:none!important}
+          .ea-match-best{display:none!important}
+          .ea-bk-expand{padding-left:10px!important;padding-right:10px!important}
+          .ea-bk-table{grid-template-columns:minmax(0,90px) 1fr 1fr 1fr!important;gap:4px!important}
+          .ea-bk-hd{overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;min-width:0;text-align:center}
+          .ea-bk-val{overflow:hidden!important;min-width:0!important}
+          .ea-no-bk-grid{grid-template-columns:1fr!important;gap:8px!important}
         }
       `}</style>
 
@@ -277,7 +283,7 @@ export default function IntelligencePage() {
                     {/* Date */}
                     <div>
                       <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:13, color:'rgba(247,245,240,.38)' }}>{fmtDate(m.date)}</span>
-                      {isLive && <span style={{ display:'block', fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7, color:'#C8FF00', letterSpacing:'.1em', marginTop:2 }}>LIVE</span>}
+                      {isLive && !isCompleted && <span style={{ display:'block', fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7, color:'#C8FF00', letterSpacing:'.1em', marginTop:2 }}>LIVE</span>}
                     </div>
 
                     {/* Match */}
@@ -291,7 +297,7 @@ export default function IntelligencePage() {
                     </div>
 
                     {/* Best market */}
-                    <div style={{ textAlign:'right' }}>
+                    <div className="ea-match-best" style={{ textAlign:'right' }}>
                       {isCompleted ? (
                         <>
                           <span style={{
@@ -357,7 +363,16 @@ export default function IntelligencePage() {
 
                     {/* Expand toggle */}
                     <div style={{ textAlign:'center' }}>
-                      <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:16, color:isExp?'#C8FF00':'rgba(247,245,240,.3)', userSelect:'none', lineHeight:1 }}>
+                      <span style={{
+                        display:'inline-flex', alignItems:'center', justifyContent:'center',
+                        width:24, height:24,
+                        border:`1px solid ${isExp?'rgba(200,255,0,.35)':'rgba(247,245,240,.2)'}`,
+                        background: isExp?'rgba(200,255,0,.06)':'transparent',
+                        borderRadius:2,
+                        fontFamily:"var(--font-mono,'DM Mono',monospace)",
+                        fontSize:16, color:isExp?'#C8FF00':'rgba(247,245,240,.6)',
+                        userSelect:'none', lineHeight:1,
+                      }}>
                         {isExp ? '−' : '+'}
                       </span>
                     </div>
@@ -365,20 +380,20 @@ export default function IntelligencePage() {
 
                   {/* Expanded breakdown */}
                   {isExp && (
-                    <div style={{ borderTop:'1px solid rgba(247,245,240,.05)', padding:'12px 20px 16px' }}>
+                    <div className="ea-bk-expand" style={{ borderTop:'1px solid rgba(247,245,240,.05)', padding:'12px 20px 16px' }}>
                       {hasBookmakers ? (<>
-                        <div style={{ display:'grid', gridTemplateColumns:'140px 1fr 1fr 1fr', gap:8, marginBottom:8, fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.12em', textTransform:'uppercase', color:'rgba(247,245,240,.25)' }}>
+                        <div className="ea-bk-table" style={{ display:'grid', gridTemplateColumns:'140px 1fr 1fr 1fr', gap:8, marginBottom:8, fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.12em', textTransform:'uppercase', color:'rgba(247,245,240,.25)' }}>
                           <span>Bookmaker</span>
-                          <span style={{textAlign:'center'}}>{m.home.split(' ')[0]}</span>
-                          <span style={{textAlign:'center'}}>Draw</span>
-                          <span style={{textAlign:'center'}}>{m.away.split(' ')[0]}</span>
+                          <span className="ea-bk-hd" style={{textAlign:'center'}}>{m.home.split(' ')[0]}</span>
+                          <span className="ea-bk-hd" style={{textAlign:'center'}}>Draw</span>
+                          <span className="ea-bk-hd" style={{textAlign:'center'}}>{m.away.split(' ')[0]}</span>
                         </div>
                         {m.allBookmakers.map((bk, bi) => {
                           const maxH = Math.max(...m.allBookmakers.map(b => b.homeOdds || 0));
                           const maxD = Math.max(...m.allBookmakers.map(b => b.drawOdds || 0));
                           const maxA = Math.max(...m.allBookmakers.map(b => b.awayOdds || 0));
                           return (
-                            <div key={bi} style={{ display:'grid', gridTemplateColumns:'140px 1fr 1fr 1fr', gap:8, padding:'6px 0', borderBottom:bi<m.allBookmakers.length-1?'1px solid rgba(247,245,240,.04)':'none', alignItems:'center' }}>
+                            <div key={bi} className="ea-bk-table" style={{ display:'grid', gridTemplateColumns:'140px 1fr 1fr 1fr', gap:8, padding:'6px 0', borderBottom:bi<m.allBookmakers.length-1?'1px solid rgba(247,245,240,.04)':'none', alignItems:'center' }}>
                               <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:bk.key==='pinnacle'?'#C8FF00':'rgba(247,245,240,.5)', overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>
                                 {bk.key==='pinnacle'?'★ ':''}{bk.name}
                               </span>
@@ -387,7 +402,7 @@ export default function IntelligencePage() {
                                 { v:bk.drawOdds, max:maxD, ev_:((m.prob_draw/100)*(bk.drawOdds||0)-1)*100 },
                                 { v:bk.awayOdds, max:maxA, ev_:((m.prob_away/100)*(bk.awayOdds||0)-1)*100 },
                               ].map((cell, ci) => (
-                                <div key={ci} style={{ textAlign:'center' }}>
+                                <div key={ci} className="ea-bk-val" style={{ textAlign:'center' }}>
                                   <span style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:16, color:cell.v===cell.max&&cell.max?'#C8FF00':'rgba(247,245,240,.7)' }}>
                                     {cell.v?.toFixed(2) || '—'}
                                   </span>
@@ -405,14 +420,14 @@ export default function IntelligencePage() {
                           ★ Pinnacle = sharp reference market · green = best available price · +% = value vs model
                         </div>
                       </>) : (
-                        <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:16, marginBottom:8 }}>
+                        <div className="ea-no-bk-grid" style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:16, marginBottom:8 }}>
                           {[
                             { label:m.home, prob:m.prob_home, odds:m.bestH, ev_:m.evH },
                             { label:'Draw',  prob:m.prob_draw, odds:m.bestD, ev_:m.evD },
                             { label:m.away, prob:m.prob_away, odds:m.bestA, ev_:m.evA },
                           ].map((c,ci) => (
-                            <div key={ci} style={{ padding:'10px 14px', background:'rgba(247,245,240,.03)', borderRadius:2, border:'1px solid rgba(247,245,240,.06)' }}>
-                              <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.3)', marginBottom:6 }}>{c.label}</div>
+                            <div key={ci} style={{ padding:'10px 14px', background:'rgba(247,245,240,.03)', borderRadius:2, border:'1px solid rgba(247,245,240,.06)', minWidth:0 }}>
+                              <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, letterSpacing:'.1em', textTransform:'uppercase', color:'rgba(247,245,240,.3)', marginBottom:6, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{c.label}</div>
                               <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:18, fontWeight:500, color:'rgba(247,245,240,.8)', marginBottom:4 }}>{c.odds?.toFixed(2)||'—'}</div>
                               <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:'rgba(247,245,240,.35)' }}>Model: {c.prob}%</div>
                               {c.ev_>2 && <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:'#C8FF00', marginTop:3 }}>+{c.ev_.toFixed(1)}% value</div>}

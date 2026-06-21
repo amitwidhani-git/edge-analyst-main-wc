@@ -311,8 +311,18 @@ html.light .nav-word  { color: var(--ea-text-h)    !important; }
   .ea-hero-caption { display: none !important; }
 }
 
-/* ── FIXTURES PAGE MOBILE ─────────────────────────────────────────────────── */
+/* ── SIGNALS PAGE: toggle + odds panel visibility ─────────────────────────── */
+/* Hidden on desktop; turned on at mobile via the media query below          */
+.ea-fx-toggle    { display: none; }
+.ea-fx-odds-panel { display: none; }
+
+/* ── FIXTURES / SIGNALS PAGE MOBILE ──────────────────────────────────────── */
 @media (max-width: 768px) {
+  /* Expand toggle button */
+  .ea-fx-toggle    { display: flex !important; }
+  /* Bookmaker odds panel */
+  .ea-fx-odds-panel { display: block !important; }
+
   .ea-fx-filter { padding: 24px 16px 0 !important; }
   .ea-fx-section { padding: 0 16px 60px !important; }
   .ea-fx-hdr { display: none !important; }

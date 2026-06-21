@@ -133,11 +133,22 @@ export default function FixturesPage() {
                   <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,color:'rgba(247,245,240,.3)',marginTop:1}}>{ci===0?m.prob_home:ci===1?m.prob_draw:m.prob_away}%</div>
                 </div>
               ))}
-              <div className="ea-fx-model" style={{textAlign:'center'}}>
-                <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,padding:'3px 8px',borderRadius:2,background:m.prediction==='Draw'?'rgba(74,127,212,.1)':'rgba(200,255,0,.08)',border:m.prediction==='Draw'?'1px solid rgba(74,127,212,.25)':'1px solid rgba(200,255,0,.2)',color:m.prediction==='Draw'?'#4A7FD4':'#C8FF00',display:'inline-block'}}>
-                  {m.prediction===m.home?'HOME':m.prediction===m.away?'AWAY':'DRAW'}
-                </span>
-                <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,marginTop:3,color:m.confidence>65?'#C8FF00':m.confidence>50?'#4A7FD4':'rgba(247,245,240,.4)'}}>{m.confidence}%</div>
+              <div className="ea-fx-model" style={{textAlign:'left'}}>
+                <div style={{display:'flex',gap:4,flexWrap:'wrap'}}>
+                  {[
+                    {label:'H',prob:m.prob_home,win:m.prediction===m.home,isDraw:false},
+                    {label:'D',prob:m.prob_draw,win:m.prediction==='Draw',isDraw:true},
+                    {label:'A',prob:m.prob_away,win:m.prediction===m.away,isDraw:false},
+                  ].map((o,oi)=>(
+                    <span key={oi} style={{
+                      fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,
+                      padding:'2px 6px',borderRadius:2,
+                      background:o.win?(o.isDraw?'rgba(74,127,212,.1)':'rgba(200,255,0,.08)'):'rgba(247,245,240,.03)',
+                      border:`1px solid ${o.win?(o.isDraw?'rgba(74,127,212,.25)':'rgba(200,255,0,.2)'):'rgba(247,245,240,.07)'}`,
+                      color:o.win?(o.isDraw?'#4A7FD4':'#C8FF00'):'rgba(247,245,240,.35)',
+                    }}>{o.label} {o.prob}%</span>
+                  ))}
+                </div>
               </div>
               <div className="ea-fx-ev" style={{textAlign:'center'}}>
                 {hasVal?<span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:11,fontWeight:500,color:ec(bestEv),padding:'3px 8px',background:ebg(bestEv),border:`1px solid ${ebr(bestEv)}`,borderRadius:2,display:'inline-block'}}>+{bestEv.toFixed(1)}%</span>

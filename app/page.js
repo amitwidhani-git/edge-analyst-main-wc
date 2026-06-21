@@ -57,8 +57,8 @@ export default function HomePage() {
 
   const lastResult = [...matches]
     .filter(m=>m.status==='completed')
-    .sort((a,b)=>b.date.localeCompare(a.date))
-    .slice(0,2);
+    .sort((a,b)=>a.date.localeCompare(b.date))
+    .slice(-2);
 
   const upcoming = [
     ...lastResult,

@@ -1,15 +1,34 @@
-import { readFile } from 'fs/promises';
+import { readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
 
-// Cache the full route response for 1 hour — limits Odds API calls to at most 1/hour.
-// Raise to 7200 (2h) on quieter days; lower to 900 (15min) on match days.
-// export const revalidate = 3600;
 export const dynamic = 'force-dynamic';
 
 // ─── File helpers ─────────────────────────────────────────────────────────────
 async function readJSON(filename) {
   const raw = await readFile(join(process.cwd(), 'data', filename), 'utf-8');
   return JSON.parse(raw);
+}
+
+// ─── File-based odds cache (survives hot-reloads, saves API quota) ────────────
+// Max 1 real Odds API call per ODDS_CACHE_TTL_MS across all requests.
+const ODDS_CACHE_TTL_MS = process.env.NODE_ENV === 'development'
+  ? 12 * 60 * 60 * 1000  // 12 hours in dev
+  :  2 * 60 * 60 * 1000; //  2 hours in prod
+const CACHE_FILE = join(process.cwd(), 'data', 'odds_cache.json');
+
+async function readOddsCache() {
+  try {
+    const raw = await readFile(CACHE_FILE, 'utf-8');
+    const { ts, payload } = JSON.parse(raw);
+    if (Date.now() - ts < ODDS_CACHE_TTL_MS) return payload;
+  } catch {}
+  return null;
+}
+
+async function writeOddsCache(payload) {
+  try {
+    await writeFile(CACHE_FILE, JSON.stringify({ ts: Date.now(), payload }));
+  } catch {}
 }
 
 // ─── Team name normalisation (mirrors server.py aliases) ─────────────────────
@@ -48,10 +67,15 @@ function fuzzy(a, b) {
 function ev(prob, odds) { return ((prob / 100) * odds - 1) * 100; }
 
 // ─── Fetch live odds directly from The Odds API ───────────────────────────────
-// Matches the pattern used in app/api/odds/route.js — no proxy, key stays server-side
 async function fetchLiveOdds() {
   const apiKey = process.env.ODDS_API_KEY;
   if (!apiKey) return { odds: [], ok: false, source: null, requestsRemaining: null };
+
+  const cached = await readOddsCache();
+  if (cached) {
+    console.log(`[wc2026] serving odds from file cache`);
+    return cached;
+  }
 
   const SPORT_KEYS = [
     'soccer_fifa_world_cup',
@@ -139,7 +163,9 @@ async function fetchLiveOdds() {
 
       if (odds.length > 0) {
         console.log(`[wc2026] ${sport}: ${odds.length} fixtures · used=${used} · remaining=${remaining}`);
-        return { odds, ok: true, source: sport, requestsRemaining: remaining };
+        const result = { odds, ok: true, source: sport, requestsRemaining: remaining };
+        await writeOddsCache(result);
+        return result;
       }
 
       console.log(`[wc2026] ${sport}: 0 results — trying next`);
