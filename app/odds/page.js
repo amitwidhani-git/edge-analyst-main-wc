@@ -91,7 +91,7 @@ export default function IntelligencePage() {
   }
 
   /* ── derived ──────────────────────────────────────────────────────── */
-  const matches     = data?.matches || [];
+  const matches     = (data?.matches || []).filter(m => m.status !== 'completed');
   const liveCount   = data?.liveCount || 0;
   const valueCount  = data?.valueCount || matches.filter(m => m.bestEv > 3).length;
   const topEv       = [...matches].sort((a, b) => b.bestEv - a.bestEv)[0];

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-21",
+  "generated": "2026-06-22",
   "note": "Static pre-tournament probabilities. Monte Carlo simulator coming post group stage.",
   "results": [
     {
@@ -243,7 +243,7 @@
       "r32_pct": 3.6
     },
     {
-      "team": "Côte d'Ivoire",
+      "team": "CÃ´te d'Ivoire",
       "win_pct": 0.3,
       "final_pct": 0.8,
       "semi_pct": 1.5,
@@ -371,7 +371,7 @@
       "r32_pct": 0.2
     },
     {
-      "team": "Curaçao",
+      "team": "CuraÃ§ao",
       "win_pct": 0.01,
       "final_pct": 0.0,
       "semi_pct": 0.1,

@@ -353,3 +353,37 @@ html.light .nav-word  { color: var(--ea-text-h)    !important; }
   /* Align result inner flex to the right on mobile */
   .ea-fx-result > div { align-items: flex-end !important; }
 }
+
+/* ── GROUP STANDINGS GRID ─────────────────────────────────────────────────── */
+.ea-standings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.ea-standings-hdr,
+.ea-standings-row {
+  display: grid;
+  grid-template-columns: 1fr 28px 28px 28px 28px 28px 28px 28px 36px;
+  gap: 4px;
+}
+
+@media (max-width: 1024px) {
+  .ea-standings-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  /* Fixtures page — shrink hero so title doesn't leave a wall of empty space */
+  .ea-fx-hero.ea-hero { min-height: 34vh !important; }
+
+  .ea-standings-grid { grid-template-columns: 1fr !important; }
+
+  .ea-standings-hdr,
+  .ea-standings-row {
+    grid-template-columns: 1fr 20px 20px 20px 20px 20px 20px 20px 28px !important;
+    gap: 2px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
