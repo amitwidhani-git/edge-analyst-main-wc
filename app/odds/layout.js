@@ -15,10 +15,11 @@ export const metadata = {
     title: 'World Cup 2026 Intelligence | Edge Analysts',
     description: 'Model probabilities vs market odds for every WC 2026 match. Value edges logged before kick-off.',
     url: 'https://www.edgeanalysts.com/odds',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'World Cup 2026 Intelligence — Edge Analysts' }],
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@EdgeAnalysts',
     title: 'World Cup 2026 Odds & Value | Edge Analysts',
     description: 'Where the WC 2026 market is wrong. EdgeIQ model vs bookmaker odds — pre-match, immutable.',
     images: ['/og-image.jpg'],

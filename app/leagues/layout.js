@@ -14,10 +14,11 @@ export const metadata = {
     title: 'World Cup 2026 Rankings | Edge Analysts',
     description: 'Elo ratings and win probabilities for all 48 WC 2026 nations — 10,000 simulations.',
     url: 'https://www.edgeanalysts.com/leagues',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'World Cup 2026 Team Rankings — Edge Analysts' }],
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@EdgeAnalysts',
     title: 'World Cup 2026 Rankings | Edge Analysts',
     description: 'All 48 nations ranked by Elo rating and tournament win probability.',
     images: ['/og-image.jpg'],

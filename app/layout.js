@@ -18,15 +18,17 @@ export const metadata = {
   keywords: ['football betting tips', 'Premier League predictions', 'value betting', 'World Cup 2026 predictions', 'XGBoost football model'],
   authors: [{ name: 'Edge Analysts' }],
   robots: { index: true, follow: true },
+  alternates: { canonical: 'https://www.edgeanalysts.com' },
   openGraph: {
     type: 'website', locale: 'en_GB', url: 'https://www.edgeanalysts.com',
     siteName: 'Edge Analysts',
     title: 'Edge Analysts — Football Intelligence Platform',
     description: 'XGBoost-powered football predictions. Every probability logged before kick-off.',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Edge Analysts — Football Intelligence Platform' }],
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@EdgeAnalysts',
     title: 'Edge Analysts — Football Intelligence Platform',
     description: 'XGBoost-powered football predictions. Every probability logged before kick-off.',
     images: ['/og-image.jpg'],
@@ -46,7 +48,6 @@ export default function RootLayout({ children }) {
             if (t === 'light') document.documentElement.classList.add('light');
           } catch(e) {}
         `}} />
-        <SiteJsonLd />
         <style dangerouslySetInnerHTML={{ __html: `
           :root {
             --font-bebas: 'Bebas Neue', sans-serif;
@@ -57,6 +58,7 @@ export default function RootLayout({ children }) {
         `}} />
       </head>
       <body className="has-global-nav">
+        <SiteJsonLd />
         <a href="#main-content" className="ea-skip-link">Skip to main content</a>
         <ThemeOverrides />
         <GlobalNav />

@@ -125,6 +125,10 @@ export default function HomePage() {
       </div>
 
       <div className="ea-hero__inner">
+        <h1 style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,letterSpacing:'.22em',textTransform:'uppercase',color:'rgba(247,245,240,.85)',marginBottom:20,fontWeight:400}}>
+          Edge Analysts
+        </h1>
+
         <div style={{display:'flex',alignItems:'center',gap:16,marginBottom:28}}>
           <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:7.5,letterSpacing:'.18em',textTransform:'uppercase',background:'#F0A500',color:'#080808',padding:'5px 12px',borderRadius:2,display:'flex',alignItems:'center',gap:7}}>
             <span style={{width:5,height:5,borderRadius:'50%',background:'#080808',animation:'lp-blink 1.8s ease infinite'}}/>
@@ -135,10 +139,10 @@ export default function HomePage() {
           </span>
         </div>
 
-        <h1 style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:'clamp(88px,16vw,200px)',lineHeight:.82,letterSpacing:'.006em',margin:'0 0 36px'}}>
-          <span style={{fontFamily:"var(--font-serif,'Cormorant Garamond',serif)",fontStyle:'italic',fontWeight:300,fontSize:'.34em',color:'rgba(247,245,240,.6)',display:'block',lineHeight:1.2,marginBottom:'.05em'}}>Football Intelligence</span>
+        <h2 style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:'clamp(88px,16vw,200px)',lineHeight:.82,letterSpacing:'.006em',margin:'0 0 36px'}}>
+          <span style={{fontFamily:"var(--font-serif,'Cormorant Garamond',serif)",fontStyle:'italic',fontWeight:300,fontSize:'.34em',color:'rgba(247,245,240,.6)',display:'block',lineHeight:1.2,marginBottom:'.05em'}}>Football Intelligence Platform</span>
           <span style={{background:'linear-gradient(to right, #F0A500, #C8FF00)',WebkitBackgroundClip:'text',backgroundClip:'text',WebkitTextFillColor:'transparent',color:'transparent',display:'block'}}>World Cup 2026</span>
-        </h1>
+        </h2>
 
         <p style={{fontFamily:"var(--font-serif,'Cormorant Garamond',serif)",fontStyle:'italic',fontWeight:300,fontSize:'clamp(18px,1.6vw,24px)',lineHeight:1.6,color:'rgba(247,245,240,.92)',maxWidth:580,margin:'0 0 36px'}}>
           World Football Elo-rated predictions, live odds intelligence and 10,000-simulation tournament forecasts, built to find the edge in every World Cup fixture.

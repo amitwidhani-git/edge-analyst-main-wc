@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-23",
+  "generated": "2026-06-24",
   "teams": [
     {
       "team": "Argentina",
@@ -54,19 +54,6 @@
       "rank": 4
     },
     {
-      "team": "England",
-      "elo": 1977,
-      "conf": "UEFA",
-      "group": "L",
-      "played": 27,
-      "wins": 15,
-      "win_rate": 0.556,
-      "avg_gf": 1.78,
-      "avg_ga": 0.81,
-      "win_prob_pct": 12.0,
-      "rank": 5
-    },
-    {
       "team": "Netherlands",
       "elo": 1963,
       "conf": "UEFA",
@@ -77,6 +64,19 @@
       "avg_gf": 2.06,
       "avg_ga": 1.06,
       "win_prob_pct": 3.5,
+      "rank": 5
+    },
+    {
+      "team": "England",
+      "elo": 1958,
+      "conf": "UEFA",
+      "group": "L",
+      "played": 28,
+      "wins": 15,
+      "win_rate": 0.536,
+      "avg_gf": 1.71,
+      "avg_ga": 0.79,
+      "win_prob_pct": 12.0,
       "rank": 6
     },
     {
@@ -146,14 +146,14 @@
     },
     {
       "team": "Portugal",
-      "elo": 1869,
+      "elo": 1878,
       "conf": "UEFA",
       "group": "K",
-      "played": 19,
-      "wins": 7,
-      "win_rate": 0.368,
-      "avg_gf": 1.63,
-      "avg_ga": 1.21,
+      "played": 20,
+      "wins": 8,
+      "win_rate": 0.4,
+      "avg_gf": 1.8,
+      "avg_ga": 1.15,
       "win_prob_pct": 6.5,
       "rank": 12
     },
@@ -380,14 +380,14 @@
     },
     {
       "team": "Ghana",
-      "elo": 1657,
+      "elo": 1676,
       "conf": "CAF",
       "group": "L",
-      "played": 4,
+      "played": 5,
       "wins": 2,
-      "win_rate": 0.5,
-      "avg_gf": 1.5,
-      "avg_ga": 1.75,
+      "win_rate": 0.4,
+      "avg_gf": 1.2,
+      "avg_ga": 1.4,
       "win_prob_pct": 0.1,
       "rank": 30
     },
@@ -470,19 +470,6 @@
       "rank": 36
     },
     {
-      "team": "Uzbekistan",
-      "elo": 1585,
-      "conf": "AFC",
-      "group": "K",
-      "played": 1,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 1.0,
-      "avg_ga": 3.0,
-      "win_prob_pct": 0.05,
-      "rank": 37
-    },
-    {
       "team": "Egypt",
       "elo": 1583,
       "conf": "CAF",
@@ -493,7 +480,7 @@
       "avg_gf": 1.2,
       "avg_ga": 1.6,
       "win_prob_pct": 0.3,
-      "rank": 38
+      "rank": 37
     },
     {
       "team": "South Africa",
@@ -505,6 +492,19 @@
       "win_rate": 0.0,
       "avg_gf": 0.5,
       "avg_ga": 1.5,
+      "win_prob_pct": 0.05,
+      "rank": 38
+    },
+    {
+      "team": "Uzbekistan",
+      "elo": 1577,
+      "conf": "AFC",
+      "group": "K",
+      "played": 2,
+      "wins": 0,
+      "win_rate": 0.0,
+      "avg_gf": 0.5,
+      "avg_ga": 4.0,
       "win_prob_pct": 0.05,
       "rank": 39
     },

@@ -14,10 +14,11 @@ export const metadata = {
     title: 'World Cup 2026 Fixtures & Predictions | Edge Analysts',
     description: 'All 72 WC 2026 fixtures with model predictions, live odds and value scores.',
     url: 'https://www.edgeanalysts.com/fixtures',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'World Cup 2026 Fixtures & Predictions — Edge Analysts' }],
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@EdgeAnalysts',
     title: 'World Cup 2026 Fixtures | Edge Analysts',
     description: 'Every WC 2026 fixture — Elo predictions, live odds, value edges.',
     images: ['/og-image.jpg'],

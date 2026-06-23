@@ -15,7 +15,19 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/wc2026`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/odds`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/signals`,
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 0.8,

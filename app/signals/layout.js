@@ -15,10 +15,11 @@ export const metadata = {
     title: 'Today\'s Premier League Signals | Edge Analysts',
     description: 'XGBoost model signals ranked by edge size. Model probability vs market implied odds. Logged before kick-off — every miss published.',
     url: 'https://www.edgeanalysts.com/signals',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: "Today's Football Betting Signals — Edge Analysts" }],
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@EdgeAnalysts',
     title: 'Today\'s Premier League Signals | Edge Analysts',
     description: 'Where the market is wrong today. XGBoost signals, pre-match, immutable.',
     images: ['/og-image.jpg'],

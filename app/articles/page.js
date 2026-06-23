@@ -19,6 +19,24 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`23 Jun 2026`,
+    title:`England 0–0 Ghana: No Shots in the First Half. Kane Praises Ghana. Tuchel Has Work to Do.`,
+    excerpt:`Neither team recorded a single shot on goal in the first half.  England, who had beaten Croatia 4–2 in their opener with Kane bagging a brace, found Ghana's 5–4–1 block completely impenetrable. The second half improved — Saka hit the post, Foden curled one just wide — but Ghana's defensive shape never cracked. A scoreless draw that raises serious questions about England's ability to break down a low block, questions that have dogged this team for years.`,
+    excerpt2:`Ghana were excellent. Antoine Semenyo was a constant danger on the counter, winning five of his six duels. Inaki Williams pressed relentlessly. Yirenkyi — who scored the late winner against Panama — was a threat whenever Ghana got forward. Carlos Queiroz had set his side up perfectly. Kane praised Ghana after the game, saying they made it hard with their compact defensive shape.  They did. The best-organised side England have faced in years.`,
+    excerpt3:`The model gave England 75.9% — wrong, and a damaging drop of points. England sit on four points, Ghana on two. Panama vs Croatia is the other Group L fixture today. If Croatia win, the final matchday becomes tense. England face Panama in their last group game — a fixture that should be comfortable but suddenly carries more weight than expected. The 0–0 that nobody saw coming.`,
+    stat:`75.9%`, statLabel:`England win prob`, stat2:`0–0`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
+    modelCorrect: false, highlight: false,
+  },
+  {
+    tag:`Match Report`, date:`23 Jun 2026`,
+    title:`Portugal 5–0 Uzbekistan: Ronaldo Silences the Critics. First Goal in Six. Then the Second.`,
+    excerpt:`Cristiano Ronaldo scored his first goal in six major tournament games for Portugal in the sixth minute — the first player ever to score at six different World Cups — and became the second-oldest scorer in World Cup history at 41 years old.  The noise that had followed him since the DR Congo draw was silenced inside six minutes. Ronaldo slid home the opener from a Cancelo pass, Nuno Mendes doubled it with a free-kick, and Ronaldo added a third from a Bruno Fernandes throughball.  Comfortable before half time. Emphatic by the end.`,
+    excerpt2:`Nematov's own goal stretched the lead on the hour, and substitute Leão smashed one into the top corner late on.  Uzbekistan had their moments — Ganiev's strike was ruled out for a foul in the build-up in what would have been a stunning goal — but they were completely outclassed. Roberto Martínez had his selection validated. Ronaldo had his critics silenced. Portugal rebounded emphatically from the DR Congo disappointment.`, 
+    excerpt3:`The model gave Portugal 74.5% — correct. Portugal move to four points in Group K, level with Colombia who beat DR Congo earlier. The June 27 Portugal vs Colombia fixture is now a straight shootout for top spot. Ronaldo is four goals behind Messi in the Golden Boot race. With the quarter-finals potentially ahead, he will not give up that chase quietly.`,
+    stat:`74.5%`, statLabel:`Portugal win prob`, stat2:`5–0`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },  
+  {
     tag:`Match Report`, date:`22 Jun 2026`,
     title:`Algeria 2–1 Jordan: Gouiri Off the Bench. Algeria's First Win Since 2014 Keeps Them Alive.`,
     excerpt:`Jordan led. Fares Shiyyab's 34th-minute opener stunned the small but vocal Algerian following and briefly raised the prospect of another Group J upset. Algeria, without a World Cup win since defeating South Korea in Brazil 12 years ago, needed someone to step up. Amine Gouiri, on as a substitute, delivered. First a leveller, then the winner in the 82nd minute — a corner routine that bounced to him six yards out, composed finish past Abulaila. VAR checked for offside. Clean. Algeria celebrate.`,
