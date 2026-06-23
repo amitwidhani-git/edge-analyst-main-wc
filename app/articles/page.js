@@ -20,6 +20,33 @@ function useCursor() {
 const ARTICLES = [
   {
     tag:`Match Report`, date:`22 Jun 2026`,
+    title:`Algeria 2–1 Jordan: Gouiri Off the Bench. Algeria's First Win Since 2014 Keeps Them Alive.`,
+    excerpt:`Jordan led. Fares Shiyyab's 34th-minute opener stunned the small but vocal Algerian following and briefly raised the prospect of another Group J upset. Algeria, without a World Cup win since defeating South Korea in Brazil 12 years ago, needed someone to step up. Amine Gouiri, on as a substitute, delivered. First a leveller, then the winner in the 82nd minute — a corner routine that bounced to him six yards out, composed finish past Abulaila. VAR checked for offside. Clean. Algeria celebrate.`,
+    excerpt2:`Jordan had done what they always do — organised, disciplined, dangerous from set pieces. Ali Olwan, the goalscorer in the opening loss to Austria, was a constant threat. But their fitness levels dropped in the second half and Algeria's quality in transition told. Mahrez, also off the bench, caused problems throughout the final 20 minutes. Algeria's winning goal came from chaos — a headed clearance falling to Gouiri in the most unscripted way possible.`,
+    excerpt3:`The model gave Algeria 43.8% — correct. Algeria's first World Cup win since 2014 keeps their knockout stage hopes alive. Group J final standings depend on Argentina's group position, but Algeria now sit second on three points. Jordan are eliminated. Three correct predictions from three matches today. The model is finding its feet in matchday two.`,
+    stat:`43.8%`, statLabel:`Algeria win prob`, stat2:`2–1`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },
+  {
+    tag:`Match Report`, date:`22 Jun 2026`,
+    title:`Norway 3–2 Senegal: Haaland Brace Again. Senegal Push Until the Final Whistle.`,
+    excerpt:`Erling Haaland opened in the 18th minute and doubled Norway's lead just before half time.  Senegal, who had led against France in their opener before losing 3–1, pushed again in the second half — Mbaye pulling one back, then Diatta making it 2–2 and sending the Senegalese end into raptures. Norway found a way. The winner came from an Ødegaard corner, Østigård getting above his marker to head it home in the 74th minute. Haaland is now joint-leading scorer in the tournament.`,
+    excerpt2:`Senegal were excellent. Mané was a problem throughout. Mendy was kept busy. The xG was close — Norway's quality in the final third and Haaland's movement caused constant problems, but Senegal's press disrupted Norway's build-up play in a way no team has managed yet. Aliou Cissé's tactical adjustments after coming from behind showed exactly why Senegal deserve to be here. They lost, but only just.`,
+    excerpt3:`The model gave Norway 55.6% — correct. Norway clinch qualification to the knockout round  with two wins from two. Senegal need to beat Iraq on June 26 to have any chance of advancing. Group I is now one of the tournament's most compelling stories — France and Norway both through, Senegal fighting, Iraq all but eliminated. Haaland. Golden Boot. The race is on.`,
+    stat:`55.6%`, statLabel:`Norway win prob`, stat2:`3–2`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },
+  {
+    tag:`Match Report`, date:`22 Jun 2026`,
+    title:`France 3–0 Iraq: Mbappé Scores. Two-Hour Thunderstorm. Mbappé Scores Again. Dembélé Seals It.`,
+    excerpt:`Mbappé scored in the 14th minute, then the Philadelphia Stadium was suspended at half time as a thunderstorm moved through the area. Play was delayed for two hours.  Players warmed down, rain lashed the pitch, 75,000 fans sheltered and waited. When they came back out, France were still France. Mbappé added his second. Dembélé scored his first of the tournament. 3–0 and into the knockout round.`,
+    excerpt2:`Iraq were better than the scoreline suggests. In the first half especially, before the storm interrupted, they created two genuine chances through Ameen and Mohanad Ali that tested Lloris. The delay disrupted their rhythm more than France's — Deschamps used the break to reorganise, clarify instructions. When football resumed, France were clinical and Iraq were a different team. The storm may have cost Iraq what little chance they had.`,
+    excerpt3:`The model gave France 78.2% — correct. France clinch qualification to the knockout round  with six points from two matches. Group I is now France and Norway both through. Senegal and Iraq play for the right to join them as potential best third-placed teams. Mbappé has four goals in two games. The tournament's best player conversation has three names in it — and he's one of them.`,
+    stat:`78.2%`, statLabel:`France win prob`, stat2:`3–0`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },  
+  {
+    tag:`Match Report`, date:`22 Jun 2026`,
     title:`Argentina 2–0 Austria: Messi Breaks Klose's Record. The Defending Champions Are Through.`,
     excerpt:`Seventeen. Lionel Messi now stands alone as the greatest World Cup goalscorer of all time, his 17th tournament goal — a free-kick that took a wicked deflection off the Austrian wall — breaking Miroslav Klose's record that had stood for 12 years. The reaction inside the stadium was something different entirely. Not just celebration. Something closer to reverence.`,
     excerpt2:`Austria had started this game well. Sabitzer tested Martínez with a long-range drive in the 11th minute, Gregoritsch won two headers in the first half that caused genuine panic. Rangnick's side were organised and competitive. Then Messi's 34th-minute free-kick deflected in, the crowd found another level, and Argentina's quality in the final third became too much to handle. Mac Allister's second-half header from a De Paul corner sealed it.`,

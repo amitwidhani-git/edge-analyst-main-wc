@@ -285,5 +285,8 @@
     "away": "Austria",
     "hs": 2,
     "as": 0
-  }
+  },
+{"date":"2026-06-22","home":"France","away":"Iraq","hs":3,"as":0},
+{"date":"2026-06-22","home":"Norway","away":"Senegal","hs":3,"as":2},
+{"date":"2026-06-22","home":"Algeria","away":"Jordan","hs":2,"as":1}  
 ]
