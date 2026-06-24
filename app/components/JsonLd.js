@@ -54,7 +54,7 @@
           '@type': 'Offer',
           price: '0',
           priceCurrency: 'GBP',
-          description: “Free tier — today's top signals”,
+          description: "Free tier — today's top signals",
         },
       },
     ],
