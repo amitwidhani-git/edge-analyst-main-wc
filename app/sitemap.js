@@ -1,48 +1,13 @@
 export default function sitemap() {
-  const baseUrl = 'https://www.edgeanalysts.com';
-
+  const base = 'https://www.edgeanalysts.com'
+  const now  = new Date()
   return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/fixtures`,
-      lastModified: new Date(),
-      changeFrequency: 'hourly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/wc2026`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/odds`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/signals`,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/leagues`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/articles`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-  ];
+    { url: base,                  lastModified: now, changeFrequency: 'daily',  priority: 1.0 },
+    { url: `${base}/fixtures`,    lastModified: now, changeFrequency: 'hourly', priority: 0.9 },
+    { url: `${base}/odds`,        lastModified: now, changeFrequency: 'daily',  priority: 0.9 },
+    { url: `${base}/articles`,    lastModified: now, changeFrequency: 'daily',  priority: 0.9 },
+    { url: `${base}/wc2026`,      lastModified: now, changeFrequency: 'daily',  priority: 0.8 },
+    { url: `${base}/leagues`,     lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/syndicate`,   lastModified: now, changeFrequency: 'monthly',priority: 0.5 },
+  ]
 }

@@ -30,7 +30,7 @@ export default function GlobalFooter() {
       }} className="gfooter-grid">
 
         {/* Col 1 — Brand */}
-        <div>
+        <div className="gfooter-brand">
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
             <svg width="20" height="18" viewBox="1 -1 62 58" fill="none" aria-hidden="true" focusable="false">
               <path d="M4 22 L32 2 L60 22" stroke="rgba(247,245,240,0.7)" strokeWidth="6" strokeLinejoin="miter" fill="none"/>
@@ -98,83 +98,32 @@ export default function GlobalFooter() {
         </nav>
       </div>
 
-      {/* ── BOTTOM BAR ───────────────────────────────────────────────────── */}
-      <div style={{
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '24px 56px',
-        borderTop: '1px solid rgba(247,245,240,0.05)',
-        flexWrap: 'wrap', gap: 12,
-      }} className="gfooter-bottom">
-        <p style={{
-          fontFamily: "var(--font-body, 'Outfit', sans-serif)",
-          fontWeight: 200, fontSize: 10.5,
-          color: 'rgba(247,245,240,0.6)', lineHeight: 1.7,
-          maxWidth: 680,
-        }}>
-          <span style={{ color: '#D96060', fontWeight: 600 }}>18+</span>
-          {' · Gamble responsibly. Edge Analysts provides analytical information only and does not constitute betting advice. Odds are accurate at time of publication and subject to change. Edge Analysts earns commission when you sign up to an operator via our links. This does not affect the integrity of our analysis. Support: '}
-          <a
-            href="https://www.begambleaware.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="BeGambleAware.org (opens in new tab)"
-            style={{ color: 'rgba(247,245,240,0.8)', textDecoration: 'underline' }}
-          >BeGambleAware.org</a>
-          {' · '}
-          <a
-            href="https://www.gamcare.org.uk"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GamCare.org.uk (opens in new tab)"
-            style={{ color: 'rgba(247,245,240,0.8)', textDecoration: 'underline' }}
-          >GamCare.org.uk</a>
-        </p>
-      </div>
-
-      {/* ── RG COMPLIANCE BAR ────────────────────────────────────────────── */}
+      {/* ── RG / DISCLAIMER BAR ──────────────────────────────────────────── */}
       <div
         role="region"
         aria-label="Responsible gambling information"
         style={{
-          background: 'rgba(0,0,0,0.4)',
-          borderTop: '1px solid rgba(240,165,0,0.12)',
+          borderTop: '1px solid rgba(247,245,240,0.05)',
+          padding: '18px 56px',
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          padding: '11px 56px',
-          flexWrap: 'wrap', gap: 10,
+          flexWrap: 'wrap', gap: 12,
         }} className="gfooter-rg"
       >
         <p style={{
           fontFamily: "var(--font-body, 'Outfit', sans-serif)",
           fontWeight: 200, fontSize: 10.5,
-          color: 'rgba(247,245,240,0.6)', lineHeight: 1.7,
+          color: 'rgba(247,245,240,0.5)', lineHeight: 1.7,
+          maxWidth: 740, margin: 0,
         }}>
           <span style={{ color: '#D96060', fontWeight: 600 }}>18+</span>
-          {' Only · Bet responsibly. Gambling involves risk. Never bet more than you can afford to lose. '}
-          <a
-            href="https://www.begambleaware.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="BeGambleAware.org (opens in new tab)"
-            style={{ color: 'rgba(247,245,240,0.8)', textDecoration: 'underline' }}
-          >BeGambleAware.org</a>
+          {' · Gamble responsibly. Edge Analysts provides analytical information only and does not constitute betting advice. Odds are accurate at time of publication and subject to change. Edge Analysts earns commission when you sign up to an operator via our links. This does not affect the integrity of our analysis. Never bet more than you can afford to lose. '}
+          <a href="https://www.begambleaware.org" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(247,245,240,0.75)', textDecoration: 'underline' }}>BeGambleAware.org</a>
           {' · '}
-          <a
-            href="https://www.gamcare.org.uk"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GamCare.org.uk (opens in new tab)"
-            style={{ color: 'rgba(247,245,240,0.8)', textDecoration: 'underline' }}
-          >GamCare.org.uk</a>
+          <a href="https://www.gamcare.org.uk" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(247,245,240,0.75)', textDecoration: 'underline' }}>GamCare.org.uk</a>
           {' · '}
-          <a
-            href="https://www.gamstop.co.uk"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GamStop.co.uk (opens in new tab)"
-            style={{ color: 'rgba(247,245,240,0.8)', textDecoration: 'underline' }}
-          >GamStop.co.uk</a>
+          <a href="https://www.gamstop.co.uk" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(247,245,240,0.75)', textDecoration: 'underline' }}>GamStop.co.uk</a>
         </p>
-        <div style={{ display: 'flex', gap: 6, flexShrink: 0 }} aria-label="Responsible gambling partners">
+        <div style={{ display: 'flex', gap: 6, flexShrink: 0 }}>
           {[
             ['BeGambleAware', 'https://www.begambleaware.org'],
             ['GamCare', 'https://www.gamcare.org.uk'],
@@ -189,15 +138,37 @@ export default function GlobalFooter() {
               style={{
                 fontFamily: "var(--font-mono, 'DM Mono', monospace)",
                 fontSize: 10.5, letterSpacing: '0.04em',
-                border: '1px solid rgba(247,245,240,0.2)',
+                border: '1px solid rgba(247,245,240,0.15)',
                 borderRadius: 2, padding: '3px 7px',
-                color: 'rgba(247,245,240,0.55)',
-                textDecoration: 'none',
-                display: 'inline-block',
+                color: 'rgba(247,245,240,0.45)',
+                textDecoration: 'none', display: 'inline-block',
               }}
             >{label}</a>
           ))}
         </div>
+      </div>
+
+      {/* ── LEGAL IDENTITY BAR ───────────────────────────────────────────── */}
+      <div style={{
+        borderTop: '1px solid rgba(247,245,240,0.04)',
+        padding: '10px 56px',
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        flexWrap: 'wrap', gap: 8,
+      }} className="gfooter-legal">
+        <p style={{
+          fontFamily: "var(--font-body, 'Outfit', sans-serif)",
+          fontWeight: 200, fontSize: 9.5,
+          color: 'rgba(247,245,240,0.3)', lineHeight: 1.6, margin: 0,
+        }}>
+          © {new Date().getFullYear()} Edge Analysts Ltd · Company No. 17294865 · Registered in England and Wales
+        </p>
+        <p style={{
+          fontFamily: "var(--font-body, 'Outfit', sans-serif)",
+          fontWeight: 200, fontSize: 9.5,
+          color: 'rgba(247,245,240,0.3)', lineHeight: 1.6, margin: 0,
+        }}>
+          ICO Registration: Edge Analysts Ltd · Ref ZC180294
+        </p>
       </div>
 
       <style>{`
@@ -206,11 +177,16 @@ export default function GlobalFooter() {
         .gfooter-social:hover { border-color:rgba(247,245,240,0.4) !important; color:#F7F5F0 !important; }
         @media (max-width: 768px) {
           .gfooter-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
+            grid-template-columns: repeat(3, 1fr) !important;
             padding: 40px 20px 28px !important;
-            gap: 32px !important;
+            gap: 24px 16px !important;
           }
-          .gfooter-bottom, .gfooter-rg {
+          .gfooter-brand {
+            grid-column: 1 / -1 !important;
+            padding-bottom: 8px !important;
+            border-bottom: 1px solid rgba(247,245,240,0.06) !important;
+          }
+          .gfooter-rg, .gfooter-legal {
             padding-left: 20px !important;
             padding-right: 20px !important;
           }
