@@ -18,6 +18,7 @@ export const metadata = {
   keywords: ['football betting tips', 'Premier League predictions', 'value betting', 'World Cup 2026 predictions', 'XGBoost football model'],
   authors: [{ name: 'Edge Analysts' }],
   robots: { index: true, follow: true },
+  verification: { google: 'zRBIhubSAGddJcRhmRYHjGMH5d2c1yuQ9FLPU9bxybs' },
   alternates: { canonical: 'https://edgeanalysts.com' },
   openGraph: {
     type: 'website', locale: 'en_GB', url: 'https://edgeanalysts.com',
