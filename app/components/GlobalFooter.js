@@ -53,7 +53,7 @@ export default function GlobalFooter() {
             color: 'rgba(247,245,240,0.6)',
             maxWidth: 200, lineHeight: 1.65, marginBottom: 14,
           }}>
-            FIFA WC 2026 intelligence. Dixon-Coles model predictions. Transparent track record.
+            World Cup 2026 intelligence. Transparent track record.
           </p>
           <div style={{ display: 'flex', gap: 10 }}>
             <a href="https://www.instagram.com/edgeanalysts" target="_blank" rel="noopener noreferrer" aria-label="Edge Analysts on Instagram" className="gfooter-social">
@@ -82,7 +82,7 @@ export default function GlobalFooter() {
         {/* Col 3 — About */}
         <nav aria-label="About links">
           <span style={COL_HEADING}>About</span>
-          {[['Model methodology', '/articles'], ['Track record', '/fixtures']].map(([label, href]) => (
+          {[['Track record', '/fixtures']].map(([label, href]) => (
             <Link key={label} href={href} style={COL_LINK} className="gfooter-link">{label}</Link>
           ))}
           <a href="mailto:contactus@edgeanalysts.com" style={COL_LINK} className="gfooter-link">Contact</a>
