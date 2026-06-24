@@ -56,6 +56,7 @@ export default function RootLayout({ children }) {
             --font-serif: 'Cormorant Garamond', serif;
           }
         `}} />
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="+XhEircXXIKu+GF+XH4pGA" async />
       </head>
       <body className="has-global-nav">
         <SiteJsonLd />

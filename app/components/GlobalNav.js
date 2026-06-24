@@ -21,6 +21,7 @@ export default function GlobalNav() {
   useEffect(() => {
     fetch('/api/wc2026').then(r => r.json()).then(d => {
       const ms = (d.matches || [])
+        .filter(m => m.status === 'upcoming' || m.status === 'live')
         .sort((a,b) => a.date.localeCompare(b.date))
         .slice(0, 20);
       setWcData(ms);
