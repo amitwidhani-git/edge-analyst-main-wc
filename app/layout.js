@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+﻿import { Suspense } from "react";
 import "./globals.css";
 import ThemeOverrides from "./components/ThemeOverrides";
 import GlobalNav from "./components/GlobalNav";
@@ -9,7 +9,7 @@ import { SiteJsonLd } from "./components/JsonLd";
 // CSS variables remain the same: --font-bebas, --font-mono, --font-body, --font-serif
 
 export const metadata = {
-  metadataBase: new URL('https://www.edgeanalysts.com'),
+  metadataBase: new URL('https://edgeanalysts.com'),
   title: {
     default: 'Edge Analysts — Football Intelligence Platform',
     template: '%s | Edge Analysts',
@@ -18,9 +18,9 @@ export const metadata = {
   keywords: ['football betting tips', 'Premier League predictions', 'value betting', 'World Cup 2026 predictions', 'XGBoost football model'],
   authors: [{ name: 'Edge Analysts' }],
   robots: { index: true, follow: true },
-  alternates: { canonical: 'https://www.edgeanalysts.com' },
+  alternates: { canonical: 'https://edgeanalysts.com' },
   openGraph: {
-    type: 'website', locale: 'en_GB', url: 'https://www.edgeanalysts.com',
+    type: 'website', locale: 'en_GB', url: 'https://edgeanalysts.com',
     siteName: 'Edge Analysts',
     title: 'Edge Analysts — Football Intelligence Platform',
     description: 'XGBoost-powered football predictions. Every probability logged before kick-off.',
@@ -71,3 +71,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+

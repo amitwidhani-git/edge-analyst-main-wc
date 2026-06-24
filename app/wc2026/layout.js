@@ -1,4 +1,4 @@
-import { WC2026JsonLd } from '../components/JsonLd';
+﻿import { WC2026JsonLd } from '../components/JsonLd';
 
 export const metadata = {
   title: 'World Cup 2026 — Predictions, Odds & Group Analysis',
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'World Cup 2026 Predictions & Odds | Edge Analysts',
     description: 'Elo-rated predictions and value bets for all 72 WC 2026 fixtures. 10,000 simulations, pre-match, immutable.',
-    url: 'https://www.edgeanalysts.com/wc2026',
+    url: 'https://edgeanalysts.com/wc2026',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'World Cup 2026 Predictions — Edge Analysts' }],
   },
   twitter: {
@@ -26,7 +26,7 @@ export const metadata = {
     description: 'EdgeIQ model vs bookmaker odds for every WC 2026 match. Value edges ranked before kick-off.',
     images: ['/og-image.jpg'],
   },
-  alternates: { canonical: 'https://www.edgeanalysts.com/wc2026' },
+  alternates: { canonical: 'https://edgeanalysts.com/wc2026' },
 };
 
 export default function WC2026Layout({ children }) {
@@ -37,3 +37,4 @@ export default function WC2026Layout({ children }) {
     </>
   );
 }
+

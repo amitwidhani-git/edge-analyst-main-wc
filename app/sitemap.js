@@ -1,5 +1,5 @@
-export default function sitemap() {
-  const base = 'https://www.edgeanalysts.com'
+﻿export default function sitemap() {
+  const base = 'https://edgeanalysts.com'
   const now  = new Date()
   return [
     { url: base,                  lastModified: now, changeFrequency: 'daily',  priority: 1.0 },

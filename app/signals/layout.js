@@ -1,4 +1,4 @@
-export const metadata = {
+﻿export const metadata = {
   title: 'Signals — Today\'s Football Betting Intelligence',
   description: 'Premier League XGBoost betting signals for 2025/26. Model probability vs market odds, edge scores ranked by conviction. Every prediction timestamped before kick-off. Free access, no account required.',
   keywords: [
@@ -14,7 +14,7 @@ export const metadata = {
   openGraph: {
     title: 'Today\'s Premier League Signals | Edge Analysts',
     description: 'XGBoost model signals ranked by edge size. Model probability vs market implied odds. Logged before kick-off — every miss published.',
-    url: 'https://www.edgeanalysts.com/signals',
+    url: 'https://edgeanalysts.com/signals',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: "Today's Football Betting Signals — Edge Analysts" }],
   },
   twitter: {
@@ -24,9 +24,10 @@ export const metadata = {
     description: 'Where the market is wrong today. XGBoost signals, pre-match, immutable.',
     images: ['/og-image.jpg'],
   },
-  alternates: { canonical: 'https://www.edgeanalysts.com/signals' },
+  alternates: { canonical: 'https://edgeanalysts.com/signals' },
 };
 
 export default function SignalsLayout({ children }) {
   return children;
 }
+

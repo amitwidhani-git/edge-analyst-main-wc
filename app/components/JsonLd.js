@@ -1,28 +1,28 @@
-export function SiteJsonLd() {
+﻿export function SiteJsonLd() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'WebSite',
-        '@id': 'https://www.edgeanalysts.com/#website',
-        url: 'https://www.edgeanalysts.com/',
+        '@id': 'https://edgeanalysts.com/#website',
+        url: 'https://edgeanalysts.com/',
         name: 'Edge Analysts',
         description: 'Football prediction intelligence platform. XGBoost model. Immutable audit log.',
-        publisher: { '@id': 'https://www.edgeanalysts.com/#organisation' },
+        publisher: { '@id': 'https://edgeanalysts.com/#organisation' },
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'https://www.edgeanalysts.com/signals?q={search_term_string}',
+          target: 'https://edgeanalysts.com/signals?q={search_term_string}',
           'query-input': 'required name=search_term_string',
         },
       },
       {
         '@type': 'Organization',
-        '@id': 'https://www.edgeanalysts.com/#organisation',
+        '@id': 'https://edgeanalysts.com/#organisation',
         name: 'Edge Analysts',
-        url: 'https://www.edgeanalysts.com/',
+        url: 'https://edgeanalysts.com/',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://www.edgeanalysts.com/logo.png',
+          url: 'https://edgeanalysts.com/logo.png',
           width: 512,
           height: 512,
         },
@@ -33,15 +33,15 @@ export function SiteJsonLd() {
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://www.edgeanalysts.com/#webpage',
-        url: 'https://www.edgeanalysts.com/',
+        '@id': 'https://edgeanalysts.com/#webpage',
+        url: 'https://edgeanalysts.com/',
         name: 'Edge Analysts — Football Intelligence Platform',
         description: 'Edge Analysts surfaces the gap between what the football betting market prices and what our XGBoost model calculates. Every prediction logged before kick-off.',
-        isPartOf: { '@id': 'https://www.edgeanalysts.com/#website' },
-        about: { '@id': 'https://www.edgeanalysts.com/#organisation' },
+        isPartOf: { '@id': 'https://edgeanalysts.com/#website' },
+        about: { '@id': 'https://edgeanalysts.com/#organisation' },
         breadcrumb: {
           '@type': 'BreadcrumbList',
-          itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.edgeanalysts.com/' }],
+          itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://edgeanalysts.com/' }],
         },
       },
       {
@@ -49,12 +49,12 @@ export function SiteJsonLd() {
         name: 'Edge Analysts',
         applicationCategory: 'SportsApplication',
         operatingSystem: 'Web',
-        url: 'https://www.edgeanalysts.com/',
+        url: 'https://edgeanalysts.com/',
         offers: {
           '@type': 'Offer',
           price: '0',
           priceCurrency: 'GBP',
-          description: "Free tier — today's top signals",
+          description: “Free tier — today's top signals”,
         },
       },
     ],
@@ -82,7 +82,7 @@ export function WC2026JsonLd() {
       address: { '@type': 'PostalAddress', addressCountry: 'US' },
     },
     organizer: { '@type': 'Organization', name: 'FIFA', url: 'https://www.fifa.com' },
-    url: 'https://www.edgeanalysts.com/wc2026',
+    url: 'https://edgeanalysts.com/wc2026',
   };
 
   return (
@@ -92,3 +92,4 @@ export function WC2026JsonLd() {
     />
   );
 }
+

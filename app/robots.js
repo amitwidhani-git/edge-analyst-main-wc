@@ -1,4 +1,4 @@
-export default function robots() {
+﻿export default function robots() {
   return {
     rules: [
       {
@@ -11,6 +11,7 @@ export default function robots() {
       { userAgent: 'PerplexityBot',  allow: '/' },
       { userAgent: 'OAI-SearchBot',  allow: '/' },
     ],
-    sitemap: 'https://www.edgeanalysts.com/sitemap.xml',
+    sitemap: 'https://edgeanalysts.com/sitemap.xml',
   };
 }
+

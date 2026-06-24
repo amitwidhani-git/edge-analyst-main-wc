@@ -1,4 +1,4 @@
-export const metadata = {
+﻿export const metadata = {
   title: 'Fixtures — World Cup 2026 Schedule & Predictions',
   description: 'All 72 World Cup 2026 fixtures with Elo-rated match predictions, live odds and value scores. Group stage schedule, model probabilities and best available odds.',
   keywords: [
@@ -13,7 +13,7 @@ export const metadata = {
   openGraph: {
     title: 'World Cup 2026 Fixtures & Predictions | Edge Analysts',
     description: 'All 72 WC 2026 fixtures with model predictions, live odds and value scores.',
-    url: 'https://www.edgeanalysts.com/fixtures',
+    url: 'https://edgeanalysts.com/fixtures',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'World Cup 2026 Fixtures & Predictions — Edge Analysts' }],
   },
   twitter: {
@@ -23,9 +23,10 @@ export const metadata = {
     description: 'Every WC 2026 fixture — Elo predictions, live odds, value edges.',
     images: ['/og-image.jpg'],
   },
-  alternates: { canonical: 'https://www.edgeanalysts.com/fixtures' },
+  alternates: { canonical: 'https://edgeanalysts.com/fixtures' },
 };
 
 export default function FixturesLayout({ children }) {
   return children;
 }
+
