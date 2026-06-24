@@ -74,7 +74,7 @@ export default function GlobalFooter() {
         {/* Col 2 — Platform */}
         <nav aria-label="Platform links">
           <span style={COL_HEADING}>Platform</span>
-          {[['Fixtures', '/fixtures'], ['Intelligence', '/odds'], ['Rankings', '/leagues'], ['Insights', '/articles'], ['Syndicate', '/syndicate']].map(([label, href]) => (
+          {[['Fixtures', '/fixtures'], ['Intelligence', '/intelligence'], ['Rankings', '/rankings'], ['Insights', '/insights'], ['Syndicate', '/syndicate']].map(([label, href]) => (
             <Link key={label} href={href} style={COL_LINK} className="gfooter-link">{label}</Link>
           ))}
         </nav>

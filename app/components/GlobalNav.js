@@ -5,9 +5,9 @@ import { usePathname } from 'next/navigation';
 
 const NAV_LINKS = [
   { label: 'Fixtures',      href: '/fixtures'   },
-  { label: 'Intelligence',  href: '/odds'        },
-  { label: 'Rankings',      href: '/leagues'     },
-  { label: 'Insights',      href: '/articles'    },
+  { label: 'Intelligence',  href: '/intelligence' },
+  { label: 'Rankings',      href: '/rankings'     },
+  { label: 'Insights',      href: '/insights'     },
   { label: 'Syndicate',     href: '/syndicate'   },
 ];
 

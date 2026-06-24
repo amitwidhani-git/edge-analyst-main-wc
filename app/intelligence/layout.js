@@ -14,7 +14,7 @@ export const metadata = {
   openGraph: {
     title: 'World Cup 2026 Intelligence | Edge Analysts',
     description: 'Model probabilities vs market odds for every WC 2026 match. Value edges logged before kick-off.',
-    url: 'https://www.edgeanalysts.com/odds',
+    url: 'https://www.edgeanalysts.com/intelligence',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'World Cup 2026 Intelligence — Edge Analysts' }],
   },
   twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
     description: 'Where the WC 2026 market is wrong. EdgeIQ model vs bookmaker odds — pre-match, immutable.',
     images: ['/og-image.jpg'],
   },
-  alternates: { canonical: 'https://www.edgeanalysts.com/odds' },
+  alternates: { canonical: 'https://www.edgeanalysts.com/intelligence' },
 };
 
 export default function OddsLayout({ children }) {

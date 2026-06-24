@@ -146,7 +146,7 @@ export default function HomeContent({ initialData }) {
           World Football Elo-rated predictions, live odds intelligence and 10,000-simulation tournament forecasts, built to find the edge in every World Cup fixture.
         </p>
 
-        <Link href="/odds" style={{display:'inline-flex',alignItems:'center',gap:12,marginBottom:36,textDecoration:'none'}}
+        <Link href="/intelligence" style={{display:'inline-flex',alignItems:'center',gap:12,marginBottom:36,textDecoration:'none'}}
           onMouseEnter={e=>{e.currentTarget.querySelector('span.btg-btn').style.background='#FFD600';e.currentTarget.querySelector('span.btg-arr').style.transform='translateX(5px)';}}
           onMouseLeave={e=>{e.currentTarget.querySelector('span.btg-btn').style.background='#F0A500';e.currentTarget.querySelector('span.btg-arr').style.transform='translateX(0)';}}>
           <span className="btg-btn" style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:'clamp(18px,2vw,26px)',letterSpacing:'.1em',textTransform:'uppercase',background:'#F0A500',color:'#080808',padding:'12px 28px',borderRadius:2,transition:'background .2s'}}>Beat the Game</span>
@@ -294,7 +294,7 @@ export default function HomeContent({ initialData }) {
                 </div>
               );
             })}
-            <Link href="/odds" style={{marginTop:8,padding:'12px 16px',fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,letterSpacing:'.1em',textTransform:'uppercase',color:'rgba(8,8,8,.45)',border:'1px solid rgba(8,8,8,.12)',textDecoration:'none',textAlign:'center',transition:'all .2s',borderRadius:2}}
+            <Link href="/intelligence" style={{marginTop:8,padding:'12px 16px',fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,letterSpacing:'.1em',textTransform:'uppercase',color:'rgba(8,8,8,.45)',border:'1px solid rgba(8,8,8,.12)',textDecoration:'none',textAlign:'center',transition:'all .2s',borderRadius:2}}
               onMouseEnter={e=>{e.currentTarget.style.borderColor='rgba(8,8,8,.4)';e.currentTarget.style.color='#080808';}}
               onMouseLeave={e=>{e.currentTarget.style.borderColor='rgba(8,8,8,.12)';e.currentTarget.style.color='rgba(8,8,8,.45)';}}>
               Full odds intelligence →
