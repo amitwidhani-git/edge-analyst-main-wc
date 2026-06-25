@@ -7,6 +7,7 @@
     { url: `${base}/intelligence`, lastModified: now, changeFrequency: 'daily',  priority: 0.9 },
     { url: `${base}/insights`,    lastModified: now, changeFrequency: 'daily',  priority: 0.9 },
     { url: `${base}/wc2026`,      lastModified: now, changeFrequency: 'daily',  priority: 0.8 },
+    { url: `${base}/knockout`,    lastModified: now, changeFrequency: 'daily',  priority: 0.9 },
     { url: `${base}/rankings`,    lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${base}/syndicate`,   lastModified: now, changeFrequency: 'monthly',priority: 0.5 },
   ]

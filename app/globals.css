@@ -387,3 +387,45 @@ html.light .nav-word  { color: var(--ea-text-h)    !important; }
     padding-right: 10px !important;
   }
 }
+
+/* ── FIXTURES PAGE — TAB ROW ──────────────────────────────────────────────── */
+/* Horizontal scroll on mobile instead of overflowing the viewport             */
+@media (max-width: 768px) {
+  .ea-fx-tabs {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    width: 100% !important;
+  }
+}
+
+/* ── KNOCKOUT PAGE ────────────────────────────────────────────────────────── */
+.ko-kpi-grid      { display: grid; grid-template-columns: repeat(4, 1fr); }
+.ko-group-grid    { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.ko-fixtures-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+@media (max-width: 1024px) {
+  .ko-group-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  /* Tab bar */
+  .ko-tab           { padding: 12px 14px !important; font-size: 8px !important; }
+  .ko-tab::after    { left: 14px !important; right: 14px !important; }
+  .ko-tab-subtitle  { display: none !important; }
+
+  /* KPI strip → 2 × 2 */
+  .ko-kpi-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .ko-kpi-cell {
+    padding: 18px 16px !important;
+    border-right:  none !important;
+    border-bottom: none !important;
+  }
+  /* Top row gets a bottom separator */
+  .ko-kpi-cell:nth-child(-n+2) { border-bottom: 1px solid rgba(247,245,240,.1) !important; }
+  /* Left column keeps a right separator */
+  .ko-kpi-cell:nth-child(odd)  { border-right:  1px solid rgba(247,245,240,.1) !important; }
+
+  /* Content grids → single column */
+  .ko-group-grid    { grid-template-columns: 1fr !important; gap: 8px !important; }
+  .ko-fixtures-grid { grid-template-columns: 1fr !important; }
+}

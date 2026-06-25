@@ -4,11 +4,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const NAV_LINKS = [
-  { label: 'Fixtures',      href: '/fixtures'   },
+  { label: 'Fixtures',      href: '/fixtures'    },
   { label: 'Intelligence',  href: '/intelligence' },
   { label: 'Rankings',      href: '/rankings'     },
+  { label: 'Knockout',      href: '/knockout'     },
   { label: 'Insights',      href: '/insights'     },
-  { label: 'Syndicate',     href: '/syndicate'   },
+  { label: 'Syndicate',     href: '/syndicate'    },
 ];
 
 export default function GlobalNav() {

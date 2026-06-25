@@ -116,7 +116,7 @@ export default function FixturesPage() {
       {/* Tabs + Group filter */}
       <section data-theme="dark" className="ea-fx-filter" style={{padding:'32px 56px 0',borderBottom:'1px solid rgba(247,245,240,.06)'}}>
         {/* Tabs */}
-        <div style={{display:'flex',gap:0,border:'1px solid rgba(247,245,240,.1)',borderRadius:2,overflow:'hidden',width:'fit-content',marginBottom:20}}>
+        <div className="ea-fx-tabs" style={{display:'flex',gap:0,border:'1px solid rgba(247,245,240,.1)',borderRadius:2,overflow:'hidden',width:'fit-content',marginBottom:20}}>
           {[
             ['upcoming', `Upcoming · ${loading?'—':upcoming.length}`],
             ['results',  `Results · ${loading?'—':results.length}`],
