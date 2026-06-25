@@ -60,14 +60,18 @@ function computeActualStandings(matches) {
 }
 
 /* ─── Determine each team's qualification status ────────────────────────── */
-// "through" → at most 1 team can end up ranked above this team.
-// "out"     → 2+ teams are already beyond this team's best possible score.
-// "tbc"     → everything else.
+// WC 2026 format: 12 groups × 4 teams → top 2 qualify directly (24 teams)
+// + 8 best third-placed teams = 32 total.
+//
+// "through" → confirmed in top 2 of their group (≤1 team can end above them).
+// "tbc"     → everything else: fighting for top 2, OR confirmed/possible 3rd
+//             (still eligible as a best-3rd wildcard until all groups finish).
+// "out"     → definitively 4th — 3 teams already beyond their best possible
+//             score, so they can't even be the group's 3rd-place team.
 //
 // The key subtlety: when two teams are tied on points with 0 games left, the
 // one currently ranked LOWER (by GD/GF) must treat the higher-ranked team as
-// "effectively above them" even though their pts are equal — the tiebreaker
-// is already settled and won't change.
+// "effectively above them" — the tiebreaker is already settled.
 function computeTeamStatuses(standings) {
   const statuses = {};
   for (const [, teams] of Object.entries(standings)) {
@@ -88,10 +92,12 @@ function computeTeamStatuses(standings) {
         return false;
       }).length;
 
-      // Count teams already definitively beyond this team's best possible score
+      // Count teams already definitively beyond this team's best possible score.
+      // Need >= 3 to be "out" — in this 48-team format a 3rd-place team can still
+      // qualify as one of the 8 best third-placed teams across all 12 groups.
       const defAbove = teams.filter(o => o.name !== team.name && o.pts > maxPts).length;
 
-      if (defAbove >= 2) {
+      if (defAbove >= 3) {
         statuses[team.name] = 'out';
       } else if (couldEndAbove <= 1) {
         statuses[team.name] = 'through';
@@ -430,9 +436,9 @@ export default function KnockoutPage() {
             <div data-r style={{ marginBottom:28, display:'flex', alignItems:'center', gap:20, flexWrap:'wrap' }}>
               <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.08em', textTransform:'uppercase', color:'rgba(247,245,240,.35)' }}>Legend</span>
               {[
-                { color:ACCENT,                 label:'Through' },
-                { color:'rgba(240,165,0,.9)',    label:'TBC' },
-                { color:'rgba(229,62,62,.8)',    label:'Out' },
+                { color:ACCENT,                 label:'Through (top 2)' },
+                { color:'rgba(240,165,0,.9)',    label:'TBC (incl. best 3rd)' },
+                { color:'rgba(229,62,62,.8)',    label:'Out (4th)' },
               ].map(({ color, label }) => (
                 <div key={label} style={{ display:'flex', alignItems:'center', gap:6 }}>
                   <span style={{ width:6, height:6, borderRadius:'50%', background:color, display:'inline-block' }} />
