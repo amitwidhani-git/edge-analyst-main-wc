@@ -19,6 +19,42 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`26 Jun 2026`,
+    title:`Paraguay 0–0 Australia: Nothing. Nobody Wanted It. Both Through Anyway.`,
+    excerpt:`Paraguay and Australia played a goalless draw with next to no goalmouth action.  Both sides knew a draw kept them both through. The crowd at San Francisco Bay Area Stadium — half empty by kick-off, half asleep by half time — watched 90 minutes of careful possession, zero shots on target in the first half, and a performance that will not feature in any World Cup highlights compilation. Orlando Gill in goal for Paraguay barely touched the ball. Australia's Mat Ryan barely touched the ball.`,
+    excerpt2:`There were moments. Semenyo broke in behind in the 67th minute and somehow scuffed wide from six yards. Enciso had a half-chance cleared off the line in the 74th. Both sides applauded each other's efforts with the enthusiasm of two teams who had already checked the Group D table and confirmed their arithmetic before the whistle blew. This is the expanded 48-team format in all its glory — and in all its occasional tedium.`,
+    excerpt3:`The model gave Australia 38.7% — wrong, though predicting a draw (23.9%) as the second most likely outcome would have been right. Both Paraguay and Australia finish on four points,  three behind group winners USA. Paraguay advance to the R32 for the first time since 2010. Australia advance for the second consecutive tournament. Group D produced one of the tournament's most dramatic opening matchdays — USA 4–1 — and ended with one of its least dramatic. The knockout rounds will sharpen minds considerably.`,
+    stat:`38.7%`, statLabel:`Australia win prob`, stat2:`0–0`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
+    modelCorrect: false, highlight: false,
+  },    
+  {
+    tag:`Match Report`, date:`26 Jun 2026`,
+    title:`Turkey 3–2 USA: Stoppage Time. Ayhan Breaks American Hearts. The Host Nation Falls.`,
+    excerpt:`The United States lost 3–2 to Turkey in the ninth minute of stoppage time  — a result that meant nothing for the standings (USA already through as group winners, Turkey already eliminated) but everything for the narrative. Kaan Ayhan scored the winner  for Turkey, who had chased the game from 2–1 down with extraordinary intensity in the final 20 minutes. The LA Stadium crowd was stunned into silence. Then someone remembered USA had already qualified and the noise returned.`,
+    excerpt2:`Turkey played their best football of the tournament in a dead rubber. Without the pressure of needing a result they were free, flowing, technical. Yıldız and Güler were outstanding — the performance that should have appeared against Australia and Paraguay arrived 90 minutes too late. USA rotated heavily, Berhalter giving minutes to fringe players. Sebastian Berhalter — the coach's son — started and scored. The stoppage-time winner was cruel on the home crowd but the context softened the blow considerably.`,
+    excerpt3:`The old file had the model predicting Turkey — the fix to correct USA's host boost hadn't been applied in time for this fixture. With the corrected model (USA 52%) the prediction would have been USA. Result: USA lose 3–2 in a dead rubber. Group D final standings: USA 6 points, Australia 4, Paraguay 4, Turkey 0. The R32 awaits — USA face the Group C runner-up. The group stage adventure ends on a strange note but the tournament continues.`,
+    stat:`41.3%`, statLabel:`Turkey win prob`, stat2:`3–2`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },
+  {
+    tag:`Match Report`, date:`25 Jun 2026`,
+    title:`Japan 1–1 Sweden: Elanga Levels. Both Through. Group F's Perfect Ending.`,
+    excerpt:`Daizen Maeda put Japan ahead in the second half with a gorgeous team goal — a lovely Ritsu Doan assist, a composed finish  — and for six minutes Japan were group winners. Then Anthony Elanga struck from distance, his shot from distance beating Zion Suzuki to level the scoreline.  Both benches celebrated. Both sets of fans celebrated. A draw was enough for both teams and football had its gentlemen's agreement moment — or simply two tired sides who both knew what they needed.`,
+    excerpt2:`Japan's second place finish means they face Brazil in the R32, while group winners Netherlands face Morocco.  Sweden advance as a third-placed team — Graham Potter's remarkable transformation of a side that finished bottom of their qualifying group without a win is one of the tournament's great stories. Three competitive matches, seven points across the group stage, and somehow Sweden are still alive. Elanga has been exceptional throughout. Isak scored in the opener but his influence has grown with every game.`,
+    excerpt3:`The model gave Japan 54.9% — wrong, though a draw sending both through felt like the right outcome. In the simultaneous fixture, Netherlands beat Tunisia 3–1 to confirm top spot.  Group F final standings: Netherlands 7 points, Japan 5, Sweden 4, Tunisia 0. Three genuinely good sides through. Tunisia eliminated without a point — the most dramatic fall from grace of the tournament for a side that qualified without conceding a single goal in Africa.`,
+    stat:`54.9%`, statLabel:`Japan win prob`, stat2:`1–1`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
+    modelCorrect: false, highlight: false,
+  },
+  {
+    tag:`Match Report`, date:`25 Jun 2026`,
+    title:`Tunisia 1–3 Netherlands: Brobbey Again. Group F Winners Confirmed. Tunisia's Collapse Complete.`,
+    excerpt:`Netherlands sealed top spot in Group F with a 3–1 win over Tunisia  — a result that was never really in doubt once Brobbey opened the scoring in the first half. Tunisia, already eliminated, pulled one back to give their supporters a moment of pride, but the Dutch quality told emphatically. Koeman's side look a different team to the one that drew with Japan on matchday one — sharper, more direct, with Gakpo and Brobbey operating with a fluency that should concern every team in the R32.`,
+    excerpt2:`Dumfries was excellent again at right wing-back, Gravenberch dominated midfield, and Van Dijk was imperious. Tunisia's defending was passive — the same side that conceded five to Sweden and four to Japan went out with a whimper rather than the fight their African qualifying record deserved. Their tournament: three games, zero points, zero goals in the first half of any match. The contrast with the side that won nine of ten qualifying games without conceding is stark.`,
+    excerpt3:`The model gave Netherlands 54.9% — correct. Netherlands face Morocco in the R32 — a genuinely difficult draw against the AFCON champions.  This Dutch side are capable of going deep in this tournament. They have goals throughout the team, defensive structure, and Koeman's clear tactical identity. The group stage is done. The knockout rounds begin. Netherlands are one of the most dangerous sides still standing.`,
+    stat:`54.9%`, statLabel:`Netherlands win prob`, stat2:`1–3`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },
+  {
     tag:`Match Report`, date:`25 Jun 2026`,
     title:`Curaçao 0–2 Ivory Coast: Pépé's Brace. The Elephants Make History. The Smallest Nation Bow Out With Heads High.`,
     excerpt:`Nicolas Pépé scored twice as Ivory Coast clinched second place in Group E with a 2-0 win, making their first-ever appearance in the knockout stages of the Men's FIFA World Cup.  Pépé opened in the 6th minute  — a composed finish after breakout star Yan Diomandé slid a perfect through ball  into his path. The Philadelphia crowd, already roaring at Ecuador's early goal in the simultaneous match, found another reason to celebrate. Dick Advocaat's Curaçao, guided by the 78-year-old Dutchman, relied on their disciplined setup but ultimately lacked the technical quality to trouble Ivory Coast's attackers.`, 
