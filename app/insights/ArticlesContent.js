@@ -19,6 +19,24 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`27 Jun 2026`,
+    title:`Panama 0–2 England: Bellingham Brilliant. Kane Breaks Lineker's Record. Three Lions Top Group L.`,
+    excerpt:`For an hour it looked like England might be in for another night of frustration, just like the Ghana draw.  Panama sat deep, compact, disciplined — the same defensive structure that had frustrated both Ghana and Croatia, albeit without the same quality to threaten on the counter. Harry Kane had just 10 touches in the first half.  Bellingham was everywhere but couldn't find the final ball. Then a Saka corner in the 62nd minute fell perfectly — Bellingham volleyed home with his left foot and the MetLife Stadium erupted.`, 
+    excerpt2:`Five minutes later Bellingham turned provider, clipping a cross into the box from the left. Kane did what he does best, heading past Mosquera  — his 11th World Cup goal, passing Gary Lineker to become England's all-time leading scorer at World Cups. The goal is confirmed after a lengthy VAR review which determined that a Ghana player was offside but not involved in the play.  A massive ovation for Kane as he was substituted late. Panama's Jose Fajardo had a goal ruled out for offside in the final moments — a small consolation in an otherwise painful final group game.`,
+    excerpt3:`The model gave England 59.8% — correct. England top Group L with 7 points and will face Senegal in the Round of 32 in Atlanta.  The first hour against Panama showed the same frustrations Tuchel will need to solve — England struggle to break down deep defensive blocks without creativity from wide areas. Bellingham's individual brilliance solved it tonight. Against Senegal it will need to be a team solution. Kane's record is extraordinary. England's tournament continues.`,
+    stat:`59.8%`, statLabel:`England win prob`, stat2:`0–2`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },  
+  {
+    tag:`Match Report`, date:`27 Jun 2026`,
+    title:`Croatia 2–1 Ghana: Vlašić Heads Home in the 83rd. The Vatreni Are Through. Ghana Survive as Third.`,
+    excerpt:`Petar Sučić found himself free outside the box and guided a laser through the Ghana backline and past Asare  — a stunning first-half strike that Croatia deserved for their first 45 minutes of controlled, purposeful football. Ghana pulled level with a clever free-kick routine, Derrick Luckassen getting a deft touch on Nuamah's clip into the penalty box.  Tied at 1–1 with 10 minutes left, the group was alive. Then Luka Modrić — 38 years old, still here, still brilliant — swung in a corner from the right, and Nikola Vlašić arrived at the back post to head home. Croatia through. Ghana's fate suddenly complicated.`,
+    excerpt2:`Antoine Semenyo was taken off after an apparent leg injury, and with Ghana having already used all five substitutions, they finished the final minutes with 10 men.  They held on. Ghana advance to the Round of 32 as a third-placed team — back in the knockouts for the first time since 2010.  Croatia's win means they finish second in Group L and face the runner-up of Group K — Portugal or Colombia. Modrić orchestrated everything from deep, his tournament now taking the shape of a proper farewell run rather than an awkward exit.`,
+    excerpt3:`The model gave Croatia 70.7% — correct. Group L final standings: England 7 points, Croatia 6, Ghana 4, Panama 0.  All three advancing sides were correct model calls across the group stage. Panama exit as the only side not to score in the World Cup group stage since Honduras and Algeria in 2010.  A painful exit for Thomas Christiansen's side who competed without ever threatening to score.`,
+    stat:`70.7%`, statLabel:`Croatia win prob`, stat2:`2–1`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },  
+  {
     tag:`Match Report`, date:`26 Jun 2026`,
     title:`New Zealand 1–5 Belgium: De Bruyne Pulls the Strings. Belgium Top Group G. The All Whites Bow Out.`,
     excerpt:`Belgium needed this. Two draws in their first two games — against Egypt and Iran, opponents they were expected to beat — had raised serious questions about Rudi Garcia's side. Against New Zealand they finally found their rhythm. Ousmane Dembélé was everywhere, De Bruyne dictated from deep,  and Lukaku scored twice in the first half to put any anxiety to bed before the interval. Five goals, one conceded, a performance that reminded everyone why Belgium were 9th in the world before this tournament began.`,

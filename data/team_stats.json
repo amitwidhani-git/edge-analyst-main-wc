@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-27",
+  "generated": "2026-06-28",
   "teams": [
     {
       "team": "Spain",
@@ -68,14 +68,14 @@
     },
     {
       "team": "England",
-      "elo": 1958,
+      "elo": 1963,
       "conf": "UEFA",
       "group": "L",
-      "played": 28,
-      "wins": 15,
-      "win_rate": 0.536,
-      "avg_gf": 1.71,
-      "avg_ga": 0.79,
+      "played": 29,
+      "wins": 16,
+      "win_rate": 0.552,
+      "avg_gf": 1.72,
+      "avg_ga": 0.76,
       "win_prob_pct": 12.0,
       "rank": 6
     },
@@ -119,6 +119,19 @@
       "rank": 9
     },
     {
+      "team": "Croatia",
+      "elo": 1884,
+      "conf": "UEFA",
+      "group": "L",
+      "played": 24,
+      "wins": 9,
+      "win_rate": 0.375,
+      "avg_gf": 1.54,
+      "avg_ga": 1.46,
+      "win_prob_pct": 1.2,
+      "rank": 10
+    },
+    {
       "team": "Japan",
       "elo": 1880,
       "conf": "AFC",
@@ -129,7 +142,7 @@
       "avg_gf": 1.64,
       "avg_ga": 1.27,
       "win_prob_pct": 1.6,
-      "rank": 10
+      "rank": 11
     },
     {
       "team": "Portugal",
@@ -142,19 +155,6 @@
       "avg_gf": 1.8,
       "avg_ga": 1.15,
       "win_prob_pct": 6.5,
-      "rank": 11
-    },
-    {
-      "team": "Croatia",
-      "elo": 1871,
-      "conf": "UEFA",
-      "group": "L",
-      "played": 23,
-      "wins": 8,
-      "win_rate": 0.348,
-      "avg_gf": 1.52,
-      "avg_ga": 1.48,
-      "win_prob_pct": 1.2,
       "rank": 12
     },
     {
@@ -380,14 +380,14 @@
     },
     {
       "team": "Ghana",
-      "elo": 1676,
+      "elo": 1663,
       "conf": "CAF",
       "group": "L",
-      "played": 5,
+      "played": 6,
       "wins": 2,
-      "win_rate": 0.4,
-      "avg_gf": 1.2,
-      "avg_ga": 1.4,
+      "win_rate": 0.333,
+      "avg_gf": 1.17,
+      "avg_ga": 1.5,
       "win_prob_pct": 0.1,
       "rank": 30
     },
@@ -536,14 +536,14 @@
     },
     {
       "team": "Panama",
-      "elo": 1541,
+      "elo": 1536,
       "conf": "CONCACAF",
       "group": "L",
-      "played": 9,
+      "played": 10,
       "wins": 2,
-      "win_rate": 0.222,
-      "avg_gf": 0.89,
-      "avg_ga": 2.56,
+      "win_rate": 0.2,
+      "avg_gf": 0.8,
+      "avg_ga": 2.5,
       "win_prob_pct": 0.05,
       "rank": 42
     },
