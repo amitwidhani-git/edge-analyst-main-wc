@@ -4,6 +4,7 @@ import ThemeOverrides from "./components/ThemeOverrides";
 import GlobalNav from "./components/GlobalNav";
 import GlobalFooter from "./components/GlobalFooter";
 import CookieBanner from "./components/CookieBanner";
+import AffiliateStrip from "./components/AffiliateStrip";
 import { SiteJsonLd } from "./components/JsonLd";
 
 // Fonts loaded via CSS @import in globals.css for build compatibility
@@ -68,6 +69,7 @@ export default function RootLayout({ children }) {
         <main id="main-content" style={{ paddingTop: 78 }}>
           <Suspense fallback={null}>{children}</Suspense>
         </main>
+        <AffiliateStrip />
         <GlobalFooter />
         <CookieBanner />
       </body>

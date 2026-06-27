@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import AffiliateBar from "../components/AffiliateBar";
 
 function fmtDate(d) {
   if (!d) return '';
@@ -143,6 +144,8 @@ export default function FixturesPage() {
           ))}
         </div>}
       </section>
+
+      <AffiliateBar />
 
       {/* Table / Standings */}
       <section data-theme="dark" className="ea-fx-section" style={{padding:'0 56px 80px'}}>
