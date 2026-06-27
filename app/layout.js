@@ -3,6 +3,7 @@ import "./globals.css";
 import ThemeOverrides from "./components/ThemeOverrides";
 import GlobalNav from "./components/GlobalNav";
 import GlobalFooter from "./components/GlobalFooter";
+import CookieBanner from "./components/CookieBanner";
 import { SiteJsonLd } from "./components/JsonLd";
 
 // Fonts loaded via CSS @import in globals.css for build compatibility
@@ -68,6 +69,7 @@ export default function RootLayout({ children }) {
           <Suspense fallback={null}>{children}</Suspense>
         </main>
         <GlobalFooter />
+        <CookieBanner />
       </body>
     </html>
   );
