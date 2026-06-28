@@ -204,7 +204,7 @@ export default function AffiliateStrip() {
             fontSize: 'clamp(22px,3vw,32px)', letterSpacing: '.06em',
             color: '#F7F5F0', margin: 0,
           }}>
-            Recommended Partners
+            Today's Offers
           </h2>
           <span style={{
             fontFamily: "var(--font-mono,'DM Mono',monospace)",

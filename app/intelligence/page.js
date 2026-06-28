@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import AffiliateBar from '../components/AffiliateBar';
 
 /* ─── helpers ─────────────────────────────────────────────────────────────── */
 function fmtDate(d) {
@@ -239,6 +240,8 @@ export default function IntelligencePage() {
             {showAll ? `All ${matches.length} fixtures` : `Top 10 by ${oddsSort==='ev'?'EV':oddsSort==='group'?'group':'date'}`}
           </div>
         </section>
+
+        <AffiliateBar />
 
         {/* ── MAIN CONTENT ──────────────────────────────────────────────── */}
         <section data-theme="dark" className="ea-odds-section ea-odds-main" style={{ padding:'40px 56px 80px', display:'grid', gridTemplateColumns:'1fr 280px', gap:48, alignItems:'start' }}>

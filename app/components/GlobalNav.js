@@ -52,7 +52,7 @@ export default function GlobalNav() {
         const mkt  = m.bestH===best ? `${m.home} Win ${m.bestH?.toFixed(2)}`
                    : m.bestA===best ? `${m.away} Win ${m.bestA?.toFixed(2)}`
                    : `Draw ${m.bestD?.toFixed(2)}`;
-        return `${m.home.toUpperCase()} vs ${m.away.toUpperCase()} · GRP ${m.group} · ${m.date} · ${mkt} · Model: ${m.prediction?.toUpperCase()} ${m.confidence}%`;
+        return `${m.home.toUpperCase()} vs ${m.away.toUpperCase()} · ${m.date} · ${mkt} · Model: ${m.prediction?.toUpperCase()} ${m.confidence}%`;
       })
     : [
         "SPAIN vs CABO VERDE · GRP H · 15 Jun · Spain Win 1.06 · Model: SPAIN 94%",
