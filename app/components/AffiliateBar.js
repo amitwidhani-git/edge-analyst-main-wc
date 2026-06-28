@@ -70,7 +70,7 @@ export default function AffiliateBar() {
 
         {/* Cards row */}
         <div className="ea-aff-bar" style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-          {AFFILIATES.map((a, i) => (
+          {AFFILIATES.filter(a => !a.hidden).map((a, i) => (
             <a
               key={a.id}
               href={a.href}
@@ -121,21 +121,32 @@ export default function AffiliateBar() {
                 </div>
               </div>
 
-              {/* Offer */}
+              {/* Offer — text for placeholders, or "See offer" for banner affiliates */}
               <div style={{ textAlign: 'center', flexShrink: 0 }}>
-                <div style={{
-                  fontFamily: "var(--font-bebas,'Bebas Neue',sans-serif)",
-                  fontSize: 18, letterSpacing: '.04em', color: '#C8FF00', lineHeight: 1,
-                }}>
-                  {a.offer}
-                </div>
-                <div style={{
-                  fontFamily: "var(--font-mono,'DM Mono',monospace)",
-                  fontSize: 7.5, letterSpacing: '.08em', textTransform: 'uppercase',
-                  color: 'rgba(247,245,240,.4)', marginTop: 2,
-                }}>
-                  {a.offerDetail}
-                </div>
+                {a.bannerSrc ? (
+                  <div style={{
+                    fontFamily: "var(--font-bebas,'Bebas Neue',sans-serif)",
+                    fontSize: 15, letterSpacing: '.04em', color: '#C8FF00', lineHeight: 1,
+                  }}>
+                    See Today's Offer
+                  </div>
+                ) : (
+                  <>
+                    <div style={{
+                      fontFamily: "var(--font-bebas,'Bebas Neue',sans-serif)",
+                      fontSize: 18, letterSpacing: '.04em', color: '#C8FF00', lineHeight: 1,
+                    }}>
+                      {a.offer}
+                    </div>
+                    <div style={{
+                      fontFamily: "var(--font-mono,'DM Mono',monospace)",
+                      fontSize: 7.5, letterSpacing: '.08em', textTransform: 'uppercase',
+                      color: 'rgba(247,245,240,.4)', marginTop: 2,
+                    }}>
+                      {a.offerDetail}
+                    </div>
+                  </>
+                )}
               </div>
 
               {/* CTA */}

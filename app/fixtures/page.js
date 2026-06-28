@@ -241,7 +241,7 @@ export default function FixturesPage() {
                   {[{o:m.bestH??m.odds_home,e:m.evH??0},{o:m.bestD??m.odds_draw,e:m.evD??0},{o:m.bestA??m.odds_away,e:m.evA??0}].map((c,ci)=>(
                     <div key={ci} className="ea-fx-odds" style={{textAlign:'center'}}>
                       <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:13,fontWeight:500,color:c.e>3?'#C8FF00':'rgba(247,245,240,.7)'}}>{c.o?.toFixed(2)||'—'}</span>
-                      <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,color:'rgba(247,245,240,.3)',marginTop:1}}>{ci===0?m.prob_home:ci===1?m.prob_draw:m.prob_away}%</div>
+                      <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,color:'rgba(247,245,240,.3)',marginTop:1}}>{ci===1&&m.stage!=='Group Stage'?'—':`${ci===0?m.prob_home:ci===1?m.prob_draw:m.prob_away}%`}</div>
                     </div>
                   ))}
                   <div className="ea-fx-model" style={{textAlign:'left'}}>
@@ -250,7 +250,7 @@ export default function FixturesPage() {
                         {label:'H',prob:m.prob_home,win:m.prediction===m.home,isDraw:false},
                         {label:'D',prob:m.prob_draw,win:m.prediction==='Draw',isDraw:true},
                         {label:'A',prob:m.prob_away,win:m.prediction===m.away,isDraw:false},
-                      ].map((o,oi)=>(
+                      ].filter((_,oi)=>!(oi===1&&m.stage!=='Group Stage')).map((o,oi)=>(
                         <span key={oi} style={{
                           fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,
                           padding:'2px 6px',borderRadius:2,

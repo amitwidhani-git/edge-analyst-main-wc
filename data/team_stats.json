@@ -327,6 +327,19 @@
       "rank": 25
     },
     {
+      "team": "Canada",
+      "elo": 1714,
+      "conf": "CONCACAF",
+      "group": "B",
+      "played": 13,
+      "wins": 3,
+      "win_rate": 0.231,
+      "avg_gf": 1.15,
+      "avg_ga": 1.31,
+      "win_prob_pct": 0.4,
+      "rank": 26
+    },
+    {
       "team": "South Korea",
       "elo": 1711,
       "conf": "AFC",
@@ -337,7 +350,7 @@
       "avg_gf": 1.0,
       "avg_ga": 1.4,
       "win_prob_pct": 0.7,
-      "rank": 26
+      "rank": 27
     },
     {
       "team": "Côte d'Ivoire",
@@ -350,7 +363,7 @@
       "avg_gf": 1.33,
       "avg_ga": 0.67,
       "win_prob_pct": 0.3,
-      "rank": 27
+      "rank": 28
     },
     {
       "team": "Algeria",
@@ -363,19 +376,6 @@
       "avg_gf": 1.67,
       "avg_ga": 2.33,
       "win_prob_pct": 0.3,
-      "rank": 28
-    },
-    {
-      "team": "Canada",
-      "elo": 1694,
-      "conf": "CONCACAF",
-      "group": "B",
-      "played": 12,
-      "wins": 2,
-      "win_rate": 0.167,
-      "avg_gf": 1.17,
-      "avg_ga": 1.42,
-      "win_prob_pct": 0.4,
       "rank": 29
     },
     {
@@ -431,19 +431,6 @@
       "rank": 33
     },
     {
-      "team": "South Africa",
-      "elo": 1617,
-      "conf": "CAF",
-      "group": "A",
-      "played": 3,
-      "wins": 1,
-      "win_rate": 0.333,
-      "avg_gf": 0.67,
-      "avg_ga": 1.0,
-      "win_prob_pct": 0.05,
-      "rank": 34
-    },
-    {
       "team": "Tunisia",
       "elo": 1612,
       "conf": "CAF",
@@ -454,7 +441,7 @@
       "avg_gf": 0.89,
       "avg_ga": 2.33,
       "win_prob_pct": 0.2,
-      "rank": 35
+      "rank": 34
     },
     {
       "team": "Saudi Arabia",
@@ -467,6 +454,19 @@
       "avg_gf": 0.67,
       "avg_ga": 1.89,
       "win_prob_pct": 0.1,
+      "rank": 35
+    },
+    {
+      "team": "South Africa",
+      "elo": 1597,
+      "conf": "CAF",
+      "group": "A",
+      "played": 4,
+      "wins": 1,
+      "win_rate": 0.25,
+      "avg_gf": 0.5,
+      "avg_ga": 1.0,
+      "win_prob_pct": 0.05,
       "rank": 36
     },
     {

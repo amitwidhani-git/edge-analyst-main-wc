@@ -19,6 +19,15 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`28 Jun 2026`,
+    title:`South Africa 0–1 Canada: Eustáquio in the 92nd. The Co-Hosts Are in the Last 16.`,
+    excerpt:`Stephen Eustáquio scored in stoppage time with a precise strike from the edge of the box  — a looped clearance dropping perfectly, two touches of absolute composure, low and hard past Ronwen Williams. The 92nd minute. Canada's bench erupted. The thousands of Canadian fans inside LA Stadium erupted. This is the first time the Canadian men's team has ever reached the World Cup Round of 16.  No Canadian men's team has ever gone further. History made in Los Angeles.`,
+    excerpt2:`Alphonso Davies made his tournament debut, coming on as a substitute in the 75th minute  after missing the entire group stage with a hamstring injury. His presence immediately changed the dynamic — South Africa's right side suddenly had a problem they hadn't faced all tournament. Williams was outstanding throughout, making a series of saves including a double stop that kept South Africa in the game deep into the second half.  Jonathan David rattled the post. Jacob Shaffelburg went close. Then Eustáquio settled it.`,
+    excerpt3:`The model gave Canada 54.5% — correct, and the partial co-host boost of +40 Elo at SoFi Stadium was reflected in a near coin-flip prediction that turned out to be exactly right. Canada face either Netherlands or Morocco in Houston on July 4.  Jesse Marsch told his players they are Canadian heroes.  They are. The Round of 16 awaits a nation that couldn't qualify for this tournament four years ago.`,
+    stat:`54.5%`, statLabel:`Canada win prob`, stat2:`0–1`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: true,
+  },  
+  {
     tag:`Match Report`, date:`27 Jun 2026`,
     title:`Algeria 3–3 Austria: The Wildest Game of the Tournament. Both Through. Iran Eliminated.`,
     excerpt:`Both teams only needed a tie. They still played one of the wildest games of the tournament.  Austria led twice, Algeria equalised twice, Austria led again, Algeria equalised again. Marcel Sabitzer kicked a screamer from the top of the penalty area to give Austria the lead for the final time  — and then Rafik Belghali, who had been outstanding throughout, willed the ball past three Austrian defenders to put Algeria back on level terms.  Six goals. Two teams who only needed a draw producing a six-goal thriller at Kansas City. Football refusing to be boring even when logic demanded otherwise.`,

@@ -2,6 +2,8 @@ import { readFile } from 'fs/promises';
 import { join } from 'path';
 import HomeContent from './HomeContent';
 
+export const dynamic = 'force-dynamic';
+
 async function readJSON(filename) {
   const raw = await readFile(join(process.cwd(), 'data', filename), 'utf-8');
   return JSON.parse(raw);

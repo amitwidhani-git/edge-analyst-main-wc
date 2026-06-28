@@ -35,7 +35,7 @@ export default function HomeContent({ initialData }) {
   },[]);
 
   useEffect(()=>{
-    fetch('/api/wc2026').then(r=>r.json()).then(setData).catch(()=>{}).finally(()=>setLoading(false));
+    fetch('/api/wc2026', { cache:'no-store' }).then(r=>r.json()).then(setData).catch(()=>{}).finally(()=>setLoading(false));
   },[]);
 
   useEffect(()=>{
@@ -235,7 +235,7 @@ export default function HomeContent({ initialData }) {
             {[{o:m.bestH,e:m.evH},{o:m.bestD,e:m.evD},{o:m.bestA,e:m.evA}].map((c,ci)=>(
               <div key={ci} className="ea-odds-col" style={{textAlign:'center'}}>
                 <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:13,fontWeight:500,color:c.e>3?'#C8FF00':'rgba(247,245,240,.7)'}}>{c.o?.toFixed(2)||'—'}</span>
-                <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:7.5,color:'rgba(247,245,240,.28)',marginTop:1}}>{ci===0?m.prob_home:ci===1?m.prob_draw:m.prob_away}%</div>
+                <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:7.5,color:'rgba(247,245,240,.28)',marginTop:1}}>{ci===1&&m.stage!=='Group Stage'?'—':`${ci===0?m.prob_home:ci===1?m.prob_draw:m.prob_away}%`}</div>
               </div>
             ))}
             <div style={{textAlign:'center'}}>

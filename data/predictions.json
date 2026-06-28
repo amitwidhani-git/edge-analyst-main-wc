@@ -1,12 +1,12 @@
 {
   "generated": "2026-06-28",
   "model": "Dixon-Coles + Elo",
-  "wc_results_applied": 72,
+  "wc_results_applied": 73,
   "model_record": {
-    "played": 72,
-    "correct": 45,
+    "played": 73,
+    "correct": 46,
     "wrong": 27,
-    "accuracy": 62
+    "accuracy": 63
   },
   "matches": [
     {
@@ -2033,25 +2033,25 @@
       "home": "South Africa",
       "away": "Canada",
       "venue": "SoFi Stadium, Los Angeles",
-      "home_elo": 1617,
-      "away_elo": 1694,
-      "home_xg": 1.14,
-      "away_xg": 1.57,
-      "prob_home": 39.1,
+      "home_elo": 1597,
+      "away_elo": 1714,
+      "home_xg": 1.07,
+      "away_xg": 1.63,
+      "prob_home": 35.8,
       "prob_draw": null,
-      "prob_away": 60.9,
-      "odds_home": 2.56,
+      "prob_away": 64.2,
+      "odds_home": 2.79,
       "odds_draw": null,
-      "odds_away": 1.64,
+      "odds_away": 1.56,
       "prediction": "Canada",
-      "confidence": 60.9,
-      "model_insight": "Canada slight edge (Elo gap 116). Host nation +40 Elo boost applied (away).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "confidence": 64.2,
+      "model_insight": "Canada slight edge (Elo gap 156). Host nation +40 Elo boost applied (away).",
+      "actual_result": "Canada",
+      "actual_score": "0–1",
+      "home_score": 0,
+      "away_score": 1,
+      "model_correct": true,
+      "status": "completed"
     },
     {
       "id": "R32-2",
