@@ -29,27 +29,27 @@
     },
     {
       "team": "Argentina",
-      "elo": 2070,
+      "elo": 2072,
       "conf": "CONMEBOL",
       "group": "J",
-      "played": 19,
-      "wins": 12,
-      "win_rate": 0.632,
-      "avg_gf": 1.84,
+      "played": 20,
+      "wins": 13,
+      "win_rate": 0.65,
+      "avg_gf": 1.9,
       "avg_ga": 0.95,
       "win_prob_pct": 9.0,
       "rank": 3
     },
     {
       "team": "Colombia",
-      "elo": 2002,
+      "elo": 1993,
       "conf": "CONMEBOL",
       "group": "K",
-      "played": 12,
+      "played": 13,
       "wins": 8,
-      "win_rate": 0.667,
-      "avg_gf": 1.83,
-      "avg_ga": 0.58,
+      "win_rate": 0.615,
+      "avg_gf": 1.69,
+      "avg_ga": 0.54,
       "win_prob_pct": 1.6,
       "rank": 4
     },
@@ -119,6 +119,19 @@
       "rank": 9
     },
     {
+      "team": "Portugal",
+      "elo": 1887,
+      "conf": "UEFA",
+      "group": "K",
+      "played": 21,
+      "wins": 8,
+      "win_rate": 0.381,
+      "avg_gf": 1.71,
+      "avg_ga": 1.1,
+      "win_prob_pct": 6.5,
+      "rank": 10
+    },
+    {
       "team": "Croatia",
       "elo": 1884,
       "conf": "UEFA",
@@ -129,7 +142,7 @@
       "avg_gf": 1.54,
       "avg_ga": 1.46,
       "win_prob_pct": 1.2,
-      "rank": 10
+      "rank": 11
     },
     {
       "team": "Japan",
@@ -142,19 +155,6 @@
       "avg_gf": 1.64,
       "avg_ga": 1.27,
       "win_prob_pct": 1.6,
-      "rank": 11
-    },
-    {
-      "team": "Portugal",
-      "elo": 1878,
-      "conf": "UEFA",
-      "group": "K",
-      "played": 20,
-      "wins": 8,
-      "win_rate": 0.4,
-      "avg_gf": 1.8,
-      "avg_ga": 1.15,
-      "win_prob_pct": 6.5,
       "rank": 12
     },
     {
@@ -263,14 +263,14 @@
     },
     {
       "team": "Austria",
-      "elo": 1786,
+      "elo": 1779,
       "conf": "UEFA",
       "group": "J",
-      "played": 10,
+      "played": 11,
       "wins": 5,
-      "win_rate": 0.5,
-      "avg_gf": 1.5,
-      "avg_ga": 1.4,
+      "win_rate": 0.455,
+      "avg_gf": 1.64,
+      "avg_ga": 1.55,
       "win_prob_pct": 0.6,
       "rank": 21
     },
@@ -353,6 +353,19 @@
       "rank": 27
     },
     {
+      "team": "Algeria",
+      "elo": 1696,
+      "conf": "CAF",
+      "group": "J",
+      "played": 3,
+      "wins": 1,
+      "win_rate": 0.333,
+      "avg_gf": 1.67,
+      "avg_ga": 2.33,
+      "win_prob_pct": 0.3,
+      "rank": 28
+    },
+    {
       "team": "Canada",
       "elo": 1694,
       "conf": "CONCACAF",
@@ -363,19 +376,6 @@
       "avg_gf": 1.17,
       "avg_ga": 1.42,
       "win_prob_pct": 0.4,
-      "rank": 28
-    },
-    {
-      "team": "Algeria",
-      "elo": 1689,
-      "conf": "CAF",
-      "group": "J",
-      "played": 2,
-      "wins": 1,
-      "win_rate": 0.5,
-      "avg_gf": 1.0,
-      "avg_ga": 2.0,
-      "win_prob_pct": 0.3,
       "rank": 29
     },
     {
@@ -496,15 +496,15 @@
       "rank": 38
     },
     {
-      "team": "Uzbekistan",
-      "elo": 1577,
-      "conf": "AFC",
+      "team": "Congo DR",
+      "elo": 1583,
+      "conf": "CAF",
       "group": "K",
-      "played": 2,
-      "wins": 0,
-      "win_rate": 0.0,
-      "avg_gf": 0.5,
-      "avg_ga": 4.0,
+      "played": 3,
+      "wins": 1,
+      "win_rate": 0.333,
+      "avg_gf": 1.33,
+      "avg_ga": 1.0,
       "win_prob_pct": 0.05,
       "rank": 39
     },
@@ -522,15 +522,15 @@
       "rank": 40
     },
     {
-      "team": "Congo DR",
-      "elo": 1556,
-      "conf": "CAF",
+      "team": "Uzbekistan",
+      "elo": 1550,
+      "conf": "AFC",
       "group": "K",
-      "played": 2,
+      "played": 3,
       "wins": 0,
       "win_rate": 0.0,
-      "avg_gf": 0.5,
-      "avg_ga": 1.0,
+      "avg_gf": 0.67,
+      "avg_ga": 3.67,
       "win_prob_pct": 0.05,
       "rank": 41
     },
@@ -575,14 +575,14 @@
     },
     {
       "team": "Jordan",
-      "elo": 1488,
+      "elo": 1486,
       "conf": "AFC",
       "group": "J",
-      "played": 2,
+      "played": 3,
       "wins": 0,
       "win_rate": 0.0,
       "avg_gf": 1.0,
-      "avg_ga": 2.5,
+      "avg_ga": 2.67,
       "win_prob_pct": 0.02,
       "rank": 45
     },
