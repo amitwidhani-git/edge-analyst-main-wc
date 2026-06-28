@@ -60,6 +60,10 @@ export default function HomeContent({ initialData }) {
     .sort((a,b) => a.date.localeCompare(b.date))
     .slice(0, 8);
 
+  const koCompleted = matches.filter(m => m.status === 'completed' && m.stage && m.stage !== 'Group Stage');
+  const koCorrect   = koCompleted.filter(m => m.model_correct === true).length;
+  const koAccuracy  = koCompleted.length > 0 ? Math.round(koCorrect / koCompleted.length * 100) : null;
+
   const groups       = ['A','B','C','D','E','F','G','H','I','J','K','L'];
 
   const GROUPS_MAP = {
@@ -175,14 +179,22 @@ export default function HomeContent({ initialData }) {
         {/* KPI strip */}
         <div className="ea-kpi-grid" style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',borderTop:'1px solid rgba(247,245,240,.1)',paddingTop:32,gap:0}}>
           {[
-            {n:loading?'—':matches.length,     l:'Group Fixtures'},
+            {n:loading?'—':matches.length, l:'Fixtures'},
             {n:loading?'—':data?.liveCount||0, l:'Live odds'},
             {n:loading?'—':data?.modelRecord?.played>0?`${data.modelRecord.correct}/${data.modelRecord.played}`:'—', l:'Model record', accent:true},
-            {n:loading?'—':data?.modelRecord?.accuracy!=null?`${data.modelRecord.accuracy}%`:'Pending', l:'Accuracy'},
+            {
+              n:loading?'—':data?.modelRecord?.accuracy!=null?`${data.modelRecord.accuracy}%`:'Pending',
+              l:'Accuracy',
+              sub: loading?null:koAccuracy!=null?`KO: ${koCorrect}/${koCompleted.length} · ${koAccuracy}%`:(koCompleted.length===0?'KO: pending':null),
+            },
           ].map((k,i)=>(
             <div key={i} className="ea-kpi-item" style={{padding:'0 0 0 '+(i>0?'32px':'0'),borderLeft:i>0?'1px solid rgba(247,245,240,.1)':'none'}}>
               <div style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:'clamp(36px,4vw,60px)',lineHeight:.9,color:k.accent?'#C8FF00':'#F7F5F0',marginBottom:8}}>{k.n}</div>
               <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.1em',textTransform:'uppercase',color:'rgba(247,245,240,.45)'}}>{k.l}</div>
+              {k.sub&&<div style={{marginTop:8,display:'inline-flex',alignItems:'center',gap:6,fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.08em',textTransform:'uppercase',color:'#C8FF00',background:'rgba(200,255,0,.07)',border:'1px solid rgba(200,255,0,.22)',padding:'3px 8px',borderRadius:2}}>
+                <span style={{width:5,height:5,borderRadius:'50%',background:'#C8FF00',flexShrink:0,animation:'lp-blink 2s ease infinite'}}/>
+                {k.sub}
+              </div>}
             </div>
           ))}
         </div>

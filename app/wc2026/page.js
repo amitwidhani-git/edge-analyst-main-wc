@@ -90,7 +90,7 @@ export default function WC2026Page() {
   }, [data, tab, loading]);
 
   useEffect(() => {
-    fetch('/api/wc2026').then(r => r.json()).then(d => setData(d)).catch(() => {}).finally(() => setLoading(false));
+    fetch('/api/wc2026', { cache: 'no-store' }).then(r => r.json()).then(d => setData(d)).catch(() => {}).finally(() => setLoading(false));
   }, []);
 
   /* ── odds intel helpers ──────────────────────────────────────────── */

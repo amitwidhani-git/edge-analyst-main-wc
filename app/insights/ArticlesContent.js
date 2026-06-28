@@ -714,7 +714,7 @@ export default function ArticlesContent({ initialData }) {
 
   useEffect(()=>{const t=setTimeout(()=>setImgReady(true),80);return()=>clearTimeout(t);},[]);
   useEffect(()=>{
-    fetch('/api/wc2026').then(r=>r.json()).then(setData).catch(()=>{});
+    fetch('/api/wc2026', { cache: 'no-store' }).then(r=>r.json()).then(setData).catch(()=>{});
   },[]);
   useEffect(()=>{
     const fn=()=>setScrolled(window.scrollY>400);

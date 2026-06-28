@@ -70,7 +70,7 @@ export default function IntelligencePage() {
   useEffect(() => { const t = setTimeout(() => setImgReady(true), 80); return () => clearTimeout(t); }, []);
 
   useEffect(() => {
-    fetch('/api/wc2026')
+    fetch('/api/wc2026', { cache: 'no-store' })
       .then(r => r.json())
       .then(setData)
       .catch(() => {})
@@ -322,9 +322,16 @@ export default function IntelligencePage() {
                             border:`1px solid ${hasValue ? ebr(m.bestEv) : 'rgba(247,245,240,.08)'}`,
                             color: hasValue ? ec(m.bestEv) : 'rgba(247,245,240,.5)',
                             whiteSpace:'nowrap',
-                          }}>{bestMkt}</span>
+                          }}>Value: {bestMkt}</span>
                           <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.3)', marginTop:3 }}>
-                            {bestProb}% model
+                            {bestProb}% · +{m.bestEv.toFixed(1)}% EV
+                          </div>
+                          <div style={{ marginTop:5 }}>
+                            <span style={{
+                              fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, padding:'2px 7px', borderRadius:2,
+                              background:'rgba(247,245,240,.03)', border:'1px solid rgba(247,245,240,.08)',
+                              color:'rgba(247,245,240,.45)', whiteSpace:'nowrap', display:'inline-block',
+                            }}>Model: {m.prediction} {m.confidence}%</span>
                           </div>
                         </>
                       )}

@@ -20,7 +20,7 @@ export default function GlobalNav() {
 
   /* fetch WC fixtures for ticker */
   useEffect(() => {
-    fetch('/api/wc2026').then(r => r.json()).then(d => {
+    fetch('/api/wc2026', { cache: 'no-store' }).then(r => r.json()).then(d => {
       const ms = (d.matches || [])
         .filter(m => m.status === 'upcoming' || m.status === 'live')
         .sort((a,b) => a.date.localeCompare(b.date))

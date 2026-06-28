@@ -29,7 +29,7 @@ export default function RankingsPage() {
 
   useEffect(()=>{const t=setTimeout(()=>setImgReady(true),80);return()=>clearTimeout(t);},[]);
   useEffect(()=>{
-    fetch('/api/wc2026').then(r=>r.json()).then(setData).catch(()=>{}).finally(()=>setLoading(false));
+    fetch('/api/wc2026', { cache: 'no-store' }).then(r=>r.json()).then(setData).catch(()=>{}).finally(()=>setLoading(false));
   },[]);
   useEffect(()=>{
     const fn=()=>setScrolled(window.scrollY>400);

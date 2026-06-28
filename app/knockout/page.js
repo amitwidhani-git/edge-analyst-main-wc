@@ -317,7 +317,7 @@ export default function KnockoutPage() {
   }, [data, loading, tab]);
 
   useEffect(() => {
-    fetch('/api/wc2026').then(r => r.json()).then(setData).catch(() => {}).finally(() => setLoading(false));
+    fetch('/api/wc2026', { cache: 'no-store' }).then(r => r.json()).then(setData).catch(() => {}).finally(() => setLoading(false));
   }, []);
 
   const matches   = data?.matches || [];
