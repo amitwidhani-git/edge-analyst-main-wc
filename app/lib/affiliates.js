@@ -1,6 +1,6 @@
 // ── Affiliate feature toggle ───────────────────────────────────────────────────
 // Set AFFILIATES_ENABLED to true when you are ready to show partner banners.
-export const AFFILIATES_ENABLED = false;
+export const AFFILIATES_ENABLED = true;
 
 // ── Affiliate definitions ─────────────────────────────────────────────────────
 // For affiliates with a network-served banner image, set bannerSrc + bannerHref.
