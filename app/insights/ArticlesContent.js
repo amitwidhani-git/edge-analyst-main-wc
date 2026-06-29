@@ -19,12 +19,21 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`29 Jun 2026`,
+    title:`Brazil 2–1 Japan: Martinelli in the 96th. Ancelotti's Side Survive the Samurai Blue.`,
+    excerpt:`Kaishu Sano profited from a sloppy pass and some poor Casemiro defending to fire Japan ahead in the 29th minute  — his first senior international goal, scored at the worst possible moment for Brazil. Brazil had over 80% possession in the opening 10 minutes and created next to nothing.  Japan defended brilliantly, sat compact, and for 45 minutes made the five-time champions look exactly like a team that has struggled for consistency throughout this tournament.`,
+    excerpt2:`Casemiro, having earlier had an easy header saved off the line, powered his next header in at the back post in the 56th minute  to level — vindication for Ancelotti's decision to keep faith with the veteran midfielder. Then the best moment of the match: Vinícius Júnior nutmegged a defender, drove into the box and angled a shot for the far post — Suzuki somehow got a glove to it and turned it onto the post.  The save of the tournament. Then, in the 96th minute, Guimarães slid in Martinelli, two touches of composure, a finish that doinked off the post and over the line.  Brazil through.`,
+    excerpt3:`The model predicted Brazil — correct. Brazil ended the match with an xG of 1.39 to Japan's 0.59  — the scoreline was a fair reflection of the 90-minute balance of play even if the first half suggested otherwise. Brazil face the winner of Côte d'Ivoire vs Norway in the Round of 16 on July 5 at MetLife Stadium.  Japan exit having reached the knockout stage for the fifth consecutive World Cup — but their record of never winning a knockout match remains intact. This Japan side deserved better. Suzuki's save from Vinícius alone was worth the admission price.`,
+    stat:`73.0%`, statLabel:`Brazil win prob`, stat2:`2–1`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },  
+  {
     tag:`Match Report`, date:`28 Jun 2026`,
     title:`South Africa 0–1 Canada: Eustáquio in the 92nd. The Co-Hosts Are in the Last 16.`,
     excerpt:`Stephen Eustáquio scored in stoppage time with a precise strike from the edge of the box  — a looped clearance dropping perfectly, two touches of absolute composure, low and hard past Ronwen Williams. The 92nd minute. Canada's bench erupted. The thousands of Canadian fans inside LA Stadium erupted. This is the first time the Canadian men's team has ever reached the World Cup Round of 16.  No Canadian men's team has ever gone further. History made in Los Angeles.`,
     excerpt2:`Alphonso Davies made his tournament debut, coming on as a substitute in the 75th minute  after missing the entire group stage with a hamstring injury. His presence immediately changed the dynamic — South Africa's right side suddenly had a problem they hadn't faced all tournament. Williams was outstanding throughout, making a series of saves including a double stop that kept South Africa in the game deep into the second half.  Jonathan David rattled the post. Jacob Shaffelburg went close. Then Eustáquio settled it.`,
-    excerpt3:`The model gave Canada 54.5% — correct, and the partial co-host boost of +40 Elo at SoFi Stadium was reflected in a near coin-flip prediction that turned out to be exactly right. Canada face either Netherlands or Morocco in Houston on July 4.  Jesse Marsch told his players they are Canadian heroes.  They are. The Round of 16 awaits a nation that couldn't qualify for this tournament four years ago.`,
-    stat:`54.5%`, statLabel:`Canada win prob`, stat2:`0–1`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    excerpt3:`The model gave Canada 64.2% — correct, and the partial co-host boost of +40 Elo at SoFi Stadium was reflected in a near coin-flip prediction that turned out to be exactly right. Canada face either Netherlands or Morocco in Houston on July 4.  Jesse Marsch told his players they are Canadian heroes.  They are. The Round of 16 awaits a nation that couldn't qualify for this tournament four years ago.`,
+    stat:`64.2%`, statLabel:`Canada win prob`, stat2:`0–1`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
     modelCorrect: true, highlight: true,
   },  
   {

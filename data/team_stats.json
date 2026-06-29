@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-28",
+  "generated": "2026-06-29",
   "teams": [
     {
       "team": "Spain",
@@ -67,6 +67,19 @@
       "rank": 5
     },
     {
+      "team": "Brazil",
+      "elo": 1969,
+      "conf": "CONMEBOL",
+      "group": "C",
+      "played": 18,
+      "wins": 10,
+      "win_rate": 0.556,
+      "avg_gf": 1.67,
+      "avg_ga": 0.56,
+      "win_prob_pct": 8.5,
+      "rank": 6
+    },
+    {
       "team": "England",
       "elo": 1963,
       "conf": "UEFA",
@@ -77,19 +90,6 @@
       "avg_gf": 1.72,
       "avg_ga": 0.76,
       "win_prob_pct": 12.0,
-      "rank": 6
-    },
-    {
-      "team": "Brazil",
-      "elo": 1948,
-      "conf": "CONMEBOL",
-      "group": "C",
-      "played": 17,
-      "wins": 9,
-      "win_rate": 0.529,
-      "avg_gf": 1.65,
-      "avg_ga": 0.53,
-      "win_prob_pct": 8.5,
       "rank": 7
     },
     {
@@ -145,19 +145,6 @@
       "rank": 11
     },
     {
-      "team": "Japan",
-      "elo": 1880,
-      "conf": "AFC",
-      "group": "F",
-      "played": 11,
-      "wins": 4,
-      "win_rate": 0.364,
-      "avg_gf": 1.64,
-      "avg_ga": 1.27,
-      "win_prob_pct": 1.6,
-      "rank": 12
-    },
-    {
       "team": "Switzerland",
       "elo": 1860,
       "conf": "UEFA",
@@ -168,6 +155,19 @@
       "avg_gf": 1.57,
       "avg_ga": 1.43,
       "win_prob_pct": 1.2,
+      "rank": 12
+    },
+    {
+      "team": "Japan",
+      "elo": 1859,
+      "conf": "AFC",
+      "group": "F",
+      "played": 12,
+      "wins": 4,
+      "win_rate": 0.333,
+      "avg_gf": 1.58,
+      "avg_ga": 1.33,
+      "win_prob_pct": 1.6,
       "rank": 13
     },
     {
