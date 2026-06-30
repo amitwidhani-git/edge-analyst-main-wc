@@ -2,6 +2,19 @@
   "generated": "2026-06-30",
   "teams": [
     {
+      "team": "France",
+      "elo": 2086,
+      "conf": "UEFA",
+      "group": "I",
+      "played": 28,
+      "wins": 18,
+      "win_rate": 0.643,
+      "avg_gf": 1.93,
+      "avg_ga": 0.89,
+      "win_prob_pct": 12.5,
+      "rank": 1
+    },
+    {
       "team": "Spain",
       "elo": 2078,
       "conf": "UEFA",
@@ -12,19 +25,6 @@
       "avg_gf": 2.04,
       "avg_ga": 0.79,
       "win_prob_pct": 16.0,
-      "rank": 1
-    },
-    {
-      "team": "France",
-      "elo": 2076,
-      "conf": "UEFA",
-      "group": "I",
-      "played": 27,
-      "wins": 17,
-      "win_rate": 0.63,
-      "avg_gf": 1.89,
-      "avg_ga": 0.93,
-      "win_prob_pct": 12.5,
       "rank": 2
     },
     {
@@ -80,6 +80,19 @@
       "rank": 6
     },
     {
+      "team": "Norway",
+      "elo": 1940,
+      "conf": "UEFA",
+      "group": "I",
+      "played": 4,
+      "wins": 3,
+      "win_rate": 0.75,
+      "avg_gf": 2.5,
+      "avg_ga": 2.0,
+      "win_prob_pct": 3.0,
+      "rank": 7
+    },
+    {
       "team": "Netherlands",
       "elo": 1938,
       "conf": "UEFA",
@@ -90,19 +103,6 @@
       "avg_gf": 2.16,
       "avg_ga": 1.21,
       "win_prob_pct": 3.5,
-      "rank": 7
-    },
-    {
-      "team": "Norway",
-      "elo": 1929,
-      "conf": "UEFA",
-      "group": "I",
-      "played": 3,
-      "wins": 2,
-      "win_rate": 0.667,
-      "avg_gf": 2.67,
-      "avg_ga": 2.33,
-      "win_prob_pct": 3.0,
       "rank": 8
     },
     {
@@ -237,14 +237,14 @@
     },
     {
       "team": "Sweden",
-      "elo": 1834,
+      "elo": 1824,
       "conf": "UEFA",
       "group": "F",
-      "played": 12,
+      "played": 13,
       "wins": 6,
-      "win_rate": 0.5,
-      "avg_gf": 1.5,
-      "avg_ga": 1.25,
+      "win_rate": 0.462,
+      "avg_gf": 1.38,
+      "avg_ga": 1.38,
       "win_prob_pct": 0.7,
       "rank": 19
     },
@@ -353,19 +353,6 @@
       "rank": 27
     },
     {
-      "team": "Côte d'Ivoire",
-      "elo": 1704,
-      "conf": "CAF",
-      "group": "E",
-      "played": 3,
-      "wins": 2,
-      "win_rate": 0.667,
-      "avg_gf": 1.33,
-      "avg_ga": 0.67,
-      "win_prob_pct": 0.3,
-      "rank": 28
-    },
-    {
       "team": "Algeria",
       "elo": 1696,
       "conf": "CAF",
@@ -375,6 +362,19 @@
       "win_rate": 0.333,
       "avg_gf": 1.67,
       "avg_ga": 2.33,
+      "win_prob_pct": 0.3,
+      "rank": 28
+    },
+    {
+      "team": "Côte d'Ivoire",
+      "elo": 1693,
+      "conf": "CAF",
+      "group": "E",
+      "played": 4,
+      "wins": 2,
+      "win_rate": 0.5,
+      "avg_gf": 1.25,
+      "avg_ga": 1.0,
       "win_prob_pct": 0.3,
       "rank": 29
     },

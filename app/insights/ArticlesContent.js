@@ -19,6 +19,24 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`30 Jun 2026`,
+    title:`France 3–0 Sweden: Mbappé Reaches 18. Deschamps Back on the Touchline. Les Bleus Into the Last 16.`,
+    excerpt:`Didier Deschamps returned to the touchline after missing France's group stage victory over Norway to attend his mother's funeral  — and his captain acknowledged the moment. Mbappé sprinted straight to Deschamps to celebrate after opening the scoring just before half time  — a composed finish after Dembélé's cutback from a corner. The hug between manager and captain captured something beyond football. France were in front and their tournament was exactly on track.`,
+    excerpt2:`Olise fed Barcola early in the second half and the lead was two  — Sweden, who had pressed bravely at times and caused problems through Elanga down the right, were broken. Mbappé added his second to settle the contest,  reaching 18 World Cup goals — level with Messi at the top of the all-time list. Mbappé and Olise were then given sendoffs in the 85th minute with the game no longer in doubt,  the MetLife crowd giving both a standing ovation. Sweden had their moments — Olise hit the post twice, once with a spectacular bicycle kick — but France's depth was simply overwhelming.`,
+    excerpt3:`The model gave France 78.7% — correct, the most confident call of the Round of 32 and fully justified. France will face Paraguay in the Round of 16 on July 4  — the side that eliminated Germany on penalties in the tournament's biggest shock. Mbappé vs Paraguay's disciplined 4-5-1. Deschamps vs the organisation that held Germany for 120 minutes. The contrast could not be more stark. Sweden exit having exceeded every pre-tournament projection — Graham Potter's transformation of this side is the coaching story of the tournament.`,
+    stat:`78.7%`, statLabel:`France win prob`, stat2:`3–0`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },  
+  {
+    tag:`Match Report`, date:`30 Jun 2026`,
+    title:`Côte d'Ivoire 1–2 Norway: Haaland in the 86th. Norway Win a Knockout Game for the First Time.`,
+    excerpt:`Antonio Nusa curled in a stunning opener in the first half  — a right-footed effort from the edge of the box that gave Fofana no chance, the 20-year-old Brighton winger announcing himself on the biggest stage. Norway were controlled, disciplined, and dangerous on the counter throughout the first half. Ivory Coast had Amad Diallo to thank  — the Manchester United winger who had scored the late winner against Ecuador in the group stage produced another moment of quality in the 74th minute, a composed left-footed finish in the penalty box to level things.`,
+    excerpt2:`Erling Haaland scored the winner in the 86th minute  — Oscar Bobb playing a lovely ball down the right channel for Patrick Berg, who squared it across goal, and Haaland's scuffed flick somehow crept over the line.  Not his cleanest finish of the tournament but it didn't matter. Norway were through. His father, Alfie, was emotional in the stands  as Norway celebrated a landmark moment in their football history. This is Norway's fourth World Cup — and the first time they have ever won a knockout match.  Ivory Coast had their chances but Nyland was immaculate, including a fine save from Amad's long-range effort late on.`,
+    excerpt3:`The model gave Norway 68.9% — correct. Norway will next face Brazil in the Round of 16 at MetLife Stadium in New Jersey on July 5.  That is the tie of the round — the tournament's form striker, Haaland, against the five-time world champions who only scraped past Japan with a 96th-minute Martinelli goal. Ivory Coast exit having made the knockout stages for the first time in their history and won a round of 16 place that they couldn't convert. This was an extraordinary World Cup for Emerse Faé's side. Amad Diallo was magnificent throughout. The next generation of Ivorian football is here.`,
+    stat:`68.9%`, statLabel:`Norway win prob`, stat2:`1–2`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },  
+  {
     tag:`Match Report`, date:`29 Jun 2026`,
     title:`Netherlands 1–1 Morocco (2–3 pens): Saibari's Spot-Kick. Atlas Lions Stun the Dutch.`,
     excerpt:`Morocco had a strong chance after the break — a deft through ball created a clear run for Achraf Hakimi, but he sent the ball off the crossbar.  Then it looked like the chance had gone. Substitute Wout Weghorst's flick header released Crysencio Summerville, who drew in the last defender and slipped the ball to Cody Gakpo  in the 72nd minute — the Liverpool forward finishing with ice in his veins, days after announcing he and his partner were expecting their first child. Netherlands led. Morocco's tournament looked over.`,
