@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { AFFILIATES_ENABLED, AFFILIATES, getBanner } from "../lib/affiliates";
 
 function AffiliateCard({ affiliate }) {
-  const { name, tagline, badge, href, termsHref, termsLabel, brandColor } = affiliate;
+  const { name, tagline, href, termsHref, termsLabel, brandColor } = affiliate;
   const banner = getBanner(affiliate, '300x250', '250x250');
 
   return (
@@ -20,14 +20,7 @@ function AffiliateCard({ affiliate }) {
     }}>
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: brandColor, opacity: 0.7 }} aria-hidden="true"/>
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 16px 10px' }}>
-        <span style={{
-          fontFamily: "var(--font-mono,'DM Mono',monospace)",
-          fontSize: 8, letterSpacing: '.12em', textTransform: 'uppercase',
-          background: 'rgba(200,255,0,.1)', color: '#C8FF00',
-          border: '1px solid rgba(200,255,0,.2)',
-          padding: '3px 8px', borderRadius: 2,
-        }}>{badge}</span>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '12px 16px 8px' }}>
         <span style={{ fontFamily: "var(--font-mono,'DM Mono',monospace)", fontSize: 7.5, letterSpacing: '.08em', textTransform: 'uppercase', color: 'rgba(247,245,240,.25)' }}>Ad</span>
       </div>
 
@@ -88,7 +81,7 @@ export default function AffiliateStrip() {
 
   return (
     <section
-      aria-label="Partner offers"
+      aria-label="Offers"
       data-theme="dark"
       style={{ background: '#0A0A0A', borderTop: '1px solid rgba(247,245,240,.06)', borderBottom: '1px solid rgba(247,245,240,.06)', padding: '48px clamp(16px,3vw,56px)' }}
     >

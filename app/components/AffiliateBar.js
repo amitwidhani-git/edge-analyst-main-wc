@@ -3,18 +3,11 @@ import { AFFILIATES_ENABLED, AFFILIATES } from "../lib/affiliates";
 
 function LogoMini({ initials, color }) {
   return (
-    <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true" style={{ flexShrink: 0 }}>
-      <rect width="36" height="36" rx="4" fill={color} fillOpacity="0.12"/>
-      <rect x="0.5" y="0.5" width="35" height="35" rx="3.5" fill="none" stroke={color} strokeOpacity="0.35"/>
-      <text
-        x="18" y="20"
-        textAnchor="middle"
-        dominantBaseline="middle"
-        fontFamily="'Bebas Neue', sans-serif"
-        fontSize="13"
-        letterSpacing="1.5"
-        fill={color}
-      >
+    <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" style={{ flexShrink: 0 }}>
+      <rect width="40" height="40" rx="4" fill={color} fillOpacity="0.12"/>
+      <rect x="0.5" y="0.5" width="39" height="39" rx="3.5" fill="none" stroke={color} strokeOpacity="0.35"/>
+      <text x="20" y="22" textAnchor="middle" dominantBaseline="middle"
+        fontFamily="'Bebas Neue', sans-serif" fontSize="14" letterSpacing="1.5" fill={color}>
         {initials}
       </text>
     </svg>
@@ -31,11 +24,9 @@ export default function AffiliateBar() {
         .ea-aff-bar-item { transition: background .15s, border-color .15s; }
         .ea-aff-bar-item:hover { background: rgba(200,255,0,.04) !important; border-color: rgba(200,255,0,.18) !important; }
         .ea-aff-bar-item:hover .ea-aff-cta { background: #C8FF00 !important; color: #080808 !important; }
-        @media (max-width: 768px) {
-          .ea-aff-bar { overflow-x: auto !important; flex-wrap: nowrap !important; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-          .ea-aff-bar::-webkit-scrollbar { display: none; }
-          .ea-aff-bar-item { min-width: 220px !important; }
-        }
+        .ea-aff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+        @media (max-width: 900px) { .ea-aff-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 520px)  { .ea-aff-grid { grid-template-columns: 1fr; } }
       `}</style>
 
       <div
@@ -49,13 +40,14 @@ export default function AffiliateBar() {
           padding: '12px clamp(16px,3.5vw,56px)',
         }}
       >
+        {/* Label row */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
           <span style={{
             fontFamily: "var(--font-mono,'DM Mono',monospace)",
             fontSize: 7.5, letterSpacing: '.16em', textTransform: 'uppercase',
             color: 'rgba(247,245,240,.28)',
           }}>
-            Recommended Partners · 18+ · Gamble Responsibly
+            Offers · 18+ · Gamble Responsibly
           </span>
           <span style={{
             fontFamily: "var(--font-mono,'DM Mono',monospace)",
@@ -68,30 +60,25 @@ export default function AffiliateBar() {
           </span>
         </div>
 
-        <div className="ea-aff-bar" style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+        {/* 3-column grid → 2 rows of 3 */}
+        <div className="ea-aff-grid">
           {visible.map((a) => (
             <a
               key={a.id}
               href={a.href}
               target="_blank"
               rel="noopener noreferrer sponsored"
-              aria-label={`${a.name} — See today's offer. Opens in new tab.`}
+              aria-label={`${a.name} — Claim offer. Opens in new tab.`}
               className="ea-aff-bar-item"
               style={{
-                flex: '1 1 0',
-                minWidth: 0,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 12,
+                display: 'flex', alignItems: 'center', gap: 12,
                 padding: '10px 14px',
                 border: '1px solid rgba(247,245,240,.07)',
-                borderRadius: 3,
-                textDecoration: 'none',
-                background: 'transparent',
-                position: 'relative',
-                overflow: 'hidden',
+                borderRadius: 3, textDecoration: 'none', background: 'transparent',
+                position: 'relative', overflow: 'hidden',
               }}
             >
+              {/* Brand-colour left accent */}
               <div style={{
                 position: 'absolute', top: 0, left: 0, bottom: 0, width: 2,
                 background: a.brandColor, opacity: 0.6,
@@ -99,6 +86,7 @@ export default function AffiliateBar() {
 
               <LogoMini initials={a.logoInitials} color={a.brandColor} />
 
+              {/* Name + tagline */}
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{
                   fontFamily: "var(--font-bebas,'Bebas Neue',sans-serif)",
@@ -118,26 +106,16 @@ export default function AffiliateBar() {
                 </div>
               </div>
 
-              <div style={{ textAlign: 'center', flexShrink: 0 }}>
-                <div style={{
-                  fontFamily: "var(--font-bebas,'Bebas Neue',sans-serif)",
-                  fontSize: 15, letterSpacing: '.04em', color: '#C8FF00', lineHeight: 1,
-                }}>
-                  See Today's Offer
-                </div>
-              </div>
-
+              {/* CTA */}
               <div
                 className="ea-aff-cta"
                 style={{
                   flexShrink: 0,
                   fontFamily: "var(--font-mono,'DM Mono',monospace)",
                   fontSize: 8.5, letterSpacing: '.1em', textTransform: 'uppercase',
-                  border: '1px solid rgba(200,255,0,.4)',
-                  color: '#C8FF00',
+                  border: '1px solid rgba(200,255,0,.4)', color: '#C8FF00',
                   padding: '7px 14px', borderRadius: 2,
-                  transition: 'background .15s, color .15s',
-                  whiteSpace: 'nowrap',
+                  transition: 'background .15s, color .15s', whiteSpace: 'nowrap',
                 }}
               >
                 Claim →

@@ -26,7 +26,7 @@ function LeaderboardBanner({ affiliate }) {
 
 function AffiliateRow({ affiliate, index }) {
   const banner = getBanner(affiliate, '300x250', '250x250');
-  const { name, tagline, badge, href, termsHref, termsLabel, brandColor } = affiliate;
+  const { name, tagline, href, termsHref, termsLabel, brandColor } = affiliate;
 
   return (
     <div className="ea-fb-row" style={{
@@ -70,13 +70,6 @@ function AffiliateRow({ affiliate, index }) {
           }}>
             #{String(index + 1).padStart(2, '0')}
           </span>
-          <span style={{
-            fontFamily: "var(--font-mono,'DM Mono',monospace)",
-            fontSize: 8, letterSpacing: '.12em', textTransform: 'uppercase',
-            background: 'rgba(200,255,0,.1)', color: '#C8FF00',
-            border: '1px solid rgba(200,255,0,.2)',
-            padding: '2px 8px', borderRadius: 2,
-          }}>{badge}</span>
         </div>
 
         <div>
@@ -166,7 +159,7 @@ export default function FreeBetsContent() {
                 color: '#C8FF00', border: '1px solid rgba(200,255,0,.3)',
                 padding: '3px 10px', borderRadius: 2,
               }}>
-                Partner Offers
+                Offers
               </span>
               <span style={{
                 fontFamily: "var(--font-mono,'DM Mono',monospace)",
