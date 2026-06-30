@@ -7,7 +7,6 @@ const NAV_LINKS = [
   { label: 'Fixtures',      href: '/fixtures'    },
   { label: 'Intelligence',  href: '/intelligence' },
   { label: 'Rankings',      href: '/rankings'     },
-  { label: 'Knockout',      href: '/knockout'     },
   { label: 'Insights',      href: '/insights'     },
   { label: 'Syndicate',     href: '/syndicate'    },
 ];

@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import AffiliateBar from "../components/AffiliateBar";
+import BracketView from "../components/BracketView";
 
 function fmtDate(d) {
   if (!d) return '';
@@ -122,6 +123,7 @@ export default function FixturesPage() {
             ['upcoming', `Upcoming · ${loading?'—':upcoming.length}`],
             ['results',  `Results · ${loading?'—':results.length}`],
             ['groups',   'Group Tables'],
+            ['bracket',  'Knockout'],
           ].map(([val,label],i,arr)=>(
             <button key={val} onClick={()=>setTab(val)} style={{
               fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,letterSpacing:'.1em',textTransform:'uppercase',
@@ -133,7 +135,7 @@ export default function FixturesPage() {
             }}>{label}</button>
           ))}
         </div>
-        {tab !== 'groups' && <div style={{display:'flex',gap:6,flexWrap:'wrap',paddingBottom:24}}>
+        {tab !== 'groups' && tab !== 'bracket' && <div style={{display:'flex',gap:6,flexWrap:'wrap',paddingBottom:24}}>
           <button onClick={()=>setGrp('ALL')} style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.1em',textTransform:'uppercase',padding:'7px 16px',borderRadius:2,border:`1px solid ${grp==='ALL'?'rgba(200,255,0,.4)':'rgba(247,245,240,.08)'}`,background:grp==='ALL'?'rgba(200,255,0,.08)':'transparent',color:grp==='ALL'?'#C8FF00':'rgba(247,245,240,.45)',cursor:'none',transition:'all .15s'}}>
             All Groups
           </button>
@@ -150,7 +152,14 @@ export default function FixturesPage() {
       {/* Table / Standings */}
       <section data-theme="dark" className="ea-fx-section" style={{padding:'0 56px 80px'}}>
 
-        {tab === 'groups' ? (
+        {tab === 'bracket' ? (
+          <div style={{paddingTop:32}}>
+            {loading
+              ? <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,color:'rgba(247,245,240,.3)',letterSpacing:'.1em'}}>Loading bracket…</div>
+              : <BracketView matches={matches} />
+            }
+          </div>
+        ) : tab === 'groups' ? (
           /* ── Group Standings ── */
           loading ? (
             <div className="ea-standings-grid">
