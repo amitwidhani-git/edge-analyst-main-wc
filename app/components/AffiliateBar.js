@@ -23,6 +23,7 @@ function LogoMini({ initials, color }) {
 
 export default function AffiliateBar() {
   if (!AFFILIATES_ENABLED) return null;
+  const visible = AFFILIATES.filter(a => !a.hidden);
 
   return (
     <>
@@ -48,7 +49,6 @@ export default function AffiliateBar() {
           padding: '12px clamp(16px,3.5vw,56px)',
         }}
       >
-        {/* Label row */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
           <span style={{
             fontFamily: "var(--font-mono,'DM Mono',monospace)",
@@ -68,15 +68,14 @@ export default function AffiliateBar() {
           </span>
         </div>
 
-        {/* Cards row */}
         <div className="ea-aff-bar" style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-          {AFFILIATES.filter(a => !a.hidden).map((a, i) => (
+          {visible.map((a) => (
             <a
               key={a.id}
               href={a.href}
               target="_blank"
               rel="noopener noreferrer sponsored"
-              aria-label={`${a.name} — ${a.offer} ${a.offerDetail}. Opens in new tab.`}
+              aria-label={`${a.name} — See today's offer. Opens in new tab.`}
               className="ea-aff-bar-item"
               style={{
                 flex: '1 1 0',
@@ -93,7 +92,6 @@ export default function AffiliateBar() {
                 overflow: 'hidden',
               }}
             >
-              {/* Brand-colour left accent */}
               <div style={{
                 position: 'absolute', top: 0, left: 0, bottom: 0, width: 2,
                 background: a.brandColor, opacity: 0.6,
@@ -101,7 +99,6 @@ export default function AffiliateBar() {
 
               <LogoMini initials={a.logoInitials} color={a.brandColor} />
 
-              {/* Name + tagline */}
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{
                   fontFamily: "var(--font-bebas,'Bebas Neue',sans-serif)",
@@ -121,35 +118,15 @@ export default function AffiliateBar() {
                 </div>
               </div>
 
-              {/* Offer — text for placeholders, or "See offer" for banner affiliates */}
               <div style={{ textAlign: 'center', flexShrink: 0 }}>
-                {a.bannerSrc ? (
-                  <div style={{
-                    fontFamily: "var(--font-bebas,'Bebas Neue',sans-serif)",
-                    fontSize: 15, letterSpacing: '.04em', color: '#C8FF00', lineHeight: 1,
-                  }}>
-                    See Today's Offer
-                  </div>
-                ) : (
-                  <>
-                    <div style={{
-                      fontFamily: "var(--font-bebas,'Bebas Neue',sans-serif)",
-                      fontSize: 18, letterSpacing: '.04em', color: '#C8FF00', lineHeight: 1,
-                    }}>
-                      {a.offer}
-                    </div>
-                    <div style={{
-                      fontFamily: "var(--font-mono,'DM Mono',monospace)",
-                      fontSize: 7.5, letterSpacing: '.08em', textTransform: 'uppercase',
-                      color: 'rgba(247,245,240,.4)', marginTop: 2,
-                    }}>
-                      {a.offerDetail}
-                    </div>
-                  </>
-                )}
+                <div style={{
+                  fontFamily: "var(--font-bebas,'Bebas Neue',sans-serif)",
+                  fontSize: 15, letterSpacing: '.04em', color: '#C8FF00', lineHeight: 1,
+                }}>
+                  See Today's Offer
+                </div>
               </div>
 
-              {/* CTA */}
               <div
                 className="ea-aff-cta"
                 style={{

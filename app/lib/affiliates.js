@@ -1,52 +1,127 @@
 // ── Affiliate feature toggle ───────────────────────────────────────────────────
-// Set AFFILIATES_ENABLED to true when you are ready to show partner banners.
 export const AFFILIATES_ENABLED = true;
 
+// ── Banner helper ─────────────────────────────────────────────────────────────
+// Returns the first matching banner object {src, w, h} from the priority list.
+export function getBanner(affiliate, ...sizes) {
+  for (const size of sizes) {
+    if (affiliate.banners?.[size]) return affiliate.banners[size];
+  }
+  return null;
+}
+
 // ── Affiliate definitions ─────────────────────────────────────────────────────
-// For affiliates with a network-served banner image, set bannerSrc + bannerHref.
-// The banner image carries the dynamic offer — no need to hardcode offer text.
-// For placeholder affiliates, set offer/offerDetail/brandColor/logoInitials instead.
+// Each affiliate has a banners object keyed by "WxH" string.
+// Use getBanner(affiliate, '300x250', '250x250') to pick the best available size.
 export const AFFILIATES = [
   {
-    id: 'affiliate-1',
-    name: 'Betrino Sports',
+    id: 'fruity-king',
+    name: 'Fruity King Sports',
     tagline: 'Sports Betting',
     badge: "Editor's Pick",
-    // Network-served banner (offer text is dynamic, updated by the affiliate)
-    bannerSrc: 'https://publisher.confidonetwork.com/getBanner.php?ad=2585&i=2030',
-    bannerWidth: 300,
-    bannerHeight: 250,
+    logoInitials: 'FK',
+    href: 'https://creatives.excelaffiliates.com/redirect.aspx?mid=5984&sid=1019537&cid=&pid=&affid=1014054',
+    termsHref: 'https://www.excelaffiliates.com/terms-and-conditions/',
+    termsLabel: 'T&Cs apply',
+    brandColor: '#22C55E',
+    banners: {
+      '120x60':  { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7244&i=2030', w: 120, h: 60 },
+      '250x250': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7243&i=2030', w: 250, h: 250 },
+      '300x250': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7242&i=2030', w: 300, h: 250 },
+      '728x90':  { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7241&i=2030', w: 728, h: 90 },
+    },
+  },
+  {
+    id: 'spinzwin',
+    name: 'Spinzwin Sports',
+    tagline: 'Sports Betting',
+    badge: 'Top Rated',
+    logoInitials: 'SW',
+    href: 'https://creatives.excelaffiliates.com/redirect.aspx?mid=5887&sid=1019536&cid=&pid=&affid=1014054',
+    termsHref: 'https://www.excelaffiliates.com/terms-and-conditions/',
+    termsLabel: 'T&Cs apply',
+    brandColor: '#8B5CF6',
+    banners: {
+      '125x125': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7264&i=2030', w: 125, h: 125 },
+      '160x600': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7263&i=2030b', w: 160, h: 600 },
+      '250x250': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7262&i=2030', w: 250, h: 250 },
+      '300x250': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7261&i=2030', w: 300, h: 250 },
+      '728x90':  { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7259&i=2030', w: 728, h: 90 },
+    },
+  },
+  {
+    id: 'monster-sports',
+    name: 'Monster Sports',
+    tagline: 'Sports Betting',
+    badge: 'Great Odds',
+    logoInitials: 'MS',
+    href: 'https://creatives.excelaffiliates.com/redirect.aspx?mid=5272&sid=1019535&cid=&pid=&affid=1014054',
+    termsHref: 'https://www.excelaffiliates.com/terms-and-conditions/',
+    termsLabel: 'T&Cs apply',
+    brandColor: '#10B981',
+    banners: {
+      '125x125': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7256&i=2030', w: 125, h: 125 },
+      '120x600': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7257&i=2030', w: 120, h: 600 },
+      '160x600': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7255&i=2030', w: 160, h: 600 },
+      '250x250': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7253&i=2030', w: 250, h: 250 },
+      '300x250': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7252&i=2030', w: 300, h: 250 },
+      '728x90':  { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7254&i=2030', w: 728, h: 90 },
+    },
+  },
+  {
+    id: 'betmaze',
+    name: 'BETMAZE',
+    tagline: 'Sports Betting',
+    badge: 'New Offer',
+    logoInitials: 'BM',
+    href: 'https://m.bluefoxaffiliates.com/redirect.aspx?mid=111&sid=1801&cid=&pid=&affid=248',
+    termsHref: 'https://www.bluefoxaffiliates.com/terms-and-conditions/',
+    termsLabel: 'T&Cs apply',
+    brandColor: '#0EA5E9',
+    banners: {
+      '160x600': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7225&i=2030', w: 160, h: 600 },
+      '468x58':  { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7223&i=2030', w: 468, h: 58 },
+      '300x250': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7224&i=2030', w: 300, h: 250 },
+      '728x90':  { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7222&i=2030', w: 728, h: 90 },
+    },
+  },
+  {
+    id: 'betrino',
+    name: 'BETRINO',
+    tagline: 'Sports Betting',
+    badge: "Editor's Pick",
+    logoInitials: 'BR',
     href: 'https://creatives.excelaffiliates.com/redirect.aspx?mid=5824&sid=1019534&cid=&pid=&affid=1014054',
     termsHref: 'https://www.excelaffiliates.com/terms-and-conditions/',
     termsLabel: 'T&Cs apply',
     brandColor: '#E8371E',
+    banners: {
+      '125x125': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7238&i=2030', w: 125, h: 125 },
+      '120x60':  { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7257&i=2030', w: 120, h: 60 },
+      '160x600': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7237&i=2030', w: 160, h: 600 },
+      '250x250': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7236&i=2030', w: 250, h: 250 },
+      '300x250': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7235&i=2030', w: 300, h: 250 },
+      '468x58':  { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7234&i=2030', w: 468, h: 58 },
+      '728x90':  { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7233&i=2030', w: 728, h: 90 },
+    },
   },
   {
-    id: 'affiliate-2',
+    id: 'mogobet',
     name: 'MOGOBET',
     tagline: 'Sports Betting',
     badge: 'Top Rated',
-    // Network-served banner — 1920×1080 widescreen format, scaled via CSS
-    bannerSrc: 'https://publisher.confidonetwork.com/getBanner.php?ad=869&i=2030',
-    bannerWidth: 1920,
-    bannerHeight: 1080,
+    logoInitials: 'MG',
     href: 'https://m.bluefoxaffiliates.com/redirect.aspx?mid=103&sid=1800&cid=&pid=&affid=248',
-    termsHref: 'https://www.bluefoxaffiliates.com/terms-and-conditions/', // ← add MOGOBET T&Cs link when available
+    termsHref: 'https://www.bluefoxaffiliates.com/terms-and-conditions/',
     termsLabel: 'T&Cs apply',
     brandColor: '#F97316',
-  },
-  {
-    id: 'affiliate-3',
-    name: 'Partner Three',
-    tagline: 'In-Play Specialists',
-    badge: 'Great Value',
-    hidden: true, // ← set to false when details are ready
-    offer: 'Up to £50',
-    offerDetail: 'Welcome Bonus',
-    termsHref: '#',
-    termsLabel: '18+ | New customers | Min deposit £10 | T&Cs apply',
-    brandColor: '#007B40',
-    logoInitials: 'P3',
-    href: '#',
+    banners: {
+      '125x125': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7248&i=2030', w: 125, h: 125 },
+      '160x600': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7247&i=2030', w: 160, h: 600 },
+      '250x250': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=866&i=2030', w: 250, h: 250 },
+      '300x250': { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7246&i=2030', w: 300, h: 250 },
+      '468x60':  { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7250&i=2030', w: 468, h: 60 },
+      '728x90':  { src: 'https://publisher.confidonetwork.com/getBanner.php?ad=7249&i=2030', w: 728, h: 90 },
+    },
   },
 ];

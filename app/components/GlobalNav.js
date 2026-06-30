@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: 'Rankings',      href: '/rankings'     },
   { label: 'Insights',      href: '/insights'     },
   { label: 'Syndicate',     href: '/syndicate'    },
+  { label: 'Free Bets',     href: '/free-bets',  highlight: true },
 ];
 
 export default function GlobalNav() {
@@ -128,8 +129,21 @@ export default function GlobalNav() {
 
           {/* Desktop nav */}
           <nav style={{ display: 'flex', alignItems: 'center', gap: 32 }} aria-label="Main">
-            {NAV_LINKS.map(({ label, href }) => {
+            {NAV_LINKS.map(({ label, href, highlight }) => {
               const active = pathname === href || pathname?.startsWith(href + '/');
+              if (highlight) {
+                return (
+                  <Link key={href} href={href}
+                    style={{
+                      fontFamily: "var(--font-mono,'DM Mono',monospace)",
+                      fontSize: 9, letterSpacing: '.1em', textTransform: 'uppercase',
+                      color: '#080808',
+                      background: '#C8FF00',
+                      padding: '4px 10px', borderRadius: 2,
+                      textDecoration: 'none', opacity: active ? 1 : 0.88,
+                    }}>{label}</Link>
+                );
+              }
               return (
                 <Link key={href} href={href}
                   className={`ea-nav-link${active ? ' active' : ''}`}
@@ -154,9 +168,9 @@ export default function GlobalNav() {
         {/* Mobile menu */}
         {menuOpen && (
           <div id="ea-mobile-menu" style={{ background: dark?'#080808':'#F7F5F0', borderTop:`1px solid ${borderColor}`, padding:'16px 24px' }}>
-            {NAV_LINKS.map(({label,href}) => (
+            {NAV_LINKS.map(({label,href,highlight}) => (
               <Link key={href} href={href} onClick={() => setMenuOpen(false)}
-                style={{ display:'block', padding:'10px 0', fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:10, letterSpacing:'.1em', textTransform:'uppercase', color:textColor, textDecoration:'none', borderBottom:`1px solid ${borderColor}` }}>
+                style={{ display:'block', padding:'10px 0', fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:10, letterSpacing:'.1em', textTransform:'uppercase', color: highlight ? '#C8FF00' : textColor, textDecoration:'none', borderBottom:`1px solid ${borderColor}` }}>
                 {label}
               </Link>
             ))}
