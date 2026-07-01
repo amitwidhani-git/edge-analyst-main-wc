@@ -145,6 +145,19 @@
       "rank": 11
     },
     {
+      "team": "Belgium",
+      "elo": 1877,
+      "conf": "UEFA",
+      "group": "G",
+      "played": 23,
+      "wins": 14,
+      "win_rate": 0.609,
+      "avg_gf": 1.61,
+      "avg_ga": 0.74,
+      "win_prob_pct": 2.0,
+      "rank": 12
+    },
+    {
       "team": "Mexico",
       "elo": 1862,
       "conf": "CONCACAF",
@@ -155,7 +168,7 @@
       "avg_gf": 1.0,
       "avg_ga": 0.71,
       "win_prob_pct": 1.1,
-      "rank": 12
+      "rank": 13
     },
     {
       "team": "Switzerland",
@@ -168,7 +181,7 @@
       "avg_gf": 1.57,
       "avg_ga": 1.43,
       "win_prob_pct": 1.2,
-      "rank": 13
+      "rank": 14
     },
     {
       "team": "Japan",
@@ -181,19 +194,6 @@
       "avg_gf": 1.58,
       "avg_ga": 1.33,
       "win_prob_pct": 1.6,
-      "rank": 14
-    },
-    {
-      "team": "Belgium",
-      "elo": 1852,
-      "conf": "UEFA",
-      "group": "G",
-      "played": 22,
-      "wins": 13,
-      "win_rate": 0.591,
-      "avg_gf": 1.55,
-      "avg_ga": 0.68,
-      "win_prob_pct": 2.0,
       "rank": 15
     },
     {
@@ -210,19 +210,6 @@
       "rank": 16
     },
     {
-      "team": "Senegal",
-      "elo": 1836,
-      "conf": "CAF",
-      "group": "I",
-      "played": 10,
-      "wins": 4,
-      "win_rate": 0.4,
-      "avg_gf": 1.7,
-      "avg_ga": 1.7,
-      "win_prob_pct": 0.8,
-      "rank": 17
-    },
-    {
       "team": "Ecuador",
       "elo": 1826,
       "conf": "CONMEBOL",
@@ -233,7 +220,7 @@
       "avg_gf": 1.0,
       "avg_ga": 1.0,
       "win_prob_pct": 0.9,
-      "rank": 18
+      "rank": 17
     },
     {
       "team": "Sweden",
@@ -246,6 +233,19 @@
       "avg_gf": 1.38,
       "avg_ga": 1.38,
       "win_prob_pct": 0.7,
+      "rank": 18
+    },
+    {
+      "team": "Senegal",
+      "elo": 1811,
+      "conf": "CAF",
+      "group": "I",
+      "played": 11,
+      "wins": 4,
+      "win_rate": 0.364,
+      "avg_gf": 1.73,
+      "avg_ga": 1.82,
+      "win_prob_pct": 0.8,
       "rank": 19
     },
     {
