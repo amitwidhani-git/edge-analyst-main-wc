@@ -1,12 +1,12 @@
 {
   "generated": "2026-07-01",
   "model": "Dixon-Coles + Elo",
-  "wc_results_applied": 79,
+  "wc_results_applied": 80,
   "model_record": {
-    "played": 79,
-    "correct": 50,
+    "played": 80,
+    "correct": 51,
     "wrong": 29,
-    "accuracy": 63
+    "accuracy": 64
   },
   "matches": [
     {
@@ -2229,25 +2229,25 @@
       "home": "England",
       "away": "Congo DR",
       "venue": "Mercedes-Benz Stadium, Atlanta",
-      "home_elo": 1963,
-      "away_elo": 1583,
-      "home_xg": 1.9,
-      "away_xg": 0.81,
-      "prob_home": 75.9,
+      "home_elo": 1968,
+      "away_elo": 1578,
+      "home_xg": 1.91,
+      "away_xg": 0.8,
+      "prob_home": 76.2,
       "prob_draw": null,
-      "prob_away": 24.1,
-      "odds_home": 1.32,
+      "prob_away": 23.8,
+      "odds_home": 1.31,
       "odds_draw": null,
-      "odds_away": 4.15,
+      "odds_away": 4.21,
       "prediction": "England",
-      "confidence": 75.9,
-      "model_insight": "England strong favourites (Elo gap 380).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "confidence": 76.2,
+      "model_insight": "England strong favourites (Elo gap 390).",
+      "actual_result": "England",
+      "actual_score": "2–1",
+      "home_score": 2,
+      "away_score": 1,
+      "model_correct": true,
+      "status": "completed"
     },
     {
       "id": "R32-9",
