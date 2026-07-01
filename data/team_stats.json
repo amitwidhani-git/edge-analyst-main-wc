@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-30",
+  "generated": "2026-07-01",
   "teams": [
     {
       "team": "France",
@@ -145,6 +145,19 @@
       "rank": 11
     },
     {
+      "team": "Mexico",
+      "elo": 1862,
+      "conf": "CONCACAF",
+      "group": "A",
+      "played": 14,
+      "wins": 8,
+      "win_rate": 0.571,
+      "avg_gf": 1.0,
+      "avg_ga": 0.71,
+      "win_prob_pct": 1.1,
+      "rank": 12
+    },
+    {
       "team": "Switzerland",
       "elo": 1860,
       "conf": "UEFA",
@@ -155,7 +168,7 @@
       "avg_gf": 1.57,
       "avg_ga": 1.43,
       "win_prob_pct": 1.2,
-      "rank": 12
+      "rank": 13
     },
     {
       "team": "Japan",
@@ -168,19 +181,6 @@
       "avg_gf": 1.58,
       "avg_ga": 1.33,
       "win_prob_pct": 1.6,
-      "rank": 13
-    },
-    {
-      "team": "Ecuador",
-      "elo": 1853,
-      "conf": "CONMEBOL",
-      "group": "E",
-      "played": 10,
-      "wins": 3,
-      "win_rate": 0.3,
-      "avg_gf": 1.1,
-      "avg_ga": 0.9,
-      "win_prob_pct": 0.9,
       "rank": 14
     },
     {
@@ -223,16 +223,16 @@
       "rank": 17
     },
     {
-      "team": "Mexico",
-      "elo": 1835,
-      "conf": "CONCACAF",
-      "group": "A",
-      "played": 13,
-      "wins": 7,
-      "win_rate": 0.538,
-      "avg_gf": 0.92,
-      "avg_ga": 0.77,
-      "win_prob_pct": 1.1,
+      "team": "Ecuador",
+      "elo": 1826,
+      "conf": "CONMEBOL",
+      "group": "E",
+      "played": 11,
+      "wins": 3,
+      "win_rate": 0.273,
+      "avg_gf": 1.0,
+      "avg_ga": 1.0,
+      "win_prob_pct": 0.9,
       "rank": 18
     },
     {

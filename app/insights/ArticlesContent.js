@@ -19,6 +19,15 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`1 Jul 2026`,
+    title:`Mexico 2–0 Ecuador: El Tri End 40 Years of Hurt. The Azteca Defies the Model.`,
+    excerpt:`After an hour's delay for a thunderstorm that lashed Mexico City, the skies cleared and Mexico made history. Julián Quiñones fired into the top left corner in the 22nd minute after a Roberto Alvarado through ball — a clean, powerful finish that sent 87,000 inside Estadio Azteca into delirium. Nine minutes later Raúl Jiménez doubled it, a quick give-and-go with Quiñones before a curling finish into the top right. Two goals in nine minutes, both from the partnership that has defined this Mexican campaign. Forty years since they last won a knockout World Cup game. The wait is over.`,
+    excerpt2:`Ecuador, who had shocked Germany with that Neuer error and Plata's bundled winner in the group stage, found nothing here. Galíndez pulled off a stunning save from César Montes' header off a corner — briefly keeping Ecuador in the game — but Mexico were in complete control throughout. Hincapié was sent off in stoppage time for covering his mouth in a confrontational exchange with Santiago Giménez, a red card that capped a miserable end for a side that had threatened to be this tournament's great story before the Azteca silenced them completely.`,
+    excerpt3:`The model gave Ecuador 52.6% — wrong. Ecuador's Elo had surged after eliminating Germany in the group stage, making this almost a coin flip. The model was right to see it that way. Mexico's +150 host boost at the Azteca nearly cancelled Ecuador's post-Germany Elo gain — and in the end it was the crowd, the occasion, and Javier Aguirre's pragmatism that settled it. Mexico go through to the Round of 16 back at the Azteca facing either England or DR Congo on Sunday. Four wins from four, clean sheet in every game. The model said Ecuador. The Azteca said otherwise.`,
+    stat:`52.6%`, statLabel:`Ecuador win prob`, stat2:`2–0`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
+    modelCorrect: false, highlight: false,
+  },  
+  {
     tag:`Match Report`, date:`30 Jun 2026`,
     title:`France 3–0 Sweden: Mbappé Reaches 18. Deschamps Back on the Touchline. Les Bleus Into the Last 16.`,
     excerpt:`Didier Deschamps returned to the touchline after missing France's group stage victory over Norway to attend his mother's funeral  — and his captain acknowledged the moment. Mbappé sprinted straight to Deschamps to celebrate after opening the scoring just before half time  — a composed finish after Dembélé's cutback from a corner. The hug between manager and captain captured something beyond football. France were in front and their tournament was exactly on track.`,
