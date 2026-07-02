@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-01",
+  "generated": "2026-07-02",
   "teams": [
     {
       "team": "France",
@@ -262,6 +262,19 @@
       "rank": 20
     },
     {
+      "team": "USA",
+      "elo": 1795,
+      "conf": "CONCACAF",
+      "group": "D",
+      "played": 11,
+      "wins": 5,
+      "win_rate": 0.455,
+      "avg_gf": 1.45,
+      "avg_ga": 1.0,
+      "win_prob_pct": 1.7,
+      "rank": 21
+    },
+    {
       "team": "Austria",
       "elo": 1779,
       "conf": "UEFA",
@@ -272,19 +285,6 @@
       "avg_gf": 1.64,
       "avg_ga": 1.55,
       "win_prob_pct": 0.6,
-      "rank": 21
-    },
-    {
-      "team": "USA",
-      "elo": 1779,
-      "conf": "CONCACAF",
-      "group": "D",
-      "played": 10,
-      "wins": 4,
-      "win_rate": 0.4,
-      "avg_gf": 1.4,
-      "avg_ga": 1.1,
-      "win_prob_pct": 1.7,
       "rank": 22
     },
     {
@@ -406,13 +406,13 @@
     },
     {
       "team": "Bosnia-Herzegovina",
-      "elo": 1647,
+      "elo": 1631,
       "conf": "UEFA",
       "group": "B",
-      "played": 3,
+      "played": 4,
       "wins": 1,
-      "win_rate": 0.333,
-      "avg_gf": 1.67,
+      "win_rate": 0.25,
+      "avg_gf": 1.25,
       "avg_ga": 2.0,
       "win_prob_pct": 0.1,
       "rank": 32

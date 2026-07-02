@@ -19,6 +19,15 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`2 Jul 2026`,
+    title:`USA 2–0 Bosnia-Herzegovina: Balogun Scores, Gets Sent Off. Tillman's Free-Kick Seals History.`,
+    excerpt:`Folarin Balogun scored what proved to be the decisive goal for the U.S. just before halftime — his third of the tournament — but was then sent off just after the hour mark in a controversial decision that will see him suspended for the round-of-16 match against Belgium.  A fortuitous deflection took the ball onto Balogun's path and he finished expertly underneath an advancing Nikola Vasilj.  The Levi's Stadium crowd erupted. Then came the red card — Balogun raked his studs down Muharemovic's calf and landed on his ankle as the two challenged for an aerial ball, although it seemed inadvertent,  VAR advised the referee to go to the screen, and the screen said red.`,
+    excerpt2:`Playing with 10 men, the U.S. did more than simply hold on.  Sergino Dest won a free kick at the edge of the box and Malik Tillman's gorgeous free kick past the Bosnian wall in the 82nd minute sealed the victory.  Bosnia's Edin Džeko, 40 years old, came off injured early in the second half in what could be his final game for his country.  Bajraktarević — born in the USA, switched to Bosnia in 2024, scored the penalty that sent them to this World Cup — faced his birth country and lost.  Football writes the most extraordinary stories.`,
+    excerpt3:`The model gave USA 80.5% — correct. The United States won only the second World Cup knockout game in program history and first since 2002.  USA will face Belgium on July 6 at Seattle's Lumen Field — a rematch of the 2014 World Cup Round of 16 when Belgium defeated the USA 2-1 in extra time.  Balogun, suspended for the Belgium game, has three goals in three matches and is one shy of the all-time record for an American at a single World Cup.  Pochettino insists the team can win without him. Given what they produced with 10 men tonight, it's hard to argue.`,
+    stat:`80.5%`, statLabel:`USA win prob`, stat2:`2–0`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },  
+  {
     tag:`Match Report`, date:`1 Jul 2026`,
     title:`Belgium 3–2 Senegal (AET): Lukaku. Tielemans. Tielemans Again. The Most Dramatic Comeback of the Tournament.`,
     excerpt:`Senegal led 2–1 with three minutes of normal time remaining.  Habib Diarra had opened the scoring and Ismaïla Sarr added a second just after half time  — Mory Diaw making save after save to keep Belgium at bay throughout. It looked over. Then Meunier found space down the right and crossed for Lukaku to head home in the 86th minute  — 2–1. Three minutes later, Trossard pulled Diaw off his line and Tielemans drilled home  — 2–2. Seattle lost its mind. Senegal had one hand on the Round of 16 and Belgium tore it away in four minutes.`,
@@ -35,7 +44,7 @@ const ARTICLES = [
     excerpt3:`The model gave England 75.9% — correct, though the manner of the win raises serious questions. This was the first time England had won a World Cup match after conceding first since the 1966 final.  England's rocky display raises huge questions as to whether they can make it past Mexico, never mind reach the final.  Kane is now England's all-time top scorer at World Cups. England will next face Mexico at the Azteca Stadium for a place in the quarter-finals  — the co-hosts who have kept a clean sheet in every game. Tuchel has work to do before Sunday.`,
     stat:`75.9%`, statLabel:`England win prob`, stat2:`2–1`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
     modelCorrect: true, highlight: false,
-  }  
+  },
   {
     tag:`Match Report`, date:`1 Jul 2026`,
     title:`Mexico 2–0 Ecuador: El Tri End 40 Years of Hurt. The Azteca Defies the Model.`,
