@@ -19,6 +19,33 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`3 Jul 2026`,
+    title:`Switzerland 2–0 Algeria: Ndoye Beauty. The Swiss March Quietly Into the Last 16.`,
+    excerpt:`Nobody is talking about Switzerland. Nobody was talking about Switzerland after they topped Group B with seven points, knocked out Canada in the group stage decider, and now beaten Algeria 2–0 to reach the last 16 for the first time since 1954. Dan Ndoye put the Nottingham Forest forward's name into World Cup history books — a thunderous strike from the top of the penalty area just after halftime, the kind of goal that will be shown on Swiss television for decades. Granit Xhaka organised everything from deep, Yakin's system worked to perfection, and Algeria never really threatened after a bright opening spell.`,
+    excerpt2:`Algeria came into this fixture with momentum — their group stage ending produced a 3–3 thriller against Austria and Gouiri's brace saved their campaign. But Switzerland were a different level of opponent. Riyad Mahrez had one dangerous moment in the sixth minute — couldn't get a touch on a cross in front of goal — and after that Switzerland controlled every facet of the match. Amdouni added a second goal late to seal it. Algeria's World Cup ends without a win over a European side — a drought that now stretches to 1982.`,
+    excerpt3:`The model gave Switzerland 65.1% — correct. Switzerland face either Colombia or Ghana in the Round of 16 on July 7 in Vancouver. That fixture looks very winnable on paper. This quietly relentless Swiss side have won their last three consecutive World Cup matches for the first time in their history. Nobody is talking about them. Maybe that's exactly how Murat Yakin wants it.`,
+    stat:`65.1%`, statLabel:`Switzerland win prob`, stat2:`2–0`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },
+  {
+    tag:`Match Report`, date:`3 Jul 2026`,
+    title:`Portugal 2–1 Croatia: Ramos in the 90th+4. Ronaldo's Penalty. The Most Dramatic Night of the Tournament.`,
+    excerpt:`Portugal were losing in the second half. Modrić — 40 years old, still extraordinary — had sprayed a diagonal pass for Kramarić to control and finish past Costa to put Croatia ahead in the 72nd minute. Then Ronaldo stepped up for a penalty in the 81st minute — awarded after a clumsy challenge on Leão — and converted with the composure of a man who has done this approximately one thousand times. 1–1. Extra time loomed. Then Gonçalo Ramos, who had been magnificent throughout, headed in a Cancelo cross in the 90th+4 to send Portugal through. Croatia's Antonio Perišić bundled in what appeared to be a leveller in the 90th+6 but VAR disallowed it for handball in the build-up.`,
+    excerpt2:`The BMO Field crowd in Toronto was on its feet for the final 20 minutes — the kind of noise that usually only happens at a World Cup final. Modrić was brilliant and heartbroken. Kramarić and Livaja caused Portugal problems throughout. Portugal's defence was far from convincing — Rúben Dias was caught out twice — and if the Perišić goal had stood, Croatia deserved extra time on the balance of play. The VAR call was correct but felt cruel. Modrić confirmed after the match that this was his final international appearance. Forty years old, playing his last World Cup game, still the best midfielder on the pitch.`,
+    excerpt3:`The model gave Portugal 55.5% — correct, in the tournament's closest fixture by model probability. Portugal face Spain in the Round of 16 on Monday — an Iberian derby that could define this entire knockout bracket. Ronaldo is through. Ramos is the tournament's most complete striker. But Croatia's performance showed Portugal have real defensive vulnerabilities. Spain, who just demolished Austria 3–0, will know exactly where to attack.`,
+    stat:`55.5%`, statLabel:`Portugal win prob`, stat2:`2–1`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: true,
+  },
+  {
+    tag:`Match Report`, date:`2 Jul 2026`,
+    title:`Spain 3–0 Austria: Oyarzabal Brace. Yamal Unstoppable. La Roja's First Knockout Win Since 2010.`,
+    excerpt:`Lamine Yamal got the ball on the right touchline in the 12th minute, looked up, and pinged a cross so precise that Oyarzabal barely had to move to head it in. The fastest goal Spain have scored in a knockout game since 1986. Austria, who had drawn 3–3 with Algeria and beaten Jordan in the group stage, competed for 20 minutes before Spain's quality made the outcome inevitable. Yamal was simply unplayable — running at defenders, winning free kicks, drawing fouls, creating chaos at will in front of 80,000 at SoFi Stadium.`,
+    excerpt2:`Porro doubled the lead in the 66th minute with a composed finish after a Pedri through ball, and Oyarzabal completed his brace eight minutes from time — a low volley from the edge of the box that flew into the bottom corner. Austria had a Sabitzer effort saved by Simón in the second half that was their only genuine chance. Rangnick's side were organised but outclassed. Spain's performance — fluid, fast, technically perfect — was the most complete 90 minutes any team has produced in this tournament.`,
+    excerpt3:`The model gave Spain 93.9% — correct, and the performance justified every percentage point of it. Spain's first World Cup knockout win since 2010 — a 16-year wait that ends emphatically. They face Portugal in the Round of 16 on Monday in Dallas — the Iberian derby, the tie of the round, potentially the tie of the tournament. Yamal vs Ramos. Pedri vs Vitinha. Simón vs Costa. Spain are the favourites for the trophy. After tonight, it's hard to argue.`,
+    stat:`93.9%`, statLabel:`Spain win prob`, stat2:`3–0`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },  
+  {
     tag:`Match Report`, date:`2 Jul 2026`,
     title:`USA 2–0 Bosnia-Herzegovina: Balogun Scores, Gets Sent Off. Tillman's Free-Kick Seals History.`,
     excerpt:`Folarin Balogun scored what proved to be the decisive goal for the U.S. just before halftime — his third of the tournament — but was then sent off just after the hour mark in a controversial decision that will see him suspended for the round-of-16 match against Belgium.  A fortuitous deflection took the ball onto Balogun's path and he finished expertly underneath an advancing Nikola Vasilj.  The Levi's Stadium crowd erupted. Then came the red card — Balogun raked his studs down Muharemovic's calf and landed on his ankle as the two challenged for an aerial ball, although it seemed inadvertent,  VAR advised the referee to go to the screen, and the screen said red.`,
