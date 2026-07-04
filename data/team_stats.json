@@ -314,19 +314,6 @@
       "rank": 24
     },
     {
-      "team": "Australia",
-      "elo": 1734,
-      "conf": "AFC",
-      "group": "D",
-      "played": 11,
-      "wins": 4,
-      "win_rate": 0.364,
-      "avg_gf": 1.18,
-      "avg_ga": 1.45,
-      "win_prob_pct": 0.6,
-      "rank": 25
-    },
-    {
       "team": "Canada",
       "elo": 1714,
       "conf": "CONCACAF",
@@ -337,7 +324,7 @@
       "avg_gf": 1.15,
       "avg_ga": 1.31,
       "win_prob_pct": 0.4,
-      "rank": 26
+      "rank": 25
     },
     {
       "team": "South Korea",
@@ -350,7 +337,7 @@
       "avg_gf": 1.0,
       "avg_ga": 1.4,
       "win_prob_pct": 0.7,
-      "rank": 27
+      "rank": 26
     },
     {
       "team": "Côte d'Ivoire",
@@ -363,6 +350,19 @@
       "avg_gf": 1.25,
       "avg_ga": 1.0,
       "win_prob_pct": 0.3,
+      "rank": 27
+    },
+    {
+      "team": "Australia",
+      "elo": 1682,
+      "conf": "AFC",
+      "group": "D",
+      "played": 11,
+      "wins": 3,
+      "win_rate": 0.273,
+      "avg_gf": 1.0,
+      "avg_ga": 1.64,
+      "win_prob_pct": 0.6,
       "rank": 28
     },
     {
@@ -431,6 +431,19 @@
       "rank": 33
     },
     {
+      "team": "Egypt",
+      "elo": 1629,
+      "conf": "CAF",
+      "group": "G",
+      "played": 7,
+      "wins": 2,
+      "win_rate": 0.286,
+      "avg_gf": 1.71,
+      "avg_ga": 1.71,
+      "win_prob_pct": 0.3,
+      "rank": 34
+    },
+    {
       "team": "Tunisia",
       "elo": 1612,
       "conf": "CAF",
@@ -441,7 +454,7 @@
       "avg_gf": 0.89,
       "avg_ga": 2.33,
       "win_prob_pct": 0.2,
-      "rank": 34
+      "rank": 35
     },
     {
       "team": "Saudi Arabia",
@@ -454,7 +467,7 @@
       "avg_gf": 0.67,
       "avg_ga": 1.89,
       "win_prob_pct": 0.1,
-      "rank": 35
+      "rank": 36
     },
     {
       "team": "South Africa",
@@ -467,7 +480,7 @@
       "avg_gf": 0.5,
       "avg_ga": 1.0,
       "win_prob_pct": 0.05,
-      "rank": 36
+      "rank": 37
     },
     {
       "team": "Czechia",
@@ -480,7 +493,7 @@
       "avg_gf": 1.0,
       "avg_ga": 1.36,
       "win_prob_pct": 0.1,
-      "rank": 37
+      "rank": 38
     },
     {
       "team": "Congo DR",
@@ -493,19 +506,6 @@
       "avg_gf": 1.25,
       "avg_ga": 1.25,
       "win_prob_pct": 0.05,
-      "rank": 38
-    },
-    {
-      "team": "Egypt",
-      "elo": 1578,
-      "conf": "CAF",
-      "group": "G",
-      "played": 7,
-      "wins": 1,
-      "win_rate": 0.143,
-      "avg_gf": 1.43,
-      "avg_ga": 2.0,
-      "win_prob_pct": 0.3,
       "rank": 39
     },
     {
