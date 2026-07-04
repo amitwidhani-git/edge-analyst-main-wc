@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-03",
+  "generated": "2026-07-04",
   "teams": [
     {
       "team": "France",
@@ -29,27 +29,27 @@
     },
     {
       "team": "Argentina",
-      "elo": 2072,
+      "elo": 2075,
       "conf": "CONMEBOL",
       "group": "J",
-      "played": 20,
-      "wins": 13,
-      "win_rate": 0.65,
-      "avg_gf": 1.9,
-      "avg_ga": 0.95,
+      "played": 21,
+      "wins": 14,
+      "win_rate": 0.667,
+      "avg_gf": 1.95,
+      "avg_ga": 1.0,
       "win_prob_pct": 9.0,
       "rank": 3
     },
     {
       "team": "Colombia",
-      "elo": 1993,
+      "elo": 2000,
       "conf": "CONMEBOL",
       "group": "K",
-      "played": 13,
-      "wins": 8,
-      "win_rate": 0.615,
-      "avg_gf": 1.69,
-      "avg_ga": 0.54,
+      "played": 14,
+      "wins": 9,
+      "win_rate": 0.643,
+      "avg_gf": 1.64,
+      "avg_ga": 0.5,
       "win_prob_pct": 1.6,
       "rank": 4
     },
@@ -315,14 +315,14 @@
     },
     {
       "team": "Australia",
-      "elo": 1717,
+      "elo": 1734,
       "conf": "AFC",
       "group": "D",
-      "played": 10,
-      "wins": 3,
-      "win_rate": 0.3,
-      "avg_gf": 0.8,
-      "avg_ga": 1.3,
+      "played": 11,
+      "wins": 4,
+      "win_rate": 0.364,
+      "avg_gf": 1.18,
+      "avg_ga": 1.45,
       "win_prob_pct": 0.6,
       "rank": 25
     },
@@ -379,19 +379,6 @@
       "rank": 29
     },
     {
-      "team": "Ghana",
-      "elo": 1663,
-      "conf": "CAF",
-      "group": "L",
-      "played": 6,
-      "wins": 2,
-      "win_rate": 0.333,
-      "avg_gf": 1.17,
-      "avg_ga": 1.5,
-      "win_prob_pct": 0.1,
-      "rank": 30
-    },
-    {
       "team": "Paraguay",
       "elo": 1663,
       "conf": "CONMEBOL",
@@ -402,6 +389,19 @@
       "avg_gf": 1.43,
       "avg_ga": 2.29,
       "win_prob_pct": 0.2,
+      "rank": 30
+    },
+    {
+      "team": "Ghana",
+      "elo": 1656,
+      "conf": "CAF",
+      "group": "L",
+      "played": 7,
+      "wins": 2,
+      "win_rate": 0.286,
+      "avg_gf": 1.0,
+      "avg_ga": 1.43,
+      "win_prob_pct": 0.1,
       "rank": 31
     },
     {
@@ -470,19 +470,6 @@
       "rank": 36
     },
     {
-      "team": "Egypt",
-      "elo": 1595,
-      "conf": "CAF",
-      "group": "G",
-      "played": 6,
-      "wins": 1,
-      "win_rate": 0.167,
-      "avg_gf": 1.17,
-      "avg_ga": 1.5,
-      "win_prob_pct": 0.3,
-      "rank": 37
-    },
-    {
       "team": "Czechia",
       "elo": 1591,
       "conf": "UEFA",
@@ -493,7 +480,7 @@
       "avg_gf": 1.0,
       "avg_ga": 1.36,
       "win_prob_pct": 0.1,
-      "rank": 38
+      "rank": 37
     },
     {
       "team": "Congo DR",
@@ -506,18 +493,31 @@
       "avg_gf": 1.25,
       "avg_ga": 1.25,
       "win_prob_pct": 0.05,
+      "rank": 38
+    },
+    {
+      "team": "Egypt",
+      "elo": 1578,
+      "conf": "CAF",
+      "group": "G",
+      "played": 7,
+      "wins": 1,
+      "win_rate": 0.143,
+      "avg_gf": 1.43,
+      "avg_ga": 2.0,
+      "win_prob_pct": 0.3,
       "rank": 39
     },
     {
       "team": "Cabo Verde",
-      "elo": 1566,
+      "elo": 1563,
       "conf": "CAF",
       "group": "H",
-      "played": 3,
+      "played": 4,
       "wins": 0,
       "win_rate": 0.0,
-      "avg_gf": 0.67,
-      "avg_ga": 0.67,
+      "avg_gf": 1.0,
+      "avg_ga": 1.25,
       "win_prob_pct": 0.05,
       "rank": 40
     },
