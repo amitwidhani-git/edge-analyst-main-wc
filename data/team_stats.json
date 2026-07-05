@@ -1,16 +1,16 @@
 {
-  "generated": "2026-07-04",
+  "generated": "2026-07-05",
   "teams": [
     {
       "team": "France",
-      "elo": 2086,
+      "elo": 2090,
       "conf": "UEFA",
       "group": "I",
-      "played": 28,
-      "wins": 18,
-      "win_rate": 0.643,
-      "avg_gf": 1.93,
-      "avg_ga": 0.89,
+      "played": 29,
+      "wins": 19,
+      "win_rate": 0.655,
+      "avg_gf": 1.9,
+      "avg_ga": 0.86,
       "win_prob_pct": 12.5,
       "rank": 1
     },
@@ -107,14 +107,14 @@
     },
     {
       "team": "Morocco",
-      "elo": 1921,
+      "elo": 1933,
       "conf": "CAF",
       "group": "C",
-      "played": 14,
-      "wins": 6,
-      "win_rate": 0.429,
-      "avg_gf": 1.29,
-      "avg_ga": 1.07,
+      "played": 15,
+      "wins": 7,
+      "win_rate": 0.467,
+      "avg_gf": 1.4,
+      "avg_ga": 1.0,
       "win_prob_pct": 1.5,
       "rank": 9
     },
@@ -314,19 +314,6 @@
       "rank": 24
     },
     {
-      "team": "Canada",
-      "elo": 1714,
-      "conf": "CONCACAF",
-      "group": "B",
-      "played": 13,
-      "wins": 3,
-      "win_rate": 0.231,
-      "avg_gf": 1.15,
-      "avg_ga": 1.31,
-      "win_prob_pct": 0.4,
-      "rank": 25
-    },
-    {
       "team": "South Korea",
       "elo": 1711,
       "conf": "AFC",
@@ -337,6 +324,19 @@
       "avg_gf": 1.0,
       "avg_ga": 1.4,
       "win_prob_pct": 0.7,
+      "rank": 25
+    },
+    {
+      "team": "Canada",
+      "elo": 1702,
+      "conf": "CONCACAF",
+      "group": "B",
+      "played": 14,
+      "wins": 3,
+      "win_rate": 0.214,
+      "avg_gf": 1.07,
+      "avg_ga": 1.43,
+      "win_prob_pct": 0.4,
       "rank": 26
     },
     {
@@ -380,14 +380,14 @@
     },
     {
       "team": "Paraguay",
-      "elo": 1663,
+      "elo": 1659,
       "conf": "CONMEBOL",
       "group": "D",
-      "played": 7,
+      "played": 8,
       "wins": 2,
-      "win_rate": 0.286,
-      "avg_gf": 1.43,
-      "avg_ga": 2.29,
+      "win_rate": 0.25,
+      "avg_gf": 1.25,
+      "avg_ga": 2.12,
       "win_prob_pct": 0.2,
       "rank": 30
     },

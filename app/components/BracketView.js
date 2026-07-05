@@ -4,41 +4,35 @@ import { useState, useRef, useLayoutEffect, useMemo } from "react";
 const ACCENT = '#C8FF00';
 const ROUND_LABELS = ['Round of 32', 'Round of 16', 'Quarter-Final', 'Semi-Final', 'Final'];
 
-/* Official FIFA WC2026 wall-chart ordering.
-   Values are R32 match indices (1-based, matching M73=R32-1 .. M88=R32-16).
-   Each sub-array is a pair [home, away] that feeds one R16 slot in display order
-   (top to bottom). Adjacent pairs share a QF, adjacent QF-pairs share a SF. */
+/* R32 match indices (1-based) that feed each R16 slot, in R16-id order
+   (R16-1 .. R16-8). QFs then pair adjacent R16 slots: (R16-1,R16-2),
+   (R16-3,R16-4), (R16-5,R16-6), (R16-7,R16-8) — winner of R16-N plays
+   winner of R16-N+1 for odd N. SFs pair adjacent QF slots the same way. */
 const R32_TO_R16_PAIRS = [
-  // ── Top half → SF M101 ──────────────────────────────────────────
-  // QF M97 = R16 M90 + R16 M89
-  [1,  4],   // R16 M90: W(M73) vs W(M76)  — Canada vs Netherlands/Morocco — Houston   Sat 4 Jul
-  [2,  5],   // R16 M89: W(M74) vs W(M77)  — Brazil/Japan vs Ivory Coast/Norway — Philadelphia Sat 4 Jul
-  // QF M98 = R16 M94 + R16 M93
-  [9,  10],  // R16 M94: W(M81) vs W(M82)  — Belgium/Senegal vs USA/Bosnia — Seattle   Mon 6 Jul
-  [11, 12],  // R16 M93: W(M83) vs W(M84)  — Spain/Austria vs Portugal/Croatia — Dallas    Mon 6 Jul
-  // ── Bottom half → SF M102 ───────────────────────────────────────
-  // QF M99 = R16 M91 + R16 M92
-  [3,  6],   // R16 M91: W(M75) vs W(M78)  — Germany/Paraguay vs France/Sweden — New York  Sun 5 Jul
-  [7,  8],   // R16 M92: W(M79) vs W(M80)  — Mexico/Ecuador vs England/Congo — Mexico City Sun 5 Jul
-  // QF M100 = R16 M96 + R16 M95
-  [13, 16],  // R16 M96: W(M85) vs W(M88)  — Switzerland/Algeria vs Colombia/Ghana — Vancouver Tue 7 Jul
-  [14, 15],  // R16 M95: W(M86) vs W(M87)  — Australia/Egypt vs Argentina/Cabo Verde — Atlanta   Tue 7 Jul
+  [1,  4],   // R16-1: W(R32-1) vs W(R32-4)  — Houston      4 Jul
+  [3,  6],   // R16-2: W(R32-3) vs W(R32-6)  — Philadelphia 4 Jul
+  [2,  5],   // R16-3: W(R32-2) vs W(R32-5)  — Atlanta      5 Jul
+  [7,  8],   // R16-4: W(R32-7) vs W(R32-8)  — Mexico City  6 Jul
+  [11, 12],  // R16-5: W(R32-11) vs W(R32-12) — Los Angeles  6 Jul
+  [9,  10],  // R16-6: W(R32-9) vs W(R32-10)  — Seattle      7 Jul
+  [14, 15],  // R16-7: W(R32-14) vs W(R32-15) — Miami        7 Jul
+  [13, 16],  // R16-8: W(R32-13) vs W(R32-16) — Kansas City  7 Jul
 ];
 
 /* Known dates & venues for rounds 1–4 (R32 dates come from data). */
 const ROUND_METADATA = [
   null, // R32 — from data
-  [ // R16 in display order: M90, M89, M94, M93, M91, M92, M96, M95
+  [ // R16 in display order: R16-1 .. R16-8
     { date: '2026-07-04', venue: 'Houston' },
     { date: '2026-07-04', venue: 'Philadelphia' },
-    { date: '2026-07-06', venue: 'Seattle' },
-    { date: '2026-07-06', venue: 'Dallas' },
-    { date: '2026-07-05', venue: 'New York' },
-    { date: '2026-07-05', venue: 'Mexico City' },
-    { date: '2026-07-07', venue: 'Vancouver' },
-    { date: '2026-07-07', venue: 'Atlanta' },
+    { date: '2026-07-05', venue: 'Atlanta' },
+    { date: '2026-07-06', venue: 'Mexico City' },
+    { date: '2026-07-06', venue: 'Los Angeles' },
+    { date: '2026-07-07', venue: 'Seattle' },
+    { date: '2026-07-07', venue: 'Miami' },
+    { date: '2026-07-07', venue: 'Kansas City' },
   ],
-  [ // QF: M97, M98, M99, M100
+  [ // QF: (R16-1+2), (R16-3+4), (R16-5+6), (R16-7+8)
     { date: '2026-07-09', venue: 'Boston' },
     { date: '2026-07-10', venue: 'Los Angeles' },
     { date: '2026-07-11', venue: 'Miami' },
@@ -65,7 +59,13 @@ function dayLabel(dateStr) {
 }
 
 function buildBracketRounds(matches) {
-  const r32 = (matches || []).filter(m => m.stage && m.stage !== 'Group Stage');
+  const byStage = {};
+  (matches || []).forEach(m => {
+    if (!m.stage || m.stage === 'Group Stage') return;
+    (byStage[m.stage] ||= []).push(m);
+  });
+
+  const r32 = byStage['Round of 32'] || [];
   const byNum = {};
   r32.forEach(m => {
     const n = parseInt(String(m.id).split('-')[1], 10);
@@ -89,18 +89,37 @@ function buildBracketRounds(matches) {
   const rounds = [round0];
   let prev = round0;
   for (let r = 1; r < ROUND_LABELS.length; r++) {
+    const stageMatches = byStage[ROUND_LABELS[r]] || [];
     const next = [];
     for (let i = 0; i < prev.length; i += 2) {
       const a = prev[i], b = prev[i + 1];
       const meta = ROUND_METADATA[r]?.[i / 2];
-      next.push({
-        home:       a?.winnerName ? { name: a.winnerName, score: null } : null,
-        away:       b?.winnerName ? { name: b.winnerName, score: null } : null,
-        status:     'upcoming',
-        date:       meta?.date  || null,
-        venue:      meta?.venue || null,
-        winnerName: null,
+      const teamsKnown = a?.winnerName && b?.winnerName;
+      // Match this bracket slot to its real fixture by the pair of team names,
+      // since the stage's own id numbering doesn't follow bracket display order.
+      const real = teamsKnown && stageMatches.find(m => {
+        const names = [m.home, m.away];
+        return names.includes(a.winnerName) && names.includes(b.winnerName);
       });
+      if (real) {
+        next.push({
+          home:       { name: real.home, score: real.home_score },
+          away:       { name: real.away, score: real.away_score },
+          status:     real.status,
+          date:       real.date,
+          venue:      real.venue || meta?.venue || null,
+          winnerName: real.status === 'completed' ? (real.actual_result || null) : null,
+        });
+      } else {
+        next.push({
+          home:       a?.winnerName ? { name: a.winnerName, score: null } : null,
+          away:       b?.winnerName ? { name: b.winnerName, score: null } : null,
+          status:     'upcoming',
+          date:       meta?.date  || null,
+          venue:      meta?.venue || null,
+          winnerName: null,
+        });
+      }
     }
     rounds.push(next);
     prev = next;
