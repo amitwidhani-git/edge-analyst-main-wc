@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-05",
+  "generated": "2026-07-06",
   "teams": [
     {
       "team": "France",
@@ -54,42 +54,42 @@
       "rank": 4
     },
     {
-      "team": "Brazil",
-      "elo": 1969,
-      "conf": "CONMEBOL",
-      "group": "C",
-      "played": 18,
-      "wins": 10,
-      "win_rate": 0.556,
-      "avg_gf": 1.67,
-      "avg_ga": 0.56,
-      "win_prob_pct": 8.5,
+      "team": "England",
+      "elo": 1986,
+      "conf": "UEFA",
+      "group": "L",
+      "played": 31,
+      "wins": 18,
+      "win_rate": 0.581,
+      "avg_gf": 1.77,
+      "avg_ga": 0.81,
+      "win_prob_pct": 12.0,
       "rank": 5
     },
     {
-      "team": "England",
+      "team": "Norway",
       "elo": 1968,
       "conf": "UEFA",
-      "group": "L",
-      "played": 30,
-      "wins": 17,
-      "win_rate": 0.567,
-      "avg_gf": 1.73,
-      "avg_ga": 0.77,
-      "win_prob_pct": 12.0,
+      "group": "I",
+      "played": 5,
+      "wins": 4,
+      "win_rate": 0.8,
+      "avg_gf": 2.4,
+      "avg_ga": 1.8,
+      "win_prob_pct": 3.0,
       "rank": 6
     },
     {
-      "team": "Norway",
-      "elo": 1940,
-      "conf": "UEFA",
-      "group": "I",
-      "played": 4,
-      "wins": 3,
-      "win_rate": 0.75,
-      "avg_gf": 2.5,
-      "avg_ga": 2.0,
-      "win_prob_pct": 3.0,
+      "team": "Brazil",
+      "elo": 1941,
+      "conf": "CONMEBOL",
+      "group": "C",
+      "played": 19,
+      "wins": 10,
+      "win_rate": 0.526,
+      "avg_gf": 1.63,
+      "avg_ga": 0.63,
+      "win_prob_pct": 8.5,
       "rank": 7
     },
     {
@@ -158,19 +158,6 @@
       "rank": 12
     },
     {
-      "team": "Mexico",
-      "elo": 1862,
-      "conf": "CONCACAF",
-      "group": "A",
-      "played": 14,
-      "wins": 8,
-      "win_rate": 0.571,
-      "avg_gf": 1.0,
-      "avg_ga": 0.71,
-      "win_prob_pct": 1.1,
-      "rank": 13
-    },
-    {
       "team": "Japan",
       "elo": 1859,
       "conf": "AFC",
@@ -181,7 +168,7 @@
       "avg_gf": 1.58,
       "avg_ga": 1.33,
       "win_prob_pct": 1.6,
-      "rank": 14
+      "rank": 13
     },
     {
       "team": "Croatia",
@@ -194,7 +181,7 @@
       "avg_gf": 1.52,
       "avg_ga": 1.48,
       "win_prob_pct": 1.2,
-      "rank": 15
+      "rank": 14
     },
     {
       "team": "Uruguay",
@@ -207,6 +194,19 @@
       "avg_gf": 1.35,
       "avg_ga": 0.76,
       "win_prob_pct": 1.4,
+      "rank": 15
+    },
+    {
+      "team": "Mexico",
+      "elo": 1844,
+      "conf": "CONCACAF",
+      "group": "A",
+      "played": 15,
+      "wins": 8,
+      "win_rate": 0.533,
+      "avg_gf": 1.07,
+      "avg_ga": 0.87,
+      "win_prob_pct": 1.1,
       "rank": 16
     },
     {

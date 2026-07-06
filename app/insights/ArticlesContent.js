@@ -19,6 +19,24 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`6 Jul 2026`,
+    title:`Mexico 2–3 England: Bellingham's Brace Silences the Azteca. Model Correct in the Closest Call of the Round.`,
+    excerpt:`Mexico had not conceded a single goal in five matches at this tournament. Jude Bellingham changed that in the 34th minute. Declan Rice drove 60 yards with the ball, found Saka wide on the right, and Bellingham stooped to head home — the first goal Mexico had conceded at the 2026 World Cup. The Azteca fell silent for the first time all tournament. Two minutes later, Mora lost possession in his own half, Bellingham received the ball from Kane on the counter and rolled it into the bottom corner. Two goals in three minutes. England had done what no side managed for 450 minutes of football against El Tri.`,
+    excerpt2:`Quiñones pulled one back before half time — a side-volley from close range after Guehi's failed clearance — and Mexico's second came from the penalty spot, Jiménez converting to make it 2–2. Pickford made a stunning reaction save to deny Jiménez a second. Kane then converted England's penalty for 3–2 before Quansah was reduced to ten men following a straight red for a reckless sliding tackle on Gallardo. Mexico threw everything at England in the final stages. Pickford was magnificent. England held on. A chaotic, extraordinary night at the world's most famous stadium.`,
+    excerpt3:`The model gave England 53.1% — correct, the slimmest majority of any prediction in the knockout stage so far. The Azteca boost was applied, the Elo gap was just 30 points with the host boost included, and the model called it as a genuine coin flip leaning England. It was exactly that. Quiñones matched Luis Hernández's 1998 record with four tournament goals. Kane's penalty was his 15th World Cup goal. England face Norway in Miami on July 11 — Haaland's seven goals vs Kane's fifteen. The quarter-final of the tournament.`,
+    stat:`53.1%`, statLabel:`England win prob`, stat2:`2–3`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: true,
+  },  
+  {
+    tag:`Match Report`, date:`5 Jul 2026`,
+    title:`Brazil 1–2 Norway: Haaland 79'. Haaland 90'. The Five-Time Champions Are Out. Again.`,
+    excerpt:`For 78 minutes this was a match neither side could win. Bruno Guimarães had his penalty saved by Nyland in the first half — a tame effort that the goalkeeper guessed correctly, diving left. Nyland saved from Martinelli's low drive. Nyland thwarted Vinícius Junior with his leg when Odegaard lost possession. Endrick, brought on by Ancelotti at half time, danced through on goal and dinked wide with only Nyland to beat. Brazil created. Brazil were denied. Then Schjelderup whipped in a cross from the left and Haaland soared above Gabriel to power a header into the corner. 79th minute. Norway 1–0.`,
+    excerpt2:`What happened next was extraordinary. Patrick Berg drove a low shot that deflected off the post and in to make it 2–0 with minutes remaining. Neymar, introduced in the 67th minute to thunderous roars from the pro-Brazil crowd, converted a penalty in stoppage time after an Østigård elbow on Casemiro — 2–1 — but there was no miracle. Neymar was seen jawing at Nyland after scoring, the Norwegian goalkeeper smiling down at him. Brazil had made at least the quarter-finals at each of the last eight World Cups. That streak is over.`,
+    excerpt3:`The model gave Brazil 53.0% — wrong, in the closest prediction of any R16 match and perhaps the most honest one. A 29-point Elo gap between these sides. The model knew this was a genuine contest. It was. Norway are into their first-ever World Cup quarter-final — a nation of 5.4 million, 28 years without a World Cup appearance, now in the last eight. They face either Mexico or England in Miami on July 11. Haaland has seven goals, level with Messi. The Golden Boot race is extraordinary. Nyland was the best goalkeeper in this match. Brazil were the better team for 78 minutes and they are going home.`,
+    stat:`53.0%`, statLabel:`Brazil win prob`, stat2:`1–2`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
+    modelCorrect: false, highlight: true,
+  },  
+  {
     tag:`Match Report`, date:`4 Jul 2026`,
     title:`Paraguay 0–1 France: Mbappé's Penalty. Gill the Hero in Defeat. The Miracle Run Is Over.`,
     excerpt:`Orlando Gill saved from Mbappé three times in normal time. Three times the Real Madrid forward bore down on goal and three times the Paraguay goalkeeper found a way to keep him out — a performance so extraordinary that even the French supporters applauded him. Paraguay, the side who eliminated Germany on penalties having been comprehensively outplayed for 120 minutes, did exactly the same here. Compact, physical, technically disciplined. France had 14 shots. The only one that beat Gill was a penalty.`,
