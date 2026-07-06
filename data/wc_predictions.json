@@ -2554,7 +2554,7 @@
       "actual_score": "1–2",
       "home_score": 1,
       "away_score": 2,
-      "model_correct": true,
+      "model_correct": false,
       "status": "completed"
     },
     {
