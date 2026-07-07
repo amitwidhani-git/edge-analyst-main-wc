@@ -1,390 +1,390 @@
 {
   "generated": "2026-07-07",
-  "note": "Static pre-tournament probabilities. Monte Carlo simulator coming post group stage.",
+  "note": "Monte Carlo simulation — 10,000 iterations of remaining knockout bracket",
   "results": [
     {
+      "team": "Argentina",
+      "win_pct": 25.2,
+      "final_pct": 49.7,
+      "semi_pct": 98.8,
+      "quarter_pct": 0.0,
+      "still_in": true
+    },
+    {
       "team": "Spain",
-      "win_pct": 16.0,
-      "final_pct": 40.0,
-      "semi_pct": 80.0,
-      "quarter_pct": 128.0,
-      "r32_pct": 192.0
+      "win_pct": 18.0,
+      "final_pct": 35.9,
+      "semi_pct": 72.3,
+      "quarter_pct": 100.0,
+      "still_in": true
     },
     {
       "team": "France",
-      "win_pct": 12.5,
-      "final_pct": 31.2,
-      "semi_pct": 62.5,
+      "win_pct": 17.4,
+      "final_pct": 36.1,
+      "semi_pct": 71.8,
       "quarter_pct": 100.0,
-      "r32_pct": 150.0
+      "still_in": true
     },
     {
       "team": "England",
-      "win_pct": 12.0,
-      "final_pct": 30.0,
-      "semi_pct": 60.0,
-      "quarter_pct": 96.0,
-      "r32_pct": 144.0
-    },
-    {
-      "team": "Argentina",
-      "win_pct": 9.0,
-      "final_pct": 22.5,
-      "semi_pct": 45.0,
-      "quarter_pct": 72.0,
-      "r32_pct": 108.0
-    },
-    {
-      "team": "Brazil",
-      "win_pct": 8.5,
-      "final_pct": 21.2,
-      "semi_pct": 42.5,
-      "quarter_pct": 68.0,
-      "r32_pct": 102.0
-    },
-    {
-      "team": "Portugal",
-      "win_pct": 6.5,
-      "final_pct": 16.2,
-      "semi_pct": 32.5,
-      "quarter_pct": 52.0,
-      "r32_pct": 78.0
-    },
-    {
-      "team": "Germany",
-      "win_pct": 5.5,
-      "final_pct": 13.8,
-      "semi_pct": 27.5,
-      "quarter_pct": 44.0,
-      "r32_pct": 66.0
-    },
-    {
-      "team": "Netherlands",
-      "win_pct": 3.5,
-      "final_pct": 8.8,
-      "semi_pct": 17.5,
-      "quarter_pct": 28.0,
-      "r32_pct": 42.0
+      "win_pct": 12.7,
+      "final_pct": 24.9,
+      "semi_pct": 50.9,
+      "quarter_pct": 100.0,
+      "still_in": true
     },
     {
       "team": "Norway",
-      "win_pct": 3.0,
-      "final_pct": 7.5,
-      "semi_pct": 15.0,
-      "quarter_pct": 24.0,
-      "r32_pct": 36.0
+      "win_pct": 12.6,
+      "final_pct": 24.9,
+      "semi_pct": 49.1,
+      "quarter_pct": 100.0,
+      "still_in": true
     },
     {
       "team": "Belgium",
-      "win_pct": 2.0,
-      "final_pct": 5.0,
-      "semi_pct": 10.0,
-      "quarter_pct": 16.0,
-      "r32_pct": 24.0
-    },
-    {
-      "team": "USA",
-      "win_pct": 1.7,
-      "final_pct": 4.2,
-      "semi_pct": 8.5,
-      "quarter_pct": 13.6,
-      "r32_pct": 20.4
-    },
-    {
-      "team": "Colombia",
-      "win_pct": 1.6,
-      "final_pct": 4.0,
-      "semi_pct": 8.0,
-      "quarter_pct": 12.8,
-      "r32_pct": 19.2
-    },
-    {
-      "team": "Japan",
-      "win_pct": 1.6,
-      "final_pct": 4.0,
-      "semi_pct": 8.0,
-      "quarter_pct": 12.8,
-      "r32_pct": 19.2
+      "win_pct": 7.0,
+      "final_pct": 14.0,
+      "semi_pct": 27.7,
+      "quarter_pct": 100.0,
+      "still_in": true
     },
     {
       "team": "Morocco",
-      "win_pct": 1.5,
-      "final_pct": 3.8,
-      "semi_pct": 7.5,
-      "quarter_pct": 12.0,
-      "r32_pct": 18.0
-    },
-    {
-      "team": "Uruguay",
-      "win_pct": 1.4,
-      "final_pct": 3.5,
-      "semi_pct": 7.0,
-      "quarter_pct": 11.2,
-      "r32_pct": 16.8
-    },
-    {
-      "team": "Croatia",
-      "win_pct": 1.2,
-      "final_pct": 3.0,
-      "semi_pct": 6.0,
-      "quarter_pct": 9.6,
-      "r32_pct": 14.4
-    },
-    {
-      "team": "Switzerland",
-      "win_pct": 1.2,
-      "final_pct": 3.0,
-      "semi_pct": 6.0,
-      "quarter_pct": 9.6,
-      "r32_pct": 14.4
-    },
-    {
-      "team": "Mexico",
-      "win_pct": 1.1,
-      "final_pct": 2.8,
-      "semi_pct": 5.5,
-      "quarter_pct": 8.8,
-      "r32_pct": 13.2
-    },
-    {
-      "team": "Ecuador",
-      "win_pct": 0.9,
-      "final_pct": 2.2,
-      "semi_pct": 4.5,
-      "quarter_pct": 7.2,
-      "r32_pct": 10.8
-    },
-    {
-      "team": "Turkey",
-      "win_pct": 0.8,
-      "final_pct": 2.0,
-      "semi_pct": 4.0,
-      "quarter_pct": 6.4,
-      "r32_pct": 9.6
-    },
-    {
-      "team": "Senegal",
-      "win_pct": 0.8,
-      "final_pct": 2.0,
-      "semi_pct": 4.0,
-      "quarter_pct": 6.4,
-      "r32_pct": 9.6
-    },
-    {
-      "team": "Sweden",
-      "win_pct": 0.7,
-      "final_pct": 1.8,
-      "semi_pct": 3.5,
-      "quarter_pct": 5.6,
-      "r32_pct": 8.4
-    },
-    {
-      "team": "South Korea",
-      "win_pct": 0.7,
-      "final_pct": 1.8,
-      "semi_pct": 3.5,
-      "quarter_pct": 5.6,
-      "r32_pct": 8.4
-    },
-    {
-      "team": "Australia",
-      "win_pct": 0.6,
-      "final_pct": 1.5,
-      "semi_pct": 3.0,
-      "quarter_pct": 4.8,
-      "r32_pct": 7.2
-    },
-    {
-      "team": "Austria",
-      "win_pct": 0.6,
-      "final_pct": 1.5,
-      "semi_pct": 3.0,
-      "quarter_pct": 4.8,
-      "r32_pct": 7.2
-    },
-    {
-      "team": "Iran",
-      "win_pct": 0.4,
-      "final_pct": 1.0,
-      "semi_pct": 2.0,
-      "quarter_pct": 3.2,
-      "r32_pct": 4.8
-    },
-    {
-      "team": "Canada",
-      "win_pct": 0.4,
-      "final_pct": 1.0,
-      "semi_pct": 2.0,
-      "quarter_pct": 3.2,
-      "r32_pct": 4.8
-    },
-    {
-      "team": "Algeria",
-      "win_pct": 0.3,
-      "final_pct": 0.8,
-      "semi_pct": 1.5,
-      "quarter_pct": 2.4,
-      "r32_pct": 3.6
+      "win_pct": 6.9,
+      "final_pct": 14.0,
+      "semi_pct": 28.2,
+      "quarter_pct": 100.0,
+      "still_in": true
     },
     {
       "team": "Egypt",
       "win_pct": 0.3,
-      "final_pct": 0.8,
-      "semi_pct": 1.5,
-      "quarter_pct": 2.4,
-      "r32_pct": 3.6
+      "final_pct": 0.5,
+      "semi_pct": 1.2,
+      "quarter_pct": 0.0,
+      "still_in": true
+    },
+    {
+      "team": "Switzerland",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": true
+    },
+    {
+      "team": "Colombia",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": true
+    },
+    {
+      "team": "Brazil",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Portugal",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Germany",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Netherlands",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "USA",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Japan",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Uruguay",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Croatia",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Mexico",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Ecuador",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Turkey",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Senegal",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Sweden",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "South Korea",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Australia",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Austria",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Iran",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Canada",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Algeria",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "Scotland",
-      "win_pct": 0.3,
-      "final_pct": 0.8,
-      "semi_pct": 1.5,
-      "quarter_pct": 2.4,
-      "r32_pct": 3.6
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "Côte d'Ivoire",
-      "win_pct": 0.3,
-      "final_pct": 0.8,
-      "semi_pct": 1.5,
-      "quarter_pct": 2.4,
-      "r32_pct": 3.6
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "Paraguay",
-      "win_pct": 0.2,
-      "final_pct": 0.5,
-      "semi_pct": 1.0,
-      "quarter_pct": 1.6,
-      "r32_pct": 2.4
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "Tunisia",
-      "win_pct": 0.2,
-      "final_pct": 0.5,
-      "semi_pct": 1.0,
-      "quarter_pct": 1.6,
-      "r32_pct": 2.4
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "Bosnia-Herzegovina",
-      "win_pct": 0.1,
-      "final_pct": 0.2,
-      "semi_pct": 0.5,
-      "quarter_pct": 0.8,
-      "r32_pct": 1.2
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "Ghana",
-      "win_pct": 0.1,
-      "final_pct": 0.2,
-      "semi_pct": 0.5,
-      "quarter_pct": 0.8,
-      "r32_pct": 1.2
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "Saudi Arabia",
-      "win_pct": 0.1,
-      "final_pct": 0.2,
-      "semi_pct": 0.5,
-      "quarter_pct": 0.8,
-      "r32_pct": 1.2
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "Czechia",
-      "win_pct": 0.1,
-      "final_pct": 0.2,
-      "semi_pct": 0.5,
-      "quarter_pct": 0.8,
-      "r32_pct": 1.2
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "Congo DR",
-      "win_pct": 0.05,
-      "final_pct": 0.1,
-      "semi_pct": 0.2,
-      "quarter_pct": 0.4,
-      "r32_pct": 0.6
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "Cabo Verde",
-      "win_pct": 0.05,
-      "final_pct": 0.1,
-      "semi_pct": 0.2,
-      "quarter_pct": 0.4,
-      "r32_pct": 0.6
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "South Africa",
-      "win_pct": 0.05,
-      "final_pct": 0.1,
-      "semi_pct": 0.2,
-      "quarter_pct": 0.4,
-      "r32_pct": 0.6
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "Uzbekistan",
-      "win_pct": 0.05,
-      "final_pct": 0.1,
-      "semi_pct": 0.2,
-      "quarter_pct": 0.4,
-      "r32_pct": 0.6
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "Panama",
-      "win_pct": 0.05,
-      "final_pct": 0.1,
-      "semi_pct": 0.2,
-      "quarter_pct": 0.4,
-      "r32_pct": 0.6
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "Iraq",
-      "win_pct": 0.02,
-      "final_pct": 0.1,
-      "semi_pct": 0.1,
-      "quarter_pct": 0.2,
-      "r32_pct": 0.2
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "Jordan",
-      "win_pct": 0.02,
-      "final_pct": 0.1,
-      "semi_pct": 0.1,
-      "quarter_pct": 0.2,
-      "r32_pct": 0.2
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "Qatar",
-      "win_pct": 0.02,
-      "final_pct": 0.1,
-      "semi_pct": 0.1,
-      "quarter_pct": 0.2,
-      "r32_pct": 0.2
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "New Zealand",
-      "win_pct": 0.02,
-      "final_pct": 0.1,
-      "semi_pct": 0.1,
-      "quarter_pct": 0.2,
-      "r32_pct": 0.2
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "Curaçao",
-      "win_pct": 0.01,
+      "win_pct": 0.0,
       "final_pct": 0.0,
-      "semi_pct": 0.1,
-      "quarter_pct": 0.1,
-      "r32_pct": 0.1
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     },
     {
       "team": "Haiti",
-      "win_pct": 0.01,
+      "win_pct": 0.0,
       "final_pct": 0.0,
-      "semi_pct": 0.1,
-      "quarter_pct": 0.1,
-      "r32_pct": 0.1
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
     }
   ]
 }
