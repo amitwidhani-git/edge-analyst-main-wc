@@ -3,83 +3,67 @@
   "note": "Monte Carlo simulation — 10,000 iterations of remaining knockout bracket",
   "results": [
     {
-      "team": "Argentina",
-      "win_pct": 25.2,
-      "final_pct": 49.7,
-      "semi_pct": 98.8,
-      "quarter_pct": 0.0,
+      "team": "Spain",
+      "win_pct": 18.8,
+      "final_pct": 37.4,
+      "semi_pct": 73.5,
+      "quarter_pct": 100.0,
       "still_in": true
     },
     {
-      "team": "Spain",
-      "win_pct": 18.0,
-      "final_pct": 35.9,
-      "semi_pct": 72.3,
+      "team": "Argentina",
+      "win_pct": 18.7,
+      "final_pct": 38.0,
+      "semi_pct": 78.5,
       "quarter_pct": 100.0,
       "still_in": true
     },
     {
       "team": "France",
       "win_pct": 17.4,
-      "final_pct": 36.1,
-      "semi_pct": 71.8,
+      "final_pct": 35.4,
+      "semi_pct": 72.5,
       "quarter_pct": 100.0,
       "still_in": true
     },
     {
       "team": "England",
-      "win_pct": 12.7,
-      "final_pct": 24.9,
-      "semi_pct": 50.9,
+      "win_pct": 13.8,
+      "final_pct": 27.0,
+      "semi_pct": 52.5,
       "quarter_pct": 100.0,
       "still_in": true
     },
     {
       "team": "Norway",
-      "win_pct": 12.6,
-      "final_pct": 24.9,
-      "semi_pct": 49.1,
+      "win_pct": 12.0,
+      "final_pct": 24.2,
+      "semi_pct": 47.5,
       "quarter_pct": 100.0,
       "still_in": true
     },
     {
       "team": "Belgium",
       "win_pct": 7.0,
-      "final_pct": 14.0,
-      "semi_pct": 27.7,
+      "final_pct": 13.8,
+      "semi_pct": 26.5,
       "quarter_pct": 100.0,
       "still_in": true
     },
     {
       "team": "Morocco",
-      "win_pct": 6.9,
-      "final_pct": 14.0,
-      "semi_pct": 28.2,
+      "win_pct": 6.8,
+      "final_pct": 13.4,
+      "semi_pct": 27.5,
       "quarter_pct": 100.0,
       "still_in": true
     },
     {
-      "team": "Egypt",
-      "win_pct": 0.3,
-      "final_pct": 0.5,
-      "semi_pct": 1.2,
-      "quarter_pct": 0.0,
-      "still_in": true
-    },
-    {
       "team": "Switzerland",
-      "win_pct": 0.0,
-      "final_pct": 0.0,
-      "semi_pct": 0.0,
-      "quarter_pct": 0.0,
-      "still_in": true
-    },
-    {
-      "team": "Colombia",
-      "win_pct": 0.0,
-      "final_pct": 0.0,
-      "semi_pct": 0.0,
-      "quarter_pct": 0.0,
+      "win_pct": 5.5,
+      "final_pct": 10.8,
+      "semi_pct": 21.5,
+      "quarter_pct": 100.0,
       "still_in": true
     },
     {
@@ -116,6 +100,14 @@
     },
     {
       "team": "USA",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Colombia",
       "win_pct": 0.0,
       "final_pct": 0.0,
       "semi_pct": 0.0,
@@ -228,6 +220,14 @@
     },
     {
       "team": "Algeria",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Egypt",
       "win_pct": 0.0,
       "final_pct": 0.0,
       "semi_pct": 0.0,

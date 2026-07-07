@@ -29,29 +29,16 @@
     },
     {
       "team": "Argentina",
-      "elo": 2075,
+      "elo": 2078,
       "conf": "CONMEBOL",
       "group": "J",
-      "played": 21,
-      "wins": 14,
-      "win_rate": 0.667,
-      "avg_gf": 1.95,
-      "avg_ga": 1.0,
+      "played": 22,
+      "wins": 15,
+      "win_rate": 0.682,
+      "avg_gf": 2.0,
+      "avg_ga": 1.05,
       "win_prob_pct": 9.0,
       "rank": 3
-    },
-    {
-      "team": "Colombia",
-      "elo": 2000,
-      "conf": "CONMEBOL",
-      "group": "K",
-      "played": 14,
-      "wins": 9,
-      "win_rate": 0.643,
-      "avg_gf": 1.64,
-      "avg_ga": 0.5,
-      "win_prob_pct": 1.6,
-      "rank": 4
     },
     {
       "team": "England",
@@ -64,7 +51,7 @@
       "avg_gf": 1.77,
       "avg_ga": 0.81,
       "win_prob_pct": 12.0,
-      "rank": 5
+      "rank": 4
     },
     {
       "team": "Norway",
@@ -77,6 +64,19 @@
       "avg_gf": 2.4,
       "avg_ga": 1.8,
       "win_prob_pct": 3.0,
+      "rank": 5
+    },
+    {
+      "team": "Colombia",
+      "elo": 1965,
+      "conf": "CONMEBOL",
+      "group": "K",
+      "played": 15,
+      "wins": 9,
+      "win_rate": 0.6,
+      "avg_gf": 1.73,
+      "avg_ga": 0.73,
+      "win_prob_pct": 1.6,
       "rank": 6
     },
     {
@@ -119,6 +119,19 @@
       "rank": 9
     },
     {
+      "team": "Switzerland",
+      "elo": 1909,
+      "conf": "UEFA",
+      "group": "B",
+      "played": 23,
+      "wins": 10,
+      "win_rate": 0.435,
+      "avg_gf": 1.7,
+      "avg_ga": 1.43,
+      "win_prob_pct": 1.2,
+      "rank": 10
+    },
+    {
       "team": "Portugal",
       "elo": 1898,
       "conf": "UEFA",
@@ -129,7 +142,7 @@
       "avg_gf": 1.65,
       "avg_ga": 1.09,
       "win_prob_pct": 6.5,
-      "rank": 10
+      "rank": 11
     },
     {
       "team": "Belgium",
@@ -142,19 +155,6 @@
       "avg_gf": 1.71,
       "avg_ga": 0.75,
       "win_prob_pct": 2.0,
-      "rank": 11
-    },
-    {
-      "team": "Switzerland",
-      "elo": 1874,
-      "conf": "UEFA",
-      "group": "B",
-      "played": 22,
-      "wins": 9,
-      "win_rate": 0.409,
-      "avg_gf": 1.59,
-      "avg_ga": 1.36,
-      "win_prob_pct": 1.2,
       "rank": 12
     },
     {
@@ -432,14 +432,14 @@
     },
     {
       "team": "Egypt",
-      "elo": 1629,
+      "elo": 1625,
       "conf": "CAF",
       "group": "G",
-      "played": 7,
+      "played": 8,
       "wins": 2,
-      "win_rate": 0.286,
-      "avg_gf": 1.71,
-      "avg_ga": 1.71,
+      "win_rate": 0.25,
+      "avg_gf": 1.75,
+      "avg_ga": 1.88,
       "win_prob_pct": 0.3,
       "rank": 34
     },
