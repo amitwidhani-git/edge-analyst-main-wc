@@ -1,10 +1,10 @@
 {
-  "generated": "2026-07-06",
+  "generated": "2026-07-07",
   "model": "Dixon-Coles + Elo",
-  "wc_results_applied": 93,
+  "wc_results_applied": 94,
   "model_record": {
-    "played": 93,
-    "correct": 62,
+    "played": 94,
+    "correct": 63,
     "wrong": 31,
     "accuracy": 67
   },
@@ -2634,12 +2634,12 @@
       "prediction": "Belgium",
       "confidence": 55.7,
       "model_insight": "Closely matched teams — draw likely. Host nation +100 Elo boost applied.",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "actual_result": "Belgium",
+      "actual_score": "1–4",
+      "home_score": 1,
+      "away_score": 4,
+      "model_correct": true,
+      "status": "completed"
     },
     {
       "id": "R16-7",

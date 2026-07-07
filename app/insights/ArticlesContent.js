@@ -19,6 +19,15 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`7 Jul 2026`,
+    title:`USA 1–4 Belgium: De Ketelaere's Brace. Freese's Horror Error. The Co-Hosts Are Out.`,
+    excerpt:`De Ketelaere scored in the 9th minute — a composed finish after Raskin's switch found Trossard wide, the ball cut back for the Club Brugge forward to side-foot home. USA responded with energy. Tillman hit a direct free-kick into the top corner in the 31st minute — his second from a set piece in as many knockout games, the first American to do so since records began — and Lumen Field found its voice again. Then, barely 120 seconds later, De Ketelaere received at the far post and headed home. 2–1. The momentum that had briefly swung never swung back.`,
+    excerpt2:`Vanaken's third in the 57th minute was the defining moment — and the most painful. Matt Freese came rushing from his goal to collect a routine back-pass, completely misjudged the bounce outside his penalty area, and Vanaken pounced on the loose ball to roll into an empty net. Freese stood, hands on knees, the sellout Seattle crowd silent. Pulisic limped off in the 59th minute, emotional on the bench. Berhalter nearly pulled one back from distance in the 79th. Balogun forced a save from Courtois in the 82nd. Lukaku added a fourth in stoppage time. All three co-hosts eliminated at the Round of 16.`,
+    excerpt3:`The model gave Belgium 55.7% — correct, though the margin of victory — and the xG of 2.15 to 0.67 — suggested Belgium were much more dominant than a coin-flip prediction implied. The model's +100 USA home boost at Seattle reflected the genuine crowd advantage but couldn't account for a goalkeeping error that changed the game. Belgium face Spain in Los Angeles on July 10 — a quarter-final between the tournament's two most statistically dominant sides. USA exit having won three World Cup knockout games under Pochettino — more than any USMNT manager in history. The home soil dream ends in the Round of 16. The programme is building. This won't be the last time.`,
+    stat:`55.7%`, statLabel:`Belgium win prob`, stat2:`1–4`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },  
+  {
     tag:`Match Report`, date:`6 Jul 2026`,
     title:`Portugal 0–1 Spain: Merino in the 91st. Ronaldo's World Cup Is Over. Spain Into the Last Eight.`,
     excerpt:`Cristiano Ronaldo said before the game this would be his final World Cup. He played 73 minutes, had one genuine chance — a close-range effort that Unai Simón saved with his legs after João Félix's header — and walked off to a standing ovation at SoFi Stadium that acknowledged six tournaments, 20 goals, a career of extraordinary achievement, and the one thing that always eluded him. Portugal's xG was 0.56. Spain's was 1.77. The match told one story. The scoreboard told a different one for 90 minutes.`,

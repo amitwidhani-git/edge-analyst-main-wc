@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-06",
+  "generated": "2026-07-07",
   "teams": [
     {
       "team": "Spain",
@@ -133,14 +133,14 @@
     },
     {
       "team": "Belgium",
-      "elo": 1877,
+      "elo": 1897,
       "conf": "UEFA",
       "group": "G",
-      "played": 23,
-      "wins": 14,
-      "win_rate": 0.609,
-      "avg_gf": 1.61,
-      "avg_ga": 0.74,
+      "played": 24,
+      "wins": 15,
+      "win_rate": 0.625,
+      "avg_gf": 1.71,
+      "avg_ga": 0.75,
       "win_prob_pct": 2.0,
       "rank": 11
     },
@@ -263,14 +263,14 @@
     },
     {
       "team": "USA",
-      "elo": 1795,
+      "elo": 1776,
       "conf": "CONCACAF",
       "group": "D",
-      "played": 11,
+      "played": 12,
       "wins": 5,
-      "win_rate": 0.455,
-      "avg_gf": 1.45,
-      "avg_ga": 1.0,
+      "win_rate": 0.417,
+      "avg_gf": 1.42,
+      "avg_ga": 1.25,
       "win_prob_pct": 1.7,
       "rank": 21
     },
