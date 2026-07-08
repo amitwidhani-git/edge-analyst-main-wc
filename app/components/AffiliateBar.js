@@ -1,5 +1,6 @@
 "use client";
 import { AFFILIATES_ENABLED, AFFILIATES } from "../lib/affiliates";
+import { trackAffiliateClick } from "../lib/trackClick";
 
 function LogoMini({ initials, color }) {
   return (
@@ -70,6 +71,7 @@ export default function AffiliateBar() {
               rel="noopener noreferrer sponsored"
               aria-label={`${a.name} — Claim offer. Opens in new tab.`}
               className="ea-aff-bar-item"
+              onClick={() => trackAffiliateClick(a.id, 'bar')}
               style={{
                 display: 'flex', alignItems: 'center', gap: 12,
                 padding: '10px 14px',

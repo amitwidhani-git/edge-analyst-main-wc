@@ -1,9 +1,10 @@
 "use client";
 import Link from 'next/link';
 import { AFFILIATES_ENABLED, AFFILIATES, getBanner } from "../lib/affiliates";
+import { trackAffiliateClick } from "../lib/trackClick";
 
 function AffiliateCard({ affiliate }) {
-  const { name, tagline, href, termsHref, termsLabel, brandColor } = affiliate;
+  const { id, name, tagline, href, termsHref, termsLabel, brandColor } = affiliate;
   const banner = getBanner(affiliate, '300x250', '250x250');
 
   return (
@@ -36,6 +37,7 @@ function AffiliateCard({ affiliate }) {
       {banner && (
         <a href={href} target="_blank" rel="noopener noreferrer sponsored"
           aria-label={`${name} offer — opens in new tab`}
+          onClick={() => trackAffiliateClick(id, 'strip-banner')}
           style={{ display: 'block', lineHeight: 0, margin: '0 16px' }}>
           <img src={banner.src} width={banner.w} height={banner.h}
             alt={`${name} current offer`}
@@ -45,6 +47,7 @@ function AffiliateCard({ affiliate }) {
       )}
 
       <a href={href} target="_blank" rel="noopener noreferrer sponsored"
+        onClick={() => trackAffiliateClick(id, 'strip-cta')}
         style={{
           display: 'block',
           margin: '10px 16px 0',

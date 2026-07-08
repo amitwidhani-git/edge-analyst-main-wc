@@ -1,5 +1,6 @@
 "use client";
 import { AFFILIATES, AFFILIATES_ENABLED, getBanner } from "../lib/affiliates";
+import { trackAffiliateClick } from "../lib/trackClick";
 
 function LeaderboardBanner({ affiliate }) {
   const banner = getBanner(affiliate, '728x90');
@@ -10,6 +11,7 @@ function LeaderboardBanner({ affiliate }) {
       target="_blank"
       rel="noopener noreferrer sponsored"
       aria-label={`${affiliate.name} offer — opens in new tab`}
+      onClick={() => trackAffiliateClick(affiliate.id, 'freebets-leaderboard')}
       style={{ display: 'block', lineHeight: 0 }}
     >
       <img
@@ -26,7 +28,7 @@ function LeaderboardBanner({ affiliate }) {
 
 function AffiliateRow({ affiliate, index }) {
   const banner = getBanner(affiliate, '300x250', '250x250');
-  const { name, tagline, href, termsHref, termsLabel, brandColor } = affiliate;
+  const { id, name, tagline, href, termsHref, termsLabel, brandColor } = affiliate;
 
   return (
     <div className="ea-fb-row" style={{
@@ -46,6 +48,7 @@ function AffiliateRow({ affiliate, index }) {
           target="_blank"
           rel="noopener noreferrer sponsored"
           aria-label={`${name} offer`}
+          onClick={() => trackAffiliateClick(id, 'freebets-banner')}
           className="ea-fb-banner"
           style={{ display: 'flex', alignItems: 'center', padding: '20px 20px 20px 24px', flexShrink: 0 }}
         >
@@ -100,6 +103,7 @@ function AffiliateRow({ affiliate, index }) {
           href={href}
           target="_blank"
           rel="noopener noreferrer sponsored"
+          onClick={() => trackAffiliateClick(id, 'freebets-cta')}
           className="ea-fb-claim"
           style={{
             display: 'block',
