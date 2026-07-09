@@ -48,10 +48,15 @@ export default function GlobalNav() {
   /* build ticker items from live WC fixtures */
   const tickerItems = wcData.length > 0
     ? wcData.map(m => {
-        const best = Math.max(m.bestH||0, m.bestD||0, m.bestA||0);
-        const mkt  = m.bestH===best ? `${m.home} Win ${m.bestH?.toFixed(2)}`
-                   : m.bestA===best ? `${m.away} Win ${m.bestA?.toFixed(2)}`
-                   : `Draw ${m.bestD?.toFixed(2)}`;
+        // Market favourite = lowest decimal odds (highest implied probability), not the
+        // largest odds value — the largest odds is the biggest underdog, not the favourite.
+        const candidates = [
+          { label: `${m.home} Win`, odds: m.bestH },
+          { label: 'Draw',          odds: m.bestD },
+          { label: `${m.away} Win`, odds: m.bestA },
+        ].filter(c => c.odds > 0);
+        const favourite = candidates.reduce((min, c) => c.odds < min.odds ? c : min, candidates[0]);
+        const mkt = favourite ? `${favourite.label} ${favourite.odds.toFixed(2)}` : '';
         return `${m.home.toUpperCase()} vs ${m.away.toUpperCase()} · ${m.date} · ${mkt} · Model: ${m.prediction?.toUpperCase()} ${m.confidence}%`;
       })
     : [

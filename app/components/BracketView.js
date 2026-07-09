@@ -4,41 +4,45 @@ import { useState, useRef, useLayoutEffect, useMemo } from "react";
 const ACCENT = '#C8FF00';
 const ROUND_LABELS = ['Round of 32', 'Round of 16', 'Quarter-Final', 'Semi-Final', 'Final'];
 
-/* R32 match indices (1-based) that feed each R16 slot, in R16-id order
-   (R16-1 .. R16-8). QFs then pair adjacent R16 slots: (R16-1,R16-2),
-   (R16-3,R16-4), (R16-5,R16-6), (R16-7,R16-8) — winner of R16-N plays
-   winner of R16-N+1 for odd N. SFs pair adjacent QF slots the same way. */
+/* R32 match indices (1-based) that feed each R16 slot. Display order here is
+   NOT R16-id order — it's bracket-branch order, arranged so that generically
+   pairing adjacent slots (0,1)(2,3)(4,5)(6,7) produces the real QF groupings:
+   QF-1 = R16-1+R16-2 (Houston/Philadelphia), QF-2 = R16-5+R16-6 (LA/Seattle),
+   QF-3 = R16-3+R16-4 (Atlanta/Mexico City), QF-4 = R16-7+R16-8 (Miami/KC).
+   That in turn makes the QF→SF adjacent pairing land on QF-1×QF-2 and
+   QF-3×QF-4, matching the actual semi-final draw. */
 const R32_TO_R16_PAIRS = [
-  [1,  4],   // R16-1: W(R32-1) vs W(R32-4)  — Houston      4 Jul
-  [3,  6],   // R16-2: W(R32-3) vs W(R32-6)  — Philadelphia 4 Jul
-  [2,  5],   // R16-3: W(R32-2) vs W(R32-5)  — Atlanta      5 Jul
-  [7,  8],   // R16-4: W(R32-7) vs W(R32-8)  — Mexico City  6 Jul
-  [11, 12],  // R16-5: W(R32-11) vs W(R32-12) — Los Angeles  6 Jul
-  [9,  10],  // R16-6: W(R32-9) vs W(R32-10)  — Seattle      7 Jul
-  [14, 15],  // R16-7: W(R32-14) vs W(R32-15) — Miami        7 Jul
-  [13, 16],  // R16-8: W(R32-13) vs W(R32-16) — Kansas City  7 Jul
+  [1,  4],   // R16-1: W(R32-1) vs W(R32-4)   — Houston      4 Jul  ┐ feeds QF-1
+  [3,  6],   // R16-2: W(R32-3) vs W(R32-6)   — Philadelphia 4 Jul  ┘ (Boston)
+  [11, 12],  // R16-5: W(R32-11) vs W(R32-12) — Los Angeles  6 Jul  ┐ feeds QF-2
+  [9,  10],  // R16-6: W(R32-9) vs W(R32-10)  — Seattle      7 Jul  ┘ (LA)
+  [2,  5],   // R16-3: W(R32-2) vs W(R32-5)   — Atlanta      5 Jul  ┐ feeds QF-3
+  [7,  8],   // R16-4: W(R32-7) vs W(R32-8)   — Mexico City  6 Jul  ┘ (Miami)
+  [14, 15],  // R16-7: W(R32-14) vs W(R32-15) — Miami        7 Jul  ┐ feeds QF-4
+  [13, 16],  // R16-8: W(R32-13) vs W(R32-16) — Kansas City  7 Jul  ┘ (KC)
 ];
 
-/* Known dates & venues for rounds 1–4 (R32 dates come from data). */
+/* Known dates & venues for rounds 1–4 (R32 dates come from data). R16 order
+   matches R32_TO_R16_PAIRS above (bracket-branch order, not R16-id order). */
 const ROUND_METADATA = [
   null, // R32 — from data
-  [ // R16 in display order: R16-1 .. R16-8
+  [ // R16, in bracket-branch order (feeds QF-1, QF-1, QF-2, QF-2, QF-3, QF-3, QF-4, QF-4)
     { date: '2026-07-04', venue: 'Houston' },
     { date: '2026-07-04', venue: 'Philadelphia' },
-    { date: '2026-07-05', venue: 'Atlanta' },
-    { date: '2026-07-06', venue: 'Mexico City' },
     { date: '2026-07-06', venue: 'Los Angeles' },
     { date: '2026-07-07', venue: 'Seattle' },
+    { date: '2026-07-05', venue: 'Atlanta' },
+    { date: '2026-07-06', venue: 'Mexico City' },
     { date: '2026-07-07', venue: 'Miami' },
     { date: '2026-07-07', venue: 'Kansas City' },
   ],
-  [ // QF: (R16-1+2), (R16-3+4), (R16-5+6), (R16-7+8)
+  [ // QF-1 .. QF-4, in official order — (R16-1+2), (R16-5+6), (R16-3+4), (R16-7+8)
     { date: '2026-07-09', venue: 'Boston' },
     { date: '2026-07-10', venue: 'Los Angeles' },
     { date: '2026-07-11', venue: 'Miami' },
-    { date: '2026-07-11', venue: 'Kansas City' },
+    { date: '2026-07-12', venue: 'Kansas City' },
   ],
-  [ // SF: M101, M102
+  [ // SF-1 = W(QF-1) vs W(QF-2), SF-2 = W(QF-3) vs W(QF-4)
     { date: '2026-07-14', venue: 'Dallas' },
     { date: '2026-07-15', venue: 'Atlanta' },
   ],
@@ -59,13 +63,16 @@ function dayLabel(dateStr) {
 }
 
 function buildBracketRounds(matches) {
+  // Keyed by lowercased stage — data casing has drifted before (e.g. "Quarter-final"
+  // vs a hardcoded "Quarter-Final" lookup), which silently hid completed QF results.
   const byStage = {};
   (matches || []).forEach(m => {
-    if (!m.stage || m.stage === 'Group Stage') return;
-    (byStage[m.stage] ||= []).push(m);
+    if (!m.stage || m.stage.toLowerCase() === 'group stage') return;
+    const key = m.stage.toLowerCase();
+    (byStage[key] ||= []).push(m);
   });
 
-  const r32 = byStage['Round of 32'] || [];
+  const r32 = byStage['round of 32'] || [];
   const byNum = {};
   r32.forEach(m => {
     const n = parseInt(String(m.id).split('-')[1], 10);
@@ -89,7 +96,7 @@ function buildBracketRounds(matches) {
   const rounds = [round0];
   let prev = round0;
   for (let r = 1; r < ROUND_LABELS.length; r++) {
-    const stageMatches = byStage[ROUND_LABELS[r]] || [];
+    const stageMatches = byStage[ROUND_LABELS[r].toLowerCase()] || [];
     const next = [];
     for (let i = 0; i < prev.length; i += 2) {
       const a = prev[i], b = prev[i + 1];

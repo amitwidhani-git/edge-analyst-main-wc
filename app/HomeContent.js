@@ -6,7 +6,6 @@ function fmtDate(d) {
   if (!d) return '';
   return new Date(d+'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short'});
 }
-const KO_SHORT_LABEL = { 'Round of 32':'R32', 'Round of 16':'R16', 'Quarter-Final':'QF', 'Semi-Final':'SF', 'Final':'F' };
 const ec   = e => e>=8?'#C8FF00':e>=3?'rgba(200,255,0,.8)':'rgba(247,245,240,.55)';
 const ecL  = e => e>=8?'#005F3F':e>=3?'rgba(0,95,63,.8)':'rgba(8,8,8,.35)';
 const ebrL = e => e>=8?'rgba(0,95,63,.18)':e>=3?'rgba(0,95,63,.09)':'rgba(8,8,8,.08)';
@@ -61,12 +60,15 @@ export default function HomeContent({ initialData }) {
     .sort((a,b) => a.date.localeCompare(b.date))
     .slice(0, 8);
 
-  const koStages = ['Round of 32', 'Round of 16', 'Quarter-Final', 'Semi-Final', 'Final'];
+  const koStages = ['Round of 32', 'Round of 16', 'Quarter-final', 'Semi-final', 'Final'];
+  // Case-insensitive stage match — data has used inconsistent casing before (e.g. "Quarter-final"
+  // vs a hardcoded "Quarter-Final" here once silently hid QF accuracy for the whole round).
   const koHighlights = koStages.map(stage => {
-    const completed = matches.filter(m => m.stage === stage && m.status === 'completed');
+    const sameStage = m => (m.stage || '').toLowerCase() === stage.toLowerCase();
+    const completed = matches.filter(m => sameStage(m) && m.status === 'completed');
     if (completed.length === 0) return null;
     const correct  = completed.filter(m => m.model_correct === true).length;
-    const total    = matches.filter(m => m.stage === stage).length;
+    const total    = matches.filter(sameStage).length;
     const accuracy = Math.round(correct / completed.length * 100);
     return { stage, completed: completed.length, total, correct, accuracy };
   }).filter(Boolean);
@@ -110,6 +112,7 @@ export default function HomeContent({ initialData }) {
         .ea-kpi-grid{grid-template-columns:repeat(2,1fr)!important}
         .ea-kpi-item{padding-left:0!important;border-left:none!important}
         .ea-kpi-item:nth-child(even){padding-left:24px!important;border-left:1px solid rgba(247,245,240,.1)!important}
+        .ea-ko-grid{grid-template-columns:repeat(2,1fr)!important}
         .ea-section-pad{padding-left:20px!important;padding-right:20px!important}
         .ea-fixtures-row{grid-template-columns:56px 1fr 1fr 80px!important}
         .ea-odds-col{display:none!important}
@@ -189,26 +192,44 @@ export default function HomeContent({ initialData }) {
             {n:loading?'—':matches.length, l:'Fixtures'},
             {n:loading?'—':data?.liveCount||0, l:'Live odds'},
             {n:loading?'—':data?.modelRecord?.played>0?`${data.modelRecord.correct}/${data.modelRecord.played}`:'—', l:'Model record', accent:true},
-            {
-              n:loading?'—':data?.modelRecord?.accuracy!=null?`${data.modelRecord.accuracy}%`:'Pending',
-              l:'Accuracy',
-              subItems: loading?null:koHighlights,
-            },
+            {n:loading?'—':data?.modelRecord?.accuracy!=null?`${data.modelRecord.accuracy}%`:'Pending', l:'Overall accuracy'},
           ].map((k,i)=>(
             <div key={i} className="ea-kpi-item" style={{padding:'0 0 0 '+(i>0?'32px':'0'),borderLeft:i>0?'1px solid rgba(247,245,240,.1)':'none'}}>
               <div style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:'clamp(36px,4vw,60px)',lineHeight:.9,color:k.accent?'#C8FF00':'#F7F5F0',marginBottom:8}}>{k.n}</div>
               <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.1em',textTransform:'uppercase',color:'rgba(247,245,240,.45)'}}>{k.l}</div>
-              {k.subItems&&<div style={{marginTop:8,display:'flex',flexDirection:'column',gap:4,alignItems:'flex-start'}}>
-                {k.subItems.map(h=>(
-                  <div key={h.stage} style={{display:'inline-flex',alignItems:'center',gap:6,fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.08em',textTransform:'uppercase',color:'#C8FF00',background:'rgba(200,255,0,.07)',border:'1px solid rgba(200,255,0,.22)',padding:'3px 8px',borderRadius:2}}>
-                    <span style={{width:5,height:5,borderRadius:'50%',background:'#C8FF00',flexShrink:0,animation:'lp-blink 2s ease infinite'}}/>
-                    {KO_SHORT_LABEL[h.stage]||h.stage}: {h.correct}/{h.completed}{h.completed<h.total?` of ${h.total}`:''} · {h.accuracy}%
-                  </div>
-                ))}
-              </div>}
             </div>
           ))}
         </div>
+
+        {/* Knockout accuracy — one full-size tile per round, most recent round highlighted */}
+        {!loading && koHighlights.length>0 && (
+          <div className="ea-ko-grid" style={{display:'grid',gridTemplateColumns:`repeat(${koHighlights.length},1fr)`,gap:12,marginTop:28}}>
+            {koHighlights.map((h,i)=>{
+              const latest = i===koHighlights.length-1;
+              return (
+                <div key={h.stage} style={{
+                  position:'relative', overflow:'hidden', borderRadius:3, padding:'22px 20px',
+                  border:`1px solid ${latest?'rgba(200,255,0,.4)':'rgba(247,245,240,.12)'}`,
+                  background: latest?'rgba(200,255,0,.06)':'rgba(247,245,240,.03)',
+                }}>
+                  <div style={{position:'absolute',top:0,left:0,right:0,height:2,background:latest?'#C8FF00':'rgba(247,245,240,.25)'}} aria-hidden="true"/>
+                  <div style={{display:'flex',alignItems:'center',gap:7,marginBottom:12}}>
+                    {latest&&<span style={{width:6,height:6,borderRadius:'50%',background:'#C8FF00',flexShrink:0,animation:'lp-blink 1.8s ease infinite'}}/>}
+                    <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8.5,letterSpacing:'.14em',textTransform:'uppercase',color:latest?'#C8FF00':'rgba(247,245,240,.55)'}}>
+                      {h.stage} {latest?'· Live':''}
+                    </span>
+                  </div>
+                  <div style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:'clamp(40px,5vw,68px)',lineHeight:.9,color:latest?'#C8FF00':'#F7F5F0'}}>
+                    {h.accuracy}%
+                  </div>
+                  <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,letterSpacing:'.04em',color:'rgba(247,245,240,.45)',marginTop:8}}>
+                    {h.correct}/{h.completed} correct{h.completed<h.total?` · ${h.total-h.completed} to play`:''}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     </section>
 
