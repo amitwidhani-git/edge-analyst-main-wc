@@ -1,6 +1,19 @@
 {
-  "generated": "2026-07-07",
+  "generated": "2026-07-09",
   "teams": [
+    {
+      "team": "France",
+      "elo": 2105,
+      "conf": "UEFA",
+      "group": "I",
+      "played": 30,
+      "wins": 20,
+      "win_rate": 0.667,
+      "avg_gf": 1.9,
+      "avg_ga": 0.83,
+      "win_prob_pct": 12.5,
+      "rank": 1
+    },
     {
       "team": "Spain",
       "elo": 2100,
@@ -12,19 +25,6 @@
       "avg_gf": 2.04,
       "avg_ga": 0.73,
       "win_prob_pct": 16.0,
-      "rank": 1
-    },
-    {
-      "team": "France",
-      "elo": 2090,
-      "conf": "UEFA",
-      "group": "I",
-      "played": 29,
-      "wins": 19,
-      "win_rate": 0.655,
-      "avg_gf": 1.9,
-      "avg_ga": 0.86,
-      "win_prob_pct": 12.5,
       "rank": 2
     },
     {
@@ -107,14 +107,14 @@
     },
     {
       "team": "Morocco",
-      "elo": 1933,
+      "elo": 1918,
       "conf": "CAF",
       "group": "C",
-      "played": 15,
+      "played": 16,
       "wins": 7,
-      "win_rate": 0.467,
-      "avg_gf": 1.4,
-      "avg_ga": 1.0,
+      "win_rate": 0.438,
+      "avg_gf": 1.31,
+      "avg_ga": 1.06,
       "win_prob_pct": 1.5,
       "rank": 9
     },

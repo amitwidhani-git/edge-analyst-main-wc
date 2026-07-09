@@ -340,5 +340,6 @@
   {"date":"2026-07-06","home":"Portugal","away":"Spain","hs":0,"as":1},
   {"date":"2026-07-07","home":"USA","away":"Belgium","hs":1,"as":4} ,
   {"date":"2026-07-07","home":"Argentina","away":"Egypt","hs":3,"as":2},
-  {"date":"2026-07-07","home":"Switzerland","away":"Colombia","hs":4,"as":3}  
+  {"date":"2026-07-07","home":"Switzerland","away":"Colombia","hs":4,"as":3},
+  {"date":"2026-07-09","home":"Morocco","away":"France","hs":0,"as":2}  
 ]

@@ -19,6 +19,15 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`9 Jul 2026`,
+    title:`Morocco 0–2 France: Mbappé and Dembélé. Les Bleus Into Their Third Straight Semi-Final.`,
+    excerpt:`Morocco's xG in the first half was 0.04. France had the better of everything — Mbappé through on goal four minutes in, Digne hitting the crossbar from distance, Upamecano heading wide from a corner. Bounou made six saves in total, including a brilliant leaning stop from Mateta late on that reminded everyone why Morocco's goalkeeper has been one of the tournament's standout performers. But six saves wasn't enough tonight. France are simply too good.`,
+    excerpt2:`Mbappé sorted his feet out inside the box early in the second half and swept a left-footed finish into the far corner — his eighth goal of the tournament, level with Messi at the top of the Golden Boot race. Dembélé added a second six minutes later, driving directly at the heart of Morocco's retreating defence before squeezing a shot past Bounou that the goalkeeper got a hand to but couldn't keep out. Mbappé was substituted late with an ankle knock — the one worry from an otherwise dominant evening for Deschamps' side.`,
+    excerpt3:`The model gave France 72.1% — correct. France become only the third team ever to reach the World Cup semi-finals in three consecutive tournaments. They will play the winner of Spain vs Belgium. Morocco exit having been unbeaten in 34 matches before tonight, having eliminated Netherlands on penalties, having produced one of the tournament's great goalkeeping performances from Bounou throughout. Their Atlas Lions story — AFCON champions, Arab Cup winners, World Cup quarter-finalists — deserves enormous credit. France just happen to be very, very good.`,
+    stat:`72.1%`, statLabel:`France win prob`, stat2:`0–2`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },  
+  {
     tag:`Match Report`, date:`7 Jul 2026`,
     title:`Switzerland 0–0 Colombia (4–3 pens): Kobel's Night. Campaz's Miss. The Quietly Brilliant Swiss Are in the Last Eight.`,
     excerpt:`James Rodríguez ran the game from deep. Luis Díaz caused problems down the left all night. Colombia had 58% possession, more shots, more corners, more of everything — except goals. Switzerland defended with the organised brilliance that has defined their entire tournament. Kobel made three saves of real quality. Granit Xhaka covered every blade of grass. Manzambi, missing through injury, was sorely absent. Murat Yakin's side never looked like winning in normal time and never looked like losing either.`,
