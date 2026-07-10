@@ -2,6 +2,19 @@
   "generated": "2026-07-10",
   "teams": [
     {
+      "team": "Spain",
+      "elo": 2112,
+      "conf": "UEFA",
+      "group": "H",
+      "played": 27,
+      "wins": 16,
+      "win_rate": 0.593,
+      "avg_gf": 2.04,
+      "avg_ga": 0.74,
+      "win_prob_pct": 16.0,
+      "rank": 1
+    },
+    {
       "team": "France",
       "elo": 2105,
       "conf": "UEFA",
@@ -12,19 +25,6 @@
       "avg_gf": 1.9,
       "avg_ga": 0.83,
       "win_prob_pct": 12.5,
-      "rank": 1
-    },
-    {
-      "team": "Spain",
-      "elo": 2100,
-      "conf": "UEFA",
-      "group": "H",
-      "played": 26,
-      "wins": 15,
-      "win_rate": 0.577,
-      "avg_gf": 2.04,
-      "avg_ga": 0.73,
-      "win_prob_pct": 16.0,
       "rank": 2
     },
     {
@@ -146,14 +146,14 @@
     },
     {
       "team": "Belgium",
-      "elo": 1897,
+      "elo": 1884,
       "conf": "UEFA",
       "group": "G",
-      "played": 24,
+      "played": 25,
       "wins": 15,
-      "win_rate": 0.625,
-      "avg_gf": 1.71,
-      "avg_ga": 0.75,
+      "win_rate": 0.6,
+      "avg_gf": 1.68,
+      "avg_ga": 0.8,
       "win_prob_pct": 2.0,
       "rank": 12
     },

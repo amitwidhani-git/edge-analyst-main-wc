@@ -19,6 +19,15 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`10 Jul 2026`,
+    title:`Belgium 1–2 Spain: Merino Again. Lammens' Horror Drop. Spain Into Their First Semi Since 2010.`,
+    excerpt:`Fabián Ruiz opened the scoring in the 26th minute — a first-time finish from a Baena cutback that gave Courtois no chance. Then De Ketelaere made history in the 41st minute, becoming the first player to score against Spain in the entire 2026 World Cup. Six clean sheets ended. Belgium were level. The second half was a battle — De Bruyne going close, Yamal forcing two fine saves from Courtois before the Real Madrid goalkeeper went down clutching his left thigh and limped off to be replaced by Senne Lammens.`,
+    excerpt2:`Merino came off the bench in the 86th minute. One minute and 57 seconds later, Cubarsí's shot from the edge of the area was struck well but straight at Lammens — the substitute goalkeeper inexplicably spilled it directly into Merino's path, who slammed home the rebound. Bedlam at SoFi Stadium. Merino has now scored the winning goal for Spain in the 88th minute or later in back-to-back knockout games. Tielemans had missed the match entirely after a warm-up injury. Courtois — Belgium's best player — off at the crucial moment. Football's margins are brutal.`,
+    excerpt3:`The model gave Spain 72.2% — correct. Spain face France in the semi-final on Tuesday in Dallas — a repeat of the 2022 quarter-final where France won 2-1 with a late Theo Hernández goal. Belgium exit having scored in four of five knockout games, never quite finding the consistency to beat a side of Spain's calibre. Lukaku finishes his last World Cup without a tournament goal. De Bruyne, 35, says he will decide on international retirement in the coming weeks. Spain are in the last four. Merino. Again.`,
+    stat:`72.2%`, statLabel:`Spain win prob`, stat2:`1–2`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },  
+  {
     tag:`Match Report`, date:`9 Jul 2026`,
     title:`Morocco 0–2 France: Mbappé and Dembélé. Les Bleus Into Their Third Straight Semi-Final.`,
     excerpt:`Morocco's xG in the first half was 0.04. France had the better of everything — Mbappé through on goal four minutes in, Digne hitting the crossbar from distance, Upamecano heading wide from a corner. Bounou made six saves in total, including a brilliant leaning stop from Mateta late on that reminded everyone why Morocco's goalkeeper has been one of the tournament's standout performers. But six saves wasn't enough tonight. France are simply too good.`,
