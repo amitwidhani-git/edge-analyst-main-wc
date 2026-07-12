@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-10",
+  "generated": "2026-07-12",
   "teams": [
     {
       "team": "Spain",
@@ -42,29 +42,16 @@
     },
     {
       "team": "England",
-      "elo": 1986,
+      "elo": 2010,
       "conf": "UEFA",
       "group": "L",
-      "played": 31,
-      "wins": 18,
-      "win_rate": 0.581,
-      "avg_gf": 1.77,
+      "played": 32,
+      "wins": 19,
+      "win_rate": 0.594,
+      "avg_gf": 1.78,
       "avg_ga": 0.81,
       "win_prob_pct": 12.0,
       "rank": 4
-    },
-    {
-      "team": "Norway",
-      "elo": 1968,
-      "conf": "UEFA",
-      "group": "I",
-      "played": 5,
-      "wins": 4,
-      "win_rate": 0.8,
-      "avg_gf": 2.4,
-      "avg_ga": 1.8,
-      "win_prob_pct": 3.0,
-      "rank": 5
     },
     {
       "team": "Colombia",
@@ -77,6 +64,19 @@
       "avg_gf": 1.73,
       "avg_ga": 0.73,
       "win_prob_pct": 1.6,
+      "rank": 5
+    },
+    {
+      "team": "Norway",
+      "elo": 1944,
+      "conf": "UEFA",
+      "group": "I",
+      "played": 6,
+      "wins": 4,
+      "win_rate": 0.667,
+      "avg_gf": 2.17,
+      "avg_ga": 1.83,
+      "win_prob_pct": 3.0,
       "rank": 6
     },
     {

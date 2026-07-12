@@ -19,6 +19,15 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`11 Jul 2026`,
+    title:`Norway 1–2 England AET: Bellingham Brace. Nyland's Spill. Three Lions Into the Semi-Final.`,
+    excerpt:`Schjelderup put Norway ahead in the 36th minute — a composed finish after Haaland's flick-on found him in space — and for the second time in this tournament England went behind in a quarter-final. They responded immediately. Anthony Gordon drove to the byline and cut back for Bellingham to sweep home in first-half stoppage time. 1–1. England levelled before the half-time whistle and the temperature in Miami rose considerably. Haaland had one fierce strike saved by Pickford in the second half. Nyland saved brilliantly from Saka's cutback. Extra time was inevitable.`,
+    excerpt2:`Norway were running on fumes by the time extra time arrived — they'd played Brazil, Ivory Coast, and now a gruelling England side across three knockout games in 11 days. The decisive moment came from a Nyland error — Morgan Rogers struck from distance, the normally reliable Norwegian goalkeeper spilled it directly at Bellingham's feet, and the Birmingham City midfielder did what he has done throughout this tournament — scored. A sixth goal in 2026. His brace sends England to their second World Cup semi-final in three editions. Pickford becomes England's outright record appearance maker at the World Cup, overtaking Peter Shilton.`,
+    excerpt3:`The model predicted England — correct. England's route to the semi-final: beat Croatia 4–2, drew with Ghana 0–0, beat Panama 2–0, beat DR Congo 2–1, beat Mexico 3–2, now beat Norway 2–1 AET. Seven matches, five wins, two draws, never eliminated. They face Argentina in Atlanta on July 15 — Messi's record eight goals vs Bellingham's six, the Golden Boot race framing the tournament's biggest match. Haaland's eight goals ended here too. The race to be remembered as this World Cup's defining player goes on.`,
+    stat:`51.6%`, statLabel:`England win prob`, stat2:`1–2 AET`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: true,
+  },
+  {
     tag:`Match Report`, date:`10 Jul 2026`,
     title:`Belgium 1–2 Spain: Merino Again. Lammens' Horror Drop. Spain Into Their First Semi Since 2010.`,
     excerpt:`Fabián Ruiz opened the scoring in the 26th minute — a first-time finish from a Baena cutback that gave Courtois no chance. Then De Ketelaere made history in the 41st minute, becoming the first player to score against Spain in the entire 2026 World Cup. Six clean sheets ended. Belgium were level. The second half was a battle — De Bruyne going close, Yamal forcing two fine saves from Courtois before the Real Madrid goalkeeper went down clutching his left thigh and limped off to be replaced by Senne Lammens.`,
