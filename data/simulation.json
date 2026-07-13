@@ -1,45 +1,37 @@
 {
   "generated": "2026-07-12",
-  "note": "Monte Carlo simulation — 10,000 iterations of remaining knockout bracket",
+  "note": "Monte Carlo simulation - 10,000 iterations",
   "results": [
     {
-      "team": "England",
-      "win_pct": 25.4,
-      "final_pct": 50.7,
-      "semi_pct": 100.0,
-      "quarter_pct": 0.0,
-      "still_in": true
-    },
-    {
-      "team": "France",
-      "win_pct": 25.1,
-      "final_pct": 49.3,
-      "semi_pct": 100.0,
-      "quarter_pct": 0.0,
-      "still_in": true
-    },
-    {
       "team": "Spain",
-      "win_pct": 24.4,
-      "final_pct": 49.2,
+      "win_pct": 27.1,
+      "final_pct": 55.0,
       "semi_pct": 100.0,
       "quarter_pct": 0.0,
       "still_in": true
     },
     {
       "team": "Argentina",
-      "win_pct": 19.5,
-      "final_pct": 39.5,
-      "semi_pct": 78.4,
-      "quarter_pct": 100.0,
+      "win_pct": 25.8,
+      "final_pct": 51.3,
+      "semi_pct": 100.0,
+      "quarter_pct": 0.0,
       "still_in": true
     },
     {
-      "team": "Switzerland",
-      "win_pct": 5.5,
-      "final_pct": 11.3,
-      "semi_pct": 21.6,
-      "quarter_pct": 100.0,
+      "team": "England",
+      "win_pct": 24.6,
+      "final_pct": 48.7,
+      "semi_pct": 100.0,
+      "quarter_pct": 0.0,
+      "still_in": true
+    },
+    {
+      "team": "France",
+      "win_pct": 22.5,
+      "final_pct": 45.0,
+      "semi_pct": 100.0,
+      "quarter_pct": 0.0,
       "still_in": true
     },
     {
@@ -132,6 +124,14 @@
     },
     {
       "team": "Croatia",
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
+      "quarter_pct": 0.0,
+      "still_in": false
+    },
+    {
+      "team": "Switzerland",
       "win_pct": 0.0,
       "final_pct": 0.0,
       "semi_pct": 0.0,

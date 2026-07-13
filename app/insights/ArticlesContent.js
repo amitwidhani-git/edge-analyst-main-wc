@@ -19,6 +19,15 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`12 Jul 2026`,
+    title:`Argentina 3–1 Switzerland AET: Álvarez's Golazo. Lautaro Off the Bench. The Champions Are in the Last Four.`,
+    excerpt:`Mac Allister headed in from Messi's corner in the 10th minute — the most unlikely of sources given the midfielder's lack of aerial threat, but Messi's delivery was so precise that it didn't matter. Switzerland equalised in the 67th through Ndoye, who slid it under Emiliano Martínez after Ricardo Rodríguez's perfectly weighted through ball. Then Embolo was sent off in the 72nd minute for a second yellow — diving after jostling with Lisandro Martínez and Romero throughout. Switzerland, ten men and a goal down to chase, did exactly that in what was a remarkable display of defensive resilience.`,
+    excerpt2:`Into extra time. Álvarez received the ball on the left, cut inside, and curled a stunning effort into the top right corner in the 112th minute — the goal of the quarter-finals. The Kansas City crowd erupted. Lautaro Martínez, on as a substitute since the 85th minute, completed the scoring in the 120th+1, pouncing on a rebound after Kobel's save. Argentina had been dragged into extra time for the second consecutive knockout game. They won both. Emiliano Martínez made four crucial saves before Ndoye's goal. The Argentine goalkeeper is the unsung hero of this entire campaign.`,
+    excerpt3:`The model predicted Argentina — correct. Argentina face England in the semi-finals in Atlanta on Wednesday — a rematch of the 2022 quarter-final where Argentina won on penalties, and of the 1986 final where Maradona's Hand of God and Goal of the Century defined a generation. Messi now faces Bellingham. Argentina are two wins from back-to-back World Cup titles — something no team has achieved since Brazil in 1958 and 1962. Switzerland exit having produced the tournament's most disciplined defensive performance in a quarter-final in years. Kobel, Xhaka, Ndoye — a country of 8.7 million deserved more.`,
+    stat:`78.1%`, statLabel:`Argentina win prob`, stat2:`3–1 AET`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: false,
+  },  
+  {
     tag:`Match Report`, date:`11 Jul 2026`,
     title:`Norway 1–2 England AET: Bellingham Brace. Nyland's Spill. Three Lions Into the Semi-Final.`,
     excerpt:`Schjelderup put Norway ahead in the 36th minute — a composed finish after Haaland's flick-on found him in space — and for the second time in this tournament England went behind in a quarter-final. They responded immediately. Anthony Gordon drove to the byline and cut back for Bellingham to sweep home in first-half stoppage time. 1–1. England levelled before the half-time whistle and the temperature in Miami rose considerably. Haaland had one fierce strike saved by Pickford in the second half. Nyland saved brilliantly from Saka's cutback. Extra time was inevitable.`,

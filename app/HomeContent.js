@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import ProvisionalBadge from "./components/ProvisionalBadge";
+import { isProvisionalPrediction } from "./lib/predictionStatus";
 
 function fmtDate(d) {
   if (!d) return '';
@@ -264,6 +266,7 @@ export default function HomeContent({ initialData }) {
       )):upcoming.map((m,i)=>{
         const bestEv=Math.max(m.evH,m.evD,m.evA);
         const hasVal=bestEv>3;
+        const provisional=isProvisionalPrediction(m);
         return(
           <div key={i} className="ea-fixtures-row" style={{display:'grid',gridTemplateColumns:'72px 1fr 1fr 60px 68px 68px 68px 90px',gap:8,padding:'12px 0',borderBottom:'1px solid rgba(247,245,240,.04)',borderLeft:`2px solid ${hasVal?ec(bestEv):'transparent'}`,transition:'background .15s',cursor:'none'}}
             onMouseEnter={e=>e.currentTarget.style.background='rgba(200,255,0,.02)'}
@@ -277,7 +280,7 @@ export default function HomeContent({ initialData }) {
             <span className="ea-hfx-team" style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:15,letterSpacing:'.04em',color:m.prediction===m.away?'#F7F5F0':'rgba(247,245,240,.5)'}}>{m.away}</span>
             <span className="ea-odds-col" style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,color:'rgba(247,245,240,.3)',textAlign:'center'}}>{m.group}</span>
             {[{o:m.bestH,e:m.evH},{o:m.bestD,e:m.evD},{o:m.bestA,e:m.evA}].map((c,ci)=>(
-              <div key={ci} className="ea-odds-col" style={{textAlign:'center'}}>
+              <div key={ci} className="ea-odds-col" style={{textAlign:'center',opacity:provisional?.4:1}}>
                 <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:13,fontWeight:500,color:c.e>3?'#C8FF00':'rgba(247,245,240,.7)'}}>{c.o?.toFixed(2)||'—'}</span>
                 <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:7.5,color:'rgba(247,245,240,.28)',marginTop:1}}>{ci===1&&m.stage!=='Group Stage'?'—':`${ci===0?m.prob_home:ci===1?m.prob_draw:m.prob_away}%`}</div>
               </div>
@@ -288,6 +291,8 @@ export default function HomeContent({ initialData }) {
                   <span style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:15,letterSpacing:'.04em',color:m.model_correct?'#C8FF00':'#ef4444'}}>{m.actual_score}</span>
                   <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:7,marginTop:2,color:m.model_correct?'#C8FF00':'#ef4444',letterSpacing:'.06em'}}>{m.model_correct?'✓ CORRECT':'✗ WRONG'}</div>
                 </>
+              ):provisional?(
+                <ProvisionalBadge />
               ):(
                 <>
                   <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,padding:'3px 8px',borderRadius:2,background:'rgba(200,255,0,.07)',border:'1px solid rgba(200,255,0,.18)',color:'#C8FF00',display:'inline-block'}}>
@@ -321,20 +326,22 @@ export default function HomeContent({ initialData }) {
               const odds=isH?m.bestH:isA?m.bestA:m.bestD;
               const prob=isH?m.prob_home:isA?m.prob_away:m.prob_draw;
               const hasVal=m.bestEv>3;
+              const provisional=isProvisionalPrediction(m);
               return(
-                <div key={i} style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'14px 16px',borderTop:`1px solid ${ebrL(m.bestEv)}`,borderRight:`1px solid ${ebrL(m.bestEv)}`,borderBottom:`1px solid ${ebrL(m.bestEv)}`,borderLeft:`2px solid ${hasVal?ecL(m.bestEv):'rgba(8,8,8,.12)'}`,transition:'background .15s',cursor:'none'}}
+                <div key={i} style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'14px 16px',borderTop:`1px solid ${ebrL(m.bestEv)}`,borderRight:`1px solid ${ebrL(m.bestEv)}`,borderBottom:`1px solid ${ebrL(m.bestEv)}`,borderLeft:`2px solid ${hasVal?ecL(m.bestEv):'rgba(8,8,8,.12)'}`,transition:'background .15s',cursor:'none',opacity:provisional?.55:1}}
                   onMouseEnter={e=>e.currentTarget.style.background='rgba(8,8,8,.03)'}
                   onMouseLeave={e=>e.currentTarget.style.background='transparent'}>
                   <div>
-                    <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.08em',textTransform:'uppercase',color:'rgba(8,8,8,.4)',marginBottom:3}}>
-                      Grp {m.group} · {fmtDate(m.date)} · {m.home} vs {m.away}
+                    <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,letterSpacing:'.08em',textTransform:'uppercase',color:'rgba(8,8,8,.4)',marginBottom:3,display:'flex',alignItems:'center',gap:6}}>
+                      <span>Grp {m.group} · {fmtDate(m.date)} · {m.home} vs {m.away}</span>
+                      {provisional&&<ProvisionalBadge style={{color:'#B45309',background:'rgba(180,83,9,.08)',border:'1px solid rgba(180,83,9,.22)'}} />}
                     </div>
                     <div style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:18,letterSpacing:'.04em',color:'#080808'}}>{mkt}</div>
                     <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,color:'rgba(8,8,8,.45)',marginTop:2}}>
                       Model: <span style={{color:'#005F3F',fontWeight:600}}>{prob}%</span> · Odds: <span style={{color:'#080808',fontWeight:500}}>{odds?.toFixed(2)}</span>
                     </div>
                   </div>
-                  {hasVal&&<span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:14,fontWeight:500,color:ecL(m.bestEv),padding:'4px 10px',background:ebrL(m.bestEv),border:`1px solid ${ebrL(m.bestEv)}`,borderRadius:2,flexShrink:0,marginLeft:12}}>+{m.bestEv.toFixed(1)}%</span>}
+                  {hasVal&&!provisional&&<span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:14,fontWeight:500,color:ecL(m.bestEv),padding:'4px 10px',background:ebrL(m.bestEv),border:`1px solid ${ebrL(m.bestEv)}`,borderRadius:2,flexShrink:0,marginLeft:12}}>+{m.bestEv.toFixed(1)}%</span>}
                 </div>
               );
             })}

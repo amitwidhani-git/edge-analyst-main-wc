@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import AffiliateBar from '../components/AffiliateBar';
+import ProvisionalBadge from '../components/ProvisionalBadge';
+import { isProvisionalPrediction } from '../lib/predictionStatus';
 
 /* ─── helpers ─────────────────────────────────────────────────────────────── */
 function fmtDate(d) {
@@ -263,6 +265,7 @@ export default function IntelligencePage() {
               const hasValue  = m.bestEv > 3 && !isCompleted;
               const isLive    = m.oddsSource === 'live';
               const hasBookmakers = m.allBookmakers?.length > 0;
+              const provisional = isProvisionalPrediction(m);
 
               return (
                 <div key={matchId} style={{
@@ -314,6 +317,8 @@ export default function IntelligencePage() {
                             Predicted: {m.prediction}
                           </div>
                         </>
+                      ) : provisional ? (
+                        <ProvisionalBadge />
                       ) : (
                         <>
                           <span style={{
@@ -343,12 +348,12 @@ export default function IntelligencePage() {
                       { odds:m.bestD, ev_:m.evD, label:'Draw' },
                       { odds:m.bestA, ev_:m.evA, label:m.away.split(' ')[0] },
                     ].map((c, ci) => (
-                      <div key={ci} className="ea-match-col-hide" style={{ textAlign:'center' }}>
+                      <div key={ci} className="ea-match-col-hide" style={{ textAlign:'center', opacity:provisional?.4:1 }}>
                         <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, color:'rgba(247,245,240,.28)', marginBottom:2 }}>{c.label}</div>
                         <span style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:22, color: c.ev_>3?'#C8FF00':'rgba(247,245,240,.75)' }}>
                           {c.odds?.toFixed(2) || '—'}
                         </span>
-                        {c.ev_>3 && (
+                        {c.ev_>3 && !provisional && (
                           <div style={{ fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)", fontSize:14, color:'rgba(200,255,0,.65)', marginTop:1 }}>
                             +{c.ev_.toFixed(1)}%
                           </div>
@@ -358,7 +363,7 @@ export default function IntelligencePage() {
 
                     {/* EV badge */}
                     <div style={{ textAlign:'center' }}>
-                      {!isCompleted && (
+                      {!isCompleted && !provisional && (
                         <span style={{
                           fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:hasValue?11:10, fontWeight:500,
                           color: ec(m.bestEv),
@@ -368,6 +373,9 @@ export default function IntelligencePage() {
                         }}>
                           {m.bestEv > 0 ? '+' : ''}{m.bestEv.toFixed(1)}%
                         </span>
+                      )}
+                      {!isCompleted && provisional && (
+                        <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:'rgba(247,245,240,.2)' }}>—</span>
                       )}
                     </div>
 
@@ -391,6 +399,14 @@ export default function IntelligencePage() {
                   {/* Expanded breakdown */}
                   {isExp && (
                     <div className="ea-bk-expand" style={{ borderTop:'1px solid rgba(247,245,240,.05)', padding:'12px 20px 16px' }}>
+                      {provisional && (
+                        <div style={{ marginBottom:12, display:'flex', alignItems:'center', gap:8 }}>
+                          <ProvisionalBadge />
+                          <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:'rgba(247,245,240,.4)' }}>
+                            Model probabilities for this round are still being fine-tuned — treat as indicative only.
+                          </span>
+                        </div>
+                      )}
                       {hasBookmakers ? (<>
                         <div className="ea-bk-table" style={{ display:'grid', gridTemplateColumns:'140px 1fr 1fr 1fr', gap:8, marginBottom:8, fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, letterSpacing:'.12em', textTransform:'uppercase', color:'rgba(247,245,240,.25)' }}>
                           <span>Bookmaker</span>

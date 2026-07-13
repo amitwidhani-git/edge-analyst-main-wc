@@ -29,14 +29,14 @@
     },
     {
       "team": "Argentina",
-      "elo": 2078,
+      "elo": 2092,
       "conf": "CONMEBOL",
       "group": "J",
-      "played": 22,
-      "wins": 15,
-      "win_rate": 0.682,
-      "avg_gf": 2.0,
-      "avg_ga": 1.05,
+      "played": 23,
+      "wins": 16,
+      "win_rate": 0.696,
+      "avg_gf": 2.04,
+      "avg_ga": 1.04,
       "win_prob_pct": 9.0,
       "rank": 3
     },
@@ -119,19 +119,6 @@
       "rank": 9
     },
     {
-      "team": "Switzerland",
-      "elo": 1909,
-      "conf": "UEFA",
-      "group": "B",
-      "played": 23,
-      "wins": 10,
-      "win_rate": 0.435,
-      "avg_gf": 1.7,
-      "avg_ga": 1.43,
-      "win_prob_pct": 1.2,
-      "rank": 10
-    },
-    {
       "team": "Portugal",
       "elo": 1898,
       "conf": "UEFA",
@@ -142,6 +129,19 @@
       "avg_gf": 1.65,
       "avg_ga": 1.09,
       "win_prob_pct": 6.5,
+      "rank": 10
+    },
+    {
+      "team": "Switzerland",
+      "elo": 1895,
+      "conf": "UEFA",
+      "group": "B",
+      "played": 24,
+      "wins": 10,
+      "win_rate": 0.417,
+      "avg_gf": 1.67,
+      "avg_ga": 1.5,
+      "win_prob_pct": 1.2,
       "rank": 11
     },
     {

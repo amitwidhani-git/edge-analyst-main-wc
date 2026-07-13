@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import ProvisionalBadge from "../components/ProvisionalBadge";
+import { isProvisionalPrediction } from "../lib/predictionStatus";
 
 /* ─── helpers ──────────────────────────────────────────────────────────────── */
 const ec  = e => e >= 8 ? '#C8FF00' : e >= 3 ? 'rgba(200,255,0,.8)' : 'rgba(247,245,240,.55)';
@@ -339,6 +341,7 @@ export default function WC2026Page() {
               const bestEv = Math.max(m.evH, m.evD, m.evA);
               const isH=bestEv===m.evH,isA=bestEv===m.evA;
               const hasValue = bestEv > 3;
+              const provisional = isProvisionalPrediction(m);
 
               return (
                 <div key={m.id || i} className={`wc-match-row${hasValue?' has-value':''}`}
@@ -362,7 +365,7 @@ export default function WC2026Page() {
                     { odds: m.bestD, ev_: m.evD, isMatch: !isH&&!isA },
                     { odds: m.bestA, ev_: m.evA, isMatch: isA },
                   ].map((cell, ci) => (
-                    <div key={ci} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:2 }}>
+                    <div key={ci} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:2, opacity:provisional?.4:1 }}>
                       <span className={`wc-odds-cell${cell.ev_>=8&&m.oddsSource==='live'?' value':cell.ev_>=3&&m.oddsSource==='live'?' best':''}`}>
                         {cell.odds?.toFixed(2) || '—'}
                       </span>
@@ -374,24 +377,32 @@ export default function WC2026Page() {
 
                   {/* Model pick */}
                   <div style={{ textAlign:'center' }}>
-                    <span style={{
-                      fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, letterSpacing:'.08em',
-                      padding:'3px 8px', borderRadius:2,
-                      background: m.prediction==='Draw'?'rgba(74,127,212,.1)':'rgba(200,255,0,.08)',
-                      border: m.prediction==='Draw'?'1px solid rgba(74,127,212,.25)':'1px solid rgba(200,255,0,.2)',
-                      color: m.prediction==='Draw'?'#4A7FD4':'#C8FF00',
-                      display:'inline-block',
-                    }}>
-                      {m.prediction === m.home ? 'HOME' : m.prediction === m.away ? 'AWAY' : 'DRAW'}
-                    </span>
-                    <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, marginTop:2, color: m.confidence>65?'#C8FF00':m.confidence>50?'#4A7FD4':'rgba(247,245,240,.4)' }}>
-                      {m.confidence}%
-                    </div>
+                    {provisional ? (
+                      <ProvisionalBadge />
+                    ) : (
+                      <>
+                        <span style={{
+                          fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, letterSpacing:'.08em',
+                          padding:'3px 8px', borderRadius:2,
+                          background: m.prediction==='Draw'?'rgba(74,127,212,.1)':'rgba(200,255,0,.08)',
+                          border: m.prediction==='Draw'?'1px solid rgba(74,127,212,.25)':'1px solid rgba(200,255,0,.2)',
+                          color: m.prediction==='Draw'?'#4A7FD4':'#C8FF00',
+                          display:'inline-block',
+                        }}>
+                          {m.prediction === m.home ? 'HOME' : m.prediction === m.away ? 'AWAY' : 'DRAW'}
+                        </span>
+                        <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, marginTop:2, color: m.confidence>65?'#C8FF00':m.confidence>50?'#4A7FD4':'rgba(247,245,240,.4)' }}>
+                          {m.confidence}%
+                        </div>
+                      </>
+                    )}
                   </div>
 
                   {/* EV */}
                   <div style={{ textAlign:'center' }}>
-                    {hasValue ? (
+                    {provisional ? (
+                      <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:'rgba(247,245,240,.2)' }}>—</span>
+                    ) : hasValue ? (
                       <span style={{
                         fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:10, fontWeight:500,
                         color: ec(bestEv), background: ebg(bestEv),
@@ -400,7 +411,7 @@ export default function WC2026Page() {
                     ) : (
                       <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:'rgba(247,245,240,.2)' }}>—</span>
                     )}
-                    {m.oddsSource === 'live' && (
+                    {m.oddsSource === 'live' && !provisional && (
                       <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7, color:'#C8FF00', marginTop:2, letterSpacing:'.08em' }}>LIVE</div>
                     )}
                   </div>
@@ -519,6 +530,7 @@ export default function WC2026Page() {
                   const bestProb = isH ? m.prob_home : isA ? m.prob_away : m.prob_draw;
                   const hasValue = m.bestEv > 3;
                   const hasLive  = m.oddsSource === 'live';
+                  const provisional = isProvisionalPrediction(m);
 
                   return (
                     <div key={matchId} style={{
@@ -555,20 +567,26 @@ export default function WC2026Page() {
 
                         {/* Best market pick */}
                         <div style={{ textAlign:'right' }}>
-                          <span style={{
-                            fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9,
-                            padding:'3px 9px', borderRadius:2, letterSpacing:'.06em',
-                            background: hasValue ? ebg(m.bestEv) : 'rgba(247,245,240,.04)',
-                            border:`1px solid ${hasValue ? ebr(m.bestEv) : 'rgba(247,245,240,.08)'}`,
-                            color: hasValue ? ec(m.bestEv) : 'rgba(247,245,240,.5)',
-                          }}>{bestMkt}</span>
-                          <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.3)', marginTop:3 }}>
-                            {bestProb}% model
-                          </div>
+                          {provisional ? (
+                            <ProvisionalBadge />
+                          ) : (
+                            <>
+                              <span style={{
+                                fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9,
+                                padding:'3px 9px', borderRadius:2, letterSpacing:'.06em',
+                                background: hasValue ? ebg(m.bestEv) : 'rgba(247,245,240,.04)',
+                                border:`1px solid ${hasValue ? ebr(m.bestEv) : 'rgba(247,245,240,.08)'}`,
+                                color: hasValue ? ec(m.bestEv) : 'rgba(247,245,240,.5)',
+                              }}>{bestMkt}</span>
+                              <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:8, color:'rgba(247,245,240,.3)', marginTop:3 }}>
+                                {bestProb}% model
+                              </div>
+                            </>
+                          )}
                         </div>
 
                         {/* Home odds */}
-                        <div style={{ textAlign:'center' }}>
+                        <div style={{ textAlign:'center', opacity:provisional?.4:1 }}>
                           <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, color:'rgba(247,245,240,.3)', marginBottom:2 }}>{m.home.split(' ')[0]}</div>
                           <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:13, fontWeight:500,
                             color: m.evH > 3 ? '#C8FF00' : 'rgba(247,245,240,.75)' }}>
@@ -577,7 +595,7 @@ export default function WC2026Page() {
                         </div>
 
                         {/* Draw odds */}
-                        <div style={{ textAlign:'center' }}>
+                        <div style={{ textAlign:'center', opacity:provisional?.4:1 }}>
                           <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, color:'rgba(247,245,240,.3)', marginBottom:2 }}>Draw</div>
                           <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:13, fontWeight:500,
                             color: m.evD > 3 ? '#C8FF00' : 'rgba(247,245,240,.75)' }}>
@@ -586,7 +604,7 @@ export default function WC2026Page() {
                         </div>
 
                         {/* Away odds */}
-                        <div style={{ textAlign:'center' }}>
+                        <div style={{ textAlign:'center', opacity:provisional?.4:1 }}>
                           <div style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:7.5, color:'rgba(247,245,240,.3)', marginBottom:2 }}>{m.away.split(' ')[0]}</div>
                           <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:13, fontWeight:500,
                             color: m.evA > 3 ? '#C8FF00' : 'rgba(247,245,240,.75)' }}>
@@ -596,6 +614,9 @@ export default function WC2026Page() {
 
                         {/* EV badge */}
                         <div style={{ textAlign:'center' }}>
+                          {provisional ? (
+                            <span style={{ fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:9, color:'rgba(247,245,240,.2)' }}>—</span>
+                          ) : (
                           <span style={{
                             fontFamily:"var(--font-mono,'DM Mono',monospace)", fontSize:11, fontWeight:500,
                             color: ec(m.bestEv),
@@ -606,6 +627,7 @@ export default function WC2026Page() {
                           }}>
                             {m.bestEv > 0 ? '+' : ''}{m.bestEv.toFixed(1)}%
                           </span>
+                          )}
                         </div>
 
                         {/* Expand toggle — only if bookmakers available */}
