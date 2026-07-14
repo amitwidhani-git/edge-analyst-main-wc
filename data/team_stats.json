@@ -3,29 +3,16 @@
   "teams": [
     {
       "team": "Spain",
-      "elo": 2112,
+      "elo": 2137,
       "conf": "UEFA",
       "group": "H",
-      "played": 27,
-      "wins": 16,
-      "win_rate": 0.593,
+      "played": 28,
+      "wins": 17,
+      "win_rate": 0.607,
       "avg_gf": 2.04,
-      "avg_ga": 0.74,
+      "avg_ga": 0.71,
       "win_prob_pct": 16.0,
       "rank": 1
-    },
-    {
-      "team": "France",
-      "elo": 2105,
-      "conf": "UEFA",
-      "group": "I",
-      "played": 30,
-      "wins": 20,
-      "win_rate": 0.667,
-      "avg_gf": 1.9,
-      "avg_ga": 0.83,
-      "win_prob_pct": 12.5,
-      "rank": 2
     },
     {
       "team": "Argentina",
@@ -38,6 +25,19 @@
       "avg_gf": 2.04,
       "avg_ga": 1.04,
       "win_prob_pct": 9.0,
+      "rank": 2
+    },
+    {
+      "team": "France",
+      "elo": 2080,
+      "conf": "UEFA",
+      "group": "I",
+      "played": 31,
+      "wins": 20,
+      "win_rate": 0.645,
+      "avg_gf": 1.84,
+      "avg_ga": 0.87,
+      "win_prob_pct": 12.5,
       "rank": 3
     },
     {

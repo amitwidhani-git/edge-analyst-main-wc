@@ -19,6 +19,15 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`14 Jul 2026`,
+    title:`France 0–2 Spain: Oyarzabal's Penalty. Porro's Rocket. La Roja Are in the Final.`,
+    excerpt:`Lucas Digne fouled Lamine Yamal in the 22nd minute and Oyarzabal did what he always does — converted the penalty with ice-cold composure. France, who had barely threatened in the opening 20 minutes, were rattled and never recovered their rhythm. Spain's system was suffocating. Rodri and Fabian Ruiz controlling every central battle, Yamal terrorising Digne down the right flank. Porro — of all people — made it two before half time, the right back arriving late at the far post to meet a low cross and drive it home. Spain were in complete control.`,
+    excerpt2:`France had two shots on target in 90 minutes. Two. The most dangerous attacking side in international football, tournament favourites, the side with Mbappé and Dembélé and Olise — reduced to long balls into the channel and set pieces that came to nothing. Yamal had a goal ruled out for offside that would have made it 3-0. Mbappé picked up a yellow card for clattering into Simón while the goalkeeper was wasting time. Deschamps, in his final tournament as France manager, watched his side completely outplayed. His last game was supposed to be a final.`,
+    excerpt3:`The model gave Spain 56.3% — correct. Spain are in the World Cup final for the first time since 2010 — when they won it. Mbappé finishes the tournament with eight goals, level with Messi at the top of the all-time Golden Boot standings.  He will not score another. Spain face either Argentina or England on Sunday at MetLife Stadium. La Roja. Yamal. The system. The best team in this tournament, by some distance.`,
+    stat:`56.3%`, statLabel:`Spain win prob`, stat2:`0–2`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: true,
+  },  
+  {
     tag:`Match Report`, date:`12 Jul 2026`,
     title:`Argentina 3–1 Switzerland AET: Álvarez's Golazo. Lautaro Off the Bench. The Champions Are in the Last Four.`,
     excerpt:`Mac Allister headed in from Messi's corner in the 10th minute — the most unlikely of sources given the midfielder's lack of aerial threat, but Messi's delivery was so precise that it didn't matter. Switzerland equalised in the 67th through Ndoye, who slid it under Emiliano Martínez after Ricardo Rodríguez's perfectly weighted through ball. Then Embolo was sent off in the 72nd minute for a second yellow — diving after jostling with Lisandro Martínez and Romero throughout. Switzerland, ten men and a goal down to chase, did exactly that in what was a remarkable display of defensive resilience.`,

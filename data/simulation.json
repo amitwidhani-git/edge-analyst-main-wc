@@ -4,35 +4,35 @@
   "results": [
     {
       "team": "Spain",
-      "win_pct": 28.1,
-      "final_pct": 55.8,
-      "semi_pct": 100.0,
+      "win_pct": 49.7,
+      "final_pct": 100.0,
+      "semi_pct": 0.0,
       "quarter_pct": 0.0,
       "still_in": true
     },
     {
       "team": "England",
-      "win_pct": 25.1,
-      "final_pct": 50.7,
+      "win_pct": 25.9,
+      "final_pct": 51.5,
       "semi_pct": 100.0,
       "quarter_pct": 0.0,
       "still_in": true
     },
     {
       "team": "Argentina",
-      "win_pct": 24.5,
-      "final_pct": 49.3,
+      "win_pct": 24.4,
+      "final_pct": 48.5,
       "semi_pct": 100.0,
       "quarter_pct": 0.0,
       "still_in": true
     },
     {
       "team": "France",
-      "win_pct": 22.2,
-      "final_pct": 44.2,
-      "semi_pct": 100.0,
+      "win_pct": 0.0,
+      "final_pct": 0.0,
+      "semi_pct": 0.0,
       "quarter_pct": 0.0,
-      "still_in": true
+      "still_in": false
     },
     {
       "team": "Brazil",
