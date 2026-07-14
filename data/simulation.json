@@ -1,35 +1,35 @@
 {
-  "generated": "2026-07-12",
+  "generated": "2026-07-14",
   "note": "Monte Carlo simulation - 10,000 iterations",
   "results": [
     {
       "team": "Spain",
-      "win_pct": 27.1,
-      "final_pct": 55.0,
-      "semi_pct": 100.0,
-      "quarter_pct": 0.0,
-      "still_in": true
-    },
-    {
-      "team": "Argentina",
-      "win_pct": 25.8,
-      "final_pct": 51.3,
+      "win_pct": 28.1,
+      "final_pct": 55.8,
       "semi_pct": 100.0,
       "quarter_pct": 0.0,
       "still_in": true
     },
     {
       "team": "England",
-      "win_pct": 24.6,
-      "final_pct": 48.7,
+      "win_pct": 25.1,
+      "final_pct": 50.7,
+      "semi_pct": 100.0,
+      "quarter_pct": 0.0,
+      "still_in": true
+    },
+    {
+      "team": "Argentina",
+      "win_pct": 24.5,
+      "final_pct": 49.3,
       "semi_pct": 100.0,
       "quarter_pct": 0.0,
       "still_in": true
     },
     {
       "team": "France",
-      "win_pct": 22.5,
-      "final_pct": 45.0,
+      "win_pct": 22.2,
+      "final_pct": 44.2,
       "semi_pct": 100.0,
       "quarter_pct": 0.0,
       "still_in": true

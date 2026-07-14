@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import AffiliateBar from "../components/AffiliateBar";
 import BracketView from "../components/BracketView";
-import ProvisionalBadge from "../components/ProvisionalBadge";
-import { isProvisionalPrediction } from "../lib/predictionStatus";
 
 function fmtDate(d) {
   if (!d) return '';
@@ -230,7 +228,6 @@ export default function FixturesPage() {
               const bestEv=Math.max(m.evH||0,m.evD||0,m.evA||0);
               const hasVal=bestEv>3;
               const isCompleted=m.status==='completed';
-              const provisional=isProvisionalPrediction(m);
               const borderCol=isCompleted?(m.model_correct?'rgba(200,255,0,.5)':'rgba(239,68,68,.4)'):hasVal?ec(bestEv):'transparent';
               return (
                 <div key={i} className="ea-fx-row" style={{
@@ -251,35 +248,30 @@ export default function FixturesPage() {
                   <span className="ea-fx-away" style={{fontFamily:"var(--font-bebas,'Bebas Neue',sans-serif)",fontSize:15,letterSpacing:'.04em',color:m.prediction===m.away?'#F7F5F0':'rgba(247,245,240,.5)'}}>{m.away}</span>
                   <span className="ea-fx-grp" style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,color:'rgba(247,245,240,.3)',textAlign:'center'}}>{m.group}</span>
                   {[{o:m.bestH??m.odds_home,e:m.evH??0},{o:m.bestD??m.odds_draw,e:m.evD??0},{o:m.bestA??m.odds_away,e:m.evA??0}].map((c,ci)=>(
-                    <div key={ci} className="ea-fx-odds" style={{textAlign:'center',opacity:provisional?.4:1}}>
+                    <div key={ci} className="ea-fx-odds" style={{textAlign:'center'}}>
                       <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:13,fontWeight:500,color:c.e>3?'#C8FF00':'rgba(247,245,240,.7)'}}>{c.o?.toFixed(2)||'—'}</span>
                       <div style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,color:'rgba(247,245,240,.3)',marginTop:1}}>{ci===1&&m.stage!=='Group Stage'?'—':`${ci===0?m.prob_home:ci===1?m.prob_draw:m.prob_away}%`}</div>
                     </div>
                   ))}
                   <div className="ea-fx-model" style={{textAlign:'left'}}>
-                    {provisional?(
-                      <ProvisionalBadge />
-                    ):(
-                      <div style={{display:'flex',gap:4,flexWrap:'wrap'}}>
-                        {[
-                          {label:'H',prob:m.prob_home,win:m.prediction===m.home,isDraw:false},
-                          {label:'D',prob:m.prob_draw,win:m.prediction==='Draw',isDraw:true},
-                          {label:'A',prob:m.prob_away,win:m.prediction===m.away,isDraw:false},
-                        ].filter((_,oi)=>!(oi===1&&m.stage!=='Group Stage')).map((o,oi)=>(
-                          <span key={oi} style={{
-                            fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,
-                            padding:'2px 6px',borderRadius:2,
-                            background:o.win?(o.isDraw?'rgba(74,127,212,.1)':'rgba(200,255,0,.08)'):'rgba(247,245,240,.03)',
-                            border:`1px solid ${o.win?(o.isDraw?'rgba(74,127,212,.25)':'rgba(200,255,0,.2)'):'rgba(247,245,240,.07)'}`,
-                            color:o.win?(o.isDraw?'#4A7FD4':'#C8FF00'):'rgba(247,245,240,.35)',
-                          }}>{o.label} {o.prob}%</span>
-                        ))}
-                      </div>
-                    )}
+                    <div style={{display:'flex',gap:4,flexWrap:'wrap'}}>
+                      {[
+                        {label:'H',prob:m.prob_home,win:m.prediction===m.home,isDraw:false},
+                        {label:'D',prob:m.prob_draw,win:m.prediction==='Draw',isDraw:true},
+                        {label:'A',prob:m.prob_away,win:m.prediction===m.away,isDraw:false},
+                      ].filter((_,oi)=>!(oi===1&&m.stage!=='Group Stage')).map((o,oi)=>(
+                        <span key={oi} style={{
+                          fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:8,
+                          padding:'2px 6px',borderRadius:2,
+                          background:o.win?(o.isDraw?'rgba(74,127,212,.1)':'rgba(200,255,0,.08)'):'rgba(247,245,240,.03)',
+                          border:`1px solid ${o.win?(o.isDraw?'rgba(74,127,212,.25)':'rgba(200,255,0,.2)'):'rgba(247,245,240,.07)'}`,
+                          color:o.win?(o.isDraw?'#4A7FD4':'#C8FF00'):'rgba(247,245,240,.35)',
+                        }}>{o.label} {o.prob}%</span>
+                      ))}
+                    </div>
                   </div>
                   <div className="ea-fx-ev" style={{textAlign:'center'}}>
-                    {provisional?<span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,color:'rgba(247,245,240,.18)'}}>—</span>
-                    :hasVal?<span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:11,fontWeight:500,color:ec(bestEv),padding:'3px 8px',background:ebg(bestEv),border:`1px solid ${ebr(bestEv)}`,borderRadius:2,display:'inline-block'}}>+{bestEv.toFixed(1)}%</span>
+                    {hasVal?<span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:11,fontWeight:500,color:ec(bestEv),padding:'3px 8px',background:ebg(bestEv),border:`1px solid ${ebr(bestEv)}`,borderRadius:2,display:'inline-block'}}>+{bestEv.toFixed(1)}%</span>
                     :<span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,color:'rgba(247,245,240,.18)'}}>—</span>}
                   </div>
                   <div className="ea-fx-result" style={{textAlign:'center'}}>

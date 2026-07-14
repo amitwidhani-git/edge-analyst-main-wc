@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { isProvisionalPrediction } from '../lib/predictionStatus';
 
 const NAV_LINKS = [
   { label: 'Fixtures',      href: '/fixtures'    },
@@ -58,8 +57,7 @@ export default function GlobalNav() {
         ].filter(c => c.odds > 0);
         const favourite = candidates.reduce((min, c) => c.odds < min.odds ? c : min, candidates[0]);
         const mkt = favourite ? `${favourite.label} ${favourite.odds.toFixed(2)}` : '';
-        const modelPart = isProvisionalPrediction(m) ? 'Model: TO BE CONFIRMED' : `Model: ${m.prediction?.toUpperCase()} ${m.confidence}%`;
-        return `${m.home.toUpperCase()} vs ${m.away.toUpperCase()} · ${m.date} · ${mkt} · ${modelPart}`;
+        return `${m.home.toUpperCase()} vs ${m.away.toUpperCase()} · ${m.date} · ${mkt} · Model: ${m.prediction?.toUpperCase()} ${m.confidence}%`;
       })
     : [
         "SPAIN vs CABO VERDE · GRP H · 15 Jun · Spain Win 1.06 · Model: SPAIN 94%",
