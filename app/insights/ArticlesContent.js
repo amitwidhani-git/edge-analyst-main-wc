@@ -18,6 +18,15 @@ function useCursor() {
 }
 
 const ARTICLES = [
+{
+  tag:`Match Report`, date:`15 Jul 2026`,
+  title:`Argentina 2–1 England: Fernández's Rocket. Lautaro's Header. The Model Called England. Wrong.`,
+  excerpt:`No shots in the opening 30 minutes — the first time both sides had been held scoreless for that long since the first World Cup broadcast in 1966. Then Gordon tapped home Rogers' cross in the 55th minute and England led. Tuchel went defensive immediately — bringing on Konsa for Gordon, surrendering the midfield — and Argentina, 15 attempts to England's 5 across 90 minutes, turned the screw. Mac Allister hit the post. Messi created everything. Pickford made save after save. Then the 85th minute happened.`,
+  excerpt2:`Fernández received the ball 20 yards out, shaped his body, and drove a rocket through a raft of bodies that gave Pickford no chance whatsoever. The goal that will be shown forever. Then in the 90th+2, Messi — 39 years old, 22 World Cup goals, still the architect of everything — crossed from the right and Lautaro Martínez met it with a header that went in off the underside of the bar. Argentina had done it again. Their 11th goal after the 75th minute in this tournament. The comeback team of all time, doing it again, in a World Cup semi-final.`,
+  excerpt3:`The model gave England 50.9% — wrong, the narrowest possible miss on the tournament's most dramatic night. At 0.7 DC weight the model saw England's statistical profile edging Argentina by the thinnest margin — a coin flip that landed Argentina's way. Tuchel's defensive substitution at 1-0 will be debated for years. Argentina face Spain in Sunday's final at MetLife Stadium — defending champions vs reigning European champions. Messi assisted both goals. At 39. Still.`,
+  stat:`50.9%`, statLabel:`England win prob`, stat2:`2–1`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
+  modelCorrect: false, highlight: true,
+},  
   {
     tag:`Match Report`, date:`14 Jul 2026`,
     title:`France 0–2 Spain: Oyarzabal's Penalty. Porro's Rocket. La Roja Are in the Final.`,

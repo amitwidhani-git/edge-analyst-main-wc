@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-14",
+  "generated": "2026-07-17",
   "teams": [
     {
       "team": "Spain",
@@ -16,12 +16,12 @@
     },
     {
       "team": "Argentina",
-      "elo": 2092,
+      "elo": 2112,
       "conf": "CONMEBOL",
       "group": "J",
-      "played": 23,
-      "wins": 16,
-      "win_rate": 0.696,
+      "played": 24,
+      "wins": 17,
+      "win_rate": 0.708,
       "avg_gf": 2.04,
       "avg_ga": 1.04,
       "win_prob_pct": 9.0,
@@ -42,14 +42,14 @@
     },
     {
       "team": "England",
-      "elo": 2010,
+      "elo": 1991,
       "conf": "UEFA",
       "group": "L",
-      "played": 32,
+      "played": 33,
       "wins": 19,
-      "win_rate": 0.594,
-      "avg_gf": 1.78,
-      "avg_ga": 0.81,
+      "win_rate": 0.576,
+      "avg_gf": 1.76,
+      "avg_ga": 0.85,
       "win_prob_pct": 12.0,
       "rank": 4
     },
