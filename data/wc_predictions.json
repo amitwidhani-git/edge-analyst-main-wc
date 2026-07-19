@@ -1,12 +1,12 @@
 {
-  "generated": "2026-07-17",
+  "generated": "2026-07-19",
   "model": "Dixon-Coles + Elo",
-  "wc_results_applied": 102,
+  "wc_results_applied": 103,
   "model_record": {
-    "played": 102,
+    "played": 103,
     "correct": 71,
-    "wrong": 31,
-    "accuracy": 70
+    "wrong": 32,
+    "accuracy": 69
   },
   "matches": [
     {
@@ -2886,12 +2886,12 @@
       "prediction": "France",
       "confidence": 58.0,
       "model_insight": "France slight edge (Elo gap 89).",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "actual_result": "England",
+      "actual_score": "4–6",
+      "home_score": 4,
+      "away_score": 6,
+      "model_correct": false,
+      "status": "completed"
     },
     {
       "id": "FINAL",

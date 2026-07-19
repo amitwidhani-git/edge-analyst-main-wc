@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-17",
+  "generated": "2026-07-19",
   "teams": [
     {
       "team": "Spain",
@@ -29,27 +29,27 @@
     },
     {
       "team": "France",
-      "elo": 2080,
+      "elo": 2048,
       "conf": "UEFA",
       "group": "I",
-      "played": 31,
+      "played": 32,
       "wins": 20,
-      "win_rate": 0.645,
-      "avg_gf": 1.84,
-      "avg_ga": 0.87,
+      "win_rate": 0.625,
+      "avg_gf": 1.91,
+      "avg_ga": 1.03,
       "win_prob_pct": 12.5,
       "rank": 3
     },
     {
       "team": "England",
-      "elo": 1991,
+      "elo": 2023,
       "conf": "UEFA",
       "group": "L",
-      "played": 33,
-      "wins": 19,
-      "win_rate": 0.576,
-      "avg_gf": 1.76,
-      "avg_ga": 0.85,
+      "played": 34,
+      "wins": 20,
+      "win_rate": 0.588,
+      "avg_gf": 1.88,
+      "avg_ga": 0.94,
       "win_prob_pct": 12.0,
       "rank": 4
     },

@@ -18,15 +18,24 @@ function useCursor() {
 }
 
 const ARTICLES = [
-{
-  tag:`Match Report`, date:`15 Jul 2026`,
-  title:`Argentina 2–1 England: Fernández's Rocket. Lautaro's Header. The Model Called England. Wrong.`,
-  excerpt:`No shots in the opening 30 minutes — the first time both sides had been held scoreless for that long since the first World Cup broadcast in 1966. Then Gordon tapped home Rogers' cross in the 55th minute and England led. Tuchel went defensive immediately — bringing on Konsa for Gordon, surrendering the midfield — and Argentina, 15 attempts to England's 5 across 90 minutes, turned the screw. Mac Allister hit the post. Messi created everything. Pickford made save after save. Then the 85th minute happened.`,
-  excerpt2:`Fernández received the ball 20 yards out, shaped his body, and drove a rocket through a raft of bodies that gave Pickford no chance whatsoever. The goal that will be shown forever. Then in the 90th+2, Messi — 39 years old, 22 World Cup goals, still the architect of everything — crossed from the right and Lautaro Martínez met it with a header that went in off the underside of the bar. Argentina had done it again. Their 11th goal after the 75th minute in this tournament. The comeback team of all time, doing it again, in a World Cup semi-final.`,
-  excerpt3:`The model gave England 50.9% — wrong, the narrowest possible miss on the tournament's most dramatic night. At 0.7 DC weight the model saw England's statistical profile edging Argentina by the thinnest margin — a coin flip that landed Argentina's way. Tuchel's defensive substitution at 1-0 will be debated for years. Argentina face Spain in Sunday's final at MetLife Stadium — defending champions vs reigning European champions. Messi assisted both goals. At 39. Still.`,
-  stat:`50.9%`, statLabel:`England win prob`, stat2:`2–1`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
-  modelCorrect: false, highlight: true,
-},  
+  {
+    tag:`Match Report`, date:`18 Jul 2026`,
+    title:`France 4–6 England: Saka Hat-Trick. Mbappé's Record. Ten Goals. The Greatest Third-Place Match Ever.`,
+    excerpt:`Declan Rice, the captain for the day, scored in the 3rd minute. Two and a half minutes in. England had neither Kane nor Bellingham in the starting lineup. The lineup screamed low intensity, dead rubber, honours even. Rice screamed otherwise. Konsa headed home from Rice's corner in the 18th. Saka tapped in Rashford's unselfish pass for a third. Saka added a fourth with a brilliant finish from the edge of the box. 4–0 at half time. The most goals France had conceded in a half since records began. Miami watched in absolute disbelief.`,
+    excerpt2:`Then the second half happened. Mbappé scored in the 48th minute — assisted by Olise — then again in the 66th, also from an Olise assist, to become the World Cup's all-time leading scorer with 10 goals at this tournament, overtaking Messi heading into Sunday's final. Barcola halved the deficit. Dembélé made it 4–4 in stoppage time. England were wobbling. Then Saka completed his hat-trick from the penalty spot in the 87th minute. Then Dembélé scored again in the 90+5 to make it 5–4. Then Bellingham, on as a substitute in the 79th minute, dribbled past three defenders and finished to make it 6–4. Ten goals. The most in a World Cup match since 1982.`,
+    excerpt3:`The model gave France 58.0% — badly wrong, and by some margin the most wrong the model has been all tournament. England's 4–0 half-time lead was one of the most improbable scorelines ever produced at a major tournament. Bellingham ends the tournament with seven goals — the most by an England player in a single World Cup edition. Saka's hat-trick. Mbappé's record. Rice's captain's performance. England finish third. France finish fourth. A bronze medal, a consolation, a match that will be replayed for decades. Deschamps bows out with a 6–4 defeat in the most extraordinary farewell game in World Cup history.`,
+    stat:`58.0%`, statLabel:`France win prob`, stat2:`4–6`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
+    modelCorrect: false, highlight: true,
+  },  
+  {
+    tag:`Match Report`, date:`15 Jul 2026`,
+    title:`Argentina 2–1 England: Fernández's Rocket. Lautaro's Header. The Model Called England. Wrong.`,
+    excerpt:`No shots in the opening 30 minutes — the first time both sides had been held scoreless for that long since the first World Cup broadcast in 1966. Then Gordon tapped home Rogers' cross in the 55th minute and England led. Tuchel went defensive immediately — bringing on Konsa for Gordon, surrendering the midfield — and Argentina, 15 attempts to England's 5 across 90 minutes, turned the screw. Mac Allister hit the post. Messi created everything. Pickford made save after save. Then the 85th minute happened.`,
+    excerpt2:`Fernández received the ball 20 yards out, shaped his body, and drove a rocket through a raft of bodies that gave Pickford no chance whatsoever. The goal that will be shown forever. Then in the 90th+2, Messi — 39 years old, 22 World Cup goals, still the architect of everything — crossed from the right and Lautaro Martínez met it with a header that went in off the underside of the bar. Argentina had done it again. Their 11th goal after the 75th minute in this tournament. The comeback team of all time, doing it again, in a World Cup semi-final.`,
+    excerpt3:`The model gave England 50.9% — wrong, the narrowest possible miss on the tournament's most dramatic night. At 0.7 DC weight the model saw England's statistical profile edging Argentina by the thinnest margin — a coin flip that landed Argentina's way. Tuchel's defensive substitution at 1-0 will be debated for years. Argentina face Spain in Sunday's final at MetLife Stadium — defending champions vs reigning European champions. Messi assisted both goals. At 39. Still.`,
+    stat:`50.9%`, statLabel:`England win prob`, stat2:`2–1`, statLabel2:`Final score`, stat3:`✗`, statLabel3:`Model incorrect`,
+    modelCorrect: false, highlight: true,
+  },  
   {
     tag:`Match Report`, date:`14 Jul 2026`,
     title:`France 0–2 Spain: Oyarzabal's Penalty. Porro's Rocket. La Roja Are in the Final.`,
