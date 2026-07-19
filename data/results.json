@@ -347,5 +347,6 @@
   {"date":"2026-07-12","home":"Argentina","away":"Switzerland","hs":3,"as":1},
   {"date":"2026-07-14","home":"France","away":"Spain","hs":0,"as":2},
   {"date":"2026-07-15","home":"Argentina","away":"England","hs":2,"as":1},
-  {"date":"2026-07-18","home":"France","away":"England","hs":4,"as":6}  
+  {"date":"2026-07-18","home":"France","away":"England","hs":4,"as":6},
+  {"date":"2026-07-19","home":"Argentina","away":"Spain","hs":0,"as":1}  
 ]

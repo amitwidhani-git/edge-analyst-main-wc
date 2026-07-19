@@ -19,6 +19,15 @@ function useCursor() {
 
 const ARTICLES = [
   {
+    tag:`Match Report`, date:`19 Jul 2026`,
+    title:`Argentina 0–1 Spain (AET): Ferran Torres in the 106th. Spain Are World Champions.`,
+    excerpt:`Argentina did not have a single shot in 90 minutes. Not one. The first team in World Cup final history to achieve that statistical impossibility — and the fact that it felt like Argentina were still in the game, still dangerous, still Messi-shaped in their threat, tells you everything about what Spain produced. <span class="citation">Shot attempts were 19-0 for Spain through 90 minutes, who had 66% of the ball and nearly 600 completed passes to Argentina's sub-300.</span> Yamal ran the show. Rodri commanded the midfield. Pedri was everywhere. Argentina were suffocated.`,
+    excerpt2:`Enzo Fernández — hero of the semi-final — was shown a second yellow card late in normal time for a challenge on Cubarsí, leaving Argentina with ten men for extra time. In the 106th minute, Merino crossed from the left and Ferran Torres — the substitute, the man who scored the winner against Belgium in the quarter-final — finished past Emiliano Martínez. Spain had done it. Merino blocked a Messi shot with his face in the closing minutes to protect the lead. Martinez saved everything that came his way. Argentina threw bodies forward. Spain held.`,
+    excerpt3:`The model predicted Spain — correct. Spain are world champions for the second time in their history, 16 years after South Africa 2010. <span class="citation">Lamine Yamal, 19 years old, lifts the World Cup. Ferran Torres scores the winner in the final. Merino has now scored or assisted the winning goal in the semi-final and blocked the crucial shot in the final.</span> Argentina, the defending champions, attempted back-to-back titles for the first time since Brazil in 1962. They came closer than the scoreline suggests and further away than any final team ever has — zero shots in 90 minutes. Messi walks off the MetLife pitch without a second World Cup. The greatest of all time. Still.`,
+    stat:`63.9%`, statLabel:`Spain win prob`, stat2:`0–1 AET`, statLabel2:`Final score`, stat3:`✓`, statLabel3:`Model correct`,
+    modelCorrect: true, highlight: true,
+  },  
+  {
     tag:`Match Report`, date:`18 Jul 2026`,
     title:`France 4–6 England: Saka Hat-Trick. Mbappé's Record. Ten Goals. The Greatest Third-Place Match Ever.`,
     excerpt:`Declan Rice, the captain for the day, scored in the 3rd minute. Two and a half minutes in. England had neither Kane nor Bellingham in the starting lineup. The lineup screamed low intensity, dead rubber, honours even. Rice screamed otherwise. Konsa headed home from Rice's corner in the 18th. Saka tapped in Rashford's unselfish pass for a third. Saka added a fourth with a brilliant finish from the edge of the box. 4–0 at half time. The most goals France had conceded in a half since records began. Miami watched in absolute disbelief.`,

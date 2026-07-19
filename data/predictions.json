@@ -1,10 +1,10 @@
 {
   "generated": "2026-07-19",
   "model": "Dixon-Coles + Elo",
-  "wc_results_applied": 103,
+  "wc_results_applied": 104,
   "model_record": {
-    "played": 103,
-    "correct": 71,
+    "played": 104,
+    "correct": 72,
     "wrong": 32,
     "accuracy": 69
   },
@@ -2914,12 +2914,12 @@
       "prediction": "Spain",
       "confidence": 63.9,
       "model_insight": "Closely matched teams — draw likely.",
-      "actual_result": null,
-      "actual_score": null,
-      "home_score": null,
-      "away_score": null,
-      "model_correct": null,
-      "status": "upcoming"
+      "actual_result": "Spain",
+      "actual_score": "0–1",
+      "home_score": 0,
+      "away_score": 1,
+      "model_correct": true,
+      "status": "completed"
     }
   ]
 }

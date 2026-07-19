@@ -55,6 +55,9 @@ export default function HomeContent({ initialData }) {
   const simTop       = data?.simulation?.results?.slice(0,6) || [];
   const valueMatches = [...matches].sort((a,b)=>b.bestEv-a.bestEv).filter(m=>m.bestEv>0).slice(0,6);
 
+  const finalMatch   = matches.find(m => (m.stage||'').toLowerCase()==='final');
+  const finalCorrect = finalMatch?.status==='completed' && finalMatch?.model_correct===true;
+
   const upcoming = [...matches]
     .filter(m => m.status === 'upcoming')
     .sort((a,b) => a.date.localeCompare(b.date))
@@ -140,6 +143,16 @@ export default function HomeContent({ initialData }) {
         <h1 style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,letterSpacing:'.22em',textTransform:'uppercase',color:'rgba(247,245,240,.85)',marginBottom:20,fontWeight:400}}>
           Edge Analysts
         </h1>
+
+        {/* Final result highlight — shown once the Final is complete and the model called it */}
+        {!loading && finalCorrect && (
+          <div style={{display:'inline-flex',alignItems:'center',gap:10,background:'rgba(200,255,0,.12)',border:'1px solid rgba(200,255,0,.4)',borderRadius:2,padding:'9px 16px',marginBottom:20}}>
+            <span style={{width:6,height:6,borderRadius:'50%',background:'#C8FF00',flexShrink:0,animation:'lp-blink 1.8s ease infinite'}}/>
+            <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:9,letterSpacing:'.1em',textTransform:'uppercase',color:'#C8FF00',fontWeight:600}}>
+              ✓ Model Called It — {finalMatch.prediction} Champions, predicted at {finalMatch.confidence}% ({finalMatch.actual_score})
+            </span>
+          </div>
+        )}
 
         <div style={{display:'flex',alignItems:'center',gap:16,marginBottom:28}}>
           <span style={{fontFamily:"var(--font-mono,'DM Mono',monospace)",fontSize:7.5,letterSpacing:'.18em',textTransform:'uppercase',background:'#F0A500',color:'#080808',padding:'5px 12px',borderRadius:2,display:'flex',alignItems:'center',gap:7}}>
